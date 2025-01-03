@@ -1,0 +1,41 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+
+/* Hide the default scrollbar track */
+.scrollbarX::-webkit-scrollbar-track,
+.scrollbarY::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Set the scrollbar width and hide it by default */
+.scrollbarX::-webkit-scrollbar {
+    height: 6px;
+}
+
+.scrollbarY::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Set the scrollbar thumb appearance */
+.scrollbarX::-webkit-scrollbar-thumb,
+.scrollbarY::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: transparent;
+}
+
+/* Show the scrollbar thumb on hover */
+.scrollbarX:hover::-webkit-scrollbar-thumb,
+.scrollbarY:hover::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+}

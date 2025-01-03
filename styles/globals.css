@@ -1,0 +1,74 @@
+@import url("./base/index.css");
+@import url("./component/index.css");
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  display: none !important;
+}
+
+.travel_section .arrow {
+  cursor: pointer;
+  object-fit: contain;
+  opacity: 0;
+  position: absolute;
+  top: 60%;
+  transform: translate(-50%, -60%);
+  transition: all 0.5s;
+  /* visibility: hidden; */
+  height: 50px;
+  width: 50px;
+  z-index: 10;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.travel_section:hover .arrow {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0%, -60%);
+}
+
+/* swiper js */
+.swiper {
+  width: 100%;
+  height: 50vh;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: none;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  height: 40px !important;
+  width: 40px !important;
+}
+.swiper-button-prev {
+  background-image: url("https://holidays.clubmahindra.com/images/left-arrow.svg");
+}
+
+.swiper-button-next {
+  background-image: url("https://holidays.clubmahindra.com/images/right-arrow.svg");
+}
