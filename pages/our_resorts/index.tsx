@@ -18,7 +18,11 @@ function OurResortsPage() {
   return (
     <NavContainer>
       <Container className="py-2">
-        <TopBanner />
+        <TopBanner
+          photo="https://holidays.clubmahindra.com/cmsimages/banners/Our Resort - Meember Site.jpg"
+          title="My Offers"
+          subTitle="Check out some of the hottest deals on our Resorts personalised for you."
+        />
         <FilterRow />
       </Container>
 

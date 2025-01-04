@@ -43,7 +43,11 @@ function BottomNavBar() {
       <Container className="py-2 flex justify-center items-center gap-x-12">
         <ListDropDown title="resort" menuItems={resortMenuItems} />
         <ListDropDown title="privileges" menuItems={privilegesMenuItems} />
-        <Link href="#" className="text-p1-r leading-relaxed">
+        <Link
+          href="https://www.clubmahindra.com/refer-a-friend/user/dashboard"
+          target="_blank"
+          className="text-p1-r leading-relaxed"
+        >
           Referral Program{" "}
           <span className="text-p2-m animate-pulse text-[#ebb541]">★New</span>
         </Link>

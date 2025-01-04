@@ -22,13 +22,13 @@ function PrivilegsSection() {
         {
           title: "Domestic Hotels",
           photo:
-            "https://common-booking-engine.gumlet.io/cmsimages/privilege/1724847814-Domestic%20hotel%20fortune.jpg",
+            "https://images.unsplash.com/photo-1630809718582-2bc0a1b7b296?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           link: "/privilegs?section=domestic%20hotels",
         },
         {
           title: "International Hotels",
           photo:
-            "https://common-booking-engine.gumlet.io/cmsimages/privilege/International%20hotels%20koh%20lanta.jpg",
+            "https://images.unsplash.com/photo-1601972888880-3ad2df3ee0a0?q=80&w=2108&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           link: "/privilegs?section=international%20hotels",
         },
       ],
@@ -70,19 +70,19 @@ function PrivilegsSection() {
         {
           title: "Weekend Gateway",
           photo:
-            "https://common-booking-engine.gumlet.io/cmsimages/privilege/CLIENT_Beautiful%20Evening%20Villa%20View_Lonavala_%20512x608%20px.jpg",
+            "https://images.unsplash.com/photo-1504457047772-27faf1c00561?q=80&w=2147&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           link: "/privilegs?section=weekend%20gateways",
         },
         {
           title: "Curated Holidays",
           photo:
-            "https://common-booking-engine.gumlet.io/cmsimages/privilege/Curated%20holidays.jpg",
+            "https://images.unsplash.com/photo-1522034477175-d97f456a4873?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           link: "/privilegs?section=curated%20holidays",
         },
         {
           title: "Festive and Religious Experiences",
           photo:
-            "https://common-booking-engine.gumlet.io/cmsimages/privilege/9S1A9817_rann%20utsav_%20512x608%20px.jpg",
+            "https://images.unsplash.com/photo-1526139334526-f591a54b477c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           link: "/privilegs?section=religious%20festive",
         },
       ],

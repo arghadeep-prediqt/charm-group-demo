@@ -4,27 +4,27 @@ export const resortImage = [
   {
     name: "hidden game",
     image:
-      "https://common-booking-engine.gumlet.io/cmsimages/curated_images/1730904192-Trending%20Hidden%20Gems.jpg",
+      "https://images.unsplash.com/photo-1568229988520-4bc288da81f7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "new resorts",
     image:
-      "https://common-booking-engine.gumlet.io/cmsimages/curated_images/1731329538-7.png",
+      "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "hot offers",
     image:
-      "https://common-booking-engine.gumlet.io/cmsimages/curated_images/1730904297-Hot%20offers.jpg",
+      "https://images.unsplash.com/photo-1671783181352-1bb9e06fef1a?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "trending this season",
     image:
-      "https://common-booking-engine.gumlet.io/cmsimages/curated_images/1730904360-trending.jpg",
+      "https://images.unsplash.com/photo-1584954490709-3c000d2ec110?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "top related resorts",
     image:
-      "https://common-booking-engine.gumlet.io/cmsimages/curated_images/1730889242-Club-Mahindra-Snow-Peaks-Manali-Resized.jpg",
+      "https://common-booking-engine.gumlet.io/cmsimages/offer-card/offer%205.jpg",
   },
 ];
 
@@ -340,6 +340,39 @@ export const allResortsData: ResortsData[] = [
         resorts: [{ name: "Club Mahindra Diu Resort", location: "Diu" }],
       },
     ],
+  },
+];
+
+export const offerCardData = [
+  {
+    offerid: "s1CRPv",
+    valid: "04 Dec, 2025",
+    photo:
+      "https://static-clubmahindra.gumlet.io/storage/app/media/All%20Compressed%20banners/Club-Mahindra-Snow-Peaks-Manali-Resized.jpg",
+  },
+  {
+    offerid: "ClzKI7",
+    valid: "04 Dec, 2025",
+    photo:
+      "https://static-clubmahindra.gumlet.io/storage/app/media/360%20videos/DJI_0090.jpg",
+  },
+  {
+    offerid: "7AHxPS",
+    valid: "04 Dec, 2025",
+    photo:
+      "https://static-clubmahindra.gumlet.io/storage/app/media/All%20Compressed%20banners/Club-Mahindra-Thekkady.jpg",
+  },
+  {
+    offerid: "ZxYYgt",
+    valid: "04 Dec, 2025",
+    photo:
+      "https://static-clubmahindra.gumlet.io/storage/app/media/ResotBanner_Mob/Club%20Mahindra%20Netrang.webp",
+  },
+  {
+    offerid: "c9jMgX",
+    valid: "04 Dec, 2025",
+    photo:
+      "https://static-clubmahindra.gumlet.io/storage/app/media/All%20Compressed%20banners/Club%20Mahindra%20Pristine%20Peaks%20Naldehra.jpg",
   },
 ];
 
