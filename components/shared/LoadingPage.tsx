@@ -3,7 +3,7 @@ import { BlurImage } from "../ui/BluerImage";
 
 function LoadingPage() {
   return (
-    <div className="fixed w-full h-screen top-0 left-0 z-50 flex justify-center items-center backdrop-blur-sm">
+    <div className="fixed w-full h-screen top-0 left-0 z-50 flex justify-center items-center bg-black/30 backdrop-blur-sm">
       <BlurImage
         src="https://img.icons8.com/office/80/spinner-frame-5.png"
         alt="loader"

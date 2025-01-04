@@ -20,6 +20,7 @@ export const BlurImage = ({
       width={width}
       height={height}
       loading="lazy"
+      draggable={false}
       blurDataURL={typeof src === "string" ? src : undefined}
       alt={alt ? alt : "Background of a beautiful view"}
       // loader={customImageLoader}

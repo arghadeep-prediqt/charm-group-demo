@@ -10,32 +10,32 @@ const ListDropDown = dynamic(() => import("@/components/ui/ListDropDown"));
 function BottomNavBar() {
   const resortMenuItems: MenuItemProps[] = [
     {
-      title: "all resorts",
-      icon: "https://img.icons8.com/ios/100/ff9900/sunbathe.png",
-      link: "/our_resorts",
-    },
-    {
       title: "horizon",
       icon: "https://img.icons8.com/ios/100/ff9900/astronomical-twilight.png",
       link: "/#privilegs",
     },
+    {
+      title: "our resorts",
+      icon: "https://img.icons8.com/ios/100/ff9900/sunbathe.png",
+      link: "/our_resorts",
+    },
   ];
 
   const privilegesMenuItems: MenuItemProps[] = [
+    {
+      title: "Relegious Festive",
+      icon: "https://img.icons8.com/ios/100/ff9900/festival.png",
+      link: "/privilegs?section=religious%20festive",
+    },
     {
       title: "curated holidays",
       icon: "https://img.icons8.com/ios/100/ff9900/sunbathe.png",
       link: "/privilegs?section=curated%20holidays",
     },
     {
-      title: "weekends gateways",
+      title: "weekend gateways",
       icon: "https://img.icons8.com/ios/100/ff9900/car--v1.png",
       link: "/privilegs?section=weekend%20gateways",
-    },
-    {
-      title: "visa services",
-      icon: "https://img.icons8.com/ios/100/ff9900/visa.png",
-      link: "/privilegs?section=visa%20services",
     },
   ];
   return (
@@ -60,7 +60,7 @@ function BottomNavBar() {
 
         <div className="border-l border-gray-300 ps-10 flex justify-start items-center gap-x-3">
           <BlurImage
-            src={"https://img.icons8.com/material-outlined/96/ff9900/help.png"}
+            src={"https://img.icons8.com/material-outlined/96/ebb541/help.png"}
             alt="help me"
             width={100}
             height={100}
