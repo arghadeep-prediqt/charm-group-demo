@@ -4,6 +4,7 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { Poppins } from "next/font/google";
 import dynamic from "next/dynamic";
+import { ReduxProviders } from "@/redux/ReduxProviders";
 
 const LoadingPage = dynamic(() => import("@/components/shared/LoadingPage"));
 
@@ -31,8 +32,11 @@ export default function App({ Component, pageProps, router }: AppProps) {
       <Head>
         <title>Charm Group</title>
       </Head>
-      {loader && <LoadingPage />}
-      <Component {...pageProps} />
+
+      <ReduxProviders>
+        {loader && <LoadingPage />}
+        <Component {...pageProps} />
+      </ReduxProviders>
     </main>
   );
 }

@@ -8,7 +8,7 @@ const Tab3 = dynamic(() => import("@/components/layouts/Home/Tab3"));
 
 function TabSection() {
   const tabCategories = [
-    { name: "recomensations", component: <Tab1 /> },
+    { name: "Recommendations", component: <Tab1 /> },
     { name: "upcoming bookings", component: <Tab2 /> },
     { name: "payment status", component: <Tab3 /> },
   ];

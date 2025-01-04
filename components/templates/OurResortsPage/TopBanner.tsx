@@ -21,7 +21,9 @@ function TopBanner({ photo, title, subTitle }: PageProps) {
         <h1 className="text-white text-[40px] font-medium leading-relaxed">
           {title}
         </h1>
-        <p className="mt-1 text-white text-[21px]">{subTitle}</p>
+        <p className="mt-1 text-white text-[18px] w-6/12 leading-relaxed">
+          {subTitle}
+        </p>
       </div>
     </div>
   );
