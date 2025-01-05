@@ -68,7 +68,10 @@ function TravelDiaries() {
             </p>
 
             <div className="mt-3 flex justify-start items-center gap-x-4">
-              <button className="px-4 py-2.5 text-[18px] font-semibold leading-relaxed bg-sky-400 border-2 border-sky-400 text-white rounded-full min-w-[200px] shadow-sm">
+              <button
+                onClick={() => router.push(`/blog_story?index=${currentIndex}`)}
+                className="px-4 py-2.5 text-[18px] font-semibold leading-relaxed bg-sky-400 border-2 border-sky-400 text-white rounded-full min-w-[200px] shadow-sm"
+              >
                 Read full Story
               </button>
               <button

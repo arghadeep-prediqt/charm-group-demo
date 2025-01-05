@@ -45,7 +45,7 @@ function Login() {
         if (res.status === 200) {
           console.log(resData);
 
-          router.push("/");
+          router.refresh();
           setIsClicked(false);
           return;
         }
