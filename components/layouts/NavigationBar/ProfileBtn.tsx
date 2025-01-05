@@ -40,7 +40,7 @@ const navigationProfile = [
   {
     name: "Membership Transfer",
     icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1715671453-1671029219live-membership.svg",
-    link: "",
+    link: "/membership/transfer",
   },
   {
     name: "Membership E-kit",

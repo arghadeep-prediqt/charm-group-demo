@@ -1,9 +1,4 @@
-import {
-  Calendar,
-  ChevronRight,
-  FileImage,
-  SlidersHorizontal,
-} from "lucide-react";
+import { Calendar, ChevronRight, Coins, TentTree } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import React from "react";
@@ -24,14 +19,14 @@ function RightProfileSection() {
           name="Session Chart"
         />
         <ButtonSide
-          icon={<SlidersHorizontal className="size-5 text-orange-500" />}
-          link="/session_chart"
-          name="My Preferences"
+          icon={<Coins className="size-5 text-orange-500" />}
+          link="/profile/payment"
+          name="Payment Details"
         />
         <ButtonSide
-          icon={<FileImage className="size-5 text-orange-500" />}
-          link="/session_chart"
-          name="Share Your Travel Memomry"
+          icon={<TentTree className="size-5 text-orange-500" />}
+          link="/my_bookings"
+          name="My Holidays"
         />
       </div>
 
@@ -69,7 +64,7 @@ function ButtonSide({ icon, link, name }: ButtonSideProps) {
     >
       <div className="flex justify-start items-center gap-x-3">
         {icon}
-        <p className="text-p1-m text-gray-700">{name}</p>
+        <p className="text-p1-m text-start text-gray-700">{name}</p>
       </div>
 
       <ChevronRight className="size-5" />

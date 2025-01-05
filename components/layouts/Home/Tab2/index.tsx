@@ -2,7 +2,7 @@ import { BlurImage } from "@/components/ui/BluerImage";
 import dynamic from "next/dynamic";
 import React from "react";
 
-const BottomSection = dynamic(() => import("./BottomSection"));
+export const BottomSection = dynamic(() => import("./BottomSection"));
 
 function Tab2() {
   return (

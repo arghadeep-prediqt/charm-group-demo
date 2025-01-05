@@ -15,7 +15,11 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-function MemberDropdown() {
+interface PageProps {
+  isDisabled?: boolean;
+}
+
+function MemberDropdown({ isDisabled = false }: PageProps) {
   const [selected, setSelected] = useState(plans[0]);
 
   return (
@@ -25,8 +29,9 @@ function MemberDropdown() {
         className={cn(
           "w-full px-2 py-4 bg-white rounded-xl",
           "flex justify-start items-center gap-x-3",
-          "focus:outline-none"
+          "focus:outline-none border border-gray-200"
         )}
+        disabled={isDisabled}
       >
         <User className="size-6 text-sky-400" />
 
@@ -70,4 +75,4 @@ function MemberDropdown() {
 
 export default MemberDropdown;
 
-const plans = ["Startup", "Business", "Enterprise"];
+const plans = ["Member", "Direct Dependent", "Guest"];

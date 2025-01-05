@@ -51,11 +51,11 @@ function BottomNavBar() {
           Referral Program{" "}
           <span className="text-p2-m animate-pulse text-[#ebb541]">★New</span>
         </Link>
-        <Link href="#" className="text-p1-r leading-relaxed">
+        <Link href="/membership" className="text-p1-r leading-relaxed">
           Membership Upgrade
         </Link>
-        <Link href="#" className="text-p1-r leading-relaxed">
-          Community
+        <Link href="/my_bookings" className="text-p1-r leading-relaxed">
+          My Holidays
         </Link>
 
         <div className="border-l border-gray-300 ps-10 flex justify-start items-center gap-x-3">
@@ -66,7 +66,7 @@ function BottomNavBar() {
             height={100}
             className="size-5 object-cover"
           />
-          <Link href="#" className="text-p1-r leading-relaxed">
+          <Link href="/profile" className="text-p1-r leading-relaxed">
             Get Help
           </Link>
         </div>

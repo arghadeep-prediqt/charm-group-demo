@@ -440,6 +440,16 @@ export const aminitiesData = [
       "https://static-clubmahindra.gumlet.io/storage/app/media/Amenities/amenities_latest/CM_Icons_32-Laundry.png",
   },
   {
+    name: "Swiming Pool",
+    photo:
+      "https://static-clubmahindra.gumlet.io/storage/app/media/Amenities/New%20folder/CM_Icons_03-Pool.png",
+  },
+  {
+    name: "Travel Desk",
+    photo:
+      "https://static-clubmahindra.gumlet.io/storage/app/media/Amenities/amenities_latest/CM_Icons_34-Travel%20Desk.png",
+  },
+  {
     name: "Parking Facility",
     photo:
       "https://static-clubmahindra.gumlet.io/storage/app/media/Amenities/amenities_latest/CM_Icons_29-Parking%20Facility.png",

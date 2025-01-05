@@ -82,7 +82,7 @@ function LeftProfileSection() {
       <h4 className="mt-8">My Wallet</h4>
 
       <div className="mt-5 flex justify-start items-start gap-x-3">
-        <div className="w-4/12 h-[130px] bg-[#1dade3] p-3 rounded-xl flex flex-col justify-between items-start">
+        <div className="w-[32%] h-[130px] bg-[#1dade3] p-3 rounded-xl flex flex-col justify-between items-start">
           <div className="flex justify-start items-start gap-x-2">
             <BlurImage
               src={
@@ -106,7 +106,7 @@ function LeftProfileSection() {
           </p>
         </div>
 
-        <div className="w-4/12 h-[130px] bg-[#A5CF51] p-3 rounded-xl flex flex-col justify-between items-start">
+        <div className="w-[32%] h-[130px] bg-[#A5CF51] p-3 rounded-xl flex flex-col justify-between items-start">
           <div className="flex justify-start items-start gap-x-2">
             <BlurImage
               src={
@@ -129,7 +129,7 @@ function LeftProfileSection() {
           </p>
         </div>
 
-        <div className="w-4/12 h-[130px] bg-[#F4982E] p-3 rounded-xl flex flex-col justify-between items-start">
+        <div className="w-[32%] h-[130px] bg-[#F4982E] p-3 rounded-xl flex flex-col justify-between items-start">
           <div className="flex justify-start items-start gap-x-2">
             <BlurImage
               src={

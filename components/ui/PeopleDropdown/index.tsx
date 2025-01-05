@@ -1,9 +1,18 @@
 import { cn } from "@/components/lib/utils";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import { Minus, Plus, User } from "lucide-react";
+import { Poppins } from "next/font/google";
 import React, { useState } from "react";
 
-function PeopleDropdown() {
+const poppins = Poppins({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+interface PageProps {
+  isDisabled?: boolean;
+}
+
+function PeopleDropdown({ isDisabled }: PageProps) {
   const [adult, setAdult] = useState<number>(2);
   const [children, setChildren] = useState<number>(1);
   const [infants, setInfants] = useState<number>(1);
@@ -15,8 +24,9 @@ function PeopleDropdown() {
         className={cn(
           "w-full px-2 py-4 bg-white rounded-xl",
           "flex justify-start items-center gap-x-3",
-          "focus:outline-none"
+          "focus:outline-none border"
         )}
+        disabled={isDisabled}
       >
         <User className="size-6 text-sky-400" />
 
@@ -29,7 +39,7 @@ function PeopleDropdown() {
 
       <PopoverPanel
         anchor="bottom"
-        className="w-[var(--button-width)] origin-top-right rounded-xl border border-black/5 bg-white p-1 text-sm/6 transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+        className={`${poppins.className} w-[var(--button-width)] origin-top-right rounded-xl border border-black/5 bg-white p-1 text-sm/6 transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0`}
       >
         <div className="p-3 flex justify-start items-center gap-x-2">
           <div className="w-7/12">

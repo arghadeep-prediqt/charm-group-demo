@@ -65,7 +65,10 @@ function RightPaymentSection() {
         </p>
       </div>
 
-      <button className="mt-4 text-p2-m text-gray-600 w-full flex justify-start items-center gap-x-2 border border-gray-300 rounded-xl py-3 px-3 bg-gray-25 active:opacity-65">
+      <button
+        onClick={() => router.push("/profile/utilization")}
+        className="mt-4 text-p2-m text-gray-600 w-full flex justify-start items-center gap-x-2 border border-gray-300 rounded-xl py-3 px-3 bg-gray-25 active:opacity-65"
+      >
         <BlurImage
           src="https://holidays.clubmahindra.com/images/payments/Rs-icon.svg"
           alt="again"
@@ -73,7 +76,7 @@ function RightPaymentSection() {
           height={50}
           className="size-5 object-cover"
         />
-        View Transactions
+        Holidays Utilization
       </button>
 
       <div className="mt-3 flex justify-between items-end">

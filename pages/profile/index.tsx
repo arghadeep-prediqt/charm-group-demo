@@ -26,10 +26,10 @@ function ProfilePage() {
 
         <div className="p-6 w-[80vw] h-[85vh] bg-gray-50">
           <div className="p-3 rounded-xl h-full bg-white flex justify-start items-start divide-x-2">
-            <div className="w-8/12 h-full ">
+            <div className="w-9/12 h-full ">
               <LeftProfileSection />
             </div>
-            <div className="w-4/12 h-full ">
+            <div className="w-3/12 h-full ">
               <RightProfileSection />
             </div>
           </div>
