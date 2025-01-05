@@ -42,12 +42,11 @@ function Login() {
 
         const resData = await res.json();
 
-        if (resData?.message) {
-          console.log(resData);
-          window.location.replace("/");
-          setIsClicked(false);
-          return;
-        }
+        console.log(resData);
+
+        await window.location.replace("/");
+        setIsClicked(false);
+        return;
       } catch (error) {
         console.log(error);
 
