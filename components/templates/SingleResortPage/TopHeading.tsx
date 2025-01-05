@@ -20,7 +20,7 @@ function TopHeading({ params }: PageProps) {
           </button>
         </div>
       </div>
-      <p className="text-p1-r text-gray-500">Dharamshala, Himachal Pradesh</p>
+      <p className="text-p1-r text-gray-500">Vung Tau province, Vietnam</p>
       <div className="mt-5 flex justify-start items-center gap-x-1">
         <button className="border-none text-p3-m text-sky-500">
           15 Photos

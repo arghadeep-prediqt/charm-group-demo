@@ -9,6 +9,7 @@ import {
   PlusCircle,
 } from "lucide-react";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 const Container = dynamic(() => import("@/components/shared/Container"));
@@ -24,6 +25,7 @@ const optionDate = [
 ];
 
 function MembershipPage() {
+  const router = useRouter();
   const [isEdit, setIsEdit] = useState<boolean>(false);
   const [selected, setSelected] = useState<SelectedProps>(optionDate[0]);
 
@@ -112,7 +114,10 @@ function MembershipPage() {
               <Home className="size-5 text-yellow-500" />
               <p className="text-p2-m">Session Chart</p>
             </div>
-            <button className="text-p3-b text-sky-500 px-6 py-1.5 border border-sky-500 rounded-full">
+            <button
+              onClick={() => router.push("/session_chart")}
+              className="text-p3-b text-sky-500 px-6 py-1.5 border border-sky-500 rounded-full"
+            >
               View
             </button>
           </div>

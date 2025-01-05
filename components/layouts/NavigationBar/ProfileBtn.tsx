@@ -1,3 +1,4 @@
+import { LogoutReq } from "@/components/lib/utils";
 import { BlurImage } from "@/components/ui/BluerImage";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { Poppins } from "next/font/google";
@@ -50,8 +51,6 @@ const navigationProfile = [
 ];
 
 function ProfileBtn() {
-  const signOut = () => {};
-
   return (
     <Menu as="div" className={`${poppins.className} relative ml-3`}>
       <MenuButton
@@ -98,8 +97,8 @@ function ProfileBtn() {
 
         <MenuItem as="div">
           <button
-            onClick={signOut}
-            className="w-full flex justify-start items-center gap-x-2 px-4 py-2 border-none focus:outline-none text-start text-p2-m text-gray-700 data-[focus]:bg-gray-100"
+            onClick={LogoutReq}
+            className="w-full flex justify-start items-center gap-x-2 px-4 py-2 border-none focus:outline-none text-start text-p2-m text-gray-700 data-[focus]:bg-gray-100 disabled:opacity-65"
           >
             <BlurImage
               src={"https://holidays.clubmahindra.com/images/header/logout.svg"}

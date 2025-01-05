@@ -34,7 +34,7 @@ function HolidayOffer() {
           link="/our_resorts/club%20mahindra%20mussoorie%20resort"
           offerid="3960451"
           vaild="04 Dec 2025"
-          photo="https://common-booking-engine.gumlet.io/cmsimages/offer-card/Offer 3.jpg"
+          photo="https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Ho-Tram-1.jpg"
         />
       </div>
     </Container>

@@ -1,3 +1,4 @@
+import { mockCarouselData, travelDiaries } from "@/components/lib/rawData";
 import { BlurImage } from "@/components/ui/BluerImage";
 import { EllipsisVertical } from "lucide-react";
 import dynamic from "next/dynamic";
@@ -19,7 +20,10 @@ function UpcomingTab() {
         .fill(0)
         ?.map((_, id) => (
           <div key={id} className="pt-3 pb-5">
-            <SingleCard title="Club Mahindra Madikeri, Coorg" />
+            <SingleCard
+              title={travelDiaries[id].resort}
+              photo={mockCarouselData[id].src}
+            />
           </div>
         ))}
 
@@ -37,17 +41,18 @@ export default UpcomingTab;
 
 interface SingleCardProps {
   title: string;
+  photo: string;
 }
 
-function SingleCard({ title }: SingleCardProps) {
+function SingleCard({ title, photo }: SingleCardProps) {
   const router = useRouter();
 
   return (
     <div className="flex justify-between items-center gap-x-8 bg-gray-100 rounded-xl ">
       <BlurImage
-        src="https://static-clubmahindra.gumlet.io/storage/app/media/ResotBanner_Mob/club-mahindra-madikeri-coorg.webp"
+        src={photo}
         alt="banner Image"
-        width={250}
+        width={300}
         height={200}
         className="h-[200px] w-[250px] object-cover rounded-xl"
       />

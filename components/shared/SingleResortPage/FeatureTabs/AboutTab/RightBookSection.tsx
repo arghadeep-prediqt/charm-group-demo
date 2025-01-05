@@ -16,7 +16,7 @@ function RightBookSection({ name }: PageProps) {
   return (
     <div className="mb-3 bg-gray-50 p-6 rounded-xl border border-gray-200">
       <h3 className="capitalize text-[21px] font-medium">{name}</h3>
-      <p className="my-2 text-p2-r text-gray-600">Manali , Himachal Pradesh</p>
+      <p className="my-2 text-p2-r text-gray-600">Vung Tau province, Vietnam</p>
 
       <div className="mt-5 flex justify-start items-center gap-x-1">
         <button className="border-none text-p3-m text-sky-500">

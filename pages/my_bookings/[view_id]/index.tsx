@@ -26,7 +26,7 @@ function ViewHolidaysPage() {
       <Container className="py-8 flex justify-start items-start gap-x-[3%] bg-gray-100">
         <LeftViewSection
           title={String(param?.view_id)}
-          subTitle="Coorg , Karnataka"
+          subTitle="Vung Tau province, Vietnam"
         />
         {param?.type === "view" && (
           <RightViewSection title={String(param?.view_id)} />

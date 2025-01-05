@@ -11,7 +11,7 @@ function LeftViewSection({ title, subTitle }: PageProps) {
     <div className="w-[30%] bg-white border border-white rounded-2xl">
       <BlurImage
         src={
-          "https://static-clubmahindra.gumlet.io/storage/app/media/ResotBanner_Mob/club-mahindra-madikeri-coorg.webp"
+          "https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Ho-Tram-1.jpg"
         }
         alt="resort image"
         width={400}

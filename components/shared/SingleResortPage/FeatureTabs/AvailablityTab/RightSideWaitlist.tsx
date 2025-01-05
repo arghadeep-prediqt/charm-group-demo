@@ -12,7 +12,9 @@ function RightSideWaitlist({ name }: PageProps) {
     <div className="mb-3 bg-gray-50 rounded-xl border border-gray-200">
       <div className="p-6">
         <h3 className="capitalize text-[20px] font-medium">{name}</h3>
-        <p className="my-2 text-p2-r text-gray-600">Manali, Himachal Pradesh</p>
+        <p className="my-2 text-p2-r text-gray-600">
+          Vung Tau province, Vietnam
+        </p>
 
         <h4 className="capitalize mt-10 mb-1 text-gray-700">
           Add travellers details

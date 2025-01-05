@@ -37,14 +37,13 @@ export const mockCarouselData = [
   {
     category: "Long Dien District",
     title: "Charm Resort Long Hải ",
-    src: "https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Long-Hai-4-1024x850.jpeg",
+    src: "https://charm.vn/wp-content/uploads/2022/12/tien-ich-Charm-Resort-Long-Hai-4-1.jpg",
   },
   {
     category: "Thuan Phuoc commune",
     title: "Charm Diamond",
     src: "https://charm.vn/wp-content/uploads/2021/09/Charm-Diamond-2.jpg",
   },
-
   {
     category: "Thuan Phuoc commune",
     title: "Charm Heritage Village Dalat",
@@ -69,6 +68,19 @@ export const firstFilter: SelectedProps[] = [
   { id: 3, name: "South" },
   { id: 4, name: "East" },
   { id: 5, name: "West" },
+];
+
+export const regionData: SelectedProps[] = [
+  { id: 0, name: "Region" },
+  { id: 1, name: "North" },
+  { id: 2, name: "South" },
+  { id: 3, name: "East" },
+  { id: 4, name: "West" },
+];
+
+export const domesticData: SelectedProps[] = [
+  { id: 0, name: "Domestic" },
+  { id: 1, name: "International" },
 ];
 
 export const secondFilter: SelectedProps[] = [
@@ -341,6 +353,26 @@ export const allResortsData: ResortsData[] = [
       },
     ],
   },
+];
+
+export const monthsData: SelectedProps[] = [
+  { id: 1, name: "January" },
+  { id: 2, name: "February" },
+  { id: 3, name: "March" },
+  { id: 4, name: "April" },
+  { id: 5, name: "May" },
+  { id: 6, name: "June" },
+  { id: 7, name: "July" },
+  { id: 8, name: "August" },
+  { id: 9, name: "September" },
+  { id: 10, name: "October" },
+  { id: 11, name: "November" },
+  { id: 12, name: "December" },
+];
+
+export const yearData: SelectedProps[] = [
+  { id: 0, name: "2025" },
+  { id: 1, name: "2026" },
 ];
 
 export const offerCardData = [
@@ -843,5 +875,35 @@ export const paymentDetails = [
     redeemHfrpPoints: 0,
     deductPoints: 0,
     InvoiceAmount: 0,
+  },
+];
+
+export const travelDiaries = [
+  {
+    heading: "Trip to Hồ Tràm, Vietnam",
+    subHeading: "Shared By Vương Minh Tuân on 20 September 2024",
+    description:
+      "This was our first experience as members of Charm Group’s timeshare program, and it truly set the bar high. Initially, we were unsure about room availability, but the Charm Group app made the booking process effortless. We chose to stay at Charm Resort Hồ Tràm, nestled in Hồ Tràm, Vietnam, a luxurious beachfront destination spanning 40 hectares. Upon arrival, we were welcomed warmly with a refreshing drink before settling into our accommodations.\n\nOur afternoon was spent soaking in the sun by the stunning pool. In the evening, my child and I enjoyed an exciting bicycle ride, followed by a serene visit to the waterfront – an unforgettable highlight. My spouse relished the rejuvenating spa treatments available at the resort. I was also impressed by Charm Group’s commitment to sustainability, with solar energy initiatives and the convenience of an EV charging station for our electric car.\n\nThe fine dining experience was exceptional, and my child had a fantastic time exploring the kids’ play area. Later, I savored the gentle breeze by the waterfront, which perfectly captured the essence of relaxation. The resort’s proximity to Hồ Tràm's attractions added to our excitement, and we’re already planning a stay at Charm Resort Đà Lạt in Đà Lạt, Vietnam, to experience its cultural charm on our next visit.",
+    resort: "Charm Resort Hồ Tràm",
+    image:
+      "https://images.unsplash.com/photo-1675310366607-18d20663943b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    heading: "Into the Heart of Nature at Charm Resort Hồ Tràm",
+    subHeading: "Shared By Trần Thị Hồng Lũy on 29 August 2024",
+    description:
+      "The breathtaking beauty of Hồ Tràm, Vietnam, feels like a scene straight out of a dream. Its pristine beaches, luxurious surroundings, and serene ambiance offer an unforgettable escape. Our trip to Charm Resort Hồ Tràm, nestled within this coastal haven, was nothing short of spectacular.\n\nFrom the moment we arrived, the resort’s warmth and hospitality stood out. Greeted by the friendly staff with a refreshing welcome drink, we felt at ease immediately. Spread across a sprawling 40 hectares, the resort offers a wealth of amenities – from a wellness center and spa to a sparkling swimming pool and a vibrant kids' play area.\n\nThe resort’s travel desk made planning effortless, arranging activities tailored to our preferences. One of the highlights was a guided tour of Hồ Tràm’s lush landscapes, where we connected deeply with nature. The resort also catered to every member of our family, including preparing kid-friendly meals for our little one. The buffet spread, featuring breakfast, lunch, high tea, and dinner, was a culinary delight, showcasing perfection in every bite.\n\nWhether it was enjoying a sunset stroll along the beach, relaxing by the pool, or marveling at the beauty of the location, Charm Resort Hồ Tràm made our timeshare experience truly memorable. We’re eagerly looking forward to our next adventure at Charm Resort Phú Quốc for its unique blend of entertainment and authentic architecture.",
+    resort: "Charm Resort Hồ Tràm",
+    image:
+      "https://images.unsplash.com/photo-1709710223973-bed31e23806d?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    heading: "My Charm Resort Hồ Tràm Diary",
+    subHeading: "Shared By Văn Thị Huỳnh Hiên on 04 July 2024",
+    description:
+      "Creating a travel diary for Charm Resort Hồ Tràm is a delightful way to preserve cherished memories. Here’s how our 5-day escape unfolded:\n\n**Day 1: Arrival and First Impressions**\nMorning: Arrived at Charm Resort Hồ Tràm, Hồ Tràm, Vietnam. The check-in was seamless, with the staff offering a warm welcome and a refreshing drink. First impressions were remarkable: modern yet tranquil architecture, breathtaking beachfront views, and the lush ambiance surrounding the resort.\n\n**Day 2: Discovering Hồ Tràm**\nStarted the day with an early breakfast featuring local delicacies like fresh Vietnamese spring rolls and tropical fruits. Embarked on a nature walk guided by the resort staff, where we discovered the serene beachfront and vibrant flora.\n\n**Day 3: Adventure and Relaxation**\nAfter breakfast, ventured on an adventurous ATV ride along the coastal trails organized by the resort’s travel desk. The views and adrenaline were unforgettable! Unwound with a rejuvenating spa session, indulging in a traditional Vietnamese massage with herbal oils.\n\n**Day 4: Cultural Immersion**\nGuided visit to a nearby craft village, interacting with artisans and exploring traditional pottery and textile-making. Returned to the resort for an enchanting musical evening featuring traditional instruments.\n\n**Day 5: Departure**\nEnjoyed a leisurely breakfast before taking one last stroll around the resort to soak in its charm. The check-out process was smooth, and the staff sent us off with warm smiles and a thoughtful parting gift.\n\nCharm Resort Hồ Tràm turned our holiday into an extraordinary journey, and we can’t wait to plan our next stay at Charm Resort Đà Lạt for its unique cultural charm.",
+    resort: "Charm Resort Hồ Tràm",
+    image:
+      "https://images.unsplash.com/photo-1685714628080-356a7cddcf66?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];

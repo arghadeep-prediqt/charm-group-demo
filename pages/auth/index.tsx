@@ -25,42 +25,42 @@ function Login() {
 
       console.log({ email, password });
 
-      //   try {
-      //     const res = await fetch(`${urlApi}/api/signin`, {
-      //       method: "POST",
-      //       mode: "cors",
-      //       headers: {
-      //         "Content-Type": "application/json",
-      //       },
-      //       body: JSON.stringify({ email, password }),
-      //     });
+      if (email !== "arghadeep.mallick@prediqt.it" && password !== "123456") {
+        setIsClicked(false);
+        alert("User Credentials are not correct");
+        return;
+      }
 
-      //     const resData = await res.json();
+      try {
+        const res = await fetch(`/api/auth?token=${String(email)}`, {
+          method: "GET",
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
 
-      //     if (res.status === 200) {
-      //       // console.log(resData);
-      //       setCookie("authUser", resData?.token, {
-      //         path: "/",
-      //         httpOnly: false,
-      //         maxAge: 86400000,
-      //       });
+        const resData = await res.json();
 
-      //       router.refresh();
-      //       setIsClicked(false);
-      //       return;
-      //     }
+        if (res.status === 200) {
+          console.log(resData);
 
-      //     throw new Error("Unable to Login");
-      //   } catch (error) {
-      //     console.log(error);
+          router.push("/");
+          setIsClicked(false);
+          return;
+        }
 
-      //     alert(error);
-      //     setIsClicked(false);
-      //   }
+        throw new Error("Unable to Login");
+      } catch (error) {
+        console.log(error);
+
+        alert(error);
+        setIsClicked(false);
+      }
 
       setIsClicked(false);
     },
-    []
+    [router]
   );
 
   return (
@@ -110,6 +110,7 @@ function Login() {
                   name="email"
                   className="shadow appearance-none border border-gray-200 rounded-lg w-full py-3 px-4 h-[44px] text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent text-[16px] placeholder:text-[16px]"
                   placeholder="Email address"
+                  autoFocus={true}
                   required
                 />
               </div>

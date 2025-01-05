@@ -72,7 +72,10 @@ function Resorts() {
 
       {/* Footer */}
       <div className="mt-[2%] flex justify-center items-center">
-        <button className="flex items-center gap-x-2 border-shy-400 text-sky-600 text-p1-m py-2 px-4 border border-sky-400 rounded-lg shadow-sm">
+        <button
+          onClick={() => router.push("/session_chart")}
+          className="flex items-center gap-x-2 border-shy-400 text-sky-600 text-p1-m py-2 px-4 border border-sky-400 rounded-lg shadow-sm"
+        >
           <CalendarDays className="size-5" />
           View Season Chart to Plan your holidays
         </button>

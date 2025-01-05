@@ -44,13 +44,13 @@ function PrivilegsSection() {
           title: "Redeem Points",
           photo:
             "https://common-booking-engine.gumlet.io/cmsimages/privilege/Iphone.jpg",
-          link: "/",
+          link: "https://www.clubmahindra.com/refer-a-friend/user/dashboard",
         },
         {
           title: "Refer Now",
           photo:
             "https://common-booking-engine.gumlet.io/cmsimages/privilege/Size_ 321.39x353.3 px_Happy Family.jpg",
-          link: "/",
+          link: "https://www.clubmahindra.com/refer-a-friend/user/dashboard",
         },
       ],
     },
@@ -65,7 +65,7 @@ function PrivilegsSection() {
           title: "Visa Services",
           photo:
             "https://common-booking-engine.gumlet.io/cmsimages/privilege/NonMembersBanner_15Percentage.png",
-          link: "/",
+          link: "https://www.visa.co.in",
         },
         {
           title: "Weekend Gateway",

@@ -6,12 +6,14 @@ import {
 } from "@headlessui/react";
 import { Calendar, ChevronDown, Download, Printer } from "lucide-react";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
 import React from "react";
 
 const Container = dynamic(() => import("@/components/shared/Container"));
 const NavContainer = dynamic(() => import("@/components/shared/NavContainer"));
 
 function UtilizationPage() {
+  const router = useRouter();
   return (
     <NavContainer>
       <div className="bg-gray-100">
@@ -31,7 +33,10 @@ function UtilizationPage() {
               height={600}
               className="mt-[5%] w-[320px] h-full mx-auto object-contain"
             />
-            <button className="my-[5%] mx-auto w-7/12 flex justify-center items-center gap-x-3 text-sky-500 border border-sky-500 bg-white px-6 py-2.5 rounded-xl active:opacity-65">
+            <button
+              onClick={() => router.push("/session_chart")}
+              className="my-[5%] mx-auto w-7/12 flex justify-center items-center gap-x-3 text-sky-500 border border-sky-500 bg-white px-6 py-2.5 rounded-xl active:opacity-65"
+            >
               <Calendar className="size-4" />
               <p className="text-p2-r">View Season Details</p>
             </button>

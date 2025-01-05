@@ -26,7 +26,7 @@ function AboutTab({ name }: PageProps) {
             </div>
 
             <p className="ps-8 text-p1-r text-gray-500">
-              Dehradun - 70 kms - 2 hours 30 mins
+              Vung Tau province - 70 kms - 2 hours 30 mins
             </p>
           </div>
 

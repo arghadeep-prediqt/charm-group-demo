@@ -94,6 +94,7 @@ function RegisterPage() {
                   name="full_name"
                   className="shadow appearance-none border border-gray-200 rounded-lg w-full py-3 px-4 h-[44px] text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent text-[16px] placeholder:text-[16px]"
                   placeholder="Full Name"
+                  autoFocus
                   required
                 />
               </div>

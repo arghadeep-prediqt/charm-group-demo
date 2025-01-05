@@ -49,7 +49,7 @@ function CircuitSearchPage() {
 
         <h1 className="text-center text-[50px] leading-tight text-white font-medium mt-[4%]">
           Plan your stay at more than one <br />
-          Club Mahindra resort
+          Charm Group Resort
         </h1>
 
         <div className="flex justify-center items-center gap-x-4">

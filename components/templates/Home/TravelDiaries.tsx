@@ -1,50 +1,28 @@
+import { travelDiaries } from "@/components/lib/rawData";
 import { BlurImage } from "@/components/ui/BluerImage";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 const Container = dynamic(() => import("@/components/shared/Container"));
 
-const slides = [
-  {
-    heading: "An Oasis in the Desert",
-    subHeading: "Shared By Pallavi Swami on 13 June 2024",
-    description:
-      "Our recent stay at Club Mahindra Nature Resort in Jaipur was nothing short of exceptional. This green oasis in the heart of the desert truly lives up to its reputation, always making guests feel like they are at home. From the moment we arrived, the ...",
-    image:
-      "https://clubmahindra.gumlet.io/community/storage/storyimage/WhatsApp%20Image%202024-06-13%20at%207.08.49%20PM%20(2)_1718288379_thumbnail.png",
-  },
-  {
-    heading: "Majestic Hills and Valleys",
-    subHeading: "Shared By Rohan Sharma on 10 May 2024",
-    description:
-      "Our journey to the Club Mahindra Munnar Resort was magical. Nestled among the lush green hills, the property offers breathtaking views of the valleys. The hospitality and food were amazing. A must-visit for anyone seeking peace and natural beauty.",
-    image:
-      "https://clubmahindra.gumlet.io/community/storage/storyimage/vjVK4AeE7erHbdB_4128_thumbnail.png?q=75&w=547",
-  },
-  {
-    heading: "Beachside Bliss",
-    subHeading: "Shared By Neha Verma on 20 April 2024",
-    description:
-      "The serene beauty of Club Mahindra Goa Resort left us mesmerized. From relaxing by the beach to indulging in local cuisines, everything was perfect. A delightful experience that we would cherish forever.",
-    image:
-      "https://clubmahindra.gumlet.io/community/storage/storyimage/isOAT6285Rpchjk_4201_thumbnail.png?q=75&w=547",
-  },
-];
-
 function TravelDiaries() {
+  const router = useRouter();
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % travelDiaries.length);
   };
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? slides.length - 1 : prevIndex - 1
+      prevIndex === 0 ? travelDiaries.length - 1 : prevIndex - 1
     );
   };
 
-  const { heading, subHeading, description, image } = slides[currentIndex];
+  const { heading, subHeading, description, image, resort } =
+    travelDiaries[currentIndex];
 
   return (
     <Container className="mt-[5%] mb-[2%] py-2">
@@ -80,10 +58,12 @@ function TravelDiaries() {
         {/* Middle Div */}
         <div className="relative bg-[#faf7f7] h-full flex justify-between items-start">
           <div className="ps-16 pe-24 w-7/12 h-full flex flex-col justify-center items-start gap-4">
-            <h2>{heading}</h2>
-            <p className="text-p1-m">{subHeading}</p>
+            <h2 className="leading-tight line-clamp-1">{heading}</h2>
+            <p className="text-p1-m text-gray-700 leading-tight">
+              {subHeading}
+            </p>
 
-            <p className="text-[19px] mt-6 leading-relaxed text-gray-700">
+            <p className="text-p2-r mt-6 leading-relaxed text-gray-600 line-clamp-6">
               {description}
             </p>
 
@@ -91,7 +71,12 @@ function TravelDiaries() {
               <button className="px-4 py-2.5 text-[18px] font-semibold leading-relaxed bg-sky-400 border-2 border-sky-400 text-white rounded-full min-w-[200px] shadow-sm">
                 Read full Story
               </button>
-              <button className="px-4 py-2 text-[18px] font-semibold leading-relaxed bg-white border-2 border-sky-400 text-sky-500 rounded-full min-w-[200px] shadow-sm">
+              <button
+                onClick={() =>
+                  router.push(`/our_resorts/${resort.split(" ").join("%20")}`)
+                }
+                className="px-4 py-2 text-[18px] font-semibold leading-relaxed bg-white border-2 border-sky-400 text-sky-500 rounded-full min-w-[200px] shadow-sm"
+              >
                 Explore Resort
               </button>
             </div>

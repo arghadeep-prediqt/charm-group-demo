@@ -5,11 +5,13 @@ import {
 } from "@/components/lib/rawData";
 import { Calendar } from "lucide-react";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
 import React from "react";
 
 const SelectListBox = dynamic(() => import("@/components/ui/SelectListBox"));
 
 function FilterRow() {
+  const router = useRouter();
   return (
     <div className="px-2 flex justify-between items-end gap-x-4">
       <div className="flex flex-col justify-start items-start gap-4">
@@ -22,7 +24,10 @@ function FilterRow() {
         </div>
       </div>
 
-      <button className="py-2 text-p2-m text-sky-500 flex justify-start items-center gap-x-2 hover:underline hover:underline-offset-1 active:opacity-65">
+      <button
+        onClick={() => router.push("/session_chart")}
+        className="py-2 text-p2-m text-sky-500 flex justify-start items-center gap-x-2 hover:underline hover:underline-offset-1 active:opacity-65"
+      >
         <Calendar className="size-4 text-sky-500" />
         View Season Chart
       </button>
