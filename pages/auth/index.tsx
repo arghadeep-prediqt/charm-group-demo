@@ -23,7 +23,7 @@ function Login() {
       const email = formData.get("email");
       const password = formData.get("password");
 
-      console.log({ email, password });
+      // console.log({ email, password });
 
       if (email !== "arghadeep.mallick@prediqt.it" && password !== "123456") {
         setIsClicked(false);
@@ -42,25 +42,21 @@ function Login() {
 
         const resData = await res.json();
 
-        if (res.status === 200) {
+        if (resData?.message) {
           console.log(resData);
-
-          router.refresh();
+          window.location.replace("/");
           setIsClicked(false);
           return;
         }
-
-        throw new Error("Unable to Login");
       } catch (error) {
         console.log(error);
 
         alert(error);
         setIsClicked(false);
       }
-
       setIsClicked(false);
     },
-    [router]
+    []
   );
 
   return (
