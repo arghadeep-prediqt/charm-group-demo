@@ -31,31 +31,27 @@ function Login() {
         return;
       }
 
-      try {
-        const res = await fetch(`/api/auth?token=${String(email)}`, {
-          method: "GET",
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
+      fetch(`/api/auth?token=${String(email)}`, {
+        method: "GET",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => {
+          if (res.status === 200) {
+            // console.log(res.status);
+            router.refresh();
+            setIsClicked(false);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          router.refresh();
         });
-
-        const resData = await res.json();
-
-        console.log(resData);
-
-        await window.location.replace("/");
-        setIsClicked(false);
-        return;
-      } catch (error) {
-        console.log(error);
-
-        alert(error);
-        setIsClicked(false);
-      }
       setIsClicked(false);
     },
-    []
+    [router]
   );
 
   return (
