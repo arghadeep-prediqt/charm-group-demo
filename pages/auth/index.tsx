@@ -4,6 +4,7 @@ import { Eye, EyeClosed } from "lucide-react";
 import { BlurImage } from "@/components/ui/BluerImage";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { setCookie } from "cookies-next";
 
 const Container = dynamic(() => import("@/components/shared/Container"));
 
@@ -25,33 +26,22 @@ function Login() {
 
       // console.log({ email, password });
 
-      if (email !== "arghadeep.mallick@prediqt.it" && password !== "123456") {
+      if (email === "arghadeep.mallick@prediqt.it" && password === "123456") {
+        setCookie("authUser", JSON.stringify({ token: String(email) }), {
+          expires: new Date(Date.now() + 43200000),
+          // httpOnly: true,
+          // maxAge: 43200,
+          // path: '/',
+        });
+        window.location.reload();
         setIsClicked(false);
-        alert("User Credentials are not correct");
         return;
       }
 
-      fetch(`/api/auth?token=${String(email)}`, {
-        method: "GET",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((res) => {
-          if (res.status === 200) {
-            // console.log(res.status);
-            router.refresh();
-            setIsClicked(false);
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-          router.refresh();
-        });
       setIsClicked(false);
+      alert("User credentials are incorrect.");
     },
-    [router]
+    []
   );
 
   return (

@@ -1,8 +1,9 @@
-import { LogoutReq } from "@/components/lib/utils";
 import { BlurImage } from "@/components/ui/BluerImage";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+import { deleteCookie } from "cookies-next";
 import { Poppins } from "next/font/google";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
 const poppins = Poppins({
@@ -51,6 +52,12 @@ const navigationProfile = [
 ];
 
 function ProfileBtn() {
+  const router = useRouter();
+
+  const signOut = () => {
+    deleteCookie("authUser");
+    router.reload();
+  };
   return (
     <Menu as="div" className={`${poppins.className} relative ml-3`}>
       <MenuButton
@@ -97,7 +104,7 @@ function ProfileBtn() {
 
         <MenuItem as="div">
           <button
-            onClick={LogoutReq}
+            onClick={signOut}
             className="w-full flex justify-start items-center gap-x-2 px-4 py-2 border-none focus:outline-none text-start text-p2-m text-gray-700 data-[focus]:bg-gray-100 disabled:opacity-65"
           >
             <BlurImage
