@@ -35,7 +35,7 @@ function PrivilegsSection() {
     },
     {
       name: "referral program",
-      title: "Club M Rewards",
+      title: "Charm Group Rewards",
       description:
         "Refer your loved ones and earn holiday benefits and exciting rewards.",
       link: "#!",
@@ -90,21 +90,24 @@ function PrivilegsSection() {
   ];
 
   return (
-    <section id="privilegs" className="bg-black mt-[5%] mb-[2%] pb-[3%]">
+    <section id="privilegs" className="bg-orange-100 mt-[5%] mb-[2%] pb-[3%]">
       <Container className="py-2">
         <div className="mt-[3%] flex justify-start items-end gap-x-[2%]">
-          <h1 className="text-[46px] text-white">Privileges</h1>
-          <p className="text-p1-r text-gray-300">
+          <h1 className="text-[46px]">Privileges</h1>
+          <p className="text-p1-r text-gray-700">
             Enjoy exclusive membership benefits curated just for you
           </p>
         </div>
 
-        <TabGroup>
-          <TabList className="mt-[4%] flex justify-start items-end gap-4">
+        <TabGroup
+          className={"flex items-center gap-x-4 overflow-auto scrollbarX"}
+        >
+          <TabList className="mt-[4%] flex flex-col justify-center items-start gap-4 sticky left-0 z-20">
             {tabCategories?.map((item, id) => (
               <Tab
                 key={id}
-                className="min-w-[276px] px-8 py-4 rounded-lg text-[20px] font-medium text-gray-300 leading-relaxed text-pretty capitalize bg-primary-600 data-[selected]:bg-[#f5992f]  focus:outline-none data-[selected]:text-white hover:bg-orange-400 hover:text-white active:opacity-65"
+                as="button"
+                className="min-w-[276px] px-8 py-4 rounded-xl text-[20px] font-medium text-yellow-300 leading-relaxed text-pretty capitalize bg-primary-600 data-[selected]:bg-yellow-300 data-[selected]:shadow-sm  focus:outline-none data-[selected]:text-primary-700 hover:bg-yellow-300 hover:text-primary-600 active:opacity-65"
               >
                 {item.name}
               </Tab>
@@ -114,7 +117,7 @@ function PrivilegsSection() {
             {tabCategories?.map((item, id) => (
               <TabPanel
                 key={id}
-                className="mt-[3%] flex justify-start items-end gap-x-4 overflow-auto scrollbarX"
+                className="mt-[3%] flex justify-start items-end gap-x-4"
               >
                 <PrivilegsCard
                   title={item.title}

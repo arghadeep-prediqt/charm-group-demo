@@ -34,7 +34,7 @@ function NavigationBar() {
         <SearchDiv />
 
         <CustomNavBtn
-          logo="https://img.icons8.com/external-vectorslab-glyph-vectorslab/53/ebb541/external-Calendar-Location-maps-and-navigation-vectorslab-glyph-vectorslab.png"
+          logo="/icons/date_destination.png"
           title="Date & Destination"
           link="/search"
         />
@@ -44,12 +44,12 @@ function NavigationBar() {
           link="/mapsearch"
         />
         <CustomNavBtn
-          logo="https://img.icons8.com/ios-filled/50/ebb541/compass--v2.png"
+          logo="https://img.icons8.com/ios-filled/50/ebb541/compass-south.png"
           title="Magic Compass"
           link="/magic_compass"
         />
         <CustomNavBtn
-          logo="https://img.icons8.com/glyph-neue/64/ebb541/point-objects.png"
+          logo="https://img.icons8.com/ios-filled/50/ebb541/itinerary.png"
           title="Circuit Booking"
           link="/circuitSearch"
         />

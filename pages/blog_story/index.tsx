@@ -31,7 +31,9 @@ function BlogStoryPage() {
             className="mt-12 w-full h-[80vh] object-cover rounded-2xl"
           />
 
-          <p className="text-[19px] leading-relaxed my-12">{description}</p>
+          <div className="my-12 prose-2xl text-gray-700 prose-p:text-[20px] prose-li:text-p1-r prose-p:leading-relaxed prose-ul:list-disc w-full">
+            <div dangerouslySetInnerHTML={{ __html: description }} />
+          </div>
 
           <div className="mb-12 flex justify-center items-center">
             <button

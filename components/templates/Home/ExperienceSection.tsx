@@ -1,7 +1,11 @@
 import { BlurImage } from "@/components/ui/BluerImage";
-import { MoveRight } from "lucide-react";
 import dynamic from "next/dynamic";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import { Autoplay, EffectCoverflow } from "swiper/modules";
 
 const Container = dynamic(() => import("@/components/shared/Container"));
 
@@ -57,21 +61,6 @@ const experiences: Experience[] = [
 ];
 
 const ExperienceSection: React.FC = () => {
-  const [selectedExperience, setSelectedExperience] = useState<Experience>(
-    experiences[0] // Default to first experience
-  );
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSelectedExperience((prev) => {
-        const nextIndex = (prev.id + 1) % experiences.length;
-        return experiences[nextIndex];
-      });
-    }, 5000); // Change experience every 3 seconds
-
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, []);
-
   return (
     <React.Fragment>
       {/* Header */}
@@ -79,46 +68,42 @@ const ExperienceSection: React.FC = () => {
         <h1 className="text-[40px] leading-relaxed">Experiences</h1>
       </Container>
 
-      <div className="relative mt-3 h-[85vh]">
-        <BlurImage
-          src={selectedExperience.image}
-          alt={selectedExperience.title}
-          width={1500}
-          height={500}
-          className="w-full h-full object-cover object-center"
-        />
-
-        <div className="absolute z-10 top-0 left-0 w-full h-full bg-black/60 flex justify-between items-center gap-x-6">
-          <div className="w-6/12">
-            <h1 className="text-white text-end font-medium text-[40px]">
-              I want to experience
-            </h1>
-          </div>
-          <div className="w-6/12 ps-4 flex flex-col justify-between items-start gap-10">
-            {experiences?.map((item, id) =>
-              id === selectedExperience.id ? (
-                <div
-                  key={id}
-                  className="min-w-[350px] bg-white ps-8 pe-3 py-3 flex justify-between items-center gap-x-4 rounded-full"
-                >
-                  <h2 className="text-gray-700 font-medium">{item.title}</h2>
-                  <button className="bg-sky-400 p-2 rounded-full">
-                    <MoveRight className="size-6 text-white" />
-                  </button>
-                </div>
-              ) : (
-                <button
-                  key={id}
-                  className="ps-8 text-h2-semi-bold text-gray-300 font-medium"
-                  onClick={() => setSelectedExperience(experiences[id])}
-                >
-                  {item.title}
-                </button>
-              )
-            )}
-          </div>
-        </div>
-      </div>
+      <Container className="">
+        <Swiper
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={"auto"}
+          coverflowEffect={{
+            rotate: 1,
+            stretch: 50,
+            depth: 50,
+            modifier: 10,
+            slideShadows: true,
+          }}
+          modules={[EffectCoverflow, Autoplay]}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          className="customSwiper"
+        >
+          {experiences.map((experience, index) => (
+            <SwiperSlide key={index}>
+              <BlurImage
+                src={experience.image}
+                alt={`${index}`}
+                width={1200}
+                height={100}
+                className="w-full h-full object-cover rounded-xl bg-gray-100 "
+              />
+              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/65 to-transparent rounded-xl flex justify-start items-end px-6 py-6">
+                <h1 className="text-white">{experience.title}</h1>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Container>
     </React.Fragment>
   );
 };

@@ -10,7 +10,7 @@ const Container = dynamic(() => import("@/components/shared/Container"));
 
 function HeroSection() {
   return (
-    <Container className="flex justify-start items-start gap-x-2">
+    <Container className="pt-10 flex justify-start items-start gap-x-2">
       {/* Left Side */}
       <div className="w-7/12 py-2 pe-[2%]">
         {/* Top Heading */}
@@ -23,8 +23,8 @@ function HeroSection() {
             className="size-[75px] object-cover rounded-full border-[3px] border-yellow-400"
           />
           <div className="py-1 px-1 leading-relaxed">
-            <h1>Hello Debosree Kar!</h1>
-            <p className="text-p1-m">
+            <h2 className="font-medium">Hello, Hồng Oanh!</h2>
+            <p className="text-p1-r">
               Here are the details to help you plan your next holiday
             </p>
           </div>

@@ -36,41 +36,37 @@ function TravelDiaries() {
         {/* Left Button */}
         <button className="border-none focus:outline-none" onClick={handlePrev}>
           <BlurImage
-            src="https://holidays.clubmahindra.com/images/left-arrow.svg"
+            src="https://img.icons8.com/ios/100/facc15/circled-left--v1.png"
             alt="left-arrow"
             width={100}
             height={100}
             className="arrow -left-3"
           />
         </button>
-
         {/* Right Button  */}
         <button className="border-none focus:outline-none" onClick={handleNext}>
           <BlurImage
-            src="https://holidays.clubmahindra.com/images/right-arrow.svg"
+            src="https://img.icons8.com/ios/100/facc15/circled-right--v1.png"
             alt="right-arrow"
             width={100}
             height={100}
             className="arrow -right-3"
           />
         </button>
+        {/* Middle Div */}.
+        <div className="relative bg-[#faf7f7] h-full px-20 py-10 rounded-2xl flex justify-between items-start">
+          <div className="w-5/12 h-full flex flex-col justify-center items-start gap-4">
+            <div className="mt-3 prose-2xl text-gray-700 prose-p:text-[18px] prose-p:leading-relaxed prose-ul:list-disc w-full">
+              <div
+                className="line-clamp-6"
+                dangerouslySetInnerHTML={{ __html: description }}
+              />
+            </div>
 
-        {/* Middle Div */}
-        <div className="relative bg-[#faf7f7] h-full flex justify-between items-start">
-          <div className="ps-16 pe-24 w-7/12 h-full flex flex-col justify-center items-start gap-4">
-            <h2 className="leading-tight line-clamp-1">{heading}</h2>
-            <p className="text-p1-m text-gray-700 leading-tight">
-              {subHeading}
-            </p>
-
-            <p className="text-p2-r mt-6 leading-relaxed text-gray-600 line-clamp-6">
-              {description}
-            </p>
-
-            <div className="mt-3 flex justify-start items-center gap-x-4">
+            <div className="mt-5 flex justify-start items-center gap-x-4">
               <button
                 onClick={() => router.push(`/blog_story?index=${currentIndex}`)}
-                className="px-4 py-2.5 text-[18px] font-semibold leading-relaxed bg-sky-400 border-2 border-sky-400 text-white rounded-full min-w-[200px] shadow-sm"
+                className="px-4 py-2.5 text-[18px] font-medium leading-relaxed bg-yellow-100 border border-yellow-300 text-yellow-600 rounded-full min-w-[200px] shadow-sm"
               >
                 Read full Story
               </button>
@@ -78,30 +74,30 @@ function TravelDiaries() {
                 onClick={() =>
                   router.push(`/our_resorts/${resort.split(" ").join("%20")}`)
                 }
-                className="px-4 py-2 text-[18px] font-semibold leading-relaxed bg-white border-2 border-sky-400 text-sky-500 rounded-full min-w-[200px] shadow-sm"
+                className="px-4 py-2 text-[18px] font-medium leading-relaxed bg-yellow-300 border-2 border-yellow-200 text-gray-600 rounded-full min-w-[200px] shadow-sm"
               >
                 Explore Resort
               </button>
             </div>
           </div>
 
-          <div className="w-4/12 h-full">
+          <div className="w-6/12 h-full">
+            <h2 className="text-end leading-relaxed line-clamp-1">{heading}</h2>
+            <p className="mb-5 text-end text-p1-m text-gray-700 leading-relaxed">
+              {subHeading?.split("on")[0]}
+              <span className="font-normal">
+                | {subHeading?.split("on")[1]}
+              </span>
+            </p>
+
             <BlurImage
               src={image}
               alt="image"
               width={400}
               height={500}
-              className="w-full h-full object-cover bg-sky-200"
+              className="w-full h-full object-cover bg-sky-200 rounded-2xl shadow-sm border-2 border-gray-200"
             />
           </div>
-
-          <BlurImage
-            src={image}
-            alt="image"
-            width={400}
-            height={500}
-            className="absolute top-[50%] -translate-y-[50%]  right-[20%] -translate-x-[20%] p-2.5 w-[300px] h-[350px] object-cover bg-white"
-          />
         </div>
       </div>
     </Container>

@@ -18,6 +18,7 @@ function ThingsToDoSection() {
       //   delay: 2500,
       //   disableOnInteraction: false,
       // }}
+      className="mySwiper"
     >
       {toDoResortData?.map((item, id) => (
         <SwiperSlide key={id} className="relative">

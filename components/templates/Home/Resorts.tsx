@@ -1,7 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { BlurImage } from "@/components/ui/BluerImage";
-import { CalendarDays } from "lucide-react";
+import { CalendarDays, ChevronRightCircle } from "lucide-react";
 import { useRouter } from "next/router";
 import { resortImage } from "@/components/lib/rawData";
 
@@ -37,19 +37,19 @@ function Resorts() {
             id < 4 && (
               <div
                 key={id}
-                className="relative flex-shrink-0 w-[305px] h-[450px]"
+                className="relative flex-shrink-0 w-[305px] animate-none hover:animate-pulse"
               >
                 <BlurImage
                   src={item.image}
                   alt={item.name}
                   width={600}
                   height={900}
-                  className="w-full h-full object-cover -z-10 rounded-lg"
+                  className="w-full aspect-square object-cover -z-10 rounded-2xl"
                 />
-                <div className="p-4 bg-black/65 absolute top-0 left-0 w-full h-full z-10 flex flex-col justify-center items-center gap-8 rounded-lg">
-                  <h2 className="mt-8 text-white capitalize font-medium text-center">
+                <div className="py-6 pe-6 ps-5 bg-gradient-to-b from-black/20 to-black/65 absolute top-0 left-0 w-full h-full z-10 flex  justify-between items-end rounded-2xl">
+                  <h3 className="text-white capitalize font-medium text-start">
                     {item.name}
-                  </h2>
+                  </h3>
 
                   <button
                     onClick={() =>
@@ -60,9 +60,9 @@ function Resorts() {
                           .toLocaleLowerCase()}`
                       )
                     }
-                    className="py-2 px-4 bg-sky-400 text-white text-p1-b capitalize rounded-full"
+                    className="bg-yellow-300 text-p1-m capitalize rounded-full"
                   >
-                    explore collection
+                    <ChevronRightCircle className="size-8" />
                   </button>
                 </div>
               </div>

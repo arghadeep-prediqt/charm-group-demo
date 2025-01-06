@@ -13,6 +13,15 @@ body::-webkit-scrollbar {
   display: none !important;
 }
 
+.hero {
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.9)),
+    url("/images/banner1.jpg");
+  background-position: bottom center;
+  background-size: cover;
+  color: #ffffff;
+  background-attachment: fixed;
+}
+
 .travel_section .arrow {
   cursor: pointer;
   object-fit: contain;
@@ -36,12 +45,12 @@ body::-webkit-scrollbar {
 }
 
 /* swiper js */
-.swiper {
+.mySwiper.swiper {
   width: 100%;
   height: 50vh;
 }
 
-.swiper-slide {
+.mySwiper.swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -51,13 +60,13 @@ body::-webkit-scrollbar {
   justify-content: center;
   align-items: center;
 }
-.swiper-button-prev::after,
-.swiper-button-next::after {
+.mySwiper.swiper-button-prev::after,
+.mySwiper.swiper-button-next::after {
   display: none;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
+.mySwiper.swiper-button-prev,
+.mySwiper.swiper-button-next {
   display: none;
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -65,10 +74,23 @@ body::-webkit-scrollbar {
   height: 40px !important;
   width: 40px !important;
 }
-.swiper-button-prev {
+.mySwiper.swiper-button-prev {
   background-image: url("https://holidays.clubmahindra.com/images/left-arrow.svg");
 }
 
-.swiper-button-next {
+.mySwiper.swiper-button-next {
   background-image: url("https://holidays.clubmahindra.com/images/right-arrow.svg");
+}
+
+.customSwiper.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.customSwiper .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 800px;
+  height: 400px;
+  position: relative;
 }

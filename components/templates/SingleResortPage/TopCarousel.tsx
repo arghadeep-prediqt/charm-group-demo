@@ -20,6 +20,7 @@ function TopCarousel() {
         delay: 2500,
         disableOnInteraction: false,
       }}
+      className="mySwiper"
     >
       {singleResortData?.map((photo, id) => (
         <SwiperSlide key={id}>

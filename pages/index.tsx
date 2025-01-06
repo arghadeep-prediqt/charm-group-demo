@@ -21,11 +21,15 @@ const Resorts = dynamic(() => import("@/components/templates/Home/Resorts"));
 const HeroSection = dynamic(
   () => import("@/components/templates/Home/HeroSection")
 );
+const FirstHeroSection = dynamic(
+  () => import("@/components/templates/Home/FirstHeroSection")
+);
 const NavContainer = dynamic(() => import("@/components/shared/NavContainer"));
 
 function HomePage() {
   return (
     <NavContainer>
+      <FirstHeroSection />
       <HeroSection />
       <Resorts />
       <HolidayOffer />

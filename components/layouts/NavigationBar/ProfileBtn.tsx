@@ -72,7 +72,7 @@ function ProfileBtn() {
           className="size-12 object-cover rounded-full border-2 border-yellow-300"
         />
         <div className="py-1 px-1 leading-relaxed text-start">
-          <p className="text-p2-b">Debosree Kar</p>
+          <p className="text-p2-b">Hồng Oanh</p>
           <p className="text-p3-m text-[#ebb541] hover:underline hover:underline-offset-2">
             Day Available
           </p>
@@ -133,7 +133,7 @@ export default ProfileBtn;
 //   className="size-14 object-cover rounded-full border-2 border-yellow-300"
 // />
 // <div className="py-1 px-1 leading-relaxed">
-//   <p className="text-p2-b">Debosree Kar</p>
+//   <p className="text-p2-b">Hồng Oanh</p>
 //   <p className="text-p3-m text-[#ebb541] hover:underline hover:underline-offset-2">
 //     Day Available
 //   </p>
