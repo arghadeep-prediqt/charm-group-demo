@@ -1,5 +1,6 @@
 import { BlurImage } from "@/components/ui/BluerImage";
 import { CalendarFold, Dot, MapPin, User } from "lucide-react";
+import { useRouter } from "next/router";
 import React from "react";
 
 interface PageProps {
@@ -13,6 +14,8 @@ const resortImage = [
 ];
 
 function RightBookSection({ name }: PageProps) {
+  const router = useRouter();
+
   return (
     <div className="mb-3 bg-gray-50 p-6 rounded-xl border border-gray-200">
       <h3 className="capitalize text-[21px] font-medium">{name}</h3>
@@ -39,7 +42,7 @@ function RightBookSection({ name }: PageProps) {
         ))}
       </div>
 
-      <form className="">
+      <div className="">
         <div className="mt-3 pb-3 flex justify-start items-center gap-x-3 border-b border-gray-300">
           <MapPin className="size-6 text-sky-500" />
           <p className="text-p1-r w-[90%] capitalize">{name}</p>
@@ -56,11 +59,18 @@ function RightBookSection({ name }: PageProps) {
         </div>
 
         <div className="mt-[15%] flex justify-center items-center">
-          <button className="bg-sky-400 text-white px-6 py-2 w-full rounded-full text-p1-b">
+          <button
+            onClick={() =>
+              router.push(
+                `/my_bookings/${name.split(" ").join("%20")}?type=view`
+              )
+            }
+            className="bg-sky-400 text-white px-6 py-2 w-full rounded-full text-p1-b"
+          >
             Book Now
           </button>
         </div>
-      </form>
+      </div>
     </div>
   );
 }

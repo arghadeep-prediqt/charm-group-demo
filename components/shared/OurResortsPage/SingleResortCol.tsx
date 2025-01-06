@@ -14,7 +14,7 @@ function SingleResortCol({ district, photo, resorts }: DistrictResorts) {
           alt={district}
           width={400}
           height={200}
-          className="w-full h-full object-cover bg-gray-300 rounded-xl"
+          className="w-full h-[200px] object-cover bg-gray-300 rounded-xl"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black/10 flex justify-center items-center rounded-xl">
           <p

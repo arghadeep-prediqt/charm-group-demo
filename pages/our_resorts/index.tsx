@@ -20,7 +20,7 @@ function OurResortsPage() {
       <Container className="py-2">
         <TopBanner
           photo="https://holidays.clubmahindra.com/cmsimages/banners/Our Resort - Meember Site.jpg"
-          title="My Offers"
+          title="Our Resorts"
           subTitle="Check out some of the hottest deals on our Resorts personalised for you."
         />
         <FilterRow />

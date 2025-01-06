@@ -1,14 +1,17 @@
 import { ResortsData } from "@/components/@types/pages";
-import Container from "@/components/shared/Container";
-import SingleResortCol from "@/components/shared/OurResortsPage/SingleResortCol";
 import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
 } from "@headlessui/react";
 import { ChevronDown } from "lucide-react";
+import dynamic from "next/dynamic";
 import React from "react";
 
+const Container = dynamic(() => import("@/components/shared/Container"));
+const SingleResortCol = dynamic(
+  () => import("@/components/shared/OurResortsPage/SingleResortCol")
+);
 interface PageProps extends ResortsData {
   isOpen: boolean;
 }

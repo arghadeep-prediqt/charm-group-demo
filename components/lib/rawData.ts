@@ -106,250 +106,288 @@ export const thirdFilter: SelectedProps[] = [
 
 export const allResortsData: ResortsData[] = [
   {
-    title: "North",
+    title: "Northern Vietnam",
     data: [
       {
-        district: "Himachal Pradesh",
+        district: "Đông Bắc",
         photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1671451672-himachal%20pradesh.jpg",
+          "https://image.vietnam.travel/sites/default/files/styles/top_banner/public/2023-02/shutterstock_1900070254_1.jpg?itok=XkGlqHC7",
         resorts: [
-          { name: "Club Mahindra Dharamshala Resort", location: "Dharamshala" },
-          { name: "Club Mahindra Kandaghat Resort", location: "Kandaghat" },
           {
-            name: "Club Mahindra Pristine Peaks, Naldehra",
-            location: "Naldehra",
+            name: "Charm Resort Hạ Long Bay",
+            location: "Quảng Ninh , Đông Bắc",
           },
-        ],
-      },
-      {
-        district: "Uttarakhand",
-        photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1671452507-Uttarakhand.jpg",
-        resorts: [
-          { name: "Club Mahindra Mussoorie Resort", location: "Mussoorie" },
-          { name: "Club Mahindra Kanatal Resort", location: "Kanatal" },
-          { name: "Club Mahindra Corbett Resort", location: "Corbett" },
-        ],
-      },
-      {
-        district: "Rajasthan",
-        photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1671452720-Kashmie.jpg",
-        resorts: [
-          { name: "Club Mahindra Jaipur Resort", location: "Jaipur" },
-          { name: "Club Mahindra Udaipur Resort", location: "Udaipur" },
-          { name: "Club Mahindra Jaisalmer Resort", location: "Jaisalmer" },
-        ],
-      },
-      {
-        district: "Delhi NCR",
-        photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1671452975-Uttar%20Pradesh.jpg",
-        resorts: [
-          { name: "Club Mahindra Gurgaon Resort", location: "Gurgaon" },
+          { name: "Charm Resort Ba Bể Lake", location: "Bắc Kạn , Đông Bắc" },
           {
-            name: "Club Mahindra Greater Noida Resort",
-            location: "Greater Noida",
+            name: "Charm Resort Lạng Sơn Hills",
+            location: "Lạng Sơn , Đông Bắc",
           },
+          {
+            name: "Charm Resort Cao Bằng Riverside",
+            location: "Cao Bằng , Đông Bắc",
+          },
+          { name: "Charm Resort Mẫu Sơn", location: "Lạng Sơn , Đông Bắc" },
         ],
       },
       {
-        district: "Punjab",
+        district: "Tây Bắc",
         photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1671451672-himachal%20pradesh.jpg",
+          "https://cdn.kimkim.com/files/a/content_articles/featured_photos/538026be6c47504b374240cae3aaed096b42977b/big-0090bb4a9046bb1abb1f236b9ce588cf.jpg",
         resorts: [
-          { name: "Club Mahindra Kasauli Resort", location: "Kasauli" },
+          { name: "Charm Resort Sapa Valley", location: "Lào Cai , Tây Bắc" },
+          {
+            name: "Charm Resort Điện Biên Retreat",
+            location: "Điện Biên , Tây Bắc",
+          },
+          {
+            name: "Charm Resort Sơn La Serenity",
+            location: "Sơn La , Tây Bắc",
+          },
+          {
+            name: "Charm Resort Lai Châu Highlands",
+            location: "Lai Châu , Tây Bắc",
+          },
+          { name: "Charm Resort Mộc Châu Bliss", location: "Sơn La , Tây Bắc" },
         ],
       },
       {
-        district: "Jammu and Kashmir",
+        district: "Đồng Bằng Sông Hồng",
         photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1671453152-Ladakh.jpg",
+          "https://travelsense.asia/wp-content/uploads/2019/11/cao-bang-Trung-Khanh.jpg",
         resorts: [
-          { name: "Club Mahindra Srinagar Resort", location: "Srinagar" },
+          {
+            name: "Charm Resort West Lake",
+            location: "Hà Nội , Đồng Bằng Sông Hồng",
+          },
+          {
+            name: "Charm Resort Ninh Bình Tranquility",
+            location: "Ninh Bình , Đồng Bằng Sông Hồng",
+          },
+          {
+            name: "Charm Resort Hải Phòng Harbor",
+            location: "Hải Phòng , Đồng Bằng Sông Hồng",
+          },
+          {
+            name: "Charm Resort Nam Định Heritage",
+            location: "Nam Định , Đồng Bằng Sông Hồng",
+          },
+          {
+            name: "Charm Resort Thái Bình Serenity",
+            location: "Thái Bình , Đồng Bằng Sông Hồng",
+          },
         ],
       },
     ],
   },
   {
-    title: "South",
+    title: "Central Vietnam",
     data: [
       {
-        district: "Kerala",
+        district: "Bắc Trung Bộ",
         photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1677041779-Kerala.jpg",
-        resorts: [
-          { name: "Club Mahindra Munnar Resort", location: "Munnar" },
-          { name: "Club Mahindra Thekkady Resort", location: "Thekkady" },
-          { name: "Club Mahindra Ashtamudi Resort", location: "Ashtamudi" },
-        ],
-      },
-      {
-        district: "Karnataka",
-        photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1677041742-Karnataka.jpg",
-        resorts: [
-          { name: "Club Mahindra Madikeri Resort", location: "Madikeri" },
-          { name: "Club Mahindra Virajpet Resort", location: "Virajpet" },
-          { name: "Club Mahindra Mysore Resort", location: "Mysore" },
-        ],
-      },
-      {
-        district: "Tamil Nadu",
-        photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1677042087-Tamil%20Nadu.jpg",
-        resorts: [
-          { name: "Club Mahindra Ooty Resort", location: "Ooty" },
-          { name: "Club Mahindra Kodaikanal Resort", location: "Kodaikanal" },
-          { name: "Club Mahindra Yercaud Resort", location: "Yercaud" },
-        ],
-      },
-      {
-        district: "Andhra Pradesh",
-        photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1677041483-Andaman.jpg",
+          "https://image.vietnam.travel/sites/default/files/styles/top_banner/public/2019-02/Central%20Vietnam%20Travel%20Guide-2_0.jpg?itok=tkYt3Jqd",
         resorts: [
           {
-            name: "Starlit Suites",
-            location: "Vishakhapatnam",
+            name: "Charm Resort Cửa Lò Beachfront",
+            location: "Nghệ An , Bắc Trung Bộ",
+          },
+          {
+            name: "Charm Resort Thanh Hóa Oasis",
+            location: "Thanh Hóa , Bắc Trung Bộ",
+          },
+          {
+            name: "Charm Resort Quảng Bình Caveside",
+            location: "Quảng Bình , Bắc Trung Bộ",
+          },
+          {
+            name: "Charm Resort Hà Tĩnh Seascape",
+            location: "Hà Tĩnh , Bắc Trung Bộ",
+          },
+          {
+            name: "Charm Resort Vinh City Luxe",
+            location: "Nghệ An , Bắc Trung Bộ",
           },
         ],
       },
       {
-        district: "Andaman and Nicobar",
+        district: "Nam Trung Bộ",
         photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1677041483-Andaman.jpg",
+          "https://statics.vinwonders.com/Central-Vietnam-itinerary-01_1687860666.jpg",
         resorts: [
-          { name: "Symphony Palms, Havelock Island", location: "Port Blair" },
           {
-            name: "Symphony Summer Sands, Neil Island",
-            location: "Port Blair",
+            name: "Charm Resort Đà Nẵng Beachfront",
+            location: "Đà Nẵng , Nam Trung Bộ",
           },
-          { name: "Symphony Samudra Port Blair", location: "Port Blair" },
+          {
+            name: "Charm Resort Nha Trang Shores",
+            location: "Khánh Hòa , Nam Trung Bộ",
+          },
+          {
+            name: "Charm Resort Quy Nhơn Pearl",
+            location: "Bình Định , Nam Trung Bộ",
+          },
+          {
+            name: "Charm Resort Phan Thiết Retreat",
+            location: "Bình Thuận , Nam Trung Bộ",
+          },
+          {
+            name: "Charm Resort Lý Sơn Island",
+            location: "Quảng Ngãi , Nam Trung Bộ",
+          },
         ],
       },
       {
-        district: "Pondicherry",
+        district: "Tây Nguyên",
         photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1677041925-Puducherry.jpg",
+          "https://media.worldnomads.com/Explore/vietnam/river-hoi-an-istock-gargolas.jpg",
         resorts: [
-          { name: "Club Mahindra Pondicherry Resort", location: "Pondicherry" },
+          {
+            name: "Charm Resort Đà Lạt Heritage",
+            location: "Lâm Đồng , Tây Nguyên",
+          },
+          {
+            name: "Charm Resort Buôn Ma Thuột Coffee Retreat",
+            location: "Đắk Lắk , Tây Nguyên",
+          },
+          {
+            name: "Charm Resort Gia Lai Hills",
+            location: "Gia Lai , Tây Nguyên",
+          },
+          {
+            name: "Charm Resort Kon Tum Wilderness",
+            location: "Kon Tum , Tây Nguyên",
+          },
+          {
+            name: "Charm Resort Krông Năng Escape",
+            location: "Đắk Lắk , Tây Nguyên",
+          },
         ],
       },
     ],
   },
   {
-    title: "East",
+    title: "Southern Vietnam",
     data: [
       {
-        district: "West Bengal",
+        district: "Đông Nam Bộ",
         photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1677042126-West%20Bengal.jpg",
+          "https://image.vietnam.travel/sites/default/files/styles/top_banner/public/2017-07/southern-vietnam_1.jpg?itok=an6PzoKg",
         resorts: [
-          { name: "Club Mahindra Darjeeling Resort", location: "Darjeeling" },
-          { name: "Club Mahindra Kalimpong Resort", location: "Kalimpong" },
+          {
+            name: "Charm Resort Hồ Tràm Bliss",
+            location: "Bà Rịa–Vũng Tàu , Đông Nam Bộ",
+          },
+          {
+            name: "Charm Resort Long Hải Serenity",
+            location: "Bà Rịa–Vũng Tàu , Đông Nam Bộ",
+          },
+          {
+            name: "Charm Resort Biên Hòa Luxe",
+            location: "Đồng Nai , Đông Nam Bộ",
+          },
+          {
+            name: "Charm Resort Củ Chi Nature Retreat",
+            location: "Hồ Chí Minh City , Đông Nam Bộ",
+          },
+          {
+            name: "Charm Resort Vũng Tàu Cityscape",
+            location: "Bà Rịa–Vũng Tàu , Đông Nam Bộ",
+          },
         ],
       },
       {
-        district: "Assam",
+        district: "Đồng Bằng Sông Cửu Long",
         photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1671451672-himachal%20pradesh.jpg",
+          "https://pohcdn.com/guide/sites/default/files/styles/node__blog_post__bp_banner/public/live_banner/South-Vietnam.jpg",
         resorts: [
-          { name: "Club Mahindra Kaziranga Resort", location: "Kaziranga" },
-        ],
-      },
-      {
-        district: "Sikkim",
-        photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1677042043-Sikkim.jpg",
-        resorts: [
-          { name: "Club Mahindra Gangtok Resort", location: "Gangtok" },
-          { name: "Club Mahindra Namchi Resort", location: "Namchi" },
-        ],
-      },
-      {
-        district: "Odisha",
-        photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1671451672-himachal%20pradesh.jpg",
-        resorts: [{ name: "Club Mahindra Puri Resort", location: "Puri" }],
-      },
-      {
-        district: "Jharkhand",
-        photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1671451672-himachal%20pradesh.jpg",
-        resorts: [{ name: "Club Mahindra Ranchi Resort", location: "Ranchi" }],
-      },
-      {
-        district: "Bihar",
-        photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1671451672-himachal%20pradesh.jpg",
-        resorts: [
-          { name: "Club Mahindra Bodh Gaya Resort", location: "Bodh Gaya" },
+          {
+            name: "Charm Resort Cần Thơ Riverside",
+            location: "Cần Thơ , Đồng Bằng Sông Cửu Long",
+          },
+          {
+            name: "Charm Resort Phú Quốc Haven",
+            location: "Kiên Giang , Đồng Bằng Sông Cửu Long",
+          },
+          {
+            name: "Charm Resort Mỹ Tho Serenity",
+            location: "Tiền Giang , Đồng Bằng Sông Cửu Long",
+          },
+          {
+            name: "Charm Resort Sóc Trăng Bliss",
+            location: "Sóc Trăng , Đồng Bằng Sông Cửu Long",
+          },
+          {
+            name: "Charm Resort Châu Đốc Retreat",
+            location: "An Giang , Đồng Bằng Sông Cửu Long",
+          },
         ],
       },
     ],
   },
   {
-    title: "West",
+    title: "International",
     data: [
       {
-        district: "Rajasthan",
+        district: "Bali, Indonesia",
         photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1677041994-Rajasthan.jpg",
+          "https://plus.unsplash.com/premium_photo-1677829177642-30def98b0963?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         resorts: [
-          { name: "Club Mahindra Jaipur Resort", location: "Jaipur" },
-          { name: "Club Mahindra Udaipur Resort", location: "Udaipur" },
-          { name: "Club Mahindra Jaisalmer Resort", location: "Jaisalmer" },
-        ],
-      },
-      {
-        district: "Gujarat",
-        photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1677041662-Gujarat.jpg",
-        resorts: [
-          { name: "Club Mahindra Gir Resort", location: "Gir" },
-          { name: "Club Mahindra Dwarka Resort", location: "Dwarka" },
-        ],
-      },
-      {
-        district: "Maharashtra",
-        photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1677041857-Maharashtra.jpg",
-        resorts: [
+          { name: "Charm Resort Uluwatu Bliss", location: "Bali, Indonesia" },
           {
-            name: "Club Mahindra Mahabaleshwar Resort",
-            location: "Mahabaleshwar",
+            name: "Charm Resort Tegallalang Retreat",
+            location: "Bali, Indonesia",
           },
-          { name: "Club Mahindra Lonavala Resort", location: "Lonavala" },
-          { name: "Club Mahindra Sherwood Resort", location: "Sherwood" },
+          {
+            name: "Charm Resort Seminyak Serenity",
+            location: "Bali, Indonesia",
+          },
+          { name: "Charm Resort Nusa Dua Escape", location: "Bali, Indonesia" },
         ],
       },
       {
-        district: "Goa",
+        district: "Maldives",
         photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1677041632-Goa.jpg",
+          "https://images.unsplash.com/photo-1467377791767-c929b5dc9a23?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         resorts: [
-          { name: "Club Mahindra Varca Beach Resort", location: "Varca Beach" },
+          { name: "Charm Resort Maafushi Lagoon", location: "Maldives" },
+          { name: "Charm Resort Baa Atoll Luxe", location: "Maldives" },
+          { name: "Charm Resort Malé Serenity", location: "Maldives" },
+          { name: "Charm Resort Ari Atoll Escape", location: "Maldives" },
+        ],
+      },
+      {
+        district: "Santorini, Greece",
+        photo:
+          "https://images.unsplash.com/photo-1662116432150-4394d39ced32?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        resorts: [
+          { name: "Charm Resort Oia Sunset", location: "Santorini, Greece" },
+          { name: "Charm Resort Fira Heights", location: "Santorini, Greece" },
+          { name: "Charm Resort Kamari Bliss", location: "Santorini, Greece" },
           {
-            name: "Club Mahindra Emerald Palms Resort",
-            location: "Emerald Palms",
+            name: "Charm Resort Imerovigli Tranquility",
+            location: "Santorini, Greece",
           },
         ],
       },
       {
-        district: "Madhya Pradesh",
+        district: "Kyoto, Japan",
         photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1677041822-Madhya%20Pradesh.jpg",
+          "https://images.unsplash.com/photo-1655222330870-1c2a0fc3fea7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         resorts: [
-          { name: "Club Mahindra Kanha Resort", location: "Kanha" },
-          { name: "Club Mahindra Bandhavgarh Resort", location: "Bandhavgarh" },
+          { name: "Charm Resort Arashiyama Retreat", location: "Kyoto, Japan" },
+          {
+            name: "Charm Resort Higashiyama Heritage",
+            location: "Kyoto, Japan",
+          },
+          {
+            name: "Charm Resort Gion Luxe",
+            location: "Kyoto, Japan",
+          },
+          {
+            name: "Charm Resort Fushimi Escape",
+            location: "Kyoto, Japan",
+          },
         ],
-      },
-      {
-        district: "Daman and Diu",
-        photo:
-          "https://common-booking-engine.gumlet.io/cmsimages/state/1677041599-Daman%20and%20Diu.jpg",
-        resorts: [{ name: "Club Mahindra Diu Resort", location: "Diu" }],
       },
     ],
   },
