@@ -14,7 +14,7 @@ function ProfileCard() {
 
       <div className="absolute bottom-0 left-0 w-full h-[80%] pt-10 bg-gray-50 rounded-xl border-2 border-gray-200 -z-10">
         <h4 className="mt-2 text-[21px] text-center text-primary-600 leading-relaxed">
-          Debosree Kar
+          Hồng Oanh
         </h4>
 
         <p className="mb-4 text-p2-m text-gray-600 text-center leading-relaxed">

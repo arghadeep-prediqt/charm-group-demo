@@ -23,9 +23,9 @@ function OfferCard({ link, offerid, photo, vaild }: OfferCardProps) {
 
           <button
             onClick={() => router.push(link)}
-            className="mt-1 bg-[#0ec1eb] text-white text-p1-b py-2 px-4 w-full rounded-full active:opacity-65"
+            className="mt-1 bg-sky-50 border border-sky-400 text-sky-600 text-p1-b py-2 px-4 w-full rounded-full active:opacity-65"
           >
-            Explore now
+            Explore Now
           </button>
         </div>
       </div>

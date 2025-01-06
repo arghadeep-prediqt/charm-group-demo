@@ -18,6 +18,7 @@ function MemberReview() {
       //     delay: 2500,
       //     disableOnInteraction: false,
       //   }}
+      className="mySwiper"
     >
       {membersReviewData?.map((item, id) => (
         <SwiperSlide key={id}>

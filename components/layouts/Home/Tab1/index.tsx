@@ -16,7 +16,7 @@ function Tab1() {
         labels={["Today", "08 Jan", "23 Jan", "22 Feb", "24 Mar"]}
       />
 
-      <div className="mt-[5%] flex gap-x-4 overflow-auto">
+      <div className="mt-[5%] flex flex-wrap gap-x-4 overflow-auto">
         <PropertyCard
           photo="https://charmresorthotram.vn/uploads/setting/672d7e7dbd8a1.jpg"
           title="Charm Resort Hồ Tràm"

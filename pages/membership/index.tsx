@@ -73,7 +73,7 @@ function MembershipPage() {
         <div className="w-[65%]">
           {(!isEdit && (
             <BlurImage
-              src={"/images/membership2.png"}
+              src={"/member/member_id_1.png"}
               alt="membership2"
               width={400}
               height={400}
@@ -299,7 +299,7 @@ function MembershipForm({ setIsEdit }: MembershipFromProps) {
       </div>
       <div className="w-[50%]">
         <BlurImage
-          src={"/images/membership1.png"}
+          src={"/member/member_id_2.png"}
           alt="membership1"
           width={400}
           height={400}

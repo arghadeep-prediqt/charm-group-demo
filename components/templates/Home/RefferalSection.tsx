@@ -5,7 +5,7 @@ function RefferalSection() {
   return (
     <div className="relative mb-[3%]">
       <BlurImage
-        src={"https://holidays.clubmahindra.com/images/hfrp-bg-desktop.svg"}
+        src={"/images/reward.svg"}
         alt="referral"
         width={1600}
         height={800}

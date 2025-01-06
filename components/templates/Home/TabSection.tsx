@@ -14,11 +14,11 @@ function TabSection() {
   ];
   return (
     <TabGroup>
-      <TabList className="flex justify-between items-end gap-4 border-b">
+      <TabList className="flex justify-between items-end gap-4 border-b bg-gray-100 border border-300 rounded-full p-2">
         {tabCategories?.map((item, id) => (
           <Tab
             key={id}
-            className="px-[3%] py-2 text-p1-m text-gray-700 leading-relaxed text-pretty capitalize data-[selected]:border-b-[3px] border-sky-300 focus:outline-none data-[selected]:text-sky-500"
+            className="px-[3%] py-2 text-p1-m  leading-relaxed text-pretty capitalize data-[selected]:text-sky-700 data-[selected]:bg-sky-100 data-[selected]:border border-sky-300 rounded-full focus:outline-none"
           >
             {item.name}
           </Tab>
