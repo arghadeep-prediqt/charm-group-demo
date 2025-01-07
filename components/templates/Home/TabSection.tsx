@@ -1,35 +1,55 @@
-import React from "react";
-import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
+import React, { useCallback, useState } from "react";
 import dynamic from "next/dynamic";
+import { ChevronLeftCircle, ChevronRightCircle } from "lucide-react";
 
 const Tab1 = dynamic(() => import("@/components/layouts/Home/Tab1"));
 const Tab2 = dynamic(() => import("@/components/layouts/Home/Tab2"));
 const Tab3 = dynamic(() => import("@/components/layouts/Home/Tab3"));
 
 function TabSection() {
+  const [current, setCurrent] = useState<number>(0);
   const tabCategories = [
-    { name: "Recommendations", component: <Tab1 /> },
+    { name: "Recommended", component: <Tab1 /> },
     { name: "upcoming bookings", component: <Tab2 /> },
     { name: "payment status", component: <Tab3 /> },
   ];
+
+  const increment = useCallback(() => {
+    if (current < tabCategories.length - 1) {
+      setCurrent(current + 1);
+    }
+  }, [current, tabCategories.length]);
+
+  const decrement = useCallback(() => {
+    if (current >= 1) setCurrent(current - 1);
+  }, [current]);
+
   return (
-    <TabGroup>
-      <TabList className="flex justify-between items-end gap-4 border-b bg-gray-100 border border-300 rounded-full p-2">
-        {tabCategories?.map((item, id) => (
-          <Tab
-            key={id}
-            className="px-[3%] py-2 text-p1-m  leading-relaxed text-pretty capitalize data-[selected]:text-sky-700 data-[selected]:bg-sky-100 data-[selected]:border border-sky-300 rounded-full focus:outline-none"
+    <React.Fragment>
+      <div className="p-3 flex justify-between items-center gap-x-16 border-b-2 border-gray-300">
+        <h2 className="text-gray-700 capitalize">
+          {tabCategories[current]?.name}
+        </h2>
+        <div className="flex items-center justify-start gap-x-2">
+          <button
+            disabled={current === 0}
+            onClick={decrement}
+            className="text-primary-600 disabled:opacity-30"
           >
-            {item.name}
-          </Tab>
-        ))}
-      </TabList>
-      <TabPanels>
-        {tabCategories?.map((item, id) => (
-          <TabPanel key={id}>{item.component}</TabPanel>
-        ))}
-      </TabPanels>
-    </TabGroup>
+            <ChevronLeftCircle className="size-8" />
+          </button>
+          <button
+            onClick={increment}
+            disabled={current === tabCategories.length - 1}
+            className="text-primary-600 disabled:opacity-30"
+          >
+            <ChevronRightCircle className="size-8" />
+          </button>
+        </div>
+      </div>
+
+      {tabCategories[current]?.component}
+    </React.Fragment>
   );
 }
 
