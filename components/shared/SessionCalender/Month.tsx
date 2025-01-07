@@ -14,7 +14,6 @@ type MonthProps = {
 const notAvailable = [3, 26, 4, 2, 24, 8, 29];
 const pickTime = [25, 20, 21, 11, 28, 30, 15];
 const seasonTime = [13, 14, 18, 1, 9, 22, 12];
-const available = [23, 27, 17, 6, 19, 5, 16, 10, 7];
 
 const Month: React.FC<MonthProps> = ({ date }) => {
   const days = eachDayOfInterval({
@@ -25,25 +24,26 @@ const Month: React.FC<MonthProps> = ({ date }) => {
   const firstDayOffset = getDay(startOfMonth(date));
 
   const getDayColor = (day: Date): string => {
-    if (notAvailable.includes(day.getDate()))
-      return "bg-gray-200 text-gray-700"; // Not Available
-    if (pickTime.includes(day.getDate())) return "bg-red-500 text-white"; // Pick Time
-    if (seasonTime.includes(day.getDate())) return "bg-purple-500 text-white"; // Season Time
-    if (available.includes(day.getDate())) return "bg-blue-500 text-white"; // Available
-    return "bg-blue-500 text-white";
+    if (notAvailable.includes(day.getDate()) && day.getFullYear() === 2025)
+      return "bg-gray-200 border-gray-200 text-gray-400 shadow-none cursor-not-allowed"; // Not Available
+    if (pickTime.includes(day.getDate()) && day.getFullYear() === 2025)
+      return "border-red-200 bg-red-100 text-red-700 cursor-pointer"; // Pick Time
+    if (seasonTime.includes(day.getDate()) && day.getFullYear() === 2025)
+      return "bg-purple-100 text-purple-700 border-purple-200 cursor-pointer"; // Season Time
+    return "bg-blue-100 text-blue-700 border-blue-200 cursor-pointer"; // Available
   };
 
   return (
-    <div className="bg-[#1f3058] rounded-xl p-4 shadow-md">
+    <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 shadow-sm">
       {/* Month Title */}
-      <h3 className="text-center text-sky-400 mb-5">
+      <h3 className="text-center text-gray-500 mb-5">
         {format(date, "MMMM yyyy")}
       </h3>
 
       {/* Weekday Headers */}
-      <div className="grid grid-cols-7 text-gray-500 mb-2">
+      <div className="grid grid-cols-7 text-primary-500 mb-2">
         {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
-          <div key={day} className="pb-2 text-center text-p1-r text-white">
+          <div key={day} className="pb-2 text-center text-p1-m">
             {day}
           </div>
         ))}
@@ -60,7 +60,7 @@ const Month: React.FC<MonthProps> = ({ date }) => {
         {days.map((day) => (
           <div
             key={day.toISOString()}
-            className={`mt-3 flex justify-center items-center size-10 rounded-full ${getDayColor(
+            className={`mt-3 flex justify-center items-center size-10 rounded-full shadow-sm hover:shadow-none border ${getDayColor(
               day
             )}`}
           >

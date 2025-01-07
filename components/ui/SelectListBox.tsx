@@ -19,8 +19,8 @@ function SelectListBox({ selectedData }: PageProps) {
     <Listbox value={selected} onChange={setSelected}>
       <ListboxButton
         className={clsx(
-          "relative block w-full min-w-[160px] rounded-full bg-white ps-4 pe-3 py-1.5 text-left text-p1-r border border-gray-300",
-          "focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-black/25"
+          "relative block w-full min-w-[160px] rounded-full bg-amber-50 ps-4 pe-3 py-1.5 text-left text-primary-600 text-p1-r border border-amber-200 shadow-sm",
+          "focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-amber-300"
         )}
       >
         {selected.name}
@@ -33,7 +33,7 @@ function SelectListBox({ selectedData }: PageProps) {
         anchor="bottom"
         transition
         className={clsx(
-          "w-fit rounded-xl border border-gray-200 bg-gray-100 p-1 [--anchor-gap:var(--spacing-1)] focus:outline-none z-20",
+          "w-fit rounded-xl border border-amber-200 bg-gray-100 p-1 [--anchor-gap:var(--spacing-1)] focus:outline-none z-20",
           "transition duration-100 ease-in data-[leave]:data-[closed]:opacity-0"
         )}
       >
@@ -43,7 +43,7 @@ function SelectListBox({ selectedData }: PageProps) {
             value={person}
             className="group flex cursor-default items-center gap-2 rounded-lg py-1.5 px-3 select-none data-[focus]:bg-black/10"
           >
-            <CheckIcon className="invisible size-4 text-sky-400 group-data-[selected]:visible" />
+            <CheckIcon className="invisible size-4 text-primary-700 group-data-[selected]:visible" />
             <p className="text-p1-r text-nowrap group-data-[selected]:font-medium">
               {person.name}
             </p>

@@ -24,7 +24,7 @@ function Resorts() {
         <div className="w-2/12 flex justify-end items-center">
           <button
             onClick={() => router.push("/resort_collection")}
-            className="text-sky-700 text-[18px] font-semibold capitalize hover:underline hover:underline-offset-2"
+            className="text-amber-600 text-[18px] font-semibold capitalize hover:underline hover:underline-offset-2"
           >
             view all
           </button>
@@ -74,9 +74,9 @@ function Resorts() {
       <div className="mt-[2%] flex justify-center items-center">
         <button
           onClick={() => router.push("/session_chart")}
-          className="flex items-center gap-x-2 border-shy-400 text-sky-600 text-p1-m py-2 px-4 border border-sky-400 rounded-lg shadow-sm"
+          className="flex items-center gap-x-2 border-shy-400 text-amber-600 text-p1-m py-2 px-4 bg-amber-50 border border-amber-200 rounded-lg shadow-sm"
         >
-          <CalendarDays className="size-5" />
+          <CalendarDays className="size-5 text-inherit" />
           View Season Chart to Plan your holidays
         </button>
       </div>
