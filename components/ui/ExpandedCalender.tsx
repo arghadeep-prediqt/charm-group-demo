@@ -54,9 +54,9 @@ const ExpandedCalendar: React.FC<CalendarProps> = ({
         className={`w-10 h-10 rounded-full flex items-center justify-center text-gray-700 font-semibold 
           ${
             isSelectedStart || isSelectedEnd
-              ? "bg-blue-500 text-white"
+              ? "bg-amber-100 text-amber-600 border border-amber-200"
               : isInRange
-              ? "bg-gray-300"
+              ? "bg-amber-100 text-amber-600 border border-amber-200"
               : ""
           }
           ${isSelectedStart ? "rounded-l-full" : ""} ${
@@ -67,7 +67,11 @@ const ExpandedCalendar: React.FC<CalendarProps> = ({
               ? "hover:bg-gray-200"
               : ""
           }
-          ${isCurrentDay ? "border-2 border-sky-400 text-blue-500" : ""}
+          ${
+            isCurrentDay
+              ? "border-2 border-blue-200 text-blue-500 bg-blue-50"
+              : ""
+          }
         `}
         onClick={() => handleDateClick(date)}
       >
@@ -119,7 +123,7 @@ const ExpandedCalendar: React.FC<CalendarProps> = ({
           <div className="flex items-center justify-between mb-4">
             <button
               onClick={() => handleMonthChange(-1)}
-              className="text-sky-500"
+              className="text-amber-600"
             >
               <ChevronLeft className="size-6" />
             </button>
@@ -130,7 +134,7 @@ const ExpandedCalendar: React.FC<CalendarProps> = ({
 
             <button
               onClick={() => handleMonthChange(1)}
-              className="text-sky-500"
+              className="text-amber-600"
             >
               <ChevronRight className="size-6" />
             </button>
@@ -145,7 +149,7 @@ const ExpandedCalendar: React.FC<CalendarProps> = ({
           <div className="flex justify-center items-center">
             <button
               onClick={() => setShowCalendar(false)}
-              className="mt-6 w-[280px] bg-blue-500 font-medium text-white text-[16px] px-5 py-2.5 rounded-full"
+              className="mt-6 w-[280px] text-amber-600 font-medium bg-amber-100 border border-amber-200 text-[16px] px-5 py-2.5 rounded-full"
             >
               Save & Close Calendar
             </button>

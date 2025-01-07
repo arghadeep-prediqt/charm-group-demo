@@ -34,14 +34,13 @@ function MyBookings() {
 
   return (
     <NavContainer>
+      <TopBanner
+        isButton={true}
+        title="My Holidays"
+        photo="https://common-booking-engine.gumlet.io/cmsimages/banners/all-resort-banner.jpg"
+        subTitle="View your upcoming, ongoing and past holidays, modify bookings, find pre-book offers and cancellation options."
+      />
       <Container className="py-2">
-        <TopBanner
-          isButton={true}
-          title="My Holidays"
-          photo="https://common-booking-engine.gumlet.io/cmsimages/banners/all-resort-banner.jpg"
-          subTitle="View your upcoming, ongoing and past holidays, modify bookings, find pre-book offers and cancellation options."
-        />
-
         <TabGroup>
           <TabList className="flex justify-start items-end gap-4 border-b">
             {tabCategories?.map((item, id) => (

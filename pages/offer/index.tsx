@@ -17,12 +17,12 @@ const Container = dynamic(() => import("@/components/shared/Container"));
 function OfferPage() {
   return (
     <NavContainer>
+      <TopBanner
+        photo="https://holidays.clubmahindra.com/images/Mask%20Group%20400.png"
+        title="My Offers"
+        subTitle="Check out some of the hottest deals on our Resorts personalised for you"
+      />
       <Container className="py-2">
-        <TopBanner
-          photo="https://holidays.clubmahindra.com/images/Mask%20Group%20400.png"
-          title="My Offers"
-          subTitle="Check out some of the hottest deals on our Resorts personalised for you"
-        />
         <FilterRow />
 
         <div className="pb-6 flex flex-wrap justify-start items-start gap-6">

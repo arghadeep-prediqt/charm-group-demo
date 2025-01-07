@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { BlurImage } from "../ui/BluerImage";
-import { X } from "lucide-react";
+import { XCircle } from "lucide-react";
 
 const ChatBot: React.FC = () => {
   const [isChatVisible, setIsChatVisible] = useState(false);
@@ -93,7 +93,7 @@ const ChatBot: React.FC = () => {
                 className="mr-1"
               />
               <div className="">
-                <p className="text-p1-b text-gray-800">Tripper</p>
+                <p className="text-p1-b text-gray-800">Buddy</p>
                 <p className="text-p3-r text-gray-500">Travel Guide on chat</p>
               </div>
             </div>
@@ -102,7 +102,7 @@ const ChatBot: React.FC = () => {
               onClick={toggleChat}
               className="text-gray-400 hover:text-gray-600 transition active:opacity-60"
             >
-              <X className="size-6 text-gray-700" />
+              <XCircle className="size-6 text-primary-500" />
             </button>
           </div>
 
@@ -145,7 +145,7 @@ const ChatBot: React.FC = () => {
             />
             <button
               type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded-r-lg hover:bg-blue-600 border border-blue-500 transition font-medium"
+              className="bg-sky-500 text-white px-4 py-2 rounded-r-lg hover:bg-sky-400 hover:border-sky-400 border border-sky-500 transition font-medium"
             >
               Send
             </button>

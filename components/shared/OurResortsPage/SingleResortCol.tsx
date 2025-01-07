@@ -39,14 +39,21 @@ function SingleResortCol({ district, photo, resorts }: DistrictResorts) {
                   .toLocaleLowerCase()}`
               )
             }
-            className="py-4 w-full text-start focus:outline-none"
+            className="py-4 w-full flex justify-start items-start gap-x-3 text-start focus:outline-none"
           >
-            <p className="text-p1-m text-start capitalize leading-tight">
-              {item.name}
-            </p>
-            <p className="text-p2-r font-light capitalize leading-tight mt-1.5">
-              {item.location}, {district}
-            </p>
+            <BlurImage
+              src={photo}
+              alt={district}
+              width={50}
+              height={50}
+              className="size-12 object-cover bg-gray-300 rounded-lg"
+            />
+            <div className="capitalize">
+              <p className="text-p1-m text-star leading-tight">{item.name}</p>
+              <p className="text-p2-r text-start font-light leading-tight mt-1.5">
+                {item.location}, {district}
+              </p>
+            </div>
           </button>
         ))}
       </div>

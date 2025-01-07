@@ -17,14 +17,14 @@ const Calendar: React.FC = () => {
       <div className="absolute left-0 top-0  w-full pt-2 flex justify-between items-center">
         <button
           onClick={handlePrevious}
-          className="ps-2 text-sky-500 hover:text-blue-500 text-lg font-bold"
+          className="ps-2 text-primary-500 hover:text-gray-500 text-lg font-bold"
         >
           <ChevronLeftCircle className="size-8" />
         </button>
 
         <button
           onClick={handleNext}
-          className="pe-2 text-sky-500 hover:text-blue-500 text-lg font-bold"
+          className="pe-2 text-primary-500 hover:text-gray-500 text-lg font-bold"
         >
           <ChevronRightCircle className="size-8" />
         </button>

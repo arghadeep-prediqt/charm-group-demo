@@ -15,7 +15,7 @@ function FilterRow() {
   return (
     <div className="px-2 flex justify-between items-end gap-x-4">
       <div className="flex flex-col justify-start items-start gap-4">
-        <p className="text-p1-b">Filter By</p>
+        <p className="text-p1-m">Filter By</p>
 
         <div className="flex justify-start items-center gap-x-4">
           <SelectListBox selectedData={firstFilter} />
@@ -26,9 +26,9 @@ function FilterRow() {
 
       <button
         onClick={() => router.push("/session_chart")}
-        className="py-2 text-p2-m text-sky-500 flex justify-start items-center gap-x-2 hover:underline hover:underline-offset-1 active:opacity-65"
+        className="py-2 px-4 text-p2-m text-amber-600 bg-amber-50 flex justify-start items-center gap-x-2 hover:underline hover:underline-offset-1 active:opacity-65 rounded-lg border border-amber-200 shadow-sm"
       >
-        <Calendar className="size-4 text-sky-500" />
+        <Calendar className="size-4 text-amber-600" />
         View Season Chart
       </button>
     </div>

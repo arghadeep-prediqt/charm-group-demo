@@ -48,7 +48,7 @@ function CompassTopNav() {
     } else if (selectedRange.startDate) {
       return `${format(selectedRange.startDate, "MMM d, yyyy")}`;
     }
-    return "When do you want to plan your holiday?";
+    return "When are you planning your next getaway?";
   }, [selectedRange.endDate, selectedRange.startDate]);
 
   return (

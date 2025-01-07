@@ -45,13 +45,13 @@ function NavigationBar() {
         />
         <CustomNavBtn
           logo="https://img.icons8.com/ios-filled/50/ebb541/compass-south.png"
-          title="Magic Compass"
-          link="/magic_compass"
+          title="Pathfinder"
+          link="/pathfinder"
         />
         <CustomNavBtn
           logo="https://img.icons8.com/ios-filled/50/ebb541/itinerary.png"
-          title="Circuit Booking"
-          link="/circuitSearch"
+          title="Journy Planner"
+          link="/journy_planner"
         />
 
         <ProfileBtn />
