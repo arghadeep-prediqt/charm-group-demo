@@ -59,24 +59,23 @@ function ProfileBtn() {
     router.reload();
   };
   return (
-    <Menu as="div" className={`${poppins.className} relative ml-3`}>
+    <Menu as="div" className={`${poppins.className} text-white relative ps-6`}>
       <MenuButton
         as="button"
-        className="relative px-3 flex justify-between items-center gap-x-2 bg-gray-700 focus:outline-none"
+        className="relative px-3 flex justify-between items-center gap-x-2 bg-inherit focus:outline-none"
       >
         <BlurImage
           src={"/images/profile.jpg"}
           alt="profile"
           width={100}
           height={100}
-          className="size-12 object-cover rounded-full border-2 border-yellow-300"
+          className="size-10 object-cover rounded-full border border-amber-300"
         />
         <div className="py-1 px-1 leading-relaxed text-start">
           <p className="text-p2-b">Hồng Oanh</p>
-          <p className="text-p3-m text-[#ebb541] hover:underline hover:underline-offset-2">
+          <p className="text-p3-m text-amber-300 hover:underline hover:underline-offset-2">
             Day Available
           </p>
-          <div className="text-p3-r">White Studio</div>
         </div>
       </MenuButton>
 

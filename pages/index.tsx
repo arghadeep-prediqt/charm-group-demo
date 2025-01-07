@@ -2,9 +2,9 @@ import React from "react";
 import dynamic from "next/dynamic";
 
 const ChatBot = dynamic(() => import("@/components/shared/ChatBot"));
-const RefferalSection = dynamic(
-  () => import("@/components/templates/Home/RefferalSection")
-);
+// const RefferalSection = dynamic(
+//   () => import("@/components/templates/Home/RefferalSection")
+// );
 const ExperienceSection = dynamic(
   () => import("@/components/templates/Home/ExperienceSection")
 );
@@ -13,9 +13,6 @@ const TravelDiaries = dynamic(
 );
 const PrivilegsSection = dynamic(
   () => import("@/components/templates/Home/PrivilegsSection")
-);
-const HolidayOffer = dynamic(
-  () => import("@/components/templates/Home/HolidayOffer")
 );
 const Resorts = dynamic(() => import("@/components/templates/Home/Resorts"));
 const HeroSection = dynamic(
@@ -32,10 +29,9 @@ function HomePage() {
       <FirstHeroSection />
       <HeroSection />
       <Resorts />
-      <HolidayOffer />
       <PrivilegsSection />
       <TravelDiaries />
-      <RefferalSection />
+      {/* <RefferalSection /> */}
       <ExperienceSection />
 
       <ChatBot />

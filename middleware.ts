@@ -29,7 +29,7 @@ export const config = {
     "/pathfinder",
     "/search",
     "/mapsearch",
-    "/journy_planner",
+    "/journey_planner",
     "/our_resorts",
     "/our_resorts/:path*",
     "/offer",

@@ -13,23 +13,31 @@ const poppins = Poppins({
 
 interface PageProps {
   title: string;
+  logo: string;
   menuItems: MenuItemProps[];
 }
 
-function ListDropDown({ title, menuItems }: PageProps) {
+function ListDropDown({ title, logo, menuItems }: PageProps) {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <MenuButton
         as="button"
-        className="text-p1-r flex justify-start items-center gap-x-1 capitalize"
+        className="text-white flex justify-start items-center gap-x-1 capitalize"
       >
-        {title}
-        <ChevronDown className="text-[#ebb541] size-4" />
+        <BlurImage
+          src={logo}
+          alt={title}
+          width={100}
+          height={100}
+          className="size-6 object-cover"
+        />
+        <p className="ps-1 text-p1-m leading-tight">{title}</p>
+        <ChevronDown className="size-4" />
       </MenuButton>
       <MenuItems
         anchor="bottom"
         transition
-        className="absolute right-0 z-10 mt-2 w-fit origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+        className="absolute right-0 z-30 mt-2 w-fit origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
       >
         {menuItems?.map((item, id) => (
           <MenuItem

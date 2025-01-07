@@ -17,19 +17,19 @@ function BlogStoryPage() {
     <NavContainer>
       <Container className="py-5">
         <div className="px-20">
-          <h1 className="leading-relaxed">{heading}</h1>
-          <div className="text-gray-700 leading-relaxed">
-            <span className="text-p1-b">{subHeading?.split("on")[0]}</span> |{" "}
-            <span>{subHeading?.split("on")[1]}</span>
-          </div>
-
           <BlurImage
             src={image}
             alt={heading}
             width={1200}
             height={400}
-            className="mt-12 w-full h-[80vh] object-cover rounded-2xl"
+            className="mb-12 w-full h-[80vh] object-cover rounded-2xl"
           />
+
+          <h1 className="leading-relaxed">{heading}</h1>
+          <div className="text-gray-700 leading-relaxed">
+            <span className="text-p1-b">{subHeading?.split("on")[0]}</span> |{" "}
+            <span>{subHeading?.split("on")[1]}</span>
+          </div>
 
           <div className="my-12 prose-2xl text-gray-700 prose-p:text-[20px] prose-li:text-p1-r prose-p:leading-relaxed prose-ul:list-disc w-full">
             <div dangerouslySetInnerHTML={{ __html: description }} />
