@@ -3,10 +3,9 @@ import { BlurImage } from "@/components/ui/BluerImage";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
+import ListDropDown from "@/components/ui/ListDropDown";
+import { privilegesMenuItems } from "@/components/lib/rawData";
 const Container = dynamic(() => import("../Container"));
-const SearchDiv = dynamic(
-  () => import("@/components/layouts/NavigationBar/SearchDiv")
-);
 const CustomNavBtn = dynamic(
   () => import("@/components/layouts/NavigationBar/CustomNavBtn")
 );
@@ -16,7 +15,7 @@ const ProfileBtn = dynamic(
 
 function NavigationBar() {
   return (
-    <div className="bg-primary-700 text-white">
+    <div className="bg-[#003049]">
       <Container className="flex justify-between items-center gap-x-2">
         <Link
           href={"/"}
@@ -31,30 +30,31 @@ function NavigationBar() {
           />
           <h3 className="text-white leading-relaxed">CHARM</h3>
         </Link>
-        <SearchDiv />
 
-        <CustomNavBtn
-          logo="/icons/date_destination.png"
-          title="Date & Destination"
-          link="/search"
-        />
-        <CustomNavBtn
-          logo="https://img.icons8.com/ios-glyphs/30/ebb541/marker--v1.png"
-          title="Map View"
-          link="/mapsearch"
-        />
-        <CustomNavBtn
-          logo="https://img.icons8.com/ios-filled/50/ebb541/compass-south.png"
-          title="Pathfinder"
-          link="/pathfinder"
-        />
-        <CustomNavBtn
-          logo="https://img.icons8.com/ios-filled/50/ebb541/itinerary.png"
-          title="Journy Planner"
-          link="/journy_planner"
-        />
+        <div className="flex items-center justify-end gap-x-6 my-2">
+          <CustomNavBtn
+            logo="https://img.icons8.com/ios/100/ff9900/sun-lounger.png"
+            title="Our Resorts"
+            link="/our_resorts"
+          />
+          <ListDropDown
+            logo="https://img.icons8.com/ios/100/ff9900/crown.png"
+            title="Exclusive Privileges"
+            menuItems={privilegesMenuItems}
+          />
+          <ListDropDown
+            logo="https://img.icons8.com/ios/100/ff9900/path.png"
+            title="My Itinerary"
+            menuItems={privilegesMenuItems}
+          />
 
-        <ProfileBtn />
+          <CustomNavBtn
+            logo="https://img.icons8.com/ios/100/ff9900/ask-question--v1.png"
+            title="need assistance?"
+            link="/our_resorts"
+          />
+          <ProfileBtn />
+        </div>
       </Container>
     </div>
   );

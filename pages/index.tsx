@@ -14,9 +14,6 @@ const TravelDiaries = dynamic(
 const PrivilegsSection = dynamic(
   () => import("@/components/templates/Home/PrivilegsSection")
 );
-const HolidayOffer = dynamic(
-  () => import("@/components/templates/Home/HolidayOffer")
-);
 const Resorts = dynamic(() => import("@/components/templates/Home/Resorts"));
 const HeroSection = dynamic(
   () => import("@/components/templates/Home/HeroSection")
@@ -32,7 +29,6 @@ function HomePage() {
       <FirstHeroSection />
       <HeroSection />
       <Resorts />
-      <HolidayOffer />
       <PrivilegsSection />
       <TravelDiaries />
       <RefferalSection />

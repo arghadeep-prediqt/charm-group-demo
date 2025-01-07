@@ -1,3 +1,4 @@
+import { MenuItemProps } from "../@types/common";
 import { ResortsData, SelectedProps } from "../@types/pages";
 
 export const resortImage = [
@@ -957,5 +958,46 @@ export const travelDiaries = [
     resort: "Charm Resort Hồ Tràm",
     image:
       "https://images.unsplash.com/photo-1685714628080-356a7cddcf66?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+];
+
+export const itineraryMenuItems: MenuItemProps[] = [
+  {
+    title: "horizon",
+    icon: "https://img.icons8.com/ios/100/ff9900/astronomical-twilight.png",
+    link: "/#privilegs",
+  },
+  {
+    title: "our resorts",
+    icon: "https://img.icons8.com/ios/100/ff9900/sunbathe.png",
+    link: "/our_resorts",
+  },
+];
+
+export const privilegesMenuItems: MenuItemProps[] = [
+  {
+    title: "Weekend Escapes",
+    icon: "https://img.icons8.com/external-ddara-lineal-ddara/100/ff9900/external-Bag-pack-gaming-gambling-ddara-lineal-ddara.png",
+    link: "/privilegs?section=weekend%20gateways",
+  },
+  {
+    title: "Holidays Plans",
+    icon: "https://img.icons8.com/wired/100/ff9900/beach-umbrella--v2.png",
+    link: "/privilegs?section=curated%20holidays",
+  },
+  {
+    title: "Festive Gateways",
+    icon: "https://img.icons8.com/ios/100/ff9900/festival.png",
+    link: "/privilegs?section=religious%20festive",
+  },
+  {
+    title: "Global Hotel Network",
+    icon: "https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/100/ff9900/external-global-business-and-management-kiranshastry-lineal-kiranshastry.png",
+    link: "/privilegs?section=religious%20festive",
+  },
+  {
+    title: "Domestic Hotel Stays",
+    icon: "https://img.icons8.com/ios/100/ff9900/bed.png",
+    link: "/privilegs?section=religious%20festive",
   },
 ];
