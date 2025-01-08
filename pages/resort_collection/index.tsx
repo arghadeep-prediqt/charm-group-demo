@@ -37,7 +37,7 @@ function ResortCollectionPage() {
           className="w-full h-full object-cover object-top"
         />
 
-        <div className="absolute top-0 left-0 bg-black/60 w-full h-full flex justify-end items-start">
+        <div className="absolute top-0 left-0 bg-black/60 w-full h-full flex justify-end items-start overflow-hidden">
           <LeftSection currentImage={currentImage} />
           <RightSection
             description={currentImage?.description}

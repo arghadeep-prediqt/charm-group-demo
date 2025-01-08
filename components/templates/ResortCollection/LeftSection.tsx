@@ -1,7 +1,6 @@
 import React from "react";
 import { CurrentSectionProps } from "@/components/@types/pages";
 import { ChevronDownCircle, ChevronUpCircle } from "lucide-react";
-import Container from "@/components/shared/Container";
 import { resortImage } from "@/components/lib/rawData";
 import { useRouter } from "next/router";
 
@@ -29,7 +28,7 @@ function LeftSection({ currentImage }: PageProps) {
   };
 
   return (
-    <Container className="w-5/12 relative py-2 h-[85%] flex justify-start items-end">
+    <div className="w-5/12 ps-[5%] relative py-2 h-[85%] flex justify-start items-end">
       <div className="flex flex-col items-start justify-start gap-3">
         <button
           disabled={currentImage?.id === 0}
@@ -60,7 +59,7 @@ function LeftSection({ currentImage }: PageProps) {
           <ChevronDownCircle className="size-8" />
         </button>
       </div>
-    </Container>
+    </div>
   );
 }
 
