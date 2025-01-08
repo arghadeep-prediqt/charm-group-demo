@@ -55,7 +55,7 @@ function NavigationBar() {
           <CustomNavBtn
             logo="https://img.icons8.com/ios-filled/100/ffea00/ask-question--v1.png"
             title="need assistance?"
-            link="/our_resorts"
+            link="/faqs"
           />
           <ProfileBtn />
         </div>
