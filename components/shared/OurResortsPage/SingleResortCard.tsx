@@ -29,15 +29,15 @@ function SingleResortCard() {
             height={500}
             className="w-full h-full object-cover bg-gray-300 rounded-xl shadow-sm"
           />
-          <div className="p-4 absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/40 to-black/10 flex flex-col justify-end items-start rounded-xl border-2 border-amber-300">
+          <div className="p-4 absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end items-start rounded-xl border-2 border-amber-300">
             <p
-              className="text-white text-p1-b leading-relaxed"
+              className="text-white text-p1-b leading-relaxed line-clamp-1"
               style={{ textShadow: "0 3px 6px #000" }}
             >
               {item.name}
             </p>
             <p
-              className="text-white text-p2-r leading-relaxed"
+              className="mt-1 text-white text-p2-r leading-relaxed"
               style={{ textShadow: "0 3px 6px #000" }}
             >
               {item.location}
