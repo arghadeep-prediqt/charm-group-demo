@@ -1,40 +1,6 @@
+import { privilegesSideNav } from "@/components/lib/rawData";
 import { useRouter } from "next/router";
 import React from "react";
-
-const sideNavData = [
-  {
-    section: "curated experiences",
-    check: ["weekend gateways", "curated holidays", "religious festive"],
-    children: [
-      {
-        title: "weekend gateways",
-        path: "weekend%20gateways",
-      },
-      {
-        title: "curated holidays",
-        path: "curated%20holidays",
-      },
-      {
-        title: "religious festive",
-        path: "religious%20festive",
-      },
-    ],
-  },
-  {
-    section: "horizons (inventory exchange)",
-    check: ["international hotels", "domestic hotels"],
-    children: [
-      {
-        title: "international hotels",
-        path: "international%20hotels",
-      },
-      {
-        title: "domestic hotels",
-        path: "domestic%20hotels",
-      },
-    ],
-  },
-];
 
 function LeftSection() {
   const router = useRouter();
@@ -42,7 +8,7 @@ function LeftSection() {
 
   return (
     <div className="w-3/12 h-full flex flex-col justify-center items-start pb-2">
-      {sideNavData?.map((nav, id) => (
+      {privilegesSideNav?.map((nav, id) => (
         <div key={id} className="my-2">
           <h4
             className={`capitalize mt-4 ${

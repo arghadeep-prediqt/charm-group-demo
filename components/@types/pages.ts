@@ -1,6 +1,9 @@
 export interface CurrentSectionProps {
+  id: number;
   name: string;
   image: string;
+  heading: string;
+  description: string;
 }
 
 export interface SelectedProps {

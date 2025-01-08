@@ -12,7 +12,7 @@ function CustomNavBtn({ logo, title, link = "#" }: PageProps) {
   const router = useRouter();
   return (
     <button
-      className="ps-6 py-2 flex justify-start items-center gap-x-2 leading-relaxed"
+      className="py-2 flex justify-start items-center gap-x-2 leading-relaxed"
       onClick={() => router.push(link)}
     >
       <BlurImage

@@ -1,31 +1,95 @@
 import { MenuItemProps } from "../@types/common";
-import { ResortsData, SelectedProps } from "../@types/pages";
+import {
+  CurrentSectionProps,
+  ResortsData,
+  SelectedProps,
+} from "../@types/pages";
 
-export const resortImage = [
+export const resortImage: CurrentSectionProps[] = [
   {
-    name: "hidden gems",
+    id: 0,
+    name: "unexplored paradises",
+    heading: "Discover Hidden Luxury Escapes",
+    description:
+      "Uncover serene retreats off the beaten path. These hidden gems offer unmatched tranquility and charm for a perfect getaway.",
     image:
-      "https://images.unsplash.com/photo-1568229988520-4bc288da81f7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?q=80&w=2875&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: "new resorts",
+    id: 1,
+    name: "fresh horizons",
+    heading: "Experience the Latest in Elegance",
+    description:
+      "Be among the first to stay at our newly launched premium properties. Discover modern luxury designed for your ultimate comfort.",
     image:
-      "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: "hot offers",
+    id: 2,
+    name: "luxury for Less",
+    heading: "Luxury That Fits Your Budget",
+    description:
+      "Take advantage of exclusive limited-time deals. Indulge in world-class experiences at incredible value.",
     image:
-      "https://images.unsplash.com/photo-1671783181352-1bb9e06fef1a?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1469796466635-455ede028aca?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3DD",
   },
   {
-    name: "trending season",
+    id: 3,
+    name: "popular picks",
+    heading: "Plan Your Stay at Trending Resorts",
+    description:
+      "Explore the most sought-after destinations of the season. These resorts are buzzing with excitement and unforgettable experiences.",
     image:
-      "https://images.unsplash.com/photo-1584954490709-3c000d2ec110?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: "top rated resorts",
+    id: 4,
+    name: "guest favorites",
+    heading: "Stay at the Best-Rated Resorts",
+    description:
+      "Highly praised by travelers, these resorts deliver exceptional luxury. Enjoy a flawless escape with top-tier amenities and services.",
     image:
-      "https://common-booking-engine.gumlet.io/cmsimages/offer-card/offer%205.jpg",
+      "https://images.unsplash.com/photo-1515249347005-66ea7bc26847?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+];
+
+export const privilegesSideNav = [
+  {
+    section: "curated experiences",
+    check: ["weekend escapes", "holidays plans", "festive gateways"],
+    children: [
+      {
+        title: "weekend escapes",
+        path: "weekend%20escapes",
+        heading: "Unwind with Relaxing",
+      },
+      {
+        title: "holidays plans",
+        path: "holidays%20plans",
+        heading: "Indulge in Tailored",
+      },
+      {
+        title: "festive gateways",
+        path: "festive%20gateways",
+        heading: "Celebrate the Festive Season with a",
+      },
+    ],
+  },
+  {
+    section: "horizons (inventory exchange)",
+    check: ["global hotel network", "domestic hotel stays"],
+    children: [
+      {
+        title: "global hotel network",
+        path: "global%20hotel%20network",
+        heading: "Experience the Comfort of",
+      },
+      {
+        title: "domestic hotel stays",
+        path: "domestic%20hotel%20stays",
+        heading: "Relax with Comfort at",
+      },
+    ],
   },
 ];
 
@@ -963,41 +1027,74 @@ export const travelDiaries = [
 
 export const itineraryMenuItems: MenuItemProps[] = [
   {
-    title: "horizon",
-    icon: "https://img.icons8.com/ios/100/ff9900/astronomical-twilight.png",
-    link: "/#privilegs",
+    title: "When and Where",
+    icon: "https://img.icons8.com/ios-filled/100/00509d/where.png",
+    link: "/search",
   },
   {
-    title: "our resorts",
-    icon: "https://img.icons8.com/ios/100/ff9900/sunbathe.png",
-    link: "/our_resorts",
+    title: "Explore on Map",
+    icon: "https://img.icons8.com/ios-filled/100/00509d/world.png",
+    link: "/mapsearch",
+  },
+  {
+    title: "Pathfinder",
+    icon: "https://img.icons8.com/ios-filled/100/00509d/compass--v2.png",
+    link: "/pathfinder",
+  },
+  {
+    title: "Season Chart",
+    icon: "https://img.icons8.com/ios-filled/100/00509d/wintertime.png",
+    link: "/session_chart",
+  },
+];
+
+export const ourResortMenuItems: MenuItemProps[] = [
+  {
+    title: "Bắc Bộ",
+    icon: "https://img.icons8.com/ios-glyphs/100/00509d/mountain.png",
+    link: "/our_resorts?filter=north",
+  },
+  {
+    title: "Trung Bộ",
+    icon: "https://img.icons8.com/ios-filled/100/00509d/city.png",
+    link: "/our_resorts?filter=central",
+  },
+  {
+    title: "Nam Bộ",
+    icon: "https://img.icons8.com/ios-filled/100/00509d/island-on-water.png",
+    link: "/our_resorts?filter=south",
+  },
+  {
+    title: "International",
+    icon: "https://img.icons8.com/ios-filled/100/00509d/world.png",
+    link: "/session_chart?filter=international",
   },
 ];
 
 export const privilegesMenuItems: MenuItemProps[] = [
   {
     title: "Weekend Escapes",
-    icon: "https://img.icons8.com/external-ddara-lineal-ddara/100/ff9900/external-Bag-pack-gaming-gambling-ddara-lineal-ddara.png",
-    link: "/privilegs?section=weekend%20gateways",
+    icon: "https://img.icons8.com/external-ddara-lineal-ddara/100/00509d/external-Bag-pack-gaming-gambling-ddara-lineal-ddara.png",
+    link: "/privilegs?section=weekend%20escapes",
   },
   {
     title: "Holidays Plans",
-    icon: "https://img.icons8.com/wired/100/ff9900/beach-umbrella--v2.png",
-    link: "/privilegs?section=curated%20holidays",
+    icon: "https://img.icons8.com/wired/100/00509d/beach-umbrella--v2.png",
+    link: "/privilegs?section=holidays%20plans",
   },
   {
     title: "Festive Gateways",
-    icon: "https://img.icons8.com/ios/100/ff9900/festival.png",
-    link: "/privilegs?section=religious%20festive",
+    icon: "https://img.icons8.com/ios-filled/100/00509d/festival.png",
+    link: "/privilegs?section=festive%20gateways",
   },
   {
     title: "Global Hotel Network",
-    icon: "https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/100/ff9900/external-global-business-and-management-kiranshastry-lineal-kiranshastry.png",
-    link: "/privilegs?section=religious%20festive",
+    icon: "https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/100/00509d/external-global-business-and-management-kiranshastry-lineal-kiranshastry.png",
+    link: "/privilegs?section=global%20hotel%20network",
   },
   {
     title: "Domestic Hotel Stays",
-    icon: "https://img.icons8.com/ios/100/ff9900/bed.png",
-    link: "/privilegs?section=religious%20festive",
+    icon: "https://img.icons8.com/ios-filled/100/00509d/bed.png",
+    link: "/privilegs?section=domestic%20hotel%20stays",
   },
 ];
