@@ -17,8 +17,8 @@ function TopBanner({ photo, title, subTitle, isButton = false }: PageProps) {
       <BlurImage
         src={photo}
         alt="background"
-        width={1800}
-        height={900}
+        width={1980}
+        height={1080}
         className="w-full h-[50vh] object-cover object-center -z-10"
       />
       <Container
