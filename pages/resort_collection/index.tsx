@@ -32,8 +32,8 @@ function ResortCollectionPage() {
         <BlurImage
           src={currentImage?.image || "/images/map.png"}
           alt={currentImage?.name || "hero"}
-          width={600}
-          height={900}
+          width={1920}
+          height={1080}
           className="w-full h-full object-cover object-top"
         />
 
