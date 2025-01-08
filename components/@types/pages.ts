@@ -12,7 +12,7 @@ export interface SelectedProps {
 }
 
 // Interface for a single resort
-interface Resort {
+export interface Resort {
   name: string;
   location: string;
 }

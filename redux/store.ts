@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { userSlice } from "./slice/userSlice";
+import { resortSlice } from "./slice/resortSlice";
 
 export const store = configureStore({
   reducer: {
     user: userSlice.reducer,
+    resort: resortSlice.reducer,
 
     // [courseApi.reducerPath]: courseApi.reducer,
   },
