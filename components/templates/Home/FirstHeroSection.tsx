@@ -16,8 +16,8 @@ function FirstHeroSection() {
         height={1200}
         className="w-full h-full object-cover object-center bg-fixed"
       />
-      <Container className="pt-16 pb-2 absolute top-0 left-0 w-screen h-full bg-gradient-to-t from-black/80 to-black/30">
-        <div className="w-full h-full flex flex-col justify-center items-start gap-12">
+      <div className="pt-16 pb-2 absolute top-0 left-0 w-screen h-full bg-gradient-to-t from-black/80 to-black/30">
+        <Container className="w-full h-full flex flex-col justify-center items-start gap-12">
           <h1 className={`text-[60px] font-medium text-white leading-snug`}>
             Start your unforgettable <br /> journey with us.
           </h1>
@@ -25,8 +25,9 @@ function FirstHeroSection() {
             Explore new destinations, join our exclusive membership, and book
             your dream vacation now.
           </p>
-        </div>
-      </Container>
+        </Container>
+      </div>
+
       <div className="absolute bottom-10 left-0 w-full flex justify-center items-center hover:opacity-65">
         <Link href="#hero">
           <ArrowDownCircle className="text-amber-300 size-10 animate-bounce" />
