@@ -1,6 +1,8 @@
+import React from "react";
+import "swiper/css";
+import "swiper/css/navigation";
 import { toDoResortData } from "@/components/lib/rawData";
 import { BlurImage } from "@/components/ui/BluerImage";
-import React from "react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,10 +16,10 @@ function ThingsToDoSection() {
       modules={[Navigation, Autoplay]}
       slidesPerView={2.4}
       spaceBetween={0}
-      // autoplay={{
-      //   delay: 2500,
-      //   disableOnInteraction: false,
-      // }}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
       className="mySwiper"
     >
       {toDoResortData?.map((item, id) => (
@@ -29,7 +31,7 @@ function ThingsToDoSection() {
             height={700}
             className="w-full h-full object-cover"
           />
-          <div className="p-4 absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/50 to-black/10 flex flex-col justify-end items-start">
+          <div className="p-4 absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end items-start">
             <h3 className="mb-3 text-start text-white">{item.title}</h3>
             <p className="text-start text-p2-r text-white">
               {item.description}

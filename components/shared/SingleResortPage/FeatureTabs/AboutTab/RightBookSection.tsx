@@ -22,11 +22,13 @@ function RightBookSection({ name }: PageProps) {
       <p className="my-2 text-p2-r text-gray-600">Vung Tau province, Vietnam</p>
 
       <div className="mt-5 flex justify-start items-center gap-x-1">
-        <button className="border-none text-p3-m text-sky-500">
+        <button className="border-none text-p3-m text-amber-500">
           15 Photos
         </button>
         <Dot className="size-7 text-gray-400" />
-        <button className="border-none text-p3-m text-sky-500">2 Videos</button>
+        <button className="border-none text-p3-m text-amber-500">
+          2 Videos
+        </button>
       </div>
 
       <div className="w-full mb-12 mt-2 flex justify-start items-center flex-wrap gap-2">
@@ -37,24 +39,24 @@ function RightBookSection({ name }: PageProps) {
             alt="image"
             width={70}
             height={65}
-            className="w-[86px] h-[76px] object-cover rounded-lg"
+            className="w-[86px] h-[76px] object-cover p-1 bg-amber-50 border border-amber-300 rounded-lg"
           />
         ))}
       </div>
 
       <div className="">
         <div className="mt-3 pb-3 flex justify-start items-center gap-x-3 border-b border-gray-300">
-          <MapPin className="size-6 text-sky-500" />
+          <MapPin className="size-6 text-amber-500" />
           <p className="text-p1-r w-[90%] capitalize">{name}</p>
         </div>
 
         <div className="mt-3 py-3 flex justify-start items-center gap-x-3 border-b border-gray-300">
-          <CalendarFold className="size-6 text-sky-500" />
-          <p className="text-p1-r w-[90%] text-sky-500">Select Dates</p>
+          <CalendarFold className="size-6 text-amber-500" />
+          <p className="text-p1-r w-[90%] text-amber-500">Select Dates</p>
         </div>
 
         <div className="mt-3 py-3 flex justify-start items-center gap-x-3 border-b border-gray-300">
-          <User className="size-6 text-sky-500" />
+          <User className="size-6 text-amber-500" />
           <p className="text-p1-r w-[90%]">2 Adults</p>
         </div>
 
@@ -65,7 +67,7 @@ function RightBookSection({ name }: PageProps) {
                 `/my_bookings/${name.split(" ").join("%20")}?type=view`
               )
             }
-            className="bg-sky-400 text-white px-6 py-2 w-full rounded-full text-p1-b"
+            className="bg-amber-50 text-amber-500 px-6 py-2 w-full rounded-full text-p1-b border border-amber-400"
           >
             Book Now
           </button>

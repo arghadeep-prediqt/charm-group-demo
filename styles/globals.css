@@ -50,36 +50,31 @@ body::-webkit-scrollbar {
   height: 50vh;
 }
 
-.mySwiper.swiper-slide {
+.mySwiper .swiper-wrapper .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
-
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-.mySwiper.swiper-button-prev::after,
-.mySwiper.swiper-button-next::after {
+
+.mySwiper .swiper-button-prev::after,
+.mySwiper .swiper-button-next::after {
   display: none;
 }
 
-.mySwiper.swiper-button-prev,
-.mySwiper.swiper-button-next {
-  display: none;
+.mySwiper .swiper-button-prev,
+.mySwiper .swiper-button-next {
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
-  height: 40px !important;
-  width: 40px !important;
+  height: 50px !important;
+  width: 50px !important;
 }
-.mySwiper.swiper-button-prev {
-  background-image: url("https://holidays.clubmahindra.com/images/left-arrow.svg");
+.mySwiper .swiper-button-prev {
+  background-image: url("https://img.icons8.com/ios-filled/100/f9dc5c/circled-left-2.png");
 }
 
-.mySwiper.swiper-button-next {
-  background-image: url("https://holidays.clubmahindra.com/images/right-arrow.svg");
+.mySwiper .swiper-button-next {
+  background-image: url("https://img.icons8.com/ios-filled/100/f9dc5c/circled-right-2.png");
 }
 
 .customSwiper.swiper {

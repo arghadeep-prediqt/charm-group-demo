@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import dynamic from "next/dynamic";
-import { ChevronLeftCircle, ChevronRightCircle } from "lucide-react";
+import { ArrowLeftCircle, ArrowRightCircle } from "lucide-react";
 
 const Tab1 = dynamic(() => import("@/components/layouts/Home/Tab1"));
 const Tab2 = dynamic(() => import("@/components/layouts/Home/Tab2"));
@@ -34,16 +34,16 @@ function TabSection() {
           <button
             disabled={current === 0}
             onClick={decrement}
-            className="text-primary-600 disabled:opacity-25"
+            className="bg-[#00509d] text-white rounded-full disabled:opacity-25"
           >
-            <ChevronLeftCircle className="size-8" />
+            <ArrowLeftCircle className="size-8" />
           </button>
           <button
             onClick={increment}
             disabled={current === tabCategories.length - 1}
-            className="text-primary-600 disabled:opacity-25"
+            className="bg-[#00509d] text-white rounded-full disabled:opacity-25"
           >
-            <ChevronRightCircle className="size-8" />
+            <ArrowRightCircle className="size-8" />
           </button>
         </div>
       </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import { Dot, Heart, Share2 } from "lucide-react";
 
 interface PageProps {
   params: string;
@@ -8,26 +7,24 @@ interface PageProps {
 function TopHeading({ params }: PageProps) {
   return (
     <React.Fragment>
-      <div className="w-8/12 flex justify-between items-center">
-        <h1 className="capitalize font-medium leading-relaxed">{params}</h1>
-        <div className="flex justify-end items-center gap-x-3">
-          <button className="p-2 border-2 border-sky-300 rounded-full active:opacity-65">
-            <Share2 className="size-5 text-sky-400" />
-          </button>
+      <div className="w-full flex justify-between items-end">
+        <h1 className="w-6/12 capitalize text-gray-700 font-medium leading-relaxed">
+          {params}
+        </h1>
 
-          <button className="p-2 border-2 border-sky-300 rounded-full active:opacity-65">
-            <Heart className="size-5 text-sky-400" />
-          </button>
+        <div className="w-6/12">
+          <p className="text-end text-p1-r">
+            <span className="text-amber-500 font-semibold">6° C</span>{" "}
+            <span className="text-gray-600 uppercase">overcast clouds</span>
+          </p>
+          <p className="text-end text-p1-r text-gray-500">
+            <span className="text-amber-500 font-semibold">70</span> kms{" | "}
+            <span className="text-amber-500 font-semibold">2</span> hours{" "}
+            <span className="text-amber-500 font-semibold">30</span> mins
+          </p>
         </div>
       </div>
-      <p className="text-p1-r text-gray-500">Vung Tau province, Vietnam</p>
-      <div className="mt-5 flex justify-start items-center gap-x-1">
-        <button className="border-none text-p3-m text-sky-500">
-          15 Photos
-        </button>
-        <Dot className="size-7 text-gray-400" />
-        <button className="border-none text-p3-m text-sky-500">2 Videos</button>
-      </div>
+      <p className="text-p1-r text-primary-500">Vung Tau province, Vietnam</p>
     </React.Fragment>
   );
 }

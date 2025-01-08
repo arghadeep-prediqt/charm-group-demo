@@ -1,7 +1,7 @@
 import { cn } from "@/components/lib/utils";
 import { BlurImage } from "@/components/ui/BluerImage";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeftCircle, ArrowRightCircle } from "lucide-react";
 import { useRouter } from "next/router";
 import React, { useEffect, useState, createContext } from "react";
 
@@ -128,18 +128,18 @@ export const PrivilegsCardCarousel = ({
 
         {/* Buttons */}
         <button
-          className="absolute top-0 right-16  z-20 p-2 rounded-full bg-yellow-300 border border-gray-300 active:opacity-70 disabled:opacity-30 disabled:grayscale disabled:shadow-none shadow-sm"
+          className="absolute top-0 right-16  z-20 rounded-full bg-[#00509d] active:opacity-70 disabled:opacity-30 disabled:grayscale disabled:shadow-none shadow-sm"
           onClick={scrollLeft}
           disabled={!canScrollLeft}
         >
-          <ArrowLeft className="size-6 text-gray-600" />
+          <ArrowLeftCircle className="size-10 text-white" />
         </button>
         <button
-          className="absolute top-0 right-4  z-20 p-2 rounded-full bg-yellow-300 border border-gray-300 active:opacity-70 disabled:opacity-30 disabled:grayscale disabled:shadow-none shadow-sm"
+          className="absolute top-0 right-4  z-20 rounded-full bg-[#00509d] active:opacity-70 disabled:opacity-30 disabled:grayscale disabled:shadow-none shadow-sm"
           onClick={scrollRight}
           disabled={!canScrollRight}
         >
-          <ArrowRight className="size-6 text-gray-600" />
+          <ArrowRightCircle className="size-10 text-white" />
         </button>
       </div>
     </CarouselContext.Provider>
@@ -160,7 +160,7 @@ export const PrivilegsCard = ({
     <motion.button
       layoutId={layout ? `card-${card.title}` : undefined}
       onClick={() => router.push(`/privilegs?section=${card.path}`)}
-      className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[45vh] md:w-[25vw] overflow-hidden flex flex-col items-start justify-start relative z-10"
+      className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[45vh] md:w-[26vw] overflow-hidden flex flex-col items-start justify-start relative z-10"
     >
       <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-t from-black/90 to-transparent z-30 pointer-events-none" />
       <div className="relative z-40 p-8 w-full h-full rounded-lg flex flex-col justify-end">

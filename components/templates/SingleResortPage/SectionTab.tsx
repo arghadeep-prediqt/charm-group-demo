@@ -1,8 +1,8 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
+import { Share2 } from "lucide-react";
 
-const FloaterChecker = dynamic(() => import("./FloaterChecker"));
 const AboutTab = dynamic(
   () => import("@/components/shared/SingleResortPage/FeatureTabs/AboutTab")
 );
@@ -24,18 +24,24 @@ function SectionTab({ name }: PageProps) {
 
   return (
     <TabGroup>
-      <TabList className="mt-2 mb-4 border-y-2 border-gray-200">
-        <Container className="relative flex justify-start items-end gap-4">
-          {tabCategories?.map((item, id) => (
-            <Tab
-              key={id}
-              as="button"
-              className="px-[3%] py-4 text-p1-r text-gray-600 leading-relaxed text-pretty capitalize data-[selected]:border-b-4 border-sky-300 focus:outline-none data-[selected]:text-sky-500 data-[selected]:text-p1-b"
-            >
-              {item.name}
-            </Tab>
-          ))}
-          <FloaterChecker name={name} />
+      <TabList className="mt-2 mb-4 ">
+        <Container className="relative">
+          <div className="w-9/12 flex justify-between items-center gap-4 pe-10">
+            <div className="flex justify-start items-center gap-x-4">
+              {tabCategories?.map((item, id) => (
+                <Tab
+                  key={id}
+                  as="button"
+                  className="px-2 py-2 text-p1-r text-gray-600 leading-relaxed text-pretty capitalize data-[selected]:border-b-2 border-yellow-400 focus:outline-none data-[selected]:text-p1-m"
+                >
+                  {item.name}
+                </Tab>
+              ))}
+            </div>
+            <button className="p-2 border-2 border-yellow-300 bg-yellow-50 rounded-full active:opacity-65">
+              <Share2 className="size-5 text-yellow-500" />
+            </button>
+          </div>
         </Container>
       </TabList>
       <TabPanels>

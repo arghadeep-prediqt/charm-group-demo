@@ -1,39 +1,34 @@
 import React from "react";
-import "swiper/css";
-import "swiper/css/navigation";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
 import { BlurImage } from "@/components/ui/BluerImage";
 import { singleResortData } from "@/components/lib/rawData";
 
 function TopCarousel() {
   return (
-    <Swiper
-      pagination={{
-        type: "fraction",
-      }}
-      navigation={true}
-      modules={[Navigation, Autoplay]}
-      slidesPerView={1.2}
-      spaceBetween={10}
-      autoplay={{
-        delay: 2500,
-        disableOnInteraction: false,
-      }}
-      className="mySwiper"
-    >
-      {singleResortData?.map((photo, id) => (
-        <SwiperSlide key={id}>
-          <BlurImage
-            src={photo}
-            alt="image"
-            width={1400}
-            height={600}
-            className="w-full h-full object-cover block"
-          />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <React.Fragment>
+      <div className="h-[60vh] my-4 grid grid-rows-2 grid-flow-col gap-4">
+        <BlurImage
+          src={singleResortData?.[0] || ""}
+          alt="property1"
+          width={600}
+          height={400}
+          className="w-full h-full bg-gray-200 rounded-xl row-span-2 col-span-2"
+        />
+        <BlurImage
+          src={singleResortData?.[1] || ""}
+          alt="property1"
+          width={600}
+          height={400}
+          className="h-full bg-gray-200 rounded-xl col-span-1"
+        />{" "}
+        <BlurImage
+          src={singleResortData?.[2] || ""}
+          alt="property1"
+          width={600}
+          height={400}
+          className="h-full bg-gray-200 rounded-xl row-span-1 col-span-1"
+        />
+      </div>
+    </React.Fragment>
   );
 }
 
