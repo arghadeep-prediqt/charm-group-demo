@@ -1,8 +1,9 @@
 import React, { useEffect, useState, createContext } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, MapPin } from "lucide-react";
+import { ArrowLeftCircle, ArrowRightCircle, MapPin } from "lucide-react";
 import { BlurImage } from "../ui/BluerImage";
 import { cn } from "../lib/utils";
+import { useRouter } from "next/router";
 
 interface CarouselProps {
   items: React.JSX.Element[];
@@ -125,20 +126,20 @@ export const AppleCardCarousel = ({
         </div>
 
         {/* Buttons */}
-        <div className="mb-5 flex justify-end gap-6">
+        <div className="mb-5 flex justify-end gap-3">
           <button
-            className="p-2 rounded-full bg-gray-400 flex items-center justify-center active:opacity-70 disabled:opacity-50"
+            className="rounded-full bg-[#ff9900] flex items-center justify-center active:opacity-70 disabled:opacity-50"
             onClick={scrollLeft}
             disabled={!canScrollLeft}
           >
-            <ArrowLeft className="size-6 text-gray-100" />
+            <ArrowLeftCircle className="size-10 text-gray-100" />
           </button>
           <button
-            className="p-2 rounded-full bg-sky-400 flex items-center justify-center active:opacity-70 disabled:opacity-50"
+            className="rounded-full bg-[#ff9900] flex items-center justify-center active:opacity-70 disabled:opacity-50"
             onClick={scrollRight}
             disabled={!canScrollRight}
           >
-            <ArrowRight className="size-6 text-gray-100" />
+            <ArrowRightCircle className="size-10 text-gray-100" />
           </button>
         </div>
       </div>
@@ -155,10 +156,14 @@ export const Card = ({
   index: number;
   layout?: boolean;
 }) => {
+  const router = useRouter();
   // console.log(index);
   return (
     <motion.button
       layoutId={layout ? `card-${card.title}` : undefined}
+      onClick={() =>
+        router.push(`/our_resorts/${card.title.split(" ").join("%20")}`)
+      }
       className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[470px] md:w-[350px] overflow-hidden flex flex-col items-start justify-start relative z-10"
     >
       <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-transparent to-black/90 z-30 pointer-events-none" />

@@ -39,7 +39,7 @@ function RightSection() {
     <div className="w-9/12 h-full flex flex-col justify-center items-start">
       <h3 className="leading-relaxed">
         {headline?.heading} {""}
-        <span className="text-sky-500 capitalize">{headline?.title}</span>
+        <span className="text-[#ff9900] capitalize">{headline?.title}</span>
       </h3>
 
       <div className="flex justify-start items-center gap-x-2">

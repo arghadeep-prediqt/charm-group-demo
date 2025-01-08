@@ -4,6 +4,9 @@ import { aminitiesData } from "@/components/lib/rawData";
 import dynamic from "next/dynamic";
 import { BlurImage } from "@/components/ui/BluerImage";
 
+const TopHeading = dynamic(
+  () => import("@/components/templates/SingleResortPage/TopHeading")
+);
 const MemberReview = dynamic(() => import("./MemberReview"));
 const RightBookSection = dynamic(() => import("./RightBookSection"));
 const ThingsToDoSection = dynamic(() => import("./ThingsToDo"));
@@ -16,28 +19,31 @@ function AboutTab({ name }: PageProps) {
   return (
     <React.Fragment>
       <div className="flex justify-start items-start">
-        <div className="w-9/12 pe-4">
-          <div className="py-3 flex justify-start items-center gap-x-8 divide-x divide-gray-400">
-            <div className="flex justify-start items-center gap-x-2">
-              <h3 className="text-primary-600">6° C</h3>
-              <p className="uppercase text-p2-m text-gray-500">
-                overcast clouds
-              </p>
-            </div>
-
-            <p className="ps-8 text-p1-r text-gray-500">
-              Vung Tau province - 70 kms - 2 hours 30 mins
-            </p>
-          </div>
-
-          <h3 className="my-3 font-medium">About</h3>
-          <p className="my-3 text-p1-r">
+        <div className="w-9/12 pe-12">
+          <TopHeading params={name} />
+          <h3 className="py-2 mt-4 text-gray-600 font-medium">About</h3>
+          <p className="my-3 text-gray-600 leading-relaxed text-p1-r text-justify">
             {
-              "A Club Mahindra Managed Resort Snuggled against the rugged, snowy Himalayan mountains is your holiday haven - Club Mahindra White Meadows Resort in Manali, Himachal Pradesh. Step into our foyer and let the warmth wash over you. Here, at our Manali resort and spa, you can enjoy adventure activities like zip lining and hiking, family events like picnics and karaoke sessions, river rafting and safaris. At the end of the day, you can sit down and bond over dishes of steaming fried rice and glossy Manchurian. Manali is a gift that keeps giving. One location that generously offers you high mountains and deep valleys, rushing rivers and calm blue skies. Cupped in all this beauty is the hill station itself, with charming old temples, bustling markets, paragliding and skiing opportunities, hiking trails and Jeep safaris, museums, cafes and more. So, if you’re saving that precious time off work for a holiday, make your way to Club Mahindra’s resort in Manali."
+              "Charm Resort Hồ Tràm spans an impressive 40 hectares, divided into three main subdivisions with distinct scales: subdivision 1 covering 7.2 hectares, subdivision 2 extending over 18.9 hectares, and subdivision 3 occupying 14.2 hectares. In an exciting development, the resort is set to launch subdivision 1, which will feature over 1,086 beachfront apartments, including studio, 1-bedroom, 2-bedroom, and 3-bedroom options. Additionally, 90 luxurious resort villas—ranging from Garden Villas to Ocean Villas—will provide an exceptional living experience for those seeking tranquility and sophistication. This project promises to become a landmark destination, illuminating the charm of the southern city."
+            }
+          </p>
+          <p className="my-3 text-gray-600 leading-relaxed text-p1-r text-justify">
+            {
+              "Charm Resort Hồ Tràm enjoys a prime location, boasting 3 kilometers of pristine coastline. The endless expanse of clear blue sea and the lush green of pine forests create an enchanting natural setting. This unique combination of coastal beauty and verdant landscapes offers a harmonious blend of relaxation and vitality for visitors seeking an idyllic retreat."
+            }
+          </p>
+          <p className="my-3 text-gray-600 leading-relaxed text-p1-r text-justify">
+            {
+              "Guests can immerse themselves in the serene atmosphere of the resort, where the rhythmic rustle of leaves accompanies the soothing sound of waves crashing along the shore. Whether sitting by the beach or strolling under the canopy of trees, visitors will feel their spirits rejuvenated and their minds refreshed. This tranquil environment provides an ideal escape from the stresses of daily life, allowing one to reconnect with nature and find peace."
+            }
+          </p>
+          <p className="my-3 text-gray-600 leading-relaxed text-p1-r text-justify">
+            {
+              "As a beacon of luxury and natural beauty, Charm Resort Hồ Tràm exemplifies the perfect destination for leisure, relaxation, and rejuvenation. Its thoughtful design and harmonious integration with the surrounding environment make it a true paradise for those seeking an unparalleled coastal experience. With its diverse offerings and stunning location, the resort promises to redefine the standard of modern hospitality in the region."
             }
           </p>
 
-          <h3 className="mt-8 mb-3 font-medium">Amenities</h3>
+          <h3 className="mt-8 mb-3 text-gray-600 font-medium">Amenities</h3>
 
           <div className="w-full pb-6 pt-3 flex flex-wrap gap-4">
             {aminitiesData?.map((item, id) => (
@@ -51,17 +57,17 @@ function AboutTab({ name }: PageProps) {
       </div>
 
       <div className="w-full py-[5vh]">
-        <h3 className="mb-5 font-medium">Things to Do</h3>
+        <h3 className="mb-5 text-gray-600 font-medium">Things to Do</h3>
         <ThingsToDoSection />
       </div>
 
       <div className="w-full py-[5vh]">
-        <h3 className="mb-5 font-medium">Member Reviews</h3>
+        <h3 className="mb-5 text-gray-600 font-medium">Member Reviews</h3>
         <MemberReview />
       </div>
 
       <div className="w-full py-[5vh]">
-        <h3 className="font-medium">Location</h3>
+        <h3 className="font-medium text-gray-600">Location</h3>
         <BlurImage
           src={
             "https://charm.vn/wp-content/uploads/2022/12/vi-tri-Charm-Resort-Ho-Tram-1.jpg"

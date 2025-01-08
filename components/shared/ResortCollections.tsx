@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, MapPin } from "lucide-react";
 import React, { useEffect, useState, createContext } from "react";
 import { BlurImage } from "../ui/BluerImage";
 import { cn } from "../lib/utils";
+import { useRouter } from "next/router";
 
 interface CarouselProps {
   items: React.JSX.Element[];
@@ -153,10 +154,14 @@ export const Card = ({
   index: number;
   layout?: boolean;
 }) => {
+  const router = useRouter();
   // console.log(index);
   return (
     <motion.button
       layoutId={layout ? `card-${card.title}` : undefined}
+      onClick={() =>
+        router.push(`/our_resorts/${card.title.split(" ").join("%20")}`)
+      }
       className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[45vh] md:w-[20vw] overflow-hidden flex flex-col items-start justify-start relative z-10"
     >
       <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-transparent to-black/90 z-30 pointer-events-none" />

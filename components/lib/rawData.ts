@@ -56,7 +56,13 @@ export const resortImage: CurrentSectionProps[] = [
 export const privilegesSideNav = [
   {
     section: "curated experiences",
-    check: ["weekend escapes", "holidays plans", "festive gateways"],
+    check: [
+      "weekend escapes",
+      "holidays plans",
+      "festive gateways",
+      "global hotel network",
+      "domestic hotel stays",
+    ],
     children: [
       {
         title: "weekend escapes",
@@ -73,12 +79,6 @@ export const privilegesSideNav = [
         path: "festive%20gateways",
         heading: "Celebrate the Festive Season with a",
       },
-    ],
-  },
-  {
-    section: "horizons (inventory exchange)",
-    check: ["global hotel network", "domestic hotel stays"],
-    children: [
       {
         title: "global hotel network",
         path: "global%20hotel%20network",
@@ -515,7 +515,6 @@ export const singleResortData = [
   "https://static-clubmahindra.gumlet.io/storage/app/media/Aasonora%20Resort/Emerald%20palm/Kanatal/bar.jpg",
   "https://static-clubmahindra.gumlet.io/storage/app/media/Mussoorie/MUSSOORIE-exterior-1.jpg",
   "https://static-clubmahindra.gumlet.io/storage/app/media/Mussoorie/MUSS_1BR_03.jpg",
-  "https://static-clubmahindra.gumlet.io/storage/app/media/Mussoorie/MUSS_1BR_10.jpg",
 ];
 
 export const toDoResortData = [

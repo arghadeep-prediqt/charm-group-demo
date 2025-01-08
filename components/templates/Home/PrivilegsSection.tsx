@@ -57,7 +57,7 @@ function PrivilegsSection() {
   });
 
   return (
-    <section id="privilegs" className="bg-orange-100 mt-[5%] mb-[2%] pb-[3%]">
+    <section className="w-full bg-orange-100 mt-[5%] mb-[2%] pb-[3%]">
       <Container className="py-2">
         <div className="mt-[3%]">
           <h1 className="text-[46px] leading-relaxed">Privileges</h1>

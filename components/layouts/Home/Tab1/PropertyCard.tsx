@@ -1,5 +1,5 @@
 import { BlurImage } from "@/components/ui/BluerImage";
-import { ChevronRight } from "lucide-react";
+import { ChevronRightCircle } from "lucide-react";
 import { useRouter } from "next/router";
 import React from "react";
 
@@ -30,9 +30,9 @@ function PropertyCard({ link, photo, title }: PageProps) {
 
           <button
             onClick={() => router.push(link)}
-            className="w-fit border border-white rounded-full active:opacity-65"
+            className="w-fit border bg-amber-300 rounded-full active:opacity-65"
           >
-            <ChevronRight className="m-1 size-4 text-white" />
+            <ChevronRightCircle className="size-6 text-primary-700" />
           </button>
         </div>
       </div>
