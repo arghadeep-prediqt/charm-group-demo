@@ -1,12 +1,30 @@
-import { mockCarouselData } from "@/components/lib/rawData";
+import { mockCarouselData, privilegesSideNav } from "@/components/lib/rawData";
 import { AppleCardCarousel, Card } from "@/components/shared/AppleCardCarousel";
 import { BlurImage } from "@/components/ui/BluerImage";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+interface HeadlineProps {
+  heading: string;
+  path: string;
+  title: string;
+}
 
 function RightSection() {
   const router = useRouter();
   const section = String(router?.query?.section) || "";
+  const [headline, setHeadline] = useState<HeadlineProps>();
+
+  useEffect(() => {
+    privilegesSideNav?.filter((item) =>
+      item.children.filter((prop) => {
+        if (prop.title === section) {
+          // console.log(prop);
+          setHeadline(prop);
+        }
+      })
+    );
+  }, [section]);
 
   const cards = mockCarouselData.map((card, index) => {
     const item = {
@@ -20,8 +38,8 @@ function RightSection() {
   return (
     <div className="w-9/12 h-full flex flex-col justify-center items-start">
       <h3 className="leading-relaxed">
-        Enjoy a refreshing {""}
-        <span className="text-sky-500 capitalize">{section}</span>
+        {headline?.heading} {""}
+        <span className="text-sky-500 capitalize">{headline?.title}</span>
       </h3>
 
       <div className="flex justify-start items-center gap-x-2">
@@ -34,7 +52,7 @@ function RightSection() {
         />
         <p className="mt-1 text-p1-r leading-relaxed">
           Flat <span className="font-semibold">10% off</span> on over 100+
-          weekend villas
+          {headline?.title}
         </p>
       </div>
 

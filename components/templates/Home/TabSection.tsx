@@ -34,14 +34,14 @@ function TabSection() {
           <button
             disabled={current === 0}
             onClick={decrement}
-            className="text-primary-600 disabled:opacity-30"
+            className="text-primary-600 disabled:opacity-25"
           >
             <ChevronLeftCircle className="size-8" />
           </button>
           <button
             onClick={increment}
             disabled={current === tabCategories.length - 1}
-            className="text-primary-600 disabled:opacity-30"
+            className="text-primary-600 disabled:opacity-25"
           >
             <ChevronRightCircle className="size-8" />
           </button>

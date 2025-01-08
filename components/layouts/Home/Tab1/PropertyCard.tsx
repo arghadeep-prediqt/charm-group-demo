@@ -22,7 +22,7 @@ function PropertyCard({ link, photo, title }: PageProps) {
         className="w-full h-auto aspect-square object-cover bg-gray-200 rounded-2xl"
       />
 
-      <div className="py-2 px-3 absolute top-0 left-0 w-full h-full rounded-2xl bg-gradient-to-t from-black/50 to-black/10 flex justify-start items-end">
+      <div className="py-2 px-3 absolute top-0 left-0 w-full h-full rounded-2xl bg-gradient-to-t from-black/80 to-black/10 flex justify-start items-end">
         <div className="w-full flex justify-start items-center gap-x-2">
           <p className="w-10/12 my-2 text-p1-m text-white capitalize truncate">
             {title}

@@ -1,5 +1,6 @@
 import { CurrentSectionProps } from "@/components/@types/pages";
 import { resortImage } from "@/components/lib/rawData";
+import { BlurImage } from "@/components/ui/BluerImage";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import React, { useMemo } from "react";
@@ -27,14 +28,22 @@ function ResortCollectionPage() {
 
   return (
     <NavContainer>
-      <div className="h-[90vh] flex justify-start items-start">
-        <LeftSection currentImage={currentImage} />
-        <RightSection
-          currentkey={currentImage?.name
-            .split(" ")
-            .join("")
-            .toLocaleLowerCase()}
+      <div className="h-[93vh] w-screen relative">
+        <BlurImage
+          src={currentImage?.image || "/images/map.png"}
+          alt={currentImage?.name || "hero"}
+          width={600}
+          height={900}
+          className="w-full h-full object-cover object-top"
         />
+
+        <div className="absolute top-0 left-0 bg-black/60 w-full h-full flex justify-end items-start">
+          <LeftSection currentImage={currentImage} />
+          <RightSection
+            description={currentImage?.description}
+            heading={currentImage?.heading}
+          />
+        </div>
       </div>
     </NavContainer>
   );

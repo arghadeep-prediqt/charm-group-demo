@@ -1,13 +1,10 @@
 import React from "react";
-import { useRouter } from "next/navigation";
-
 import Container from "@/components/shared/Container";
 import { BlurImage } from "@/components/ui/BluerImage";
 import { ArrowDownCircle } from "lucide-react";
 import Link from "next/link";
 
 function FirstHeroSection() {
-  const router = useRouter();
   const banner = ["/images/banner1.jpg", "/images/banner1.png"];
 
   return (
@@ -19,25 +16,20 @@ function FirstHeroSection() {
         height={1200}
         className="w-full h-full object-cover object-center bg-fixed"
       />
-      <Container className="pt-16 pb-2 absolute top-0 left-0 w-full h-full flex flex-col justify-center items-start gap-12 bg-gradient-to-t from-black/80 to-black/30">
-        <h1 className={`text-[60px] font-medium text-white leading-snug`}>
-          Start your unforgettable <br /> journey with us.
-        </h1>
-        <p className="text-[21px] text-white w-7/12 leading-relaxed">
-          Explore new destinations, join our exclusive membership, and book your
-          dream vacation now.
-        </p>
-
-        <button
-          className="text-p1-b text-white capitalize py-3 px-5 bg-amber-300/60 rounded-lg backdrop-blur-sm"
-          onClick={() => router.push("/our_resorts")}
-        >
-          explore destination
-        </button>
+      <Container className="pt-16 pb-2 absolute top-0 left-0 w-screen h-full bg-gradient-to-t from-black/80 to-black/30">
+        <div className="w-full h-full flex flex-col justify-center items-start gap-12">
+          <h1 className={`text-[60px] font-medium text-white leading-snug`}>
+            Start your unforgettable <br /> journey with us.
+          </h1>
+          <p className="text-[21px] text-white w-7/12 leading-relaxed">
+            Explore new destinations, join our exclusive membership, and book
+            your dream vacation now.
+          </p>
+        </div>
       </Container>
       <div className="absolute bottom-10 left-0 w-full flex justify-center items-center hover:opacity-65">
         <Link href="#hero">
-          <ArrowDownCircle className="text-white size-10 animate-bounce" />
+          <ArrowDownCircle className="text-amber-300 size-10 animate-bounce" />
         </Link>
       </div>
     </section>

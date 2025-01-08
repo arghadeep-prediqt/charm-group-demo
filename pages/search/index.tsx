@@ -12,7 +12,7 @@ const SearchTopTab = dynamic(
 function SearchPage() {
   return (
     <NavContainer>
-      <section className="relative h-[87vh] w-screen">
+      <section className="relative h-[93vh] w-screen">
         <BlurImage
           src={
             "https://common-booking-engine.gumlet.io/images/searchPageBanner.jpg?q=70&w=1920"

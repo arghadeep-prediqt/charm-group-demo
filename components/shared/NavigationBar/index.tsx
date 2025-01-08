@@ -4,7 +4,11 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 
 import ListDropDown from "@/components/ui/ListDropDown";
-import { privilegesMenuItems } from "@/components/lib/rawData";
+import {
+  itineraryMenuItems,
+  ourResortMenuItems,
+  privilegesMenuItems,
+} from "@/components/lib/rawData";
 const Container = dynamic(() => import("../Container"));
 const CustomNavBtn = dynamic(
   () => import("@/components/layouts/NavigationBar/CustomNavBtn")
@@ -32,24 +36,24 @@ function NavigationBar() {
         </Link>
 
         <div className="flex items-center justify-end gap-x-6 my-2">
-          <CustomNavBtn
-            logo="https://img.icons8.com/ios/100/ff9900/sun-lounger.png"
+          <ListDropDown
+            logo="https://img.icons8.com/ios-filled/100/ffea00/sun-lounger.png"
             title="Our Resorts"
-            link="/our_resorts"
+            menuItems={ourResortMenuItems}
           />
           <ListDropDown
-            logo="https://img.icons8.com/ios/100/ff9900/crown.png"
+            logo="https://img.icons8.com/ios-filled/100/ffea00/crown.png"
             title="Exclusive Privileges"
             menuItems={privilegesMenuItems}
           />
           <ListDropDown
-            logo="https://img.icons8.com/ios/100/ff9900/path.png"
+            logo="https://img.icons8.com/ios-filled/100/ffea00/path.png"
             title="My Itinerary"
-            menuItems={privilegesMenuItems}
+            menuItems={itineraryMenuItems}
           />
 
           <CustomNavBtn
-            logo="https://img.icons8.com/ios/100/ff9900/ask-question--v1.png"
+            logo="https://img.icons8.com/ios-filled/100/ffea00/ask-question--v1.png"
             title="need assistance?"
             link="/our_resorts"
           />

@@ -74,7 +74,7 @@ const ChatBot: React.FC = () => {
             alt="Chatbot icon"
             width={50}
             height={50}
-            className="bg-gray-50 p-3 rounded-full shadow-lg border border-gray-300"
+            className="bg-amber-100 p-3 rounded-full shadow-lg border border-amber-300"
           />
         </button>
       )}
@@ -84,9 +84,7 @@ const ChatBot: React.FC = () => {
           <div className="flex items-center justify-between pb-2 border-b border-gray-200 mb-4">
             <div className="flex justify-start items-center">
               <BlurImage
-                src={
-                  "https://haptikappimg.haptikapi.com/uploads/eb11b27c6a20728c3c276a1a0aa21fa2.PNG"
-                }
+                src={"/icons/avatar.svg"}
                 alt="Bot icon"
                 width={40}
                 height={40}
@@ -142,10 +140,11 @@ const ChatBot: React.FC = () => {
               onChange={(e) => setInput(e.target.value)}
               placeholder="Type a message..."
               className="w-full flex-grow px-4 py-2 border rounded-l-lg outline-none focus:border-blue-400"
+              required
             />
             <button
               type="submit"
-              className="bg-sky-500 text-white px-4 py-2 rounded-r-lg hover:bg-sky-400 hover:border-sky-400 border border-sky-500 transition font-medium"
+              className="bg-[#00509d] text-white px-4 py-2 rounded-r-lg hover:bg-[#00509da9] hover:border-[#00509da9] border border-[#00509d] transition font-medium"
             >
               Send
             </button>
