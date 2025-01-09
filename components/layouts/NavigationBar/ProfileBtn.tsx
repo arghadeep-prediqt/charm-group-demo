@@ -25,7 +25,7 @@ function ProfileBtn() {
     <Menu as="div" className={`${poppins.className} text-white relative ps-6`}>
       <MenuButton
         as="button"
-        className="relative px-3 flex justify-between items-center gap-x-2 bg-inherit focus:outline-none"
+        className="relative flex justify-between items-center gap-x-2 bg-inherit focus:outline-none"
       >
         <BlurImage
           src={"/images/profile.jpg"}
@@ -44,7 +44,7 @@ function ProfileBtn() {
 
       <MenuItems
         transition
-        className="absolute right-0 z-10 mt-2 max-w-[240px] min-w-[var(--button-width)] origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 transition divide-y divide-gray-200 focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+        className="absolute right-0 z-10 mt-2 w-[180px] origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 transition divide-y divide-gray-200 focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
       >
         {navigationProfile?.map((item, id) => (
           <MenuItem key={id} as="div">

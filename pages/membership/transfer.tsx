@@ -16,8 +16,8 @@ function MembershipTransferPage() {
     <NavContainer>
       <TopBanner
         photo="https://images.unsplash.com/photo-1693745199505-72a44e1dbccc?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        title="Membership Transfer"
-        subTitle="We're excited to help you transition your membership with ease. Let’s get started."
+        title="Ownership Transfer"
+        subTitle="We're excited to help you transition your ownership with ease. Let’s get started."
       />
 
       <div className="px-4 flex justify-start items-start overflow-auto scrollbarY">
