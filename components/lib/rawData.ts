@@ -82,10 +82,10 @@ export const navigationProfile = [
     content: [{ name: "Payment Details", link: "#payment" }],
   },
   {
-    name: "Membership Upgrade",
+    name: "Ownership Upgrade",
     icon: "https://img.icons8.com/fluency-systems-filled/100/faa307/membership-card.png",
     link: "/membership",
-    content: [],
+    content: [{ name: "Upgrade", link: "#upgrade" }],
   },
   {
     name: "Holidays Utilization",
@@ -94,7 +94,7 @@ export const navigationProfile = [
     content: [],
   },
   {
-    name: "Membership Transfer",
+    name: "Ownership Transfer",
     icon: "https://img.icons8.com/fluency-systems-filled/100/faa307/membership-card.png",
     link: "/membership/transfer",
     content: [],

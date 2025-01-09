@@ -1,6 +1,9 @@
+import { useRouter } from "next/router";
 import React from "react";
 
 function RightPaymentSection() {
+  const router = useRouter();
+
   return (
     <div className="py-3 px-4 bg-white h-full rounded-2xl">
       <h4 className="text-gray-700 text-[16px] mt-2 mb-6">Payment Details</h4>
@@ -28,7 +31,10 @@ function RightPaymentSection() {
       </div>
 
       <div className="mt-5 flex justify-center items-center">
-        <button className="text-amber-600 bg-amber-50 border border-amber-300 py-3 w-9/12 rounded-full text-h4-semi-bold shadow-sm">
+        <button
+          onClick={() => router.push("/mockpay")}
+          className="text-amber-600 bg-amber-50 border border-amber-300 py-3 w-9/12 rounded-full text-h4-semi-bold shadow-sm"
+        >
           Pay Now
         </button>
       </div>

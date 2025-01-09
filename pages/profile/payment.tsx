@@ -24,8 +24,11 @@ function PaymentPage() {
         subTitle="View your upcoming, ongoing and past holidays, modify bookings, find pre-book offers and cancellation options."
       />
 
-      <div className="px-4 relative flex justify-start items-start overflow-auto scrollbarY">
-        <div className="w-[20vw] p-4 sticky top-0">
+      <div
+        id="payment"
+        className="px-4 relative flex justify-start items-start"
+      >
+        <div className="w-[20vw] p-4 sticky top-14">
           <LeftSideNav />
         </div>
         <div className="ps-12 w-[80vw] flex justify-start items-start">

@@ -5,7 +5,7 @@ function LeftPaymentSection() {
   return (
     <>
       <TableHeader />
-      <div className="h-[72vh] overflow-auto scrollbarY flex flex-col divide-y">
+      <div className="flex flex-col divide-y">
         {paymentDetails?.map((item, id) => (
           <RowTable
             key={id}
