@@ -10,12 +10,12 @@ interface PageProps extends ResortsData {
   setDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function ResortAccordian({ data, title, setDrawerOpen }: PageProps) {
+function ResortAccordian({ data, title, local, setDrawerOpen }: PageProps) {
   return (
     <Container className="mt-4">
       <div className="py-3 w-full border-b border-[#3a6ea5]">
         <p className="text-[18px] font-medium text-[#004e98] capitalize leading-relaxed">
-          resorts in {title}
+          resorts in {title} {(local !== "" && `(${local})`) || ""}
         </p>
       </div>
 

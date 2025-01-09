@@ -1,10 +1,12 @@
 import { BlurImage } from "@/components/ui/BluerImage";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
 import React from "react";
 
 const Container = dynamic(() => import("@/components/shared/Container"));
 
 function Tab3() {
+  const router = useRouter();
   return (
     <Container className="mt-[3%]">
       <BlurImage
@@ -21,7 +23,10 @@ function Tab3() {
         <h3 className="my-4 text-center text-amber-400 drop-shadow-sm">
           Plan ahead by making your payment in advance.
         </h3>
-        <button className="py-2 px-6 text-p1-m text-amber-600 bg-amber-50 border border-amber-200 rounded-full shadow-sm active:opacity-65">
+        <button
+          onClick={() => router.push("/profile/payment")}
+          className="py-2 px-6 text-p1-m text-amber-600 bg-amber-50 border border-amber-200 rounded-full shadow-sm active:opacity-65"
+        >
           Check Upcoming Payments
         </button>
       </div>

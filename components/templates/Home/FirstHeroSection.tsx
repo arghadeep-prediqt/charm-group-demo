@@ -19,11 +19,12 @@ function FirstHeroSection() {
       <div className="pt-16 pb-2 absolute top-0 left-0 w-screen h-full bg-gradient-to-t from-black/80 to-black/30">
         <Container className="w-full h-full flex flex-col justify-center items-start gap-12">
           <h1 className={`text-[60px] font-medium text-white leading-snug`}>
-            Start your unforgettable <br /> journey with us.
+            Embark on Your <br />
+            Extraordinary Journey Today.
           </h1>
           <p className="text-[21px] text-white w-7/12 leading-relaxed">
-            Explore new destinations, join our exclusive membership, and book
-            your dream vacation now.
+            Discover breathtaking destinations, enjoy exclusive member benefits,
+            and turn your vacation dreams into reality.
           </p>
         </Container>
       </div>

@@ -3,28 +3,22 @@ import React from "react";
 
 function ProfileCard() {
   return (
-    <div className="relative h-[25vh] z-10">
+    <div className="relative flex justify-start items-center gap-x-1 border border-amber-200 px-3 rounded-xl bg-amber-50">
       <BlurImage
-        src={"/images/profile.jpg"}
+        src={""}
         alt="profile"
-        width={80}
-        height={80}
-        className="rounded-full bg-white p-1 mx-auto border-b-2 border-gray-200 hover:grayscale"
+        width={55}
+        height={55}
+        className="rounded-full bg-amber-50 p-0.5 hover:grayscale"
       />
 
-      <div className="absolute bottom-0 left-0 w-full h-[80%] pt-10 bg-gray-50 rounded-xl border-2 border-gray-200 -z-10">
-        <h4 className="mt-2 text-[21px] text-center text-primary-600 leading-relaxed">
+      <div className="w-full ps-4 py-2">
+        <p className="text-p1-b text-start text-primary-600 leading-relaxed line-clamp-1">
           Hồng Oanh
-        </h4>
-
-        <p className="mb-4 text-p2-m text-gray-600 text-center leading-relaxed">
-          White Studio
         </p>
 
-        <hr />
-
-        <p className="mt-2.5 text-p2-b text-center text-primary-600">
-          Member ID -3060451
+        <p className="text-p3-r text-gray-600 text-start leading-relaxed">
+          White Studio
         </p>
       </div>
     </div>

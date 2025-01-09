@@ -9,9 +9,9 @@ const Tab3 = dynamic(() => import("@/components/layouts/Home/Tab3"));
 function TabSection() {
   const [current, setCurrent] = useState<number>(0);
   const tabCategories = [
-    { name: "Recommended", component: <Tab1 /> },
-    { name: "upcoming bookings", component: <Tab2 /> },
-    { name: "payment status", component: <Tab3 /> },
+    { name: "Featured Escapes", component: <Tab1 /> },
+    { name: "Featured Escapes", component: <Tab2 /> },
+    { name: "Manage Payments", component: <Tab3 /> },
   ];
 
   const increment = useCallback(() => {

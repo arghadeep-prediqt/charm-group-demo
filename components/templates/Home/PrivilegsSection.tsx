@@ -60,9 +60,10 @@ function PrivilegsSection() {
     <section className="w-full bg-orange-100 mt-[5%] mb-[2%] pb-[3%]">
       <Container className="py-2">
         <div className="mt-[3%]">
-          <h1 className="text-[46px] leading-relaxed">Privileges</h1>
+          <h1 className="text-[46px] leading-relaxed">Tailored Experiences</h1>
           <p className="text-p1-m text-gray-500 leading-relaxed">
-            Enjoy exclusive membership benefits curated just for you
+            Relish the curated advantages that make your membership truly
+            extraordinary.
           </p>
         </div>
 

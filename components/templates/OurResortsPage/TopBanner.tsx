@@ -8,10 +8,9 @@ interface PageProps {
   title: string;
   subTitle?: string;
   photo: string;
-  isButton?: boolean;
 }
 
-function TopBanner({ photo, title, subTitle, isButton = false }: PageProps) {
+function TopBanner({ photo, title, subTitle }: PageProps) {
   return (
     <div className="relative mb-6">
       <BlurImage
@@ -21,24 +20,18 @@ function TopBanner({ photo, title, subTitle, isButton = false }: PageProps) {
         height={1080}
         className="w-full h-[50vh] object-cover object-center -z-10"
       />
-      <Container
-        className={`pb-4 px-[5%] ${
-          isButton ? "pt-14" : "pt-4"
-        } absolute w-full h-full  top-0 left-0 bg-gradient-to-r from-black/70 to-black/20 z-10 flex flex-col justify-center items-start`}
-      >
-        <h1 className="text-white text-[40px] font-medium leading-relaxed">
-          {title}
-        </h1>
-        <p className="mt-1 text-white text-[18px] w-6/12 leading-relaxed">
-          {subTitle}
-        </p>
-
-        {isButton && (
-          <p className="bg-[#b0d23db3] mt-[6%] leading-relaxed px-6 py-2 rounded-lg text-[23px] font-medium text-white">
-            0 Days Available
+      <div className="absolute w-full h-full  top-0 left-0 bg-gradient-to-r from-black/70 to-black/20 z-10">
+        <Container
+          className={`pb-4 px-[5%] pt-4 w-full h-full flex flex-col justify-center items-start`}
+        >
+          <h1 className="text-white text-[40px] font-medium leading-relaxed">
+            {title}
+          </h1>
+          <p className="mt-1 text-white text-[18px] w-6/12 leading-relaxed">
+            {subTitle}
           </p>
-        )}
-      </Container>
+        </Container>
+      </div>
     </div>
   );
 }

@@ -27,5 +27,6 @@ export interface DistrictResorts {
 // Interface for regions like "North", "South", etc.
 export interface ResortsData {
   title: string;
+  local: string;
   data: DistrictResorts[];
 }

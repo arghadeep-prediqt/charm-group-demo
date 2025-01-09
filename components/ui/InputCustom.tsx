@@ -1,7 +1,7 @@
 import React from "react";
 
 interface InputCustomProps {
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   label: string;
   name?: string;
   type?: React.HTMLInputTypeAttribute;
@@ -28,7 +28,7 @@ function InputCustom({
       className={` 
       ${isBorder ? "border" : "border-none"} 
       ${isAutoWidth ? "w-full" : "w-fit"} 
-      border-[#2F80ED] p-3 flex items-center gap-x-2 bg-transparent rounded-lg`}
+      border-[#ffd500] p-3 flex items-center gap-x-2 bg-transparent rounded-lg`}
     >
       {icon}
       <input

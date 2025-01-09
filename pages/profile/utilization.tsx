@@ -4,68 +4,18 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from "@headlessui/react";
-import { Calendar, ChevronDown, Download, Printer } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import dynamic from "next/dynamic";
-import { useRouter } from "next/router";
 import React from "react";
 
 const Container = dynamic(() => import("@/components/shared/Container"));
 const NavContainer = dynamic(() => import("@/components/shared/NavContainer"));
 
 function UtilizationPage() {
-  const router = useRouter();
   return (
     <NavContainer>
-      <div className="bg-gray-100">
-        <div className="pb-3 flex justify-start items-start">
-          <div className="w-6/12 px-20 bg-white rounded-tr-2xl rounded-br-2xl">
-            <BlurImage
-              src="/member/member1.png"
-              alt="membership"
-              width={400}
-              height={600}
-              className="mt-[10%] w-[320px] h-full mx-auto object-contain"
-            />
-            <BlurImage
-              src="/member/member2.png"
-              alt="membership"
-              width={400}
-              height={600}
-              className="mt-[5%] w-[320px] h-full mx-auto object-contain"
-            />
-            <button
-              onClick={() => router.push("/session_chart")}
-              className="my-[5%] mx-auto w-7/12 flex justify-center items-center gap-x-3 text-sky-500 border border-sky-500 bg-white px-6 py-2.5 rounded-xl active:opacity-65"
-            >
-              <Calendar className="size-4" />
-              <p className="text-p2-r">View Season Details</p>
-            </button>
-          </div>
-          <div className="w-6/12 ps-16 pe-24">
-            <div className="mt-[5%] flex justify-between items-start">
-              <div className="capitalize">
-                <p className="text-p2-m leading-relaxed">
-                  Usage Summary (in days)
-                </p>
-                <p className="text-p3-r leading-relaxed italic">
-                  Maximum Balance*
-                </p>
-              </div>
-
-              <div className="flex justify-start items-center gap-x-4">
-                <p className="text-p2-m leading-relaxed">All Details</p>
-                <button className="active:opacity-65 border-none focus:outline-none">
-                  <Download className="size-5" />
-                </button>
-                <button className="active:opacity-65 border-none focus:outline-none">
-                  <Printer className="size-5" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <Container className="w-10/12 mt-[5%] py-10 bg-white rounded-2xl">
+      <div className="bg-gray-100 pt-[5%]">
+        <Container className="w-10/12 py-10 bg-white rounded-2xl">
           <AccordianSection />
         </Container>
 

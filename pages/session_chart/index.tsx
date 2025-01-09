@@ -28,9 +28,9 @@ function SessionChartPage() {
   return (
     <NavContainer>
       <TopBanner
-        photo="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2921&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        title="Session Chart"
-        subTitle="For Plan your Holidays with us."
+        photo="https://images.unsplash.com/photo-1516700675895-b2e35cae333c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        title="Plan Your Vacation by Season"
+        subTitle="Tailor your holidays to the perfect time of year with our seasonal availability chart."
       />
       <Container className="py-2">
         <div className="my-5 flex justify-start items-center gap-x-[2%]">
@@ -70,11 +70,11 @@ function SessionChartPage() {
         <React.Fragment key={id}>
           <div className="bg-yellow-100 py-2 px-8 my-6 flex justify-start items-center gap-x-4">
             <BlurImage
-              src="https://img.icons8.com/external-bearicons-gradient-bearicons/100/000000/external-Resort-location-bearicons-gradient-bearicons.png"
+              src="https://img.icons8.com/external-bearicons-glyph-bearicons/100/00509d/external-Resort-location-bearicons-glyph-bearicons.png"
               alt="green star"
               width={50}
               height={50}
-              className="size-8 object-contain"
+              className="size-6 object-contain"
             />
             <h4 className="text-primary-600 leading-relaxed">{item}</h4>
           </div>

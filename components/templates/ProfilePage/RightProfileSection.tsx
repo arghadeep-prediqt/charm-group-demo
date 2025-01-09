@@ -1,15 +1,8 @@
 import { Calendar, ChevronRight, Coins, TentTree } from "lucide-react";
-import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import React from "react";
 
-const FaqAccordian = dynamic(
-  () => import("@/components/shared/ProfilePage/FaqAccordian")
-);
-
 function RightProfileSection() {
-  const router = useRouter();
-
   return (
     <>
       <div className="p-3 flex flex-col gap-5">
@@ -28,20 +21,6 @@ function RightProfileSection() {
           link="/my_bookings"
           name="My Holidays"
         />
-      </div>
-
-      <div className="p-3 flex justify-between items-end">
-        <p className="text-p1-b">FAQs</p>
-        <button
-          onClick={() => router.push("/faqs")}
-          className="text-sky-500 text-p3-m hover:underline hover:underline-offset-1"
-        >
-          View All FAQs
-        </button>
-      </div>
-
-      <div className="py-2 px-4 overflow-auto scrollbarY h-[50vh]">
-        <FaqAccordian />
       </div>
     </>
   );

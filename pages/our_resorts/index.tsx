@@ -31,9 +31,9 @@ function OurResortsPage() {
   return (
     <NavContainer>
       <TopBanner
-        photo="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=2939&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        title="Our Resorts"
-        subTitle="Check out some of the hottest deals on our Resorts personalised for you."
+        photo="https://images.unsplash.com/photo-1521019795854-14e15f600980?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        title="Resorts Across Horizons"
+        subTitle="Experience the diverse charm of Vietnam’s regions and indulge in our exclusive international destinations."
       />
       <Container className="py-2">
         <FilterRow />
