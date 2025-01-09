@@ -71,8 +71,7 @@ export const navigationProfile = [
     content: [
       { name: "Upcoming", link: "#upcoming" },
       { name: "Ongoing", link: "#ongoing" },
-      { name: "Blocked", link: "#blocked" },
-      { name: "Completed", link: "#completd" },
+      { name: "Completed", link: "#completed" },
       { name: "Cancelled", link: "#cancelled" },
     ],
   },

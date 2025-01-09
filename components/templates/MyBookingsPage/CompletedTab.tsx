@@ -12,7 +12,7 @@ function CompletedTab() {
         <h3 className="ps-6 font-medium">Completed</h3>
       </div>
 
-      <NoEvents />
+      <NoEvents title="Thank you for traveling with us! Relive your cherished memories and start planning your next adventure." />
     </div>
   );
 }

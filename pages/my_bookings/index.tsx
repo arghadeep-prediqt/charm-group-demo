@@ -1,9 +1,6 @@
 import dynamic from "next/dynamic";
 import React from "react";
 
-const BlockedTab = dynamic(
-  () => import("@/components/templates/MyBookingsPage/BlockedTab")
-);
 const CancelledTab = dynamic(
   () => import("@/components/templates/MyBookingsPage/CancelledTab")
 );
@@ -29,7 +26,6 @@ function MyBookings() {
   const tabCategories = [
     { name: "Upcoming", component: <UpcomingTab /> },
     { name: "Ongoing", component: <OngoingTab /> },
-    { name: "Blocked", component: <BlockedTab /> },
     { name: "Completed", component: <CompletedTab /> },
     { name: "Cancelled", component: <CancelledTab /> },
   ];

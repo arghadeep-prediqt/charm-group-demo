@@ -12,7 +12,7 @@ function CancelledTab() {
         <h3 className="ps-6 font-medium">Completed</h3>
       </div>
 
-      <NoEvents />
+      <NoEvents title="For every cancelled plan, a better adventure awaits. Let’s craft your next getaway." />
     </div>
   );
 }

@@ -12,7 +12,7 @@ function OngoingTab() {
         <h3 className="ps-6 font-medium">Ongoing</h3>
       </div>
 
-      <NoEvents />
+      <NoEvents title="Enjoy every moment of your ongoing journey with exclusive perks and experiences." />
     </div>
   );
 }
