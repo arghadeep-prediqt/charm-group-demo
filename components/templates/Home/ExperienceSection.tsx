@@ -18,45 +18,57 @@ type Experience = {
 const experiences: Experience[] = [
   {
     id: 0,
-    title: "Pool Party",
+    title: "Hiking & Trekking",
     image:
-      "https://common-booking-engine.gumlet.io/cmsimages/experience/12D 2.jpg",
+      "https://images.unsplash.com/photo-1484264883846-eb04404af310?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 1,
-    title: "Pot Painting",
+    title: "Snorkeling",
     image:
-      "https://common-booking-engine.gumlet.io/cmsimages/experience/Dance-Workshop.jpg",
+      "https://images.unsplash.com/photo-1708487864802-a85aa984c93a?q=80&w=1929&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 2,
-    title: "T-Shirt Painting",
+    title: "Safari",
     image:
-      "https://common-booking-engine.gumlet.io/cmsimages/experience/Fun-Science.jpg",
+      "https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=2068&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 3,
-    title: "Beach Cycling",
+    title: "Zip Lining",
     image:
-      "https://common-booking-engine.gumlet.io/cmsimages/experience/Puppet-Show.jpg",
+      "https://images.unsplash.com/photo-1648853070657-6d58398bee93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 4,
-    title: "DJ Sessions",
+    title: "Historical Tours ",
     image:
-      "https://common-booking-engine.gumlet.io/cmsimages/experience/Village-Tour.jpg",
+      "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 5,
-    title: "Hand Casting",
+    title: "Heritage Villages",
     image:
-      "https://common-booking-engine.gumlet.io/cmsimages/experience/Karol-Ka-Tibba-Trekking.jpg",
+      "https://images.unsplash.com/photo-1706612625425-3f14f487e548?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 6,
-    title: "Karaoke Sessions",
+    title: "Spa & Wellness Retreats",
     image:
-      "https://common-booking-engine.gumlet.io/cmsimages/experience/Pine-cone-painting-1.jpg?q=75",
+      "https://images.unsplash.com/photo-1491510736257-3ad769ff47b6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    id: 7,
+    title: "Yacht Cruises",
+    image:
+      "https://images.unsplash.com/photo-1598695643539-f47d01094dee?q=80&w=2115&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    id: 8,
+    title: "Hot Air Ballooning",
+    image:
+      "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -65,7 +77,11 @@ const ExperienceSection: React.FC = () => {
     <React.Fragment>
       {/* Header */}
       <Container className="py-2 mt-3">
-        <h1 className="text-[40px] leading-relaxed">Experiences</h1>
+        <h1 className="text-[40px] leading-relaxed">Craft Your Memories</h1>
+        <p className="text-p1-m text-gray-500 leading-relaxed">
+          Indulge in hands-on activities and delightful moments with family and
+          friends.
+        </p>
       </Container>
 
       <Container className="">

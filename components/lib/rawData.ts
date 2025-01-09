@@ -53,9 +53,58 @@ export const resortImage: CurrentSectionProps[] = [
   },
 ];
 
+export const navigationProfile = [
+  {
+    name: "My Profile",
+    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1671029143-my-profile.svg",
+    link: "/profile",
+    content: [
+      { name: "Basic Information", link: "#info" },
+      { name: "Sign in method", link: "#signin" },
+      { name: "Connected Accounts", link: "#connected" },
+    ],
+  },
+  {
+    name: "My Holidays",
+    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1671029174-booking.svg",
+    link: "/my_bookings",
+    content: [
+      { name: "Upcoming", link: "#upcoming" },
+      { name: "Ongoing", link: "#ongoing" },
+      { name: "Blocked", link: "#blocked" },
+      { name: "Completed", link: "#completd" },
+      { name: "Cancelled", link: "#cancelled" },
+    ],
+  },
+  {
+    name: "Payment Details",
+    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1671029193-payment-wallet.svg",
+    link: "/profile/payment",
+    content: [{ name: "Payment Details", link: "#payment" }],
+  },
+  {
+    name: "Membership Upgrade",
+    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1671029219-membership.svg",
+    link: "/membership",
+    content: [],
+  },
+  {
+    name: "Holidays Utilization",
+    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1671029272-calendar.svg",
+    link: "/profile/utilization",
+    content: [],
+  },
+  {
+    name: "Membership Transfer",
+    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1715671453-1671029219live-membership.svg",
+    link: "/membership/transfer",
+    content: [],
+  },
+];
+
 export const privilegesSideNav = [
   {
-    section: "curated experiences",
+    section: "Signature Experiences",
     check: [
       "weekend escapes",
       "holidays plans",
@@ -172,6 +221,7 @@ export const thirdFilter: SelectedProps[] = [
 export const allResortsData: ResortsData[] = [
   {
     title: "Northern Vietnam",
+    local: "Bắc Bộ",
     data: [
       {
         district: "Đông Bắc",
@@ -246,6 +296,7 @@ export const allResortsData: ResortsData[] = [
   },
   {
     title: "Central Vietnam",
+    local: "Trung Bộ",
     data: [
       {
         district: "Bắc Trung Bộ",
@@ -332,6 +383,7 @@ export const allResortsData: ResortsData[] = [
   },
   {
     title: "Southern Vietnam",
+    local: "Nam Bộ ",
     data: [
       {
         district: "Đông Nam Bộ",
@@ -391,6 +443,7 @@ export const allResortsData: ResortsData[] = [
   },
   {
     title: "International",
+    local: "",
     data: [
       {
         district: "Bali, Indonesia",
@@ -1041,7 +1094,7 @@ export const itineraryMenuItems: MenuItemProps[] = [
     link: "/pathfinder",
   },
   {
-    title: "Season Chart",
+    title: "Seasonal Calendar",
     icon: "https://img.icons8.com/ios-filled/100/00509d/wintertime.png",
     link: "/session_chart",
   },
@@ -1073,12 +1126,12 @@ export const ourResortMenuItems: MenuItemProps[] = [
 export const privilegesMenuItems: MenuItemProps[] = [
   {
     title: "Weekend Escapes",
-    icon: "https://img.icons8.com/external-ddara-lineal-ddara/100/00509d/external-Bag-pack-gaming-gambling-ddara-lineal-ddara.png",
+    icon: "https://img.icons8.com/ios-filled/100/00509d/expedition-backpack.png",
     link: "/privilegs?section=weekend%20escapes",
   },
   {
     title: "Holidays Plans",
-    icon: "https://img.icons8.com/wired/100/00509d/beach-umbrella--v2.png",
+    icon: "https://img.icons8.com/fluency-systems-filled/100/00509d/sunbathe.png",
     link: "/privilegs?section=holidays%20plans",
   },
   {
@@ -1088,7 +1141,7 @@ export const privilegesMenuItems: MenuItemProps[] = [
   },
   {
     title: "Global Hotel Network",
-    icon: "https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/100/00509d/external-global-business-and-management-kiranshastry-lineal-kiranshastry.png",
+    icon: "https://img.icons8.com/fluency-systems-filled/100/00509d/worldwide-location.png",
     link: "/privilegs?section=global%20hotel%20network",
   },
   {

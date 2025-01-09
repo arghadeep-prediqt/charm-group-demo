@@ -15,15 +15,17 @@ function Resorts() {
       {/* Header */}
       <div className="flex justify-between items-end">
         <div className="w-10/12">
-          <h1 className="text-[40px] leading-relaxed">Resorts for you</h1>
+          <h1 className="text-[40px] leading-relaxed">Handpicked Getaways</h1>
           <p className="text-[18px] text-gray-700">
-            Explore our premium properties located at some of the most
-            picturesque locations across the world
+            Discover handpicked resorts set in stunning locations, designed to
+            make your getaways unforgettable.
           </p>
         </div>
         <div className="w-2/12 flex justify-end items-center">
           <button
-            onClick={() => router.push("/resort_collection")}
+            onClick={() =>
+              router.push("/resort_collection?section=unexplored%20paradises")
+            }
             className="text-amber-600 text-[18px] font-semibold capitalize hover:underline hover:underline-offset-2"
           >
             view all
@@ -77,7 +79,7 @@ function Resorts() {
           className="flex items-center gap-x-2 border-shy-400 text-amber-600 text-p1-m py-2 px-4 bg-amber-50 border border-amber-200 rounded-lg shadow-sm"
         >
           <CalendarDays className="size-5 text-inherit" />
-          View Season Chart to Plan your holidays
+          Seasonal Calendar for Holiday Planning
         </button>
       </div>
     </Container>

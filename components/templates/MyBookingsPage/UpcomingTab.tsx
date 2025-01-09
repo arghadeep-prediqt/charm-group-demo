@@ -1,19 +1,15 @@
 import { mockCarouselData, travelDiaries } from "@/components/lib/rawData";
 import { BlurImage } from "@/components/ui/BluerImage";
-import { EllipsisVertical } from "lucide-react";
-import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import React from "react";
 
-const NoEvents = dynamic(() => import("./NoEvents"));
-
 function UpcomingTab() {
   return (
-    <div className="relative h-full">
+    <div id="upcoming" className="relative h-full">
       <div className="absolute top-0 left-10 w-[2px] h-full bg-gray-300"></div>
       <div className="ps-[35px] py-6 relative flex justify-start items-center">
         <div className="size-3 bg-emerald-400 rounded-full"></div>
-        <h3 className="ps-6 font-medium">Upcoming Holidays (3)</h3>
+        <h3 className="ps-6 font-medium">Upcoming</h3>
       </div>
 
       {Array(3)
@@ -26,13 +22,6 @@ function UpcomingTab() {
             />
           </div>
         ))}
-
-      <div className="ps-[35px] py-8 relative flex justify-start items-center">
-        <div className="size-3 border-2 border-emerald-400 bg-white rounded-full"></div>
-        <h3 className="ps-6 font-medium">Waitlisted Holidays</h3>
-      </div>
-
-      <NoEvents />
     </div>
   );
 }
@@ -73,7 +62,7 @@ function SingleCard({ title, photo }: SingleCardProps) {
                 height={100}
                 className="size-6 object-contain"
               />
-              <p className="text-p1-r text-gray-700">2 Adult | 0 Child</p>
+              <p className="text-p1-r text-gray-700">2 Adult</p>
             </div>
 
             <div className="flex justify-start items-center gap-x-2">
@@ -106,7 +95,7 @@ function SingleCard({ title, photo }: SingleCardProps) {
                   `/my_bookings/${title.split(" ").join("%20")}?type=view`
                 )
               }
-              className="text-p1-b text-sky-500"
+              className="text-p1-b text-amber-500"
             >
               View Booking
             </button>
@@ -117,7 +106,7 @@ function SingleCard({ title, photo }: SingleCardProps) {
                   `/my_bookings/${title.split(" ").join("%20")}?type=modify`
                 )
               }
-              className="text-p1-b ps-3 text-sky-500"
+              className="text-p1-b ps-3 text-amber-500"
             >
               Modify Booking
             </button>
@@ -126,7 +115,7 @@ function SingleCard({ title, photo }: SingleCardProps) {
 
         {/* Second Col */}
         <div className="w-4/12  flex justify-center items-center">
-          <p className="text-p1-r text-white bg-emerald-400 px-3 py-1 rounded-md">
+          <p className="text-p1-r text-white bg-[#00509da9] px-3 py-1 rounded-md">
             {"08-10 Feb'25"}
           </p>
         </div>
@@ -134,7 +123,7 @@ function SingleCard({ title, photo }: SingleCardProps) {
 
         <div className="w-3/12 pe-3">
           <div className="flex justify-between items-center">
-            <div className="flex justify-start items-center gap-x-3 py-1 ps-2 pe-4 bg-yellow-400 rounded-full">
+            <div className="flex justify-start items-center gap-x-3 py-1 ps-1 pe-4 bg-amber-300 rounded-full">
               <BlurImage
                 src="https://holidays.clubmahindra.com/images/utilised.svg"
                 alt="logo"
@@ -142,11 +131,8 @@ function SingleCard({ title, photo }: SingleCardProps) {
                 height={100}
                 className="size-6 object-contain"
               />
-              <p className="text-p2-r">2 days utilised</p>
+              <p className="text-p2-m">2 days</p>
             </div>
-            <button className="active:opacity-65">
-              <EllipsisVertical className="size-6" />
-            </button>
           </div>
         </div>
       </div>

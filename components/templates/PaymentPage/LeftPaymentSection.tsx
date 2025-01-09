@@ -1,95 +1,10 @@
+import React from "react";
 import { paymentDetails } from "@/components/lib/rawData";
-import { Download, Printer } from "lucide-react";
-import React, { useState } from "react";
 
 function LeftPaymentSection() {
-  const [selected, setSelected] = useState<number>(0);
-
   return (
-    <div className="p-6 bg-white h-full rounded-2xl">
-      {/* Header */}
-      <div className="flex justify-between items-center">
-        <h3 className="text-gray-700">Payments</h3>
-        <div className="flex justify-start items-start gap-x-6">
-          <button className="border-none active:opacity-65">
-            <Download className="size-5" />
-          </button>
-
-          <button className="border-none active:opacity-65">
-            <Printer className="size-5" />
-          </button>
-        </div>
-      </div>
-
-      <div className="mt-12 cursor-pointer flex justify-start items-start gap-x-3 divide-x divide-gray-300">
-        <div onClick={() => setSelected(0)} className=" w-3/12 ">
-          <p
-            className={selected === 0 ? "text-p2-b text-sky-400" : "text-p2-r"}
-          >
-            All Payments
-          </p>
-          <p
-            className={`pb-2 text-p1-b ${
-              selected === 0
-                ? "border-b-2 border-sky-400 text-sky-400"
-                : "border-b-2 border-white"
-            }`}
-          >
-            ₹ 0
-          </p>
-        </div>
-        <div onClick={() => setSelected(1)} className="px-4 w-3/12">
-          <p
-            className={selected === 1 ? "text-p2-b text-sky-400" : "text-p2-r"}
-          >
-            EMI
-          </p>
-          <p
-            className={`pb-2 text-p1-b ${
-              selected === 1
-                ? "border-b-2 border-sky-400 text-sky-400"
-                : "border-b-2 border-white"
-            }`}
-          >
-            ₹ 0
-          </p>
-        </div>
-        <div onClick={() => setSelected(2)} className="px-4 w-3/12">
-          <p
-            className={selected === 2 ? "text-p2-b text-sky-400" : "text-p2-r"}
-          >
-            ASF
-          </p>
-          <p
-            className={`pb-2 text-p1-b ${
-              selected === 2
-                ? "border-b-2 border-sky-400 text-sky-400"
-                : "border-b-2 border-white"
-            }`}
-          >
-            ₹ 0
-          </p>
-        </div>
-        <div onClick={() => setSelected(3)} className="px-4 w-3/12">
-          <p
-            className={selected === 3 ? "text-p2-b text-sky-400" : "text-p2-r"}
-          >
-            Other Payments
-          </p>
-          <p
-            className={`pb-2 text-p1-b ${
-              selected === 3
-                ? "border-b-2 border-sky-400 text-sky-400"
-                : "border-b-2 border-white"
-            }`}
-          >
-            ₹ 0
-          </p>
-        </div>
-      </div>
-      {/* Body */}
+    <>
       <TableHeader />
-
       <div className="h-[72vh] overflow-auto scrollbarY flex flex-col divide-y">
         {paymentDetails?.map((item, id) => (
           <RowTable
@@ -101,7 +16,7 @@ function LeftPaymentSection() {
           />
         ))}
       </div>
-    </div>
+    </>
   );
 }
 
@@ -112,16 +27,16 @@ function TableHeader() {
     <div className="mt-6 flex justify-start items-start">
       <div className="w-[60%] flex justify-start items-center gap-x-2">
         <input type="checkbox" />
-        <p className="text-p3-b">Payment details</p>
+        <p className="text-p2-b text-gray-600">Payment details</p>
       </div>
       <div className="w-[13%]">
-        <p className="text-p3-b text-center">Status</p>
+        <p className="text-p2-b text-gray-600 text-center">Status</p>
       </div>
       <div className="w-[13%]">
-        <p className="text-p3-b text-center">Action</p>
+        <p className="text-p2-b text-gray-600 text-center">Action</p>
       </div>
       <div className="w-[13%]">
-        <p className="text-p3-b text-center">Amount</p>
+        <p className="text-p2-b text-gray-600 text-center">Amount</p>
       </div>
     </div>
   );
@@ -153,7 +68,7 @@ function RowTable({ dueDate, amount, status, title }: RowTableInterface) {
         </div>
       </div>
       <div className="w-[13%] flex justify-center items-center">
-        <p className="uppercase w-fit px-2 text-[10px] font-semibold rounded-md border border-emerald-400 text-emerald-500 bg-emerald-50">
+        <p className="uppercase w-fit px-2 text-[10px] font-semibold rounded-md border border-amber-400 text-amber-500 bg-amber-50">
           {status}
         </p>
       </div>

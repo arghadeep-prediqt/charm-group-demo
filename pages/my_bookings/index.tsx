@@ -1,4 +1,3 @@
-import { TabGroup, TabList, Tab, TabPanels, TabPanel } from "@headlessui/react";
 import dynamic from "next/dynamic";
 import React from "react";
 
@@ -21,7 +20,10 @@ const TopBanner = dynamic(
   () => import("@/components/templates/OurResortsPage/TopBanner")
 );
 const NavContainer = dynamic(() => import("@/components/shared/NavContainer"));
-const Container = dynamic(() => import("@/components/shared/Container"));
+
+const LeftSideNav = dynamic(
+  () => import("@/components/shared/ProfilePage/LeftSideNav")
+);
 
 function MyBookings() {
   const tabCategories = [
@@ -35,30 +37,21 @@ function MyBookings() {
   return (
     <NavContainer>
       <TopBanner
-        isButton={true}
-        title="My Holidays"
-        photo="https://common-booking-engine.gumlet.io/cmsimages/banners/all-resort-banner.jpg"
-        subTitle="View your upcoming, ongoing and past holidays, modify bookings, find pre-book offers and cancellation options."
+        photo="https://images.unsplash.com/photo-1529316275402-0462fcc4abd6?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        title="Your Holiday Dashboard"
+        subTitle="Access your upcoming, ongoing, and past holidays. Manage bookings, explore exclusive offers, or check cancellation policies with ease."
       />
-      <Container className="py-2">
-        <TabGroup>
-          <TabList className="flex justify-start items-end gap-4 border-b">
-            {tabCategories?.map((item, id) => (
-              <Tab
-                key={id}
-                className="px-4 py-2 text-p1-m text-gray-700 leading-relaxed text-pretty capitalize data-[selected]:border-b-[3px] border-sky-300 focus:outline-none data-[selected]:text-sky-500"
-              >
-                {item.name}
-              </Tab>
-            ))}
-          </TabList>
-          <TabPanels>
-            {tabCategories?.map((item, id) => (
-              <TabPanel key={id}>{item.component}</TabPanel>
-            ))}
-          </TabPanels>
-        </TabGroup>
-      </Container>
+      <div className="px-4 relative flex justify-start items-start">
+        <div className="w-[20vw] p-4 sticky top-14">
+          <LeftSideNav />
+        </div>
+
+        <div className="pe-6 pt-6 ps-12 w-[80vw]">
+          {tabCategories?.map((item, id) => (
+            <React.Fragment key={id}>{item.component}</React.Fragment>
+          ))}
+        </div>
+      </div>
     </NavContainer>
   );
 }

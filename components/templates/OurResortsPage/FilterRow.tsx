@@ -29,7 +29,7 @@ function FilterRow() {
         className="py-2 px-4 text-p2-m text-amber-600 bg-amber-50 flex justify-start items-center gap-x-2 hover:underline hover:underline-offset-1 active:opacity-65 rounded-lg border border-amber-200 shadow-sm"
       >
         <Calendar className="size-4 text-amber-600" />
-        View Season Chart
+        Seasonal Calendar
       </button>
     </div>
   );

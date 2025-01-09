@@ -27,9 +27,9 @@ function TravelDiaries() {
   return (
     <Container className="mt-[5%] mb-[2%] py-2">
       {/* Header */}
-      <h1 className="text-[40px] leading-relaxed">Travel Diaries</h1>
+      <h1 className="text-[40px] leading-relaxed">Vacation Tales</h1>
       <p className="text-[18px] text-gray-700">
-        Read great vacation stories from our Members
+        Discover heartfelt stories shared by our valued members.
       </p>
 
       <div className="my-[3%] h-[450px] relative travel_section">

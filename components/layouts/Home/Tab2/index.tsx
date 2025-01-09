@@ -1,10 +1,13 @@
 import { BlurImage } from "@/components/ui/BluerImage";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
 import React from "react";
 
 const Container = dynamic(() => import("@/components/shared/Container"));
 
 function Tab2() {
+  const router = useRouter();
+
   return (
     <Container className="mt-[3%]">
       <BlurImage
@@ -21,7 +24,10 @@ function Tab2() {
         <h3 className="text-center text-amber-400 drop-shadow-sm leading-relaxed">
           Start exploring and book your next vacation today!
         </h3>
-        <button className="mt-4 py-2 px-6 text-p1-m text-amber-600 bg-amber-50 border border-amber-200 rounded-full shadow-sm active:opacity-65">
+        <button
+          onClick={() => router.push("/our_resorts")}
+          className="mt-4 py-2 px-6 text-p1-m text-amber-600 bg-amber-50 border border-amber-200 rounded-full shadow-sm active:opacity-65"
+        >
           Browse Resorts
         </button>
       </div>

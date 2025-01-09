@@ -23,6 +23,7 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     "/",
+    "/faqs",
     "/auth",
     "/profile",
     "/profile/:path*",

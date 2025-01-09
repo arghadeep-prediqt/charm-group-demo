@@ -1,3 +1,4 @@
+import { navigationProfile } from "@/components/lib/rawData";
 import { BlurImage } from "@/components/ui/BluerImage";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { deleteCookie } from "cookies-next";
@@ -12,44 +13,6 @@ const poppins = Poppins({
   subsets: ["latin", "latin-ext"],
   display: "swap",
 });
-
-const navigationProfile = [
-  {
-    name: "My Profile",
-    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1671029143-my-profile.svg",
-    link: "/profile",
-  },
-  {
-    name: "My Holidays",
-    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1671029174-booking.svg",
-    link: "/my_bookings",
-  },
-  {
-    name: "Payment Details",
-    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1671029193-payment-wallet.svg",
-    link: "/profile/payment",
-  },
-  {
-    name: "Membership Upgrade",
-    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1671029219-membership.svg",
-    link: "/membership",
-  },
-  {
-    name: "Holidays Utilization",
-    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1671029272-calendar.svg",
-    link: "/profile/utilization",
-  },
-  {
-    name: "Membership Transfer",
-    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1715671453-1671029219live-membership.svg",
-    link: "/membership/transfer",
-  },
-  {
-    name: "Membership E-kit",
-    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1715671453-1671029219live-membership.svg",
-    link: "/membership/ekit",
-  },
-];
 
 function ProfileBtn() {
   const router = useRouter();
