@@ -10,7 +10,7 @@ function TabSection() {
   const [current, setCurrent] = useState<number>(0);
   const tabCategories = [
     { name: "Featured Escapes", component: <Tab1 /> },
-    { name: "Featured Escapes", component: <Tab2 /> },
+    { name: "Planned Getaways", component: <Tab2 /> },
     { name: "Manage Payments", component: <Tab3 /> },
   ];
 
