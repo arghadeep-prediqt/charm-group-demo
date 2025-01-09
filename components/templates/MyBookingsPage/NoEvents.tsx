@@ -2,7 +2,11 @@ import { BlurImage } from "@/components/ui/BluerImage";
 import { useRouter } from "next/router";
 import React from "react";
 
-function NoEvents() {
+interface PageProps {
+  title: string;
+}
+
+function NoEvents({ title }: PageProps) {
   const router = useRouter();
 
   return (
@@ -15,9 +19,7 @@ function NoEvents() {
         className="w-[480px] drop-shadow-md h-full object-cover mx-auto"
       />
 
-      <p className="text-p1-r text-center mt-4">
-        We are excited to help you plan your next Magical Holiday
-      </p>
+      <p className="text-p1-r text-center mt-4">{title}</p>
 
       <div className="flex justify-center items-center mt-5">
         <button
