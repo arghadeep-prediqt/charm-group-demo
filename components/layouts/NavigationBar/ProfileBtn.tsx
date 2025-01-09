@@ -70,7 +70,9 @@ function ProfileBtn() {
             className="w-full flex justify-start items-center gap-x-2 px-4 py-2 border-none focus:outline-none text-start text-p2-m text-gray-700 data-[focus]:bg-gray-100 disabled:opacity-65"
           >
             <BlurImage
-              src={"https://holidays.clubmahindra.com/images/header/logout.svg"}
+              src={
+                "https://img.icons8.com/fluency-systems-filled/100/faa307/exit.png"
+              }
               alt="logout"
               height={50}
               width={50}

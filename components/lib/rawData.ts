@@ -56,7 +56,7 @@ export const resortImage: CurrentSectionProps[] = [
 export const navigationProfile = [
   {
     name: "My Profile",
-    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1671029143-my-profile.svg",
+    icon: "https://img.icons8.com/fluency-systems-filled/100/faa307/user.png",
     link: "/profile",
     content: [
       { name: "Basic Information", link: "#info" },
@@ -66,7 +66,7 @@ export const navigationProfile = [
   },
   {
     name: "My Holidays",
-    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1671029174-booking.svg",
+    icon: "https://img.icons8.com/fluency-systems-filled/100/faa307/beach-umbrella.png",
     link: "/my_bookings",
     content: [
       { name: "Upcoming", link: "#upcoming" },
@@ -77,25 +77,25 @@ export const navigationProfile = [
   },
   {
     name: "Payment Details",
-    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1671029193-payment-wallet.svg",
+    icon: "https://img.icons8.com/fluency-systems-filled/100/faa307/card-in-use.png",
     link: "/profile/payment",
     content: [{ name: "Payment Details", link: "#payment" }],
   },
   {
     name: "Membership Upgrade",
-    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1671029219-membership.svg",
+    icon: "https://img.icons8.com/fluency-systems-filled/100/faa307/membership-card.png",
     link: "/membership",
     content: [],
   },
   {
     name: "Holidays Utilization",
-    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1671029272-calendar.svg",
+    icon: "https://img.icons8.com/fluency-systems-filled/100/faa307/overtime.png",
     link: "/profile/utilization",
     content: [],
   },
   {
     name: "Membership Transfer",
-    icon: "https://common-booking-engine.gumlet.io/cmsimages/menu/1715671453-1671029219live-membership.svg",
+    icon: "https://img.icons8.com/fluency-systems-filled/100/faa307/membership-card.png",
     link: "/membership/transfer",
     content: [],
   },
