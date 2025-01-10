@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import { useRouter } from "next/router";
 import React from "react";
 
 const MemberDropdown = dynamic(() => import("@/components/ui/MemberDropdown"));
@@ -12,22 +11,14 @@ const TabCalendar = dynamic(
 );
 
 function ModifyRightView() {
-  const route = useRouter();
-
   return (
-    <div className="w-[70%] p-6 bg-white rounded-2xl">
+    <div className="w-[70%] p-6 border border-gray-200 shadow-sm rounded-2xl">
       {/* Modify Booking Services */}
-      <div className="mt-6 mb-3 flex justify-between items-center">
-        <h4 className="leading-relaxed">Modify Booking</h4>
-        <button
-          onClick={() => route.push("/my_bookings")}
-          className="text-p2-m text-amber-600 underline-offset-2 hover:underline"
-        >
-          Back to My Stays
-        </button>
-      </div>
+      <h3 className="pb-3 text-[22px] leading-tight capitalize border-b border-gray-400">
+        Modify Booking
+      </h3>
 
-      <div className="border-b border-gray-300 pb-6 mb-6 flex justify-between items-center gap-x-10">
+      <div className="pb-6 my-6 flex justify-between items-center gap-x-10">
         <div className="w-6/12 flex items-center justify-start gap-x-2">
           <p className="text-p2-r w-3/12">Who all are travelling</p>
           <div className="w-9/12">
@@ -43,6 +34,9 @@ function ModifyRightView() {
         </div>
       </div>
 
+      <h3 className="pb-3 text-[22px] leading-tight capitalize border-b border-gray-400">
+        Booking Calender
+      </h3>
       <TabCalendar />
     </div>
   );

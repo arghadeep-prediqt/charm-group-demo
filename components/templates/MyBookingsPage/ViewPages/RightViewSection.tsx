@@ -1,38 +1,70 @@
-import { aminitiesData } from "@/components/lib/rawData";
+import { aminitiesData, experiences } from "@/components/lib/rawData";
 import { BlurImage } from "@/components/ui/BluerImage";
-import { Check, Info } from "lucide-react";
-import React from "react";
+import dynamic from "next/dynamic";
+import React, { useState } from "react";
+
+const SideDrawer = dynamic(() => import("@/components/ui/SideDrawer"));
 
 function RightViewSection() {
+  const [isDrawerOpen, setDrawerOpen] = useState<boolean>(false);
+
+  const toggleDrawer = () => {
+    setDrawerOpen((prev) => !prev);
+  };
+
   return (
-    <div className="w-[70%] p-6 bg-white rounded-2xl">
+    <div className="w-[70%] p-6 border border-gray-200 shadow-sm rounded-2xl">
+      <h3 className="pb-3 text-[22px] leading-tight capitalize border-b border-gray-400">
+        Your Stay Overview
+      </h3>
       <Heading />
 
       {/* Additional Services */}
-      <div className="mt-6 mb-3 flex justify-between items-center">
-        <h4 className="font-medium leading-relaxed">Additional Services</h4>
-      </div>
+      <div className="flex justify-between items-end mt-10 mb-3 pb-3 border-b border-gray-400">
+        <h3 className="text-[22px] leading-tight capitalize">
+          Explore Your Itinerary
+        </h3>
 
+        <button
+          onClick={() => setDrawerOpen(true)}
+          className="text-white text-p2-m bg-[#00509df9] py-1.5 px-4 rounded-lg active:opacity-65"
+        >
+          Add Activity
+        </button>
+      </div>
       <AdditionalServices />
 
-      {/* Amenities Services */}
-      <div className="mt-6 mb-3 flex justify-between items-center">
-        <h4 className="font-medium leading-relaxed">Amenities</h4>
+      {/* Experience */}
+      <h3 className="mt-10 mb-3 pb-3 text-[22px] leading-tight capitalize border-b border-gray-400">
+        Enhance Your Experience
+      </h3>
+
+      <div className="w-full mt-6 px-10 flex justify-between items-center">
+        {experienceService?.map((photo, id) => (
+          <BlurImage
+            key={id}
+            src={photo}
+            alt={`Image ${id}`}
+            width={100}
+            height={100}
+            className="w-24 object-cover"
+          />
+        ))}
       </div>
+
+      {/* Amenities Services */}
+      <h3 className="mt-10 mb-3 pb-3 text-[22px] leading-tight capitalize border-b border-gray-400">
+        Included Resort Facilities
+      </h3>
 
       <AminitiesServices />
 
-      {/* Amenities Services */}
-      <div className="mt-6 mb-3 flex justify-start items-center gap-x-2">
-        <h4 className="font-medium leading-relaxed">Travel Checklist</h4>
-        <Info className="size-5 text-amber-600" />
-      </div>
-
-      <div className="p-6 border border-gray-200 flex flex-col gap-4">
-        <ListPara para="Flip-flops. For the beach, in the shower, about the resort." />
-        <ListPara para="Don't forgot your camera - You'll have loads of photo ops on this tour, that's for sure." />
-        <ListPara para="Woolens, scarf/muffler, caps, jackets, etc." />
-      </div>
+      <SideDrawer
+        isOpen={isDrawerOpen}
+        title="Explore Our Itinerary"
+        onClose={toggleDrawer}
+        paraBody={<SingleItineraryCard setOpen={setDrawerOpen} />}
+      />
     </div>
   );
 }
@@ -41,84 +73,147 @@ export default RightViewSection;
 
 function Heading() {
   return (
-    <div className="border-b pb-3 border-gray-300 flex relative justify-between">
+    <div className="my-5 flex relative justify-between items-start">
       <div className="pe-5 z-10 bg-white">
-        <div className="text-p2-r text-gray-700 leading-relaxed ps-1">
-          Check-In
-        </div>
-        <div className="flex justify-start items-center gap-x-2">
-          <h1 className="text-[50px] text-amber-500">08</h1>
-          <div className="text-amber-500">
-            <p className="text-p1-m">Feb</p>
-            <p className="text-p1-m">Sat</p>
+        <BlurImage
+          src="https://img.icons8.com/ios-filled/100/00509d/hotel-check-in.png"
+          alt="checkin"
+          width={50}
+          height={50}
+          className="size-16"
+        />
+      </div>
+
+      <div className="mt-6 w-10/12">
+        <div className="flex justify-between items-start gap-x-[3%]">
+          <div className="w-[38%]">
+            <BlurImage
+              src="/icons/left-line.svg"
+              alt="checkin"
+              width={50}
+              height={50}
+              className="w-full h-full object-contain"
+            />
+
+            <div className="w-full mt-1 pe-2 flex justify-end items-center gap-x-4">
+              <h1 className="text-[50px] text-[#00509df9]">08</h1>
+              <div className="text-gray-500">
+                <p className="text-p1-b">February</p>
+                <p className="text-p2-m">Saturday</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-[24%] flex justify-between items-center">
+            <p className="text-p1-m text-gray-700 text-nowrap">2 Days</p>
+            <div className="size-4 rounded-full bg-gray-300">&nbsp;</div>
+            <p className="text-p1-m text-gray-700 text-nowrap">2 Adults</p>
+          </div>
+
+          <div className="w-[38%]">
+            <BlurImage
+              src="/icons/right-line.svg"
+              alt="checkin"
+              width={50}
+              height={50}
+              className="w-full h-full object-contain"
+            />
+
+            <div className="w-full  mt-1 ps-2 flex justify-start items-center gap-x-4">
+              <div className="text-gray-500">
+                <p className="text-p1-b text-end">February</p>
+                <p className="text-p2-m text-end">Monday</p>
+              </div>
+              <h1 className="text-[50px] text-[#00509df9]">10</h1>
+            </div>
           </div>
         </div>
       </div>
 
       <div className="ps-5 z-10 bg-white">
-        <div className="text-p2-r text-gray-700 leading-relaxed text-end pe-1">
-          Check-out
-        </div>
-        <div className="flex justify-start items-center gap-x-2">
-          <h1 className="text-[50px] text-amber-500">10</h1>
-          <div className="text-amber-500">
-            <p className="text-p1-m">Feb</p>
-            <p className="text-p1-m">Sat</p>
-          </div>
-        </div>
+        <BlurImage
+          src="https://img.icons8.com/ios-filled/100/00509d/hotel-chekc-out.png"
+          alt="checkin"
+          width={50}
+          height={50}
+          className="size-16"
+        />
       </div>
-
-      <div
-        className="absolute top-[50%] -translate-y-[50%] left-[50%] -translate-x-[50%] w-full h-[1px]"
-        style={{
-          backgroundImage:
-            "url('https://holidays.clubmahindra.com/images/line-dotted.png')",
-        }}
-      />
     </div>
   );
 }
 
-const data = [
-  {
-    photo:
-      "https://mobcms.clubmahindra.com/sites/default/files/special_diet_33.png",
-    title: "Special Diet",
-  },
-  {
-    photo:
-      "https://mobcms.clubmahindra.com/sites/default/files/wheel_chair_1.png",
-    title: "Wheel Chair",
-  },
-  {
-    photo:
-      "https://mobcms.clubmahindra.com/sites/default/files/special_menu_35.png",
-    title: "Special Menu",
-  },
-  {
-    photo:
-      "https://mobcms.clubmahindra.com/sites/default/files/extra_bed_1.png",
-    title: "Extra Bed",
-  },
+const experienceService = [
+  "/icons/food.svg",
+  "/icons/cook.svg",
+  "/icons/wheel_chair.svg",
+  "/icons/bed_plus.svg",
 ];
 
 function AdditionalServices() {
   return (
-    <div className="pb-3 border-b border-gray-400 flex justify-start items-center gap-x-4">
-      {data?.map((item, id) => (
-        <div key={id} className="w-3/12 relative">
-          <BlurImage
-            src={item.photo}
-            alt={item.title}
-            width={100}
-            height={100}
-            className="w-full h-[100px] object-contain mx-auto"
-          />
-          <div className="absolute top-0 left-0 w-full h-full bg-black/50 rounded-lg flex justify-start items-end px-3 py-2">
-            <p className="text-p2-r text-white">{item.title}</p>
-          </div>
-        </div>
-      ))}
+    <div className="pb-3 mt-5 flex justify-start items-center gap-x-4 overflow-auto scrollbarX">
+      {experiences?.map(
+        (item, id) =>
+          id <= 1 && (
+            <div
+              key={id}
+              className="min-w-[250px] max-w[250px] h-[150px] relative"
+            >
+              <BlurImage
+                src={item.image}
+                alt={item.title}
+                width={100}
+                height={100}
+                className="w-full h-full object-cover rounded-xl  mx-auto"
+              />
+              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/90 to-transparent rounded-xl flex justify-start items-end px-3 py-2">
+                <p className="pb-1 text-p1-b leading-relaxed text-white">
+                  {item.title}
+                </p>
+              </div>
+            </div>
+          )
+      )}
+    </div>
+  );
+}
+
+function SingleItineraryCard({
+  setOpen,
+}: {
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
+  return (
+    <div className="pb-16 flex flex-wrap justify-between items-start gap-y-6 gap-x-4">
+      {experiences?.map(
+        (item, id) =>
+          id >= 2 && (
+            <div key={id} className="w-[48%] h-[200px] relative">
+              <BlurImage
+                src={item.image}
+                alt={item.title}
+                width={200}
+                height={200}
+                className="w-full h-full object-cover bg-gray-300 rounded-xl shadow-sm"
+              />
+              <div className="p-4 absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/90 to-black/30 flex flex-col justify-between items-start rounded-xl border-2 border-gray-200 shadow-sm">
+                <button
+                  onClick={() => setOpen(false)}
+                  className="mt-1 text-p3-b leading-relaxed bg-yellow-300 py-1 px-3 active:opacity-65 rounded-md"
+                >
+                  Add Activity
+                </button>
+                <p
+                  className="text-white text-p1-b leading-relaxed line-clamp-1"
+                  style={{ textShadow: "0 3px 6px #000" }}
+                >
+                  {item.title}
+                </p>
+              </div>
+            </div>
+          )
+      )}
     </div>
   );
 }
@@ -143,15 +238,6 @@ function AminitiesServices() {
           </p>
         </div>
       ))}
-    </div>
-  );
-}
-
-function ListPara({ para }: { para: string }) {
-  return (
-    <div className="flex justify-start items-center gap-x-2">
-      <Check className="size-5 text-amber-500" />
-      <p className="text-p2-r">{para}</p>
     </div>
   );
 }
