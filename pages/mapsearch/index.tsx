@@ -18,8 +18,8 @@ function MapSearchPage() {
         ></iframe>
 
         <div className="absolute py-[3%] top-0 left-0 w-full h-full bg-black/20 flex flex-col justify-end items-center">
-          <div className="">
-            <p className="ml-[3%] mb-3 w-fit p-3 font-medium bg-white rounded-lg text-p1-m">
+          <div className="flex flex-col justify-center items-center">
+            <p className="mb-3 w-fit p-3 font-medium bg-white rounded-lg text-p1-m">
               Please search for your preferred by Resort
               Name/Terrain/Experiences
             </p>

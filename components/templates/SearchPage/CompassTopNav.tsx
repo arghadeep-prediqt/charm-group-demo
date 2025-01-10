@@ -48,7 +48,7 @@ function CompassTopNav() {
     } else if (selectedRange.startDate) {
       return `${format(selectedRange.startDate, "MMM d, yyyy")}`;
     }
-    return "When are you planning your next getaway?";
+    return "Select Your Travel Dates.";
   }, [selectedRange.endDate, selectedRange.startDate]);
 
   return (
@@ -56,9 +56,10 @@ function CompassTopNav() {
       <div className="w-fit py-3 ps-4 pe-5 bg-white rounded-full mx-auto shadow-sm">
         <CustomButton
           isAutoWidth={true}
+          isFilled={false}
           name={renderSelectedRange}
           changeFn={() => setShowCalendar(true)}
-          icon={<CalendarFold className="size-6 text-sky-500" />}
+          icon={<CalendarFold className="size-6 text-amber-500" />}
         />
       </div>
 

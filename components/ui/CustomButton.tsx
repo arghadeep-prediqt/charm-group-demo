@@ -5,6 +5,7 @@ interface ButtonProps {
   name?: string;
   type?: "button" | "submit" | "reset";
   isBorder?: boolean;
+  isFilled?: boolean;
   isAutoWidth?: boolean;
   changeFn?: () => void;
 }
@@ -12,6 +13,7 @@ interface ButtonProps {
 function CustomButton({
   icon,
   isAutoWidth,
+  isFilled = true,
   isBorder,
   name,
   type = "button",
@@ -21,8 +23,9 @@ function CustomButton({
     <div
       className={` 
       ${isBorder ? "border" : "border-none"} 
+      ${isFilled ? "bg-gray-100" : "bg-transparent"}
       ${isAutoWidth ? "w-full" : "w-fit"} 
-      border-[#2F80ED] p-3 flex items-center gap-x-2 bg-transparent rounded-lg`}
+      border-[#2F80ED] p-3 flex items-center gap-x-2  rounded-lg`}
     >
       {icon}
       <button

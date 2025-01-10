@@ -14,7 +14,7 @@ interface PageProps {
   placeholder?: string;
 }
 
-function SearchTopTab({ placeholder = "Search By Resort Name" }: PageProps) {
+function SearchTopTab({ placeholder = "Resort Name" }: PageProps) {
   const router = useRouter();
   const [selectedRange, setSelectedRange] = useState<{
     startDate: Date | null;
@@ -71,13 +71,13 @@ function SearchTopTab({ placeholder = "Search By Resort Name" }: PageProps) {
     <React.Fragment>
       <form
         onSubmit={handleSubmit}
-        className="w-fit p-4 bg-white rounded-full flex justify-start items-center gap-x-4 divide-x-2 divide-gray-300 mx-auto"
+        className="w-fit p-4 bg-white rounded-xl flex justify-start items-center gap-x-4 mx-auto"
       >
         <div>
           <InputCustom
             name="destination"
             label={placeholder}
-            icon={<MapPinIcon className="size-6 text-sky-500" />}
+            icon={<MapPinIcon className="size-6 text-amber-500" />}
             isRequired
           />
         </div>
@@ -87,7 +87,7 @@ function SearchTopTab({ placeholder = "Search By Resort Name" }: PageProps) {
             isAutoWidth={true}
             name={renderSelectedRange}
             changeFn={() => setShowCalendar(true)}
-            icon={<CalendarFold className="size-6 text-sky-500" />}
+            icon={<CalendarFold className="size-6 text-amber-500" />}
           />
         </div>
 
@@ -96,14 +96,14 @@ function SearchTopTab({ placeholder = "Search By Resort Name" }: PageProps) {
             name="guest"
             type="number"
             label="Number of Guests"
-            icon={<UsersRound className="size-6 text-sky-500" />}
+            icon={<UsersRound className="size-6 text-amber-500" />}
             isRequired
           />
         </div>
 
         <button
           type="submit"
-          className="bg-sky-500 border border-sky-500 text-white text-h3-semi-bold py-3 px-2 w-[180px] rounded-full"
+          className="bg-amber-500 text-white text-h3-semi-bold py-3 px-2 w-[180px] rounded-xl"
         >
           Search
         </button>
