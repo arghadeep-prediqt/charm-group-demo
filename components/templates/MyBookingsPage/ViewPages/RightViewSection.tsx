@@ -1,16 +1,9 @@
 import { aminitiesData } from "@/components/lib/rawData";
 import { BlurImage } from "@/components/ui/BluerImage";
 import { Check, Info } from "lucide-react";
-import { useRouter } from "next/router";
 import React from "react";
 
-interface PageProps {
-  title: string;
-}
-
-function RightViewSection({ title }: PageProps) {
-  const route = useRouter();
-
+function RightViewSection() {
   return (
     <div className="w-[70%] p-6 bg-white rounded-2xl">
       <Heading />
@@ -18,14 +11,6 @@ function RightViewSection({ title }: PageProps) {
       {/* Additional Services */}
       <div className="mt-6 mb-3 flex justify-between items-center">
         <h4 className="font-medium leading-relaxed">Additional Services</h4>
-        <button
-          onClick={() =>
-            route.push(`/our_resorts/${title.split(" ").join("%20")}`)
-          }
-          className="text-p1-b text-sky-500 underline-offset-2 hover:underline"
-        >
-          View All
-        </button>
       </div>
 
       <AdditionalServices />
@@ -33,14 +18,6 @@ function RightViewSection({ title }: PageProps) {
       {/* Amenities Services */}
       <div className="mt-6 mb-3 flex justify-between items-center">
         <h4 className="font-medium leading-relaxed">Amenities</h4>
-        <button
-          onClick={() =>
-            route.push(`/our_resorts/${title.split(" ").join("%20")}`)
-          }
-          className="text-p1-b text-sky-500 underline-offset-2 hover:underline"
-        >
-          View All
-        </button>
       </div>
 
       <AminitiesServices />
@@ -48,7 +25,7 @@ function RightViewSection({ title }: PageProps) {
       {/* Amenities Services */}
       <div className="mt-6 mb-3 flex justify-start items-center gap-x-2">
         <h4 className="font-medium leading-relaxed">Travel Checklist</h4>
-        <Info className="size-6 text-sky-500" />
+        <Info className="size-5 text-amber-600" />
       </div>
 
       <div className="p-6 border border-gray-200 flex flex-col gap-4">
@@ -70,8 +47,8 @@ function Heading() {
           Check-In
         </div>
         <div className="flex justify-start items-center gap-x-2">
-          <h1 className="text-[50px] text-sky-500">08</h1>
-          <div className="text-sky-500">
+          <h1 className="text-[50px] text-amber-500">08</h1>
+          <div className="text-amber-500">
             <p className="text-p1-m">Feb</p>
             <p className="text-p1-m">Sat</p>
           </div>
@@ -83,8 +60,8 @@ function Heading() {
           Check-out
         </div>
         <div className="flex justify-start items-center gap-x-2">
-          <h1 className="text-[50px] text-sky-500">10</h1>
-          <div className="text-sky-500">
+          <h1 className="text-[50px] text-amber-500">10</h1>
+          <div className="text-amber-500">
             <p className="text-p1-m">Feb</p>
             <p className="text-p1-m">Sat</p>
           </div>
@@ -171,7 +148,7 @@ function AminitiesServices() {
 function ListPara({ para }: { para: string }) {
   return (
     <div className="flex justify-start items-center gap-x-2">
-      <Check className="size-4 text-sky-500" />
+      <Check className="size-5 text-amber-500" />
       <p className="text-p2-r">{para}</p>
     </div>
   );

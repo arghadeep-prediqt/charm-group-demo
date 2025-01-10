@@ -28,9 +28,7 @@ function ViewHolidaysPage() {
           title={String(param?.view_id)}
           subTitle="Vung Tau province, Vietnam"
         />
-        {param?.type === "view" && (
-          <RightViewSection title={String(param?.view_id)} />
-        )}
+        {param?.type === "view" && <RightViewSection />}
         {param?.type === "modify" && <ModifyRightView />}
       </Container>
     </NavContainer>

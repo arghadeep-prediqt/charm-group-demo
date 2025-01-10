@@ -177,7 +177,7 @@ const Calendar: React.FC = () => {
                   ? "bg-[#D3D3D3] border-[#D3D3D3]"
                   : day.status === "fillingFast"
                   ? "bg-[#c5a8fe] border-[#c5a8fe]"
-                  : "bg-[#ffcd71] border-[#ffcd71]"
+                  : "bg-[#ffd484] border-[#ffd484]"
                 : "bg-transparent border-gray-100"
             }`}
           >
@@ -197,7 +197,7 @@ const Calendar: React.FC = () => {
                     <button
                       key={idx}
                       className={`${STATUS_COLORS[day.status]} 
-                        w-full text-[14px] font-medium text-start bg-white py-1 px-2 rounded active:opacity-65 flex justify-between items-center`}
+                        w-full text-[14px] font-semibold text-start bg-white py-1 px-2 rounded active:opacity-65 flex justify-between items-center`}
                     >
                       {room}
                       <div

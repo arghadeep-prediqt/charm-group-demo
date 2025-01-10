@@ -28,7 +28,7 @@ function InputCustom({
       className={` 
       ${isBorder ? "border" : "border-none"} 
       ${isAutoWidth ? "w-full" : "w-fit"} 
-      border-[#ffd500] p-3 flex items-center gap-x-2 bg-transparent rounded-lg`}
+      border-[#ffd500] p-3 flex items-center gap-x-2 bg-gray-100 rounded-lg`}
     >
       {icon}
       <input
