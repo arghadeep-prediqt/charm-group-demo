@@ -20,7 +20,7 @@ function PaymentPage() {
     <NavContainer>
       <TopBanner
         title="Payment Details"
-        photo="https://common-booking-engine.gumlet.io/cmsimages/banners/all-resort-banner.jpg"
+        photo="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         subTitle="View your upcoming, ongoing and past holidays, modify bookings, find pre-book offers and cancellation options."
       />
 
