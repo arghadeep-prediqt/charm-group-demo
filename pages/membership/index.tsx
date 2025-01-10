@@ -17,7 +17,7 @@ function MembershipPage() {
     <NavContainer>
       <TopBanner
         title="Ownership Upgrade"
-        photo="https://common-booking-engine.gumlet.io/cmsimages/banners/all-resort-banner.jpg"
+        photo="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         subTitle="View your upcoming, ongoing and past holidays, modify bookings, find pre-book offers and cancellation options."
       />
       <div
