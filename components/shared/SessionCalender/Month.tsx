@@ -34,14 +34,14 @@ const Month: React.FC<MonthProps> = ({ date }) => {
   };
 
   return (
-    <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 shadow-sm">
+    <div className="bg-[#e8f6fe] rounded-xl p-4 shadow-sm">
       {/* Month Title */}
-      <h3 className="text-center text-gray-500 mb-5">
+      <h3 className="text-center text-gray-700 mb-5">
         {format(date, "MMMM yyyy")}
       </h3>
 
       {/* Weekday Headers */}
-      <div className="grid grid-cols-7 text-primary-500 mb-2">
+      <div className="grid grid-cols-7 text-primary-700 mb-2">
         {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
           <div key={day} className="pb-2 text-center text-p1-m">
             {day}

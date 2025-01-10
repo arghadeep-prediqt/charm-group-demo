@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { setCookie } from "cookies-next";
 
-const Container = dynamic(() => import("@/components/shared/Container"));
+const Footer = dynamic(() => import("@/components/shared/Footer"));
 
 function Login() {
   const router = useRouter();
@@ -45,36 +45,50 @@ function Login() {
   );
 
   return (
-    <Container className="mt-4">
-      <Link
-        href={"/"}
-        className="flex justify-start items-center gap-x-2 cursor-pointer"
-      >
-        <BlurImage
-          src={"/images/charm.png"}
-          alt="logo"
-          width={100}
-          height={100}
-          className="size-10 object-cover"
-        />
-        <h3 className="text-gray-700 leading-relaxed">CHARM</h3>
-      </Link>
-
+    <>
       <div className="flex justify-start items-center">
-        <div className="w-6/12">
+        <div className="w-6/12 relative">
           <BlurImage
-            src="https://prediqt.ai/image/run.svg"
+            src="https://images.unsplash.com/photo-1560113855-2ea616c915ee?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="register"
             width={600}
             height={1200}
-            className="w-full object-cover"
+            className="w-full h-screen object-cover"
           />
+          <div className="absolute top-0 left-0 w-full h-full bg-black/60">
+            <div className="px-10 w-full h-full flex flex-col justify-center items-center">
+              <div className="">
+                <Link
+                  href={"/"}
+                  className="w-full flex justify-center items-center gap-x-2 cursor-pointer"
+                >
+                  <BlurImage
+                    src={"/images/charm.png"}
+                    alt="logo"
+                    width={100}
+                    height={100}
+                    className="size-28 object-cover"
+                  />
+                </Link>
+              </div>
+
+              <div className="pb-24 text-center mt-5">
+                <h1 className="text-white leading-relaxed">
+                  WELCOME BACK TO CHARM{" "}
+                </h1>
+                <p className="text-p1-r mt-1 leading-relaxed text-white">
+                  Reconnect with a community that redefines travel and
+                  experiences.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="min-h-[80vh] w-6/12 flex justify-center items-center">
           <div className="bg-white p-8 w-full max-w-xl">
             <h2 className="text-3xl font-semibold text-center mb-6 text-gray-800">
-              Sign in
+              Sign In to Charm
             </h2>
 
             {/* Login Form */}
@@ -84,13 +98,13 @@ function Login() {
                   htmlFor="email"
                   className="block text-gray-700 text-[16px] font-medium mb-2"
                 >
-                  Email address
+                  Email Address
                 </label>
                 <input
                   type="email"
                   name="email"
                   className="shadow appearance-none border border-gray-200 rounded-lg w-full py-3 px-4 h-[44px] text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent text-[16px] placeholder:text-[16px]"
-                  placeholder="Email address"
+                  placeholder="Email Address"
                   autoFocus={true}
                   required
                 />
@@ -109,7 +123,7 @@ function Login() {
                     type={isShow ? "text" : "password"}
                     name="password"
                     className="shadow appearance-none border border-gary-200 rounded-lg w-full py-3 px-4 h-[44px] text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent text-[16px] placeholder:text-[16px]"
-                    placeholder="Enter password"
+                    placeholder="Enter Password"
                     required
                   />
                   <div
@@ -139,46 +153,37 @@ function Login() {
                   href="#"
                   className="text-[16px] text-blue-500 hover:text-blue-700"
                 >
-                  Forgot password?
+                  Forgot Password?
                 </a>
               </div>
 
-              <button
-                type="submit"
-                className="bg-blue-500 hover:bg-blue-700 text-white text-[16px] font-medium py-2 px-4 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                disabled={isClicked}
-              >
-                {isClicked ? "Please wait..." : "Continue with Login"}
-              </button>
+              <div className="mt-10 flex justify-center items-center">
+                <button
+                  type="submit"
+                  className="bg-amber-500 hover:bg-amber-400 hover:text-gray-700 text-white text-[16px] font-medium py-2 rounded-full w-4/12 focus:outline-nono"
+                  disabled={isClicked}
+                >
+                  {isClicked ? "Please Wait..." : "Sign In"}
+                </button>
+              </div>
             </form>
 
             <div className="flex items-center justify-center mt-6">
-              <span className="text-gray-600 text-[15px]">
-                or use one of these options
+              <span className="text-gray-600 text-[15px] capitalize">
+                Or continue with
               </span>
             </div>
 
-            <div className="flex flex-col gap-6 mt-4">
-              <button className="bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 py-2 px-4 rounded flex items-center justify-center w-full font-medium text-[16px]">
+            <div className="flex justify-center items-center mt-4">
+              <button className="bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 py-2 px-4 rounded-full w-6/12 flex justify-start items-center font-medium text-[16px]">
                 <BlurImage
                   src={"/icons/google.svg"}
                   alt="Google"
                   width={100}
                   height={100}
-                  className="size-8 mr-2"
-                />
-                Continue with Google
-              </button>
-
-              <button className="bg-blue-600 hover:bg-blue-800 border border-blue-800 text-white py-2 px-4 rounded flex items-center justify-center w-full font-medium text-[16px]">
-                <BlurImage
-                  src={"/icons/facebook.svg"}
-                  alt="Facebook"
-                  width={100}
-                  height={100}
                   className="size-6 mr-2"
                 />
-                Continue with Facebook
+                Continue with Google
               </button>
             </div>
 
@@ -186,15 +191,17 @@ function Login() {
               Don’t have an account?{" "}
               <button
                 onClick={() => router.push("/auth/register")}
-                className="text-blue-500 hover:text-blue-700 font-medium text-[16px] border-none focus:outline-none"
+                className="text-amber-500 hover:text-amber-700 font-medium text-[16px] border-none focus:outline-none"
               >
-                Register
+                Sign Up
               </button>
             </div>
           </div>
         </div>
       </div>
-    </Container>
+
+      <Footer />
+    </>
   );
 }
 

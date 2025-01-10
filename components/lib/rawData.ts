@@ -65,7 +65,7 @@ export const navigationProfile = [
     ],
   },
   {
-    name: "My Holidays",
+    name: "My Stays",
     icon: "https://img.icons8.com/fluency-systems-filled/100/faa307/beach-umbrella.png",
     link: "/my_bookings",
     content: [
@@ -88,10 +88,17 @@ export const navigationProfile = [
     content: [{ name: "Upgrade", link: "#upgrade" }],
   },
   {
-    name: "Holidays Utilization",
+    name: "Holiday Usage",
     icon: "https://img.icons8.com/fluency-systems-filled/100/faa307/overtime.png",
     link: "/profile/utilization",
-    content: [],
+    content: [
+      { name: "Eligible Holidays", link: "#holidays" },
+      { name: "Confirmed Stays", link: "#holidays" },
+      { name: "Cancelled Reservations", link: "#holidays" },
+      { name: "Expired Holidays", link: "#holidays" },
+      { name: "Adjustments & Deductions", link: "#holidays" },
+      { name: "Cancellation", link: "#cancellation" },
+    ],
   },
   {
     name: "Ownership Transfer",

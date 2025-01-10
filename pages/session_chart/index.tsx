@@ -67,8 +67,8 @@ function SessionChartPage() {
       </Container>
 
       {resortData?.map((item, id) => (
-        <React.Fragment key={id}>
-          <div className="bg-yellow-100 py-2 px-8 my-6 flex justify-start items-center gap-x-4">
+        <Container key={id}>
+          <div className="py-2 px-2 my-6 border-b border-gray-400 flex justify-start items-center gap-x-2">
             <BlurImage
               src="https://img.icons8.com/external-bearicons-glyph-bearicons/100/00509d/external-Resort-location-bearicons-glyph-bearicons.png"
               alt="green star"
@@ -79,11 +79,35 @@ function SessionChartPage() {
             <h4 className="text-primary-600 leading-relaxed">{item}</h4>
           </div>
 
-          <Container className="py-2">
+          <div className="py-2">
             <Calendar />
-          </Container>
-        </React.Fragment>
+          </div>
+        </Container>
       ))}
+
+      <div className="sticky bottom-0 w-full py-2 bg-amber-50">
+        <Container className="flex justify-between items-center">
+          <div className="flex justify-start items-center gap-x-2">
+            <p className="size-4 rounded-full bg-blue-400">&nbsp;</p>
+            <p className="text-p1-m">Available Dates</p>
+          </div>
+
+          <div className="flex justify-start items-center gap-x-2">
+            <p className="size-4 rounded-full bg-red-400">&nbsp;</p>
+            <p className="text-p1-m">Unavailable Dates</p>
+          </div>
+
+          <div className="flex justify-start items-center gap-x-2">
+            <p className="size-4 rounded-full bg-purple-400">&nbsp;</p>
+            <p className="text-p1-m">Special Offers</p>
+          </div>
+
+          <div className="flex justify-start items-center gap-x-2">
+            <p className="size-4 rounded-full bg-gray-400">&nbsp;</p>
+            <p className="text-p1-m">Past Dates</p>
+          </div>
+        </Container>
+      </div>
     </NavContainer>
   );
 }
