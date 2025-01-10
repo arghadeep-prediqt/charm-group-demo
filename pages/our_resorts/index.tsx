@@ -1,11 +1,13 @@
 import { allResortsData } from "@/components/lib/rawData";
-import SingleResortCard from "@/components/shared/OurResortsPage/SingleResortCard";
-import SideDrawer from "@/components/ui/SideDrawer";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { clearResort } from "@/redux/slice/resortSlice";
 import dynamic from "next/dynamic";
 import React, { useState } from "react";
 
+const SingleResortCard = dynamic(
+  () => import("@/components/shared/OurResortsPage/SingleResortCard")
+);
+const SideDrawer = dynamic(() => import("@/components/ui/SideDrawer"));
 const ResortAccordian = dynamic(
   () => import("@/components/templates/OurResortsPage/ResortAccordian")
 );

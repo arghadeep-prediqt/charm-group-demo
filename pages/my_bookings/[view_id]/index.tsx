@@ -16,6 +16,9 @@ const LeftViewSection = dynamic(
 );
 const Container = dynamic(() => import("@/components/shared/Container"));
 const NavContainer = dynamic(() => import("@/components/shared/NavContainer"));
+const TopBanner = dynamic(
+  () => import("@/components/templates/OurResortsPage/TopBanner")
+);
 
 function ViewHolidaysPage() {
   const router = useRouter();
@@ -23,11 +26,14 @@ function ViewHolidaysPage() {
 
   return (
     <NavContainer>
-      <Container className="py-8 relative flex justify-start items-start gap-x-[3%] bg-gray-100">
-        <LeftViewSection
-          title={String(param?.view_id)}
-          subTitle="Vung Tau province, Vietnam"
-        />
+      <TopBanner
+        title={String(param?.view_id)}
+        photo="https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Ho-Tram-1.jpg"
+        subTitle="Vung Tau province, Vietnam"
+      />
+
+      <Container className="pb-8 pt-4 relative flex justify-start items-start gap-x-[2%]">
+        <LeftViewSection title={String(param?.view_id || "")} />
         {param?.type === "view" && <RightViewSection />}
         {param?.type === "modify" && <ModifyRightView />}
       </Container>

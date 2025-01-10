@@ -4,97 +4,120 @@ import { useRouter } from "next/router";
 
 interface PageProps {
   title: string;
-  subTitle: string;
 }
 
-function LeftViewSection({ title, subTitle }: PageProps) {
+function LeftViewSection({ title }: PageProps) {
   const router = useRouter();
 
   return (
-    <div className="w-[30%] bg-white border border-white rounded-2xl sticky top-14">
-      <BlurImage
-        src={
-          "https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Ho-Tram-1.jpg"
-        }
-        alt="resort image"
-        width={400}
-        height={200}
-        className="w-full h-[170px] object-cover rounded-tr-2xl rounded-tl-2xl"
-      />
-
+    <div className="w-[30%] border border-gray-200 shadow-sm rounded-2xl sticky top-14">
       {/* Bottom Section */}
       <div className="mt-3 py-4 px-6">
-        <h3 className="font-medium break-words text-wrap text-[22px] leading-tight capitalize">
-          {title}
+        <h3 className="pb-3 font-medium text-[22px] leading-tight capitalize border-b border-gray-400">
+          Resort Summary
         </h3>
-        <p className="text-p1-r text-gray-700 leading-relaxed mt-3">
-          {subTitle}
-        </p>
-
-        <div className="w-fit mt-5 flex justify-start items-center gap-x-3 py-1 ps-1 pe-3 bg-yellow-400 rounded-full">
-          <BlurImage
-            src="https://holidays.clubmahindra.com/images/utilised.svg"
-            alt="logo"
-            width={100}
-            height={100}
-            className="size-6 object-contain"
-          />
-          <p className="text-p2-m leading-relaxed">2 days utilised</p>
-        </div>
 
         <div className="mt-5 flex justify-start items-center gap-x-4">
           <BlurImage
-            src="https://holidays.clubmahindra.com/images/person.svg"
+            src="https://img.icons8.com/material-rounded/100/00509d/user.png"
             alt="user"
             width={100}
             height={100}
             className="size-5 object-contain"
           />
-          <p className="text-p1-r text-gray-700">2 Adults | 0 Child</p>
+          <p className="text-p1-m text-gray-700">
+            Navigator | <span className="text-amber-500">2</span> Adults
+          </p>
         </div>
 
         <div className="mt-5 flex justify-start items-center gap-x-4">
           <BlurImage
-            src="https://holidays.clubmahindra.com/images/bed.svg"
+            src="https://img.icons8.com/ios-filled/100/00509d/bed.png"
             alt="studio"
             width={100}
             height={100}
             className="size-5 object-contain"
           />
-          <p className="text-p1-r text-gray-700">1 Studio</p>
+          <p className="text-p1-m text-gray-700">
+            {" "}
+            <span className="text-amber-500">1</span> Studio
+          </p>
         </div>
 
         <div className="mt-5 flex justify-start items-center gap-x-4">
           <BlurImage
-            src="https://holidays.clubmahindra.com/images/cv.svg"
+            src="https://img.icons8.com/ios-filled/100/00509d/activity-history.png"
             alt="cv"
             width={100}
             height={100}
             className="size-5 object-contain"
           />
-          <p className="text-p1-r text-gray-700">8711719</p>
+          <p className="text-p1-m text-gray-700">#8711719</p>
+
+          <BlurImage
+            src="https://img.icons8.com/glyph-neue/100/04385E/download--v1.png"
+            alt="cv"
+            width={100}
+            height={100}
+            className="size-4 object-contain"
+          />
         </div>
 
-        <p className="text-p1-m mt-8">View on Map</p>
-        <BlurImage
-          src={
-            "https://charm.vn/wp-content/uploads/2022/12/vi-tri-Charm-Resort-Ho-Tram-1.jpg"
-          }
-          alt="map"
-          width={400}
-          height={300}
-          className="mt-3 w-full h-full border border-amber-300 rounded-xl object-cover"
-        />
-        <div className="flex justify-between items-center">
+        <div className="pt-8 flex justify-between items-center">
           <button
             onClick={() => router.back()}
-            className="mt-5 text-amber-600 text-p1-b underline underline-offset-2 hover:underline-offset-1 active:opacity-65"
+            className="px-4 py-1.5 rounded-lg text-white text-p2-m bg-red-500 active:opacity-65"
           >
-            Go Back
-          </button>
-          <button className="mt-5 text-amber-600 text-p1-b underline underline-offset-2 hover:underline-offset-1 active:opacity-65">
             Cancel Booking
           </button>
+          <button
+            onClick={() =>
+              router.push(
+                `/my_bookings/${title.split(" ").join("%20")}?type=modify`
+              )
+            }
+            className="px-4 py-1.5 rounded-lg text-white text-p2-m bg-orange-500 active:opacity-65"
+          >
+            Modify Booking
+          </button>
+        </div>
+
+        <h3 className="py-3 mt-5 font-medium text-[22px] leading-tight capitalize border-b border-gray-400">
+          Resort Location
+        </h3>
+
+        <div className="relative">
+          <BlurImage
+            src={
+              "https://charm.vn/wp-content/uploads/2022/12/vi-tri-Charm-Resort-Ho-Tram-1.jpg"
+            }
+            alt="map"
+            width={400}
+            height={300}
+            className="mt-3 w-full h-full rounded-xl object-cover shadow-sm"
+          />
+
+          <button className="absolute top-2 right-2 py-1.5 px-3 rounded-lg text-p3-m text-white bg-[#00509df9]">
+            View Map
+          </button>
+        </div>
+
+        <h3 className="py-3 mt-6 font-medium text-[22px] leading-tight capitalize border-b border-gray-400">
+          Packing Essentials
+        </h3>
+        <div className="my-5">
+          <ListPara
+            title="Comfortable Flip-Flops"
+            para="Perfect for the beach, showers, and strolling around the resort."
+          />
+          <ListPara
+            title="Capture the Moments"
+            para="Don't forget your camera – there will be plenty of amazing photo opportunities during your stay."
+          />
+          <ListPara
+            title="Stay Warm"
+            para="Pack woolens, scarves, mufflers, caps, jackets, and other essentials to keep cozy."
+          />
         </div>
       </div>
     </div>
@@ -102,3 +125,27 @@ function LeftViewSection({ title, subTitle }: PageProps) {
 }
 
 export default LeftViewSection;
+
+interface ListParaProps {
+  title: string;
+  para: string;
+}
+
+function ListPara({ para, title }: ListParaProps) {
+  return (
+    <div className="mt-3 flex justify-start items-center gap-x-2">
+      <BlurImage
+        src="https://img.icons8.com/fluency/100/verified-account--v1.png"
+        alt="check"
+        width={100}
+        height={100}
+        className="size-7 object-contain"
+      />
+
+      <p className="w-10/12 capitalize text-p3-m">
+        <span className="text-amber-500">{title}: </span>
+        <span className="text-p3-r">{para}</span>
+      </p>
+    </div>
+  );
+}
