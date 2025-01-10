@@ -3,31 +3,31 @@ import React, { useState } from "react";
 
 const pricingPlans = [
   {
-    name: "Wanderer",
+    name: "Explorer",
     price: 90000,
     yearly: 400000,
     description:
-      "Perfect for solo travelers and small families looking to explore new destinations with flexibility.",
+      "For independent travelers and small families eager to uncover hidden gems with ease and flexibility.",
     isRecommended: false,
-    buttonLabel: "Get Started",
+    buttonLabel: "Choose Explorer",
   },
   {
-    name: "Globetrotter",
+    name: "Navigator",
     price: 180000,
     yearly: 540000,
     description:
-      "Ideal for those who want a well-rounded travel experience with added perks.",
+      "For those who seek balanced travel experiences, with enhanced perks and tailored benefits to elevate every journey.",
     isRecommended: true,
     buttonLabel: "Already Paid",
   },
   {
-    name: "Voyager",
+    name: "Pioneer",
     price: 300000,
     yearly: 900000,
     description:
-      "For families and groups that want to travel frequently and enjoy VIP benefits.",
+      "For families and groups who travel often and want exclusive VIP privileges for an unparalleled vacation experience.",
     isRecommended: false,
-    buttonLabel: "Get Started",
+    buttonLabel: "Begin Your Adventure",
   },
 ];
 
@@ -109,10 +109,12 @@ const PricingTablle = () => {
                 <h3 className="text-[25px] font-medium mb-4 text-gray-800">
                   {plan.name}
                 </h3>
-                <p className="text-gray-500 mb-6">{plan.description}</p>
+                <div className="h-[130px] mb-6 flex justify-center items-center">
+                  <p className="text-gray-500">{plan.description}</p>
+                </div>
               </div>
 
-              <div className="text-[35px] font-semibold text-gray-900 mb-6">
+              <div className="text-[28px] font-semibold text-gray-900 mb-6">
                 <span className="text-[28x]">{"₫ "}</span>
                 {billingCycle === "monthly"
                   ? plan.price?.toLocaleString("en-IN")

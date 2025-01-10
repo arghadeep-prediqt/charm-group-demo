@@ -8,29 +8,49 @@ import { ChevronDown } from "lucide-react";
 import dynamic from "next/dynamic";
 import React from "react";
 
-const Container = dynamic(() => import("@/components/shared/Container"));
+const HolidayBookings = dynamic(
+  () => import("@/components/templates/MembershipPage/HolidaysBooking")
+);
+const TopBanner = dynamic(
+  () => import("@/components/templates/OurResortsPage/TopBanner")
+);
+const LeftSideNav = dynamic(
+  () => import("@/components/shared/ProfilePage/LeftSideNav")
+);
 const NavContainer = dynamic(() => import("@/components/shared/NavContainer"));
 
 function UtilizationPage() {
   return (
     <NavContainer>
-      <div className="bg-gray-100 pt-[5%]">
-        <Container className="w-10/12 py-10 bg-white rounded-2xl">
+      <TopBanner
+        title="Holiday Usage"
+        photo="https://common-booking-engine.gumlet.io/cmsimages/banners/all-resort-banner.jpg"
+        subTitle="View your upcoming, ongoing and past holidays, modify bookings, find pre-book offers and cancellation options."
+      />
+      <div
+        id="holidays"
+        className="px-4 mb-12 relative flex justify-start items-start"
+      >
+        <div className="w-[20vw] p-4 sticky top-14">
+          <LeftSideNav />
+        </div>
+        <div className="ps-12 w-[80vw]">
           <AccordianSection />
-        </Container>
 
-        <div className="mt-[5%] bg-white">
-          <div className="container mx-auto px-20 py-16">
-            <BlurImage
-              src="/member/member_footer.png"
-              alt="footer"
-              width={1400}
-              height={600}
-              className="w-full h-full object-contain"
-            />
+          <div id="cancellation" className="pt-[5%] bg-white">
+            <div className="container mx-auto py-16">
+              <BlurImage
+                src="/member/member_footer.png"
+                alt="footer"
+                width={1400}
+                height={600}
+                className="w-full h-full object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>
+      <div className="bg-gray-100 pt-[5%]"></div>
     </NavContainer>
   );
 }
@@ -38,12 +58,12 @@ function UtilizationPage() {
 export default UtilizationPage;
 
 const accordianData = [
-  { name: "Holiday Entitled", link: "/member/accordian_member.png" },
-  { name: "Holiday Booked", link: "/member/accordian_member.png" },
-  { name: "Holiday Cancelled", link: "/member/accordian_member.png" },
-  { name: "Holiday Lapsed", link: "/member/accordian_member.png" },
+  { name: "Eligible Holidays", link: "/member/accordian_member.png" },
+  { name: "Confirmed Stays", link: "/member/accordian_member.png" },
+  { name: "Cancelled Reservations", link: "/member/accordian_member.png" },
+  { name: "Expired Holidays", link: "/member/accordian_member.png" },
   {
-    name: "Holiday Debit Due to Amendment",
+    name: "Adjustments & Deductions",
     link: "/member/accordian_member.png",
   },
 ];
@@ -52,9 +72,9 @@ function AccordianSection() {
   return (
     <>
       {accordianData?.map((item, id) => (
-        <Disclosure key={id} as="div" defaultOpen={id === 1}>
+        <Disclosure key={id} as="div" defaultOpen={id === 0}>
           <DisclosureButton className="text-start group w-full">
-            <div className="py-5 flex w-full items-center justify-between border-b-2 group-data-[open]:text-sky-500 group-data-[open]:border-none text-gray-700">
+            <div className="py-5 flex w-full items-center justify-between border-b-2 group-data-[open]:text-amber-500 group-data-[open]:border-none text-gray-700">
               <p className="w-10/12 text-p1-b capitalize leading-relaxed">
                 {item.name}
               </p>
@@ -65,13 +85,7 @@ function AccordianSection() {
             as={"div"}
             className="py-1 px-6 w-full border rounded-2xl"
           >
-            <BlurImage
-              src={item.link}
-              alt={item.name}
-              width={1200}
-              height={600}
-              className="w-full h-full object-contain"
-            />
+            <HolidayBookings />
           </DisclosurePanel>
         </Disclosure>
       ))}

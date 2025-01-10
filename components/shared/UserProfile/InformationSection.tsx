@@ -91,6 +91,9 @@ function AvatarSection() {
           Membership ID - <span className="font-semibold">0255514</span>
         </p>
         <p className="text-[16px] leading-relaxed text-center text-gray-600 font-medium">
+          Membership Plan - <span className="font-semibold">Navigator</span>
+        </p>
+        <p className="text-[16px] leading-relaxed text-center text-gray-600 font-medium">
           Autopay on <span className="font-semibold">Dec 09, 2025</span>
         </p>
       </div>

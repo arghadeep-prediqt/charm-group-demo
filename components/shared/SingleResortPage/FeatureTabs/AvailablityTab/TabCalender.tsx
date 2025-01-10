@@ -1,20 +1,19 @@
-import { BlurImage } from "@/components/ui/BluerImage";
 import { MoveLeft, MoveRight } from "lucide-react";
 import React, { useState } from "react";
 
 const DAYS = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 const STATUS_COLORS = {
-  available: "text-emerald-500",
-  waitlist: "text-orange-500",
-  fullyBooked: "text-gray-400",
-  fillingFast: "text-red-500",
+  available: "text-[#32CD32]",
+  waitlist: "text-[#FFA500]",
+  fullyBooked: "text-[#D3D3D3]",
+  fillingFast: "text-[#9370DB]",
 };
 
 const STATUS_COLORS_ONLY = {
-  available: "bg-emerald-300",
-  waitlist: "bg-orange-300",
-  fullyBooked: "bg-gray-300",
-  fillingFast: "bg-red-300",
+  available: "bg-[#32CD32]",
+  waitlist: "bg-[#FFA500]",
+  fullyBooked: "bg-[#D3D3D3]",
+  fillingFast: "bg-[#9370DB]",
 };
 
 interface Day {
@@ -127,29 +126,24 @@ const Calendar: React.FC = () => {
           {/* Availability Legend */}
           <ul className="flex justify-start items-start flex-wrap gap-x-4 gap-y-2 text-sm">
             <li className="flex justify-start items-center gap-x-1">
-              <div className="inline-block size-4 bg-blue-300 rounded-full mr-2"></div>
-              Season
+              <div className="inline-block size-4 bg-[#FFD700] rounded-full mr-2"></div>
+              Peak Season
             </li>
             <li className="flex justify-start items-center gap-x-1">
-              <div className="inline-block size-4 bg-emerald-300 rounded-full mr-2"></div>
-              Available
+              <div className="inline-block size-4 bg-[#32CD32] rounded-full mr-2"></div>
+              Available Now
             </li>
             <li className="flex justify-start items-center gap-x-1">
-              <div className="inline-block size-4 bg-orange-300 rounded-full mr-2"></div>
-              Waitlist
+              <div className="inline-block size-4 bg-[#FFA500] rounded-full mr-2"></div>
+              Join Waitlist
             </li>
             <li className="flex justify-start items-center gap-x-1">
-              <div className="inline-block size-4 bg-gray-300 rounded-full mr-2"></div>
-              Fully Booked
+              <div className="inline-block size-4 bg-[#FF4500] rounded-full mr-2"></div>
+              Fully Reserved
             </li>
+
             <li className="flex justify-start items-center gap-x-1">
-              <BlurImage
-                src="https://holidays.clubmahindra.com/images/filling-fast.svg"
-                alt="fast"
-                width={100}
-                height={100}
-                className="size-5 object-contain"
-              />
+              <div className="inline-block size-4 bg-[#9370DB] rounded-full mr-2"></div>
               Filling Fast
             </li>
             <li className="flex justify-start items-center gap-x-1">
@@ -180,10 +174,10 @@ const Calendar: React.FC = () => {
             className={`p-2 rounded-lg border ${
               day.date
                 ? day.status === "fullyBooked"
-                  ? "bg-gray-100 border-gray-300"
+                  ? "bg-[#D3D3D3] border-[#D3D3D3]"
                   : day.status === "fillingFast"
-                  ? "bg-red-100 border-red-200"
-                  : "bg-blue-100 border-blue-200"
+                  ? "bg-[#c5a8fe] border-[#c5a8fe]"
+                  : "bg-[#ffcd71] border-[#ffcd71]"
                 : "bg-transparent border-gray-100"
             }`}
           >
