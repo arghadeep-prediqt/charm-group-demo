@@ -31,7 +31,7 @@ function ThingsToDoSection() {
             height={700}
             className="w-full h-full object-cover"
           />
-          <div className="p-4 absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end items-start">
+          <div className="p-4 absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end items-start">
             <h3 className="mb-3 text-start text-white">{item.title}</h3>
             <p className="text-start text-p2-r text-white">
               {item.description}

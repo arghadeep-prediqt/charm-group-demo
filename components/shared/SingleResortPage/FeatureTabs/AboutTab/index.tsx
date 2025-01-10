@@ -43,7 +43,9 @@ function AboutTab({ name }: PageProps) {
             }
           </p>
 
-          <h3 className="mt-8 mb-3 text-gray-600 font-medium">Amenities</h3>
+          <h3 className="mt-8 mb-3 text-gray-600 font-medium">
+            Resort Amenities
+          </h3>
 
           <div className="w-full pb-6 pt-3 flex flex-wrap gap-4">
             {aminitiesData?.map((item, id) => (
@@ -57,17 +59,19 @@ function AboutTab({ name }: PageProps) {
       </div>
 
       <div className="w-full py-[5vh]">
-        <h3 className="mb-5 text-gray-600 font-medium">Things to Do</h3>
+        <h3 className="mb-5 text-gray-600 font-medium">
+          Experiences & Activities
+        </h3>
         <ThingsToDoSection />
       </div>
 
       <div className="w-full py-[5vh]">
-        <h3 className="mb-5 text-gray-600 font-medium">Member Reviews</h3>
+        <h3 className="mb-5 text-gray-600 font-medium">Guest Experiences</h3>
         <MemberReview />
       </div>
 
       <div className="w-full py-[5vh]">
-        <h3 className="font-medium text-gray-600">Location</h3>
+        <h3 className="font-medium text-gray-600">How to Reach Us</h3>
         <BlurImage
           src={
             "https://charm.vn/wp-content/uploads/2022/12/vi-tri-Charm-Resort-Ho-Tram-1.jpg"

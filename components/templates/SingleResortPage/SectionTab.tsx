@@ -18,8 +18,8 @@ interface PageProps {
 
 function SectionTab({ name }: PageProps) {
   const tabCategories = [
-    { name: "about the resort", component: <AboutTab name={name} /> },
-    { name: "check availablity", component: <AvailablityTab name={name} /> },
+    { name: "Resort Highlights", component: <AboutTab name={name} /> },
+    { name: "Book Your Stay", component: <AvailablityTab name={name} /> },
   ];
 
   return (

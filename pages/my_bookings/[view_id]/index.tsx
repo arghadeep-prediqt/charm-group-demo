@@ -23,7 +23,7 @@ function ViewHolidaysPage() {
 
   return (
     <NavContainer>
-      <Container className="py-8 flex justify-start items-start gap-x-[3%] bg-gray-100">
+      <Container className="py-8 relative flex justify-start items-start gap-x-[3%] bg-gray-100">
         <LeftViewSection
           title={String(param?.view_id)}
           subTitle="Vung Tau province, Vietnam"

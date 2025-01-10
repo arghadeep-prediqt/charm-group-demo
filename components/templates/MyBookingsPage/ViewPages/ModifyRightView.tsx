@@ -21,9 +21,9 @@ function ModifyRightView() {
         <h4 className="leading-relaxed">Modify Booking</h4>
         <button
           onClick={() => route.push("/my_bookings")}
-          className="text-p2-r text-sky-500 underline-offset-2 hover:underline"
+          className="text-p2-m text-amber-600 underline-offset-2 hover:underline"
         >
-          Back to My Holidays
+          Back to My Stays
         </button>
       </div>
 

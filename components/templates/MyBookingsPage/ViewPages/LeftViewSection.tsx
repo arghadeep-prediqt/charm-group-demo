@@ -1,5 +1,6 @@
 import React from "react";
 import { BlurImage } from "@/components/ui/BluerImage";
+import { useRouter } from "next/router";
 
 interface PageProps {
   title: string;
@@ -7,8 +8,10 @@ interface PageProps {
 }
 
 function LeftViewSection({ title, subTitle }: PageProps) {
+  const router = useRouter();
+
   return (
-    <div className="w-[30%] bg-white border border-white rounded-2xl">
+    <div className="w-[30%] bg-white border border-white rounded-2xl sticky top-14">
       <BlurImage
         src={
           "https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Ho-Tram-1.jpg"
@@ -21,7 +24,7 @@ function LeftViewSection({ title, subTitle }: PageProps) {
 
       {/* Bottom Section */}
       <div className="mt-3 py-4 px-6">
-        <h3 className="font-medium break-words text-wrap text-[22px] leading-tight">
+        <h3 className="font-medium break-words text-wrap text-[22px] leading-tight capitalize">
           {title}
         </h3>
         <p className="text-p1-r text-gray-700 leading-relaxed mt-3">
@@ -47,7 +50,7 @@ function LeftViewSection({ title, subTitle }: PageProps) {
             height={100}
             className="size-5 object-contain"
           />
-          <p className="text-p1-r text-gray-700">2 Adult | 0 Child</p>
+          <p className="text-p1-r text-gray-700">2 Adults | 0 Child</p>
         </div>
 
         <div className="mt-5 flex justify-start items-center gap-x-4">
@@ -75,17 +78,24 @@ function LeftViewSection({ title, subTitle }: PageProps) {
         <p className="text-p1-m mt-8">View on Map</p>
         <BlurImage
           src={
-            "https://common-booking-engine.gumlet.io/cmsimages/bookingMapImages/128.png"
+            "https://charm.vn/wp-content/uploads/2022/12/vi-tri-Charm-Resort-Ho-Tram-1.jpg"
           }
           alt="map"
           width={400}
           height={300}
-          className="mt-3 w-full h-full object-cover"
+          className="mt-3 w-full h-full border border-amber-300 rounded-xl object-cover"
         />
-
-        <button className="mt-5 text-sky-500 text-p1-b underline underline-offset-2 hover:underline-offset-1 active:opacity-65">
-          Cancel Booking
-        </button>
+        <div className="flex justify-between items-center">
+          <button
+            onClick={() => router.back()}
+            className="mt-5 text-amber-600 text-p1-b underline underline-offset-2 hover:underline-offset-1 active:opacity-65"
+          >
+            Go Back
+          </button>
+          <button className="mt-5 text-amber-600 text-p1-b underline underline-offset-2 hover:underline-offset-1 active:opacity-65">
+            Cancel Booking
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ function LeftPaymentSection() {
         {paymentDetails?.map((item, id) => (
           <RowTable
             key={id}
-            title={`White Studio - ${item.PaymentType} ${item.emiNumber} | ${item.InvoiceDate}`}
+            title={`Navigator - ${item.PaymentType} ${item.emiNumber} | ${item.InvoiceDate}`}
             dueDate={item?.InvoiceDuedate || ""}
             status={item?.emiStatusName || ""}
             amount={item?.netAmount?.toLocaleString("en-IN") || ""}
@@ -27,13 +27,13 @@ function TableHeader() {
     <div className="mt-6 flex justify-start items-start">
       <div className="w-[60%] flex justify-start items-center gap-x-2">
         <input type="checkbox" />
-        <p className="text-p2-b text-gray-600">Payment details</p>
+        <p className="text-p2-b text-gray-600">Payment Statement</p>
       </div>
       <div className="w-[13%]">
         <p className="text-p2-b text-gray-600 text-center">Status</p>
       </div>
       <div className="w-[13%]">
-        <p className="text-p2-b text-gray-600 text-center">Action</p>
+        <p className="text-p2-b text-gray-600 text-center">Details</p>
       </div>
       <div className="w-[13%]">
         <p className="text-p2-b text-gray-600 text-center">Amount</p>
@@ -74,7 +74,7 @@ function RowTable({ dueDate, amount, status, title }: RowTableInterface) {
       </div>
       <div className="w-[13%] flex justify-center items-center">
         <button className="text-p3-b text-center text-gray-500 underline underline-offset-1 ">
-          View Details
+          Click Here
         </button>
       </div>
       <div className="w-[13%]">
