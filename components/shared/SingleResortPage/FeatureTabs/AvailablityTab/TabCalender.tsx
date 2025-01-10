@@ -84,7 +84,7 @@ const Calendar: React.FC = () => {
   };
 
   return (
-    <div className="p-4 max-w-5xl mx-auto">
+    <div className="p-4 mt-4 max-w-5xl mx-auto">
       {/* Calendar Header */}
       <header className="flex justify-between items-center gap-x-4 mb-4">
         {/* Navigation Buttons */}
@@ -98,7 +98,7 @@ const Calendar: React.FC = () => {
 
           <div className="flex justify-end items-center gap-x-2">
             <button
-              className={`text-sky-400 hover:text-sky-500 border border-sky-300 p-2 rounded-full disabled:text-gray-400 disabled:border-gray-300 ${
+              className={`text-amber-500 hover:text-amber-500 border border-amber-300 p-2 rounded-full disabled:text-gray-400 disabled:border-gray-300 ${
                 currentYear === today.getFullYear() &&
                 currentMonth === today.getMonth()
                   ? "opacity-50 cursor-not-allowed"
@@ -113,7 +113,7 @@ const Calendar: React.FC = () => {
               <MoveLeft className="size-5" />
             </button>
             <button
-              className="text-sky-400 hover:text-sky-500 border border-sky-300 p-2 rounded-full"
+              className="text-amber-500 hover:text-amber-500 border border-amber-300 p-2 rounded-full"
               onClick={goToNextMonth}
             >
               <MoveRight className="size-5" />

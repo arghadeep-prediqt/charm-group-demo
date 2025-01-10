@@ -1,20 +1,66 @@
 import { BlurImage } from "@/components/ui/BluerImage";
+import ExpandedCalendar from "@/components/ui/ExpandedCalender";
+import { format } from "date-fns";
 import { CalendarFold, Dot, MapPin, User } from "lucide-react";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useMemo, useState } from "react";
+
+const CustomButton = dynamic(() => import("@/components/ui/CustomButton"));
 
 interface PageProps {
   name: string;
 }
 
 const resortImage = [
-  "https://static-clubmahindra.gumlet.io/storage/app/media/Acacis%20Palm/Kandaghat/Kanha/Varca/Jaisalmer/Hatgad/mussoorie/mashobra/netrang/naldehra/Naukuchital/snow%20peacks/white%20meadows%20manali/WHMW_Exterior_02.jpg",
-  "https://static-clubmahindra.gumlet.io/storage/app/media/Acacis%20Palm/Kandaghat/Kanha/Varca/Jaisalmer/Hatgad/mussoorie/mashobra/netrang/naldehra/Naukuchital/snow%20peacks/white%20meadows%20manali/WHMW_Exterior_04.jpg",
-  "https://static-clubmahindra.gumlet.io/storage/app/media/Acacis%20Palm/Kandaghat/Kanha/Varca/Jaisalmer/Hatgad/mussoorie/mashobra/netrang/naldehra/Naukuchital/snow%20peacks/white%20meadows%20manali/WHMW_Hu_05.jpg",
+  "https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Ho-Tram-3.jpg",
+  "https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Ho-Tram-11.jpg",
+  "https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Ho-Tram-12.jpg",
 ];
 
 function RightBookSection({ name }: PageProps) {
   const router = useRouter();
+  const [showCalender, setShowCalendar] = useState<boolean>(false);
+  const [selectedRange, setSelectedRange] = useState<{
+    startDate: Date | null;
+    endDate: Date | null;
+  }>({
+    startDate: null,
+    endDate: null,
+  });
+
+  const handleDateSelect = (date: Date) => {
+    if (
+      !selectedRange.startDate ||
+      (selectedRange.startDate && selectedRange.endDate)
+    ) {
+      // Start a new range
+      setSelectedRange({ startDate: date, endDate: null });
+    } else {
+      // Set the end date if it's after the start date
+      if (date > selectedRange.startDate) {
+        setSelectedRange({
+          startDate: selectedRange.startDate,
+          endDate: date,
+        });
+      } else {
+        // Reset the range if the end date is before the start date
+        setSelectedRange({ startDate: date, endDate: null });
+      }
+    }
+  };
+
+  const renderSelectedRange = useMemo(() => {
+    if (selectedRange.startDate && selectedRange.endDate) {
+      return `${format(selectedRange.startDate, "MMM d, yyyy")} ~ ${format(
+        selectedRange.endDate,
+        "MMM d, yyyy"
+      )}`;
+    } else if (selectedRange.startDate) {
+      return `${format(selectedRange.startDate, "MMM d, yyyy")}`;
+    }
+    return "Check-in & Check-out";
+  }, [selectedRange.endDate, selectedRange.startDate]);
 
   return (
     <div className="mb-3 bg-gray-50 p-6 rounded-xl border border-gray-200">
@@ -51,8 +97,13 @@ function RightBookSection({ name }: PageProps) {
         </div>
 
         <div className="mt-3 py-3 flex justify-start items-center gap-x-3 border-b border-gray-300">
-          <CalendarFold className="size-6 text-amber-500" />
-          <p className="text-p1-r w-[90%] text-amber-500">Select Dates</p>
+          <CustomButton
+            isAutoWidth={true}
+            name={renderSelectedRange}
+            isFilled={false}
+            changeFn={() => setShowCalendar(true)}
+            icon={<CalendarFold className="size-6 text-amber-500" />}
+          />
         </div>
 
         <div className="mt-3 py-3 flex justify-start items-center gap-x-3 border-b border-gray-300">
@@ -73,6 +124,14 @@ function RightBookSection({ name }: PageProps) {
           </button>
         </div>
       </div>
+
+      {showCalender && (
+        <ExpandedCalendar
+          selectedRange={selectedRange}
+          onDateSelect={handleDateSelect}
+          setShowCalendar={setShowCalendar}
+        />
+      )}
     </div>
   );
 }

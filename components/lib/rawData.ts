@@ -571,53 +571,53 @@ export const offerCardData = [
 ];
 
 export const singleResortData = [
-  "https://static-clubmahindra.gumlet.io/storage/app/media/Aasonora%20Resort/Emerald%20palm/Kanatal/bar.jpg",
-  "https://static-clubmahindra.gumlet.io/storage/app/media/Mussoorie/MUSSOORIE-exterior-1.jpg",
-  "https://static-clubmahindra.gumlet.io/storage/app/media/Mussoorie/MUSS_1BR_03.jpg",
+  "https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Ho-Tram-11.jpg",
+  "https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Ho-Tram-12.jpg",
+  "https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Ho-Tram-3.jpg",
 ];
 
 export const toDoResortData = [
   {
-    title: "Vinog Mountain Quail Sanctuary",
+    title: "Sunset Viewpoint",
     photo:
-      "https://static-clubmahindra.gumlet.io/storage/app/media/resort-things-to-do/Mussoorie/Vinog%20Mountain%20Quail%20Sanctuary.jpg",
+      "https://images.unsplash.com/photo-1614877105424-a72d57d5e05c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dg",
     description:
-      "Explore the serene Vinog Mountain Quail Sanctuary, a haven for nature enthusiasts and bird watchers. This sanctuary, nestled in Mussoorie, offers picturesque views and a chance to encounter rare Himalayan wildlife.",
+      "Witness the enchanting hues of the setting sun painting the sky, offering an unforgettable experience amidst nature's tranquility.",
   },
   {
-    title: "Mussoorie Exterior View",
+    title: "Botanical Trails",
     photo:
-      "https://static-clubmahindra.gumlet.io/storage/app/media/Mussoorie/MUSSOORIE-exterior-1.jpg",
+      "https://images.unsplash.com/photo-1526754624448-267a526aea3f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
-      "A breathtaking view of Mussoorie's scenic landscape, capturing the essence of this enchanting hill station in Uttarakhand.",
+      "Explore lush trails lined with exotic flora and vibrant blooms, perfect for nature enthusiasts and peaceful strolls.",
   },
   {
-    title: "1-Bedroom Suite Interior 1",
+    title: "Adventure Peak",
     photo:
-      "https://static-clubmahindra.gumlet.io/storage/app/media/Mussoorie/MUSS_1BR_03.jpg",
+      "https://images.unsplash.com/photo-1459231978203-b7d0c47a2cb7?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
-      "Step inside a luxurious 1-bedroom suite in Mussoorie, designed to offer comfort and a touch of elegance amidst the mountains.",
+      "Scale new heights with thrilling treks, rock climbing, and unparalleled panoramic views of the surrounding landscapes.",
   },
   {
-    title: "1-Bedroom Suite Interior 2",
+    title: "Cultural Heritage Hub",
     photo:
-      "https://static-clubmahindra.gumlet.io/storage/app/media/Mussoorie/MUSS_1BR_10.jpg",
+      "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
-      "Experience the cozy ambiance of a well-furnished 1-bedroom suite, perfect for a relaxing getaway in Mussoorie.",
+      "Step back in time as you visit ancient temples, forts, and landmarks that echo the stories of a rich cultural past.",
   },
   {
-    title: "Gun Hill",
+    title: "Riverside Picnic Spot",
     photo:
-      "https://static-clubmahindra.gumlet.io/storage/app/media/resort-things-to-do/Mussoorie/Gun%20Hill.jpg",
+      "https://images.unsplash.com/photo-1634707895252-65d3d6d90a80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
-      "Visit Gun Hill, Mussoorie's second-highest peak, and enjoy panoramic views of the surrounding Himalayan ranges and the Doon Valley.",
+      "Relax by the crystal-clear waters of a serene river, enjoying the beauty of the countryside with your loved ones.",
   },
   {
-    title: "Kempty Falls",
+    title: "Wildlife Haven",
     photo:
-      "https://static-clubmahindra.gumlet.io/storage/app/media/resort-things-to-do/Mussoorie/Kempty%20Falls.jpg",
+      "https://images.unsplash.com/photo-1511715344286-1265e346ef52?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
-      "Witness the cascading beauty of Kempty Falls, a must-visit attraction in Mussoorie, perfect for picnics and nature lovers.",
+      "Dive into an adventurous safari experience, encountering diverse fauna in their natural habitats, including rare species.",
   },
 ];
 
@@ -686,55 +686,55 @@ export const aminitiesData = [
 
 export const membersReviewData = [
   {
-    name: "Arjun Sharma",
+    name: "Nguyễn Văn An",
     created: "2020",
     comment:
       "The experience was truly unforgettable! From the moment we arrived, the staff made us feel so welcome. The resort is nestled in a serene location with stunning views of the mountains. The rooms were spacious, clean, and beautifully designed to blend luxury with comfort. I especially loved the outdoor activities that allowed us to connect with nature, and the food was an absolute delight with a variety of options for all tastes. I can't wait to return!",
   },
   {
-    name: "Priya Mehta",
+    name: "Lê Thị Hoa",
     created: "2019",
     comment:
       "This was one of the most rejuvenating trips I've ever had! The peaceful environment was just what I needed to escape from the city's hustle and bustle. The resort offers everything you could ask for, from a relaxing spa to adventurous treks nearby. The staff went out of their way to accommodate all our needs, and the attention to detail in every service was impeccable. Highly recommended for anyone looking for a serene getaway.",
   },
   {
-    name: "Rohan Gupta",
+    name: "Trần Minh Hoàng",
     created: "2021",
     comment:
       "An amazing experience! The location is perfect for nature lovers, with breathtaking views and plenty of greenery all around. I particularly enjoyed the guided tours that the resort organized—they were well-planned and informative. The rooms were cozy, the food was excellent, and the hospitality was top-notch. I can't thank the staff enough for making our stay so memorable. It’s a place I would visit again without a second thought.",
   },
   {
-    name: "Sneha Kapoor",
+    name: "Phạm Thị Lan",
     created: "2022",
     comment:
       "Absolutely loved everything about this place! The resort is beautifully maintained and offers a perfect blend of luxury and tranquility. The staff was incredibly warm and attentive, ensuring that every aspect of our stay was comfortable. I spent hours just soaking in the views from our balcony—it was magical. The activities on offer kept us entertained throughout, and the food was to die for! Definitely a destination I would recommend to all my friends and family.",
   },
   {
-    name: "Vikram Patel",
+    name: "Đặng Hữu Phước",
     created: "2020",
     comment:
       "The resort exceeded all my expectations! From the moment we checked in, everything was handled with utmost professionalism and care. The surroundings were breathtaking, offering a sense of calm and relaxation. The staff was always eager to assist, and their warmth added to the overall experience. The highlight for me was the local cuisine that was served—it was authentic and delicious. I would recommend this resort to anyone looking for a memorable holiday.",
   },
   {
-    name: "Anjali Nair",
+    name: "Võ Ngọc Bích",
     created: "2021",
     comment:
       "This resort provided the perfect escape from our busy lives. The views of the surrounding hills were mesmerizing, and the fresh mountain air was invigorating. The rooms were spacious, with every amenity you could think of. What stood out the most was the incredible service—we were treated like royalty throughout our stay. The food was exceptional, with a wide range of options to choose from. It was an experience I would love to relive again and again.",
   },
   {
-    name: "Manish Reddy",
+    name: "Hồ Quang Dũng",
     created: "2018",
     comment:
       "Everything about this resort was outstanding! The location is unbeatable, surrounded by lush greenery and offering spectacular views. The staff was extremely professional and courteous, always ready to help with a smile. The rooms were luxurious yet homely, and the dining options were simply fantastic. We enjoyed every moment of our stay, from relaxing by the pool to exploring the nearby attractions. A wonderful experience that I will cherish for a long time.",
   },
   {
-    name: "Isha Desai",
+    name: "Ngô Thị Hương",
     created: "2019",
     comment:
       "A truly memorable experience! The resort is a paradise for anyone looking to unwind and reconnect with nature. The rooms were tastefully done, with attention to every little detail. I was particularly impressed with the range of activities they offered, from yoga sessions to adventure sports. The staff made us feel special at every step, and the food was absolutely divine. It’s a place I would recommend to anyone looking for a peaceful retreat.",
   },
   {
-    name: "Aditya Verma",
+    name: "Bùi Thanh Tùng",
     created: "2022",
     comment:
       "Loved every moment of our stay! The resort is set in a stunning location, with panoramic views that are truly awe-inspiring. The accommodations were comfortable and equipped with all modern amenities. What really made our trip special was the hospitality of the staff—they went above and beyond to ensure we had a great time. The food was a highlight for me, with delicious options that catered to all tastes. This place is a must-visit for anyone looking for a luxurious and peaceful holiday.",
@@ -1125,7 +1125,7 @@ export const ourResortMenuItems: MenuItemProps[] = [
   {
     title: "International",
     icon: "https://img.icons8.com/ios-filled/100/00509d/world.png",
-    link: "/session_chart?filter=international",
+    link: "/our_resorts?filter=south",
   },
 ];
 

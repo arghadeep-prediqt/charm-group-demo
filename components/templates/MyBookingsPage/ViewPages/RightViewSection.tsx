@@ -129,7 +129,7 @@ function AminitiesServices() {
       {aminitiesData?.map((item, id) => (
         <div
           key={id}
-          className="min-w-[140px] p-3 flex-1 border border-gray-300 rounded-lg flex flex-col justify-center items-center bg-gray-50"
+          className="min-w-[140px] p-3 flex-1 border border-amber-300 rounded-lg flex flex-col justify-center items-center bg-amber-50"
         >
           <BlurImage
             src={item.photo}
@@ -138,7 +138,9 @@ function AminitiesServices() {
             height={100}
             className="size-10"
           />
-          <p className="mt-3 text-p2-r text-center">{item.name}</p>
+          <p className="mt-3 text-p2-r text-amber-600 text-center">
+            {item.name}
+          </p>
         </div>
       ))}
     </div>

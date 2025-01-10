@@ -1,9 +1,10 @@
-import MemberDropdown from "@/components/ui/MemberDropdown";
-import PeopleDropdown from "@/components/ui/PeopleDropdown";
 import React from "react";
-import RoomList from "./RoomList";
 import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
 
+const RoomList = dynamic(() => import("./RoomList"));
+const MemberDropdown = dynamic(() => import("@/components/ui/MemberDropdown"));
+const PeopleDropdown = dynamic(() => import("@/components/ui/PeopleDropdown"));
 interface PageProps {
   name: string;
 }
@@ -32,11 +33,11 @@ function RightSideWaitlist({ name }: PageProps) {
       </div>
 
       <div className="mt-[3%] flex justify-between items-center">
-        <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-yellow-200 to-orange-300">
+        <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-yellow-200 to-amber-400">
           <p className="text-p3-m">Days Utilised</p>
           <p className="text-p2-b">0.8</p>
         </div>
-        <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-yellow-200 to-orange-300">
+        <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-yellow-200 to-amber-400">
           <p className="text-p3-m">Days Remaining</p>
           <p className="text-p2-b">0</p>
         </div>
@@ -47,7 +48,7 @@ function RightSideWaitlist({ name }: PageProps) {
           onClick={() =>
             router.push(`/my_bookings/${name.split(" ").join("%20")}?type=view`)
           }
-          className="bg-sky-400 text-white px-6 py-2.5 w-full rounded-br-xl rounded-bl-xl text-p1-b active:opacity-65"
+          className="bg-yellow-300 text-slate-700 px-6 py-2.5 w-full rounded-br-xl rounded-bl-xl text-p1-b active:opacity-65"
         >
           Book Now
         </button>

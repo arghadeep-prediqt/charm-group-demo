@@ -1,39 +1,39 @@
 import React from "react";
 
-const HolidayBookings = () => {
-  const bookings = [
-    {
-      voucher: "8711751",
-      resort: "Charm Resort Hồ Tràm",
-      guest: "Hồng Oanh",
-      room: "1BR-1",
-      reservationType: "SPL OFFER",
-      checkIn: "12-Feb-2025",
-      checkOut: "14-Feb-2025",
-      debitedHolidays: 2.0,
-    },
-    {
-      voucher: "8711721",
-      resort: "Charm Resort Long Hải",
-      guest: "Hồng Oanh",
-      room: "1BR-1",
-      reservationType: "SPL OFFER",
-      checkIn: "10-Feb-2025",
-      checkOut: "12-Feb-2025",
-      debitedHolidays: 2.0,
-    },
-    {
-      voucher: "8711719",
-      resort: "Charm Resort Đà Lạt",
-      guest: "Hồng Oanh",
-      room: "STU-1",
-      reservationType: "SPL OFFER",
-      checkIn: "08-Feb-2025",
-      checkOut: "10-Feb-2025",
-      debitedHolidays: 2.0,
-    },
-  ];
+const bookings = [
+  {
+    voucher: "8711751",
+    resort: "Charm Resort Hồ Tràm",
+    guest: "Hồng Oanh",
+    room: "1BR-1",
+    reservationType: "SPL OFFER",
+    checkIn: "12-Feb-2025",
+    checkOut: "14-Feb-2025",
+    debitedHolidays: 2.0,
+  },
+  {
+    voucher: "8711721",
+    resort: "Charm Resort Long Hải",
+    guest: "Hồng Oanh",
+    room: "1BR-1",
+    reservationType: "SPL OFFER",
+    checkIn: "10-Feb-2025",
+    checkOut: "12-Feb-2025",
+    debitedHolidays: 2.0,
+  },
+  {
+    voucher: "8711719",
+    resort: "Charm Resort Đà Lạt",
+    guest: "Hồng Oanh",
+    room: "STU-1",
+    reservationType: "SPL OFFER",
+    checkIn: "08-Feb-2025",
+    checkOut: "10-Feb-2025",
+    debitedHolidays: 2.0,
+  },
+];
 
+const HolidayBookings = () => {
   const totalHolidays = bookings.reduce(
     (total, booking) => total + booking.debitedHolidays,
     0
@@ -73,28 +73,28 @@ const HolidayBookings = () => {
         <tbody>
           {bookings.map((booking, index) => (
             <tr key={index}>
-              <td className="px-4 py-2 text-p3-r text-nowrap">
+              <td className="px-4 py-2 text-p2-r text-nowrap text-center">
                 {booking.voucher}
               </td>
-              <td className="px-4 py-2 text-p3-r text-nowrap">
+              <td className="px-4 py-2 text-p2-r text-nowrap text-center">
                 {booking.resort}
               </td>
-              <td className="px-4 py-2 text-p3-r text-nowrap">
+              <td className="px-4 py-2 text-p2-r text-nowrap text-center">
                 {booking.guest}
               </td>
-              <td className="px-4 py-2 text-p3-r text-nowrap">
+              <td className="px-4 py-2 text-p2-r text-nowrap text-center">
                 {booking.room}
               </td>
-              <td className="px-4 py-2 text-p3-r text-nowrap">
+              <td className="px-4 py-2 text-p2-r text-nowrap text-center">
                 {booking.reservationType}
               </td>
-              <td className="px-4 py-2 text-p3-r text-nowrap">
+              <td className="px-4 py-2 text-p2-r text-nowrap text-center">
                 {booking.checkIn}
               </td>
-              <td className="px-4 py-2 text-p3-r text-nowrap">
+              <td className="px-4 py-2 text-p2-r text-nowrap text-center">
                 {booking.checkOut}
               </td>
-              <td className="px-4 py-2 text-p3-r text-nowrap">
+              <td className="px-4 py-2 text-p2-r text-nowrap text-center">
                 {booking.debitedHolidays.toFixed(2)}
               </td>
             </tr>

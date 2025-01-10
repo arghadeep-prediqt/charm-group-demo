@@ -28,7 +28,7 @@ function PeopleDropdown({ isDisabled }: PageProps) {
         )}
         disabled={isDisabled}
       >
-        <User className="size-6 text-sky-400" />
+        <User className="size-6 text-amber-500" />
 
         <p className="text-gray-700 text-p2-r text-wrap break-words">
           {adult > 0 && `${String(adult).padStart(2, "0")} Adult`}
@@ -48,17 +48,17 @@ function PeopleDropdown({ isDisabled }: PageProps) {
           </div>
           <div className="w-5/12 flex justify-between items-center gap-x-2">
             <button
-              className="p-1 border-2 border-sky-400 rounded-full"
+              className="p-1 border-2 border-amber-500 rounded-full"
               onClick={() => adult > 0 && setAdult(adult - 1)}
             >
-              <Minus className="size-4 text-sky-400" />
+              <Minus className="size-4 text-amber-500" />
             </button>
-            <p className="text-p1-m text-sky-400">{adult}</p>
+            <p className="text-p1-m text-amber-500">{adult}</p>
             <button
-              className="p-1 border-2 border-sky-400 rounded-full"
+              className="p-1 border-2 border-amber-500 rounded-full"
               onClick={() => setAdult(adult + 1)}
             >
-              <Plus className="size-4 text-sky-400" />
+              <Plus className="size-4 text-amber-500" />
             </button>
           </div>
         </div>
@@ -70,17 +70,17 @@ function PeopleDropdown({ isDisabled }: PageProps) {
           </div>
           <div className="w-5/12 flex justify-between items-center gap-x-2">
             <button
-              className="p-1 border-2 border-sky-400 rounded-full"
+              className="p-1 border-2 border-amber-500 rounded-full"
               onClick={() => adult > 0 && setChildren(children - 1)}
             >
-              <Minus className="size-4 text-sky-400" />
+              <Minus className="size-4 text-amber-500" />
             </button>
-            <p className="text-p1-m text-sky-400">{children}</p>
+            <p className="text-p1-m text-amber-500">{children}</p>
             <button
-              className="p-1 border-2 border-sky-400 rounded-full"
+              className="p-1 border-2 border-amber-500 rounded-full"
               onClick={() => setChildren(children + 1)}
             >
-              <Plus className="size-4 text-sky-400" />
+              <Plus className="size-4 text-amber-500" />
             </button>
           </div>
         </div>
@@ -92,17 +92,17 @@ function PeopleDropdown({ isDisabled }: PageProps) {
           </div>
           <div className="w-5/12 flex justify-between items-center gap-x-2">
             <button
-              className="p-1 border-2 border-sky-400 rounded-full"
+              className="p-1 border-2 border-amber-500 rounded-full"
               onClick={() => adult > 0 && setInfants(infants - 1)}
             >
-              <Minus className="size-4 text-sky-400" />
+              <Minus className="size-4 text-amber-500" />
             </button>
-            <p className="text-p1-m text-sky-400">{infants}</p>
+            <p className="text-p1-m text-amber-500">{infants}</p>
             <button
-              className="p-1 border-2 border-sky-400 rounded-full"
+              className="p-1 border-2 border-amber-500 rounded-full"
               onClick={() => setInfants(infants + 1)}
             >
-              <Plus className="size-4 text-sky-400" />
+              <Plus className="size-4 text-amber-500" />
             </button>
           </div>
         </div>
