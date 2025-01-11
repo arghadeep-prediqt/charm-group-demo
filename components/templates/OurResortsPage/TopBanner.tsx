@@ -24,7 +24,7 @@ function TopBanner({ photo, title, subTitle }: PageProps) {
         <Container
           className={`pb-4 px-[5%] pt-4 w-full h-full flex flex-col justify-center items-start`}
         >
-          <h1 className="text-white text-[40px] font-medium leading-relaxed">
+          <h1 className="text-white text-[40px] font-medium leading-relaxed capitalize">
             {title}
           </h1>
           <p className="mt-1 text-white text-[18px] w-6/12 leading-relaxed">
