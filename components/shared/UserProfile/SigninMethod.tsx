@@ -23,7 +23,7 @@ function SigninMethod() {
       </div>
 
       {/* notification */}
-      <div className="mt-6  px-4 py-3 bg-amber-50 border border-amber-300 rounded-xl flex justify-start items-start gap-x-4">
+      <div className="mt-6  px-4 py-3 bg-amber-50 border border-amber-300 rounded-xl flex justify-start items-center gap-x-4">
         <BlurImage
           src={"/icons/verify.svg"}
           alt="verify"
@@ -42,11 +42,11 @@ function SigninMethod() {
               account. To log in, in addition {"you'll"} need to provide a 6
               digit code.
             </p>
-            <button className="px-4 py-1.5 text-[14px] text-gray-700 font-semibold bg-amber-300 rounded-lg active:opacity-70">
-              Enable
-            </button>
           </div>
         </div>
+        <button className="px-4 py-1.5 text-[14px] text-gray-700 font-semibold bg-amber-300 rounded-lg active:opacity-70">
+          Enable
+        </button>
       </div>
     </section>
   );
