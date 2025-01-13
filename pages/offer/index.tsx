@@ -29,7 +29,7 @@ function OfferPage() {
           {offerCardData?.map((item, id) => (
             <div key={id} className="w-[48%]">
               <OfferCard
-                link={`/our_resorts/club%20mahindra%20mussoorie%20resort`}
+                link={`/our_resorts/Charm%20Resort%20Hồ%20Tràm`}
                 offerid={item.offerid}
                 vaild={item.valid}
                 photo={item.photo}
