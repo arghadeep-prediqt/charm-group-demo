@@ -11,9 +11,10 @@ type MonthProps = {
   date: Date;
 };
 
-const notAvailable = [3, 26, 4, 2, 24, 8, 29];
-const pickTime = [25, 20, 21, 11, 28, 30, 15];
-const seasonTime = [13, 14, 18, 1, 9, 22, 12];
+const notAvailable = [5, 6, 7, 8, 9, 10, 11];
+const pickTime = [12, 13, 14, 15, 16, 17, 18];
+const seasonTime = [19, 20, 21, 22, 23, 24, 25];
+const memberOnly = [7, 8, 16, 17, 19, 20, 30, 31];
 
 const Month: React.FC<MonthProps> = ({ date }) => {
   const days = eachDayOfInterval({
@@ -25,16 +26,35 @@ const Month: React.FC<MonthProps> = ({ date }) => {
 
   const getDayColor = (day: Date): string => {
     if (notAvailable.includes(day.getDate()) && day.getFullYear() === 2025)
-      return "bg-gray-200 border-gray-200 text-gray-400 shadow-none cursor-not-allowed"; // Not Available
+      return `${
+        memberOnly.includes(day.getDate())
+          ? "border-2 border-[#003049]"
+          : "border-[#B0E0E6]"
+      } bg-[#87CEFA] text-slate-700 cursor-pointer`; // Not Available
+
     if (pickTime.includes(day.getDate()) && day.getFullYear() === 2025)
-      return "border-red-200 bg-red-100 text-red-700 cursor-pointer"; // Pick Time
+      return `${
+        memberOnly.includes(day.getDate())
+          ? "border-2 border-[#003049]"
+          : "border-[#FFD1DC]"
+      } bg-[#FF69B4] text-white cursor-pointer`; // Pick Time
+
     if (seasonTime.includes(day.getDate()) && day.getFullYear() === 2025)
-      return "bg-purple-100 text-purple-700 border-purple-200 cursor-pointer"; // Season Time
-    return "bg-blue-100 text-blue-700 border-blue-200 cursor-pointer"; // Available
+      return `${
+        memberOnly.includes(day.getDate())
+          ? "border-2 border-[#003049]"
+          : "border-[#FF7F50]"
+      } bg-[#FF4500] text-white cursor-pointer`; // Season Time
+
+    return `${
+      memberOnly.includes(day.getDate())
+        ? "border-2 border-[#003049]"
+        : "border-[#20B2AA]"
+    } bg-[#008080c9] text-white cursor-pointer`; // Available
   };
 
   return (
-    <div className="bg-[#e8f6fe] rounded-xl p-4 shadow-sm">
+    <div className="bg-[#fef5e8] rounded-xl p-4 shadow-sm">
       {/* Month Title */}
       <h3 className="text-center text-gray-700 mb-5">
         {format(date, "MMMM yyyy")}

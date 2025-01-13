@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { addMonths, subMonths } from "date-fns";
-import Month from "./Month";
 import { ChevronLeftCircle, ChevronRightCircle } from "lucide-react";
+import dynamic from "next/dynamic";
+
+const Month = dynamic(() => import("./Month"));
 
 const Calendar: React.FC = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -9,7 +11,7 @@ const Calendar: React.FC = () => {
   const handleNext = () => setCurrentDate(addMonths(currentDate, 1));
   const handlePrevious = () => setCurrentDate(subMonths(currentDate, 1));
 
-  const months = [0, 1, 2].map((offset) => addMonths(currentDate, offset));
+  const months = [0, 1, 2].map((offset) => addMonths(currentDate, offset)); // calender view offset
 
   return (
     <div className="relative max-w-7xl mx-auto">
