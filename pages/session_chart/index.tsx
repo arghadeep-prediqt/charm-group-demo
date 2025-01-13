@@ -6,12 +6,14 @@ import {
   thirdFilter,
   yearData,
 } from "@/components/lib/rawData";
-import Container from "@/components/shared/Container";
-import Calendar from "@/components/shared/SessionCalender/Calender";
 import { BlurImage } from "@/components/ui/BluerImage";
 import dynamic from "next/dynamic";
 import React from "react";
 
+const Container = dynamic(() => import("@/components/shared/Container"));
+const Calendar = dynamic(
+  () => import("@/components/shared/SessionCalender/Calender")
+);
 const SelectListBox = dynamic(() => import("@/components/ui/SelectListBox"));
 const NavContainer = dynamic(() => import("@/components/shared/NavContainer"));
 const TopBanner = dynamic(
@@ -88,23 +90,30 @@ function SessionChartPage() {
       <div className="sticky bottom-0 w-full py-2 bg-amber-50">
         <Container className="flex justify-between items-center">
           <div className="flex justify-start items-center gap-x-2">
-            <p className="size-4 rounded-full bg-blue-400">&nbsp;</p>
-            <p className="text-p1-m">Available Dates</p>
+            <p className="size-4 rounded-full bg-[#008080]">&nbsp;</p>
+            <p className="text-p1-m">Dewdrop Seasons</p>
           </div>
 
           <div className="flex justify-start items-center gap-x-2">
-            <p className="size-4 rounded-full bg-red-400">&nbsp;</p>
-            <p className="text-p1-m">Unavailable Dates</p>
+            <p className="size-4 rounded-full bg-[#FF69B4]">&nbsp;</p>
+            <p className="text-p1-m">Blossom Season</p>
           </div>
 
           <div className="flex justify-start items-center gap-x-2">
-            <p className="size-4 rounded-full bg-purple-400">&nbsp;</p>
-            <p className="text-p1-m">Special Offers</p>
+            <p className="size-4 rounded-full bg-[#FF4500]">&nbsp;</p>
+            <p className="text-p1-m">Aurora Seasons</p>
           </div>
 
           <div className="flex justify-start items-center gap-x-2">
-            <p className="size-4 rounded-full bg-gray-400">&nbsp;</p>
-            <p className="text-p1-m">Past Dates</p>
+            <p className="size-4 rounded-full bg-[#87CEFA]">&nbsp;</p>
+            <p className="text-p1-m">Breeze Season</p>
+          </div>
+
+          <div className="flex justify-start items-center gap-x-2">
+            <p className="size-4 rounded-full bg-transparent border-2 border-blue-500">
+              &nbsp;
+            </p>
+            <p className="text-p1-m">Members Only</p>
           </div>
         </Container>
       </div>

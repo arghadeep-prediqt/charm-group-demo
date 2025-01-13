@@ -4,14 +4,14 @@ import React, { useState } from "react";
 const DAYS = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 const STATUS_COLORS = {
   available: "text-[#32CD32]",
-  waitlist: "text-[#FFA500]",
+  waitlist: "text-[#87CEFA]",
   fullyBooked: "text-[#D3D3D3]",
   fillingFast: "text-[#9370DB]",
 };
 
 const STATUS_COLORS_ONLY = {
   available: "bg-[#32CD32]",
-  waitlist: "bg-[#FFA500]",
+  waitlist: "bg-[#87CEFA]",
   fullyBooked: "bg-[#D3D3D3]",
   fillingFast: "bg-[#9370DB]",
 };
@@ -122,13 +122,19 @@ const Calendar: React.FC = () => {
         </div>
 
         {/* Legend and Season Indicator */}
-        <div className="flex items-center ps-4 w-8/12">
+        <ul className="w-2/12 flex justify-start items-start flex-wrap gap-x-4 gap-y-2 text-sm">
+          <li className="flex justify-start items-center gap-x-1">
+            <div className="inline-block size-4 bg-[#008080c9] rounded-full mr-2"></div>
+            <div className="inline-block size-4 bg-[#ff84ef] rounded-full mr-2"></div>
+            <div className="inline-block size-4 bg-[#FF4500] rounded-full mr-2"></div>
+            <div className="inline-block size-4 bg-[#a8d6fe] rounded-full mr-2"></div>
+            Season
+          </li>
+        </ul>
+
+        <div className="flex items-center ps-4 w-6/12">
           {/* Availability Legend */}
           <ul className="flex justify-start items-start flex-wrap gap-x-4 gap-y-2 text-sm">
-            <li className="flex justify-start items-center gap-x-1">
-              <div className="inline-block size-4 bg-[#FFD700] rounded-full mr-2"></div>
-              Peak Season
-            </li>
             <li className="flex justify-start items-center gap-x-1">
               <div className="inline-block size-4 bg-[#32CD32] rounded-full mr-2"></div>
               Available Now
@@ -176,8 +182,8 @@ const Calendar: React.FC = () => {
                 ? day.status === "fullyBooked"
                   ? "bg-[#D3D3D3] border-[#D3D3D3]"
                   : day.status === "fillingFast"
-                  ? "bg-[#c5a8fe] border-[#c5a8fe]"
-                  : "bg-[#ffd484] border-[#ffd484]"
+                  ? "bg-[#a8d6fe] border-[#a8d6fe]"
+                  : "bg-[#ff84ef] border-[#ff84ef]"
                 : "bg-transparent border-gray-100"
             }`}
           >

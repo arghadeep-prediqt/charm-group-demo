@@ -47,7 +47,7 @@ function MagicCompassPage() {
               }
               className="bg-yellow-50 capitalize border-2 border-yellow-300 text-amber-600 text-[20px] font-medium py-2.5 px-8 rounded-full"
             >
-              let the feather guide you
+              Discover your Bliss
             </button>
           </div>
         </div>
