@@ -1,71 +1,76 @@
-import { BlurImage } from "@/components/ui/BluerImage";
+import Container from "@/components/shared/Container";
 import React from "react";
 
-function RefferalSection() {
+const ReferralProgram = () => {
   return (
-    <div className="relative mb-[3%]">
-      <BlurImage
-        src={"/images/reward.svg"}
-        alt="referral"
-        width={1600}
-        height={800}
-        className="w-full h-full"
-      />
-
-      <div className="absolute top-0 left-0 w-full h-full flex justify-center items-end gap-x-3 pb-14">
-        <div className="w-9/12 h-full flex justify-center items-end">
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="bg-white w-10/12 p-4 rounded-full flex justify-start items-center gap-x-4 divide-x-2 divide-gray-300 shadow-sm"
-          >
-            <input
-              required
-              type="text"
-              placeholder="Friend's Name"
-              className="w-full bg-transparent focus:outline-none ps-4 placeholder:text-primary-600 text-p1-m"
-            />
-            <input
-              required
-              type="text"
-              placeholder="Friend's City"
-              className="w-full bg-transparent focus:outline-none ps-4 placeholder:text-primary-600 text-p1-m"
-            />
-            <input
-              required
-              type="text"
-              placeholder="Mobile Number"
-              className="w-full bg-transparent focus:outline-none ps-4 placeholder:text-primary-600 text-p1-m"
-            />
-            <input
-              required
-              type="text"
-              placeholder="Friend's e-mail"
-              className="w-full bg-transparent focus:outline-none ps-4 placeholder:text-primary-600 text-p1-m"
-            />
-            <button
-              type="submit"
-              className="bg-sky-500 text-white text-[18px] font-semibold w-full py-2 rounded-full"
-            >
-              Refer Now
-            </button>
-          </form>
-        </div>
-        <div className="w-3/12">
-          <h1 className="text-white font-medium leading-snug">
-            Explore Charm <br />
-            Rewards Referral <br />
-            Program
-          </h1>
-          <button
-            type="submit"
-            className="mt-8 text-sky-500 bg-white text-p1-m px-10 py-3 rounded-full border-2 shadow-sm"
-          >
-            Explore Now
+    <div
+      className="my-[6%] pt-20 pb-16 font-sans flex flex-col items-center justify-center"
+      style={{
+        backgroundImage: "url('/images/reffer_bg.svg')", // Replace with your SVG path
+        backgroundSize: "con",
+        backgroundPosition: "center",
+      }}
+    >
+      <Container className="w-full">
+        {/* Heading */}
+        <h1 className="text-2xl font-bold text-gray-800">
+          Refer Your Friends to Charm Resorts and Earn Exclusive Vacation
+          Rewards!
+        </h1>
+        <p className="text-gray-600 mt-4">
+          Introduce your loved ones to the luxurious timeshare experiences at
+          Charm Group and earn amazing rewards. Together, create unforgettable
+          memories at our stunning resorts across Vietnam.
+        </p>
+        {/* Form Section */}
+        <div className="mt-8 bg-white shadow-lg rounded-full p-4 relative flex items-center space-x-4">
+          {/* Input Field 1 */}
+          <input
+            type="text"
+            placeholder="Who Are You Referring?"
+            className="flex-1 px-4 py-2 border-none focus:outline-none focus:ring-0 text-gray-700 placeholder-gray-500"
+          />
+          {/* Divider */}
+          <span className="text-gray-300">|</span>
+          {/* Input Field 2 */}
+          <input
+            type="text"
+            placeholder="Where Do They Live?"
+            className="flex-1 px-4 py-2 border-none focus:outline-none focus:ring-0 text-gray-700 placeholder-gray-500"
+          />
+          {/* Divider */}
+          <span className="text-gray-300">|</span>
+          {/* Input Field 3 */}
+          <input
+            type="text"
+            placeholder="Their Contact Number"
+            className="flex-1 px-4 py-2 border-none focus:outline-none focus:ring-0 text-gray-700 placeholder-gray-500"
+          />
+          {/* Divider */}
+          <span className="text-gray-300">|</span>
+          {/* Input Field 4 */}
+          <input
+            type="email"
+            placeholder="Their Email Address"
+            className="flex-1 px-4 py-2 border-none focus:outline-none focus:ring-0 text-gray-700 placeholder-gray-500"
+          />
+          {/* Refer Now Button */}
+          <button className="bg-orange-500 text-white px-10 py-3 text-base rounded-full hover:bg-orange-600 transition shadow-lg ml-4 whitespace-nowrap min-w-[8rem] flex items-center justify-center">
+            REFER NOW
           </button>
         </div>
-      </div>
+        {/* Footer Section */}
+        <div className="flex items-center justify-start mt-8">
+          <p className="text-gray-700 text-left mr-4">
+            Discover More About Charm’s Exclusive Rewards Program
+          </p>
+          <button className="bg-transparent border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-full hover:bg-orange-500 hover:text-white transition shadow-md">
+            EXPLORE NOW
+          </button>
+        </div>
+      </Container>
     </div>
   );
-}
+};
 
-export default RefferalSection;
+export default ReferralProgram;
