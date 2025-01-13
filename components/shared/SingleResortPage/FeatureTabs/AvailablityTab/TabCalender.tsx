@@ -4,14 +4,14 @@ import React, { useState } from "react";
 const DAYS = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 const STATUS_COLORS = {
   available: "text-[#32CD32]",
-  waitlist: "text-[#87CEFA]",
+  waitlist: "text-[#FFA500]",
   fullyBooked: "text-[#D3D3D3]",
   fillingFast: "text-[#9370DB]",
 };
 
 const STATUS_COLORS_ONLY = {
   available: "bg-[#32CD32]",
-  waitlist: "bg-[#87CEFA]",
+  waitlist: "bg-[#FFA500]",
   fullyBooked: "bg-[#D3D3D3]",
   fillingFast: "bg-[#9370DB]",
 };
