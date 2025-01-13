@@ -1,4 +1,3 @@
-import { BlurImage } from "@/components/ui/BluerImage";
 import {
   Disclosure,
   DisclosureButton,
@@ -8,6 +7,12 @@ import { ChevronDown } from "lucide-react";
 import dynamic from "next/dynamic";
 import React from "react";
 
+const HolidaySummary = dynamic(
+  () => import("@/components/templates/MembershipPage/HolidaySummary")
+);
+const CancellationPolicy = dynamic(
+  () => import("@/components/shared/ProfilePage/CancellationPolicy")
+);
 const HolidayBookings = dynamic(
   () => import("@/components/templates/MembershipPage/HolidaysBooking")
 );
@@ -29,7 +34,7 @@ function UtilizationPage() {
       />
       <div
         id="holidays"
-        className="px-4 mb-12 relative flex justify-start items-start"
+        className="px-4 pe-4 mb-12 relative flex justify-start items-start"
       >
         <div className="w-[20vw] p-4 sticky top-14">
           <LeftSideNav />
@@ -39,13 +44,7 @@ function UtilizationPage() {
 
           <div id="cancellation" className="pt-[5%] bg-white">
             <div className="container mx-auto py-16">
-              <BlurImage
-                src="/member/member_footer.png"
-                alt="footer"
-                width={1400}
-                height={600}
-                className="w-full h-full object-contain"
-              />
+              <CancellationPolicy />
             </div>
           </div>
         </div>
@@ -58,13 +57,14 @@ function UtilizationPage() {
 export default UtilizationPage;
 
 const accordianData = [
-  { name: "Eligible Holidays", link: "/member/accordian_member.png" },
-  { name: "Confirmed Stays", link: "/member/accordian_member.png" },
-  { name: "Cancelled Reservations", link: "/member/accordian_member.png" },
-  { name: "Expired Holidays", link: "/member/accordian_member.png" },
+  { name: "Holidays Summary", body: <HolidaySummary /> },
+  { name: "Eligible Holidays", body: <HolidayBookings /> },
+  { name: "Confirmed Stays", body: <HolidayBookings /> },
+  { name: "Cancelled Reservations", body: <HolidayBookings /> },
+  { name: "Expired Holidays", body: <HolidayBookings /> },
   {
     name: "Adjustments & Deductions",
-    link: "/member/accordian_member.png",
+    body: <HolidayBookings />,
   },
 ];
 
@@ -85,7 +85,7 @@ function AccordianSection() {
             as={"div"}
             className="py-1 px-6 w-full border rounded-2xl"
           >
-            <HolidayBookings />
+            {item.body}
           </DisclosurePanel>
         </Disclosure>
       ))}

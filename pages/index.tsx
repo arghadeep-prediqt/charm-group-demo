@@ -1,5 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
+import RefferalSection from "@/components/templates/Home/RefferalSection";
 
 const ChatBot = dynamic(() => import("@/components/shared/ChatBot"));
 const ExperienceSection = dynamic(
@@ -28,6 +29,7 @@ function HomePage() {
       <Resorts />
       <PrivilegsSection />
       <TravelDiaries />
+      <RefferalSection />
       <ExperienceSection />
 
       <ChatBot />

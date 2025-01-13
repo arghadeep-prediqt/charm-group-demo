@@ -802,15 +802,15 @@ export const experiences: Experience[] = [
 export const faqData = [
   {
     heading: "What is Charm Group?",
-    description: `Charm Group is one of India's leading vacation ownership companies, offering unforgettable holiday experiences across a range of resorts and destinations.`,
+    description: `Charm Group is one of Vietnam's leading vacation ownership companies, offering unforgettable holiday experiences across a range of resorts and destinations.`,
   },
   {
     heading: "How does Charm Group membership work?",
-    description: `Charm Group membership allows you to book vacations at over 100 resorts in India and abroad. Members get annual vacation weeks for 25 years, which can be customised based on your preferences.`,
+    description: `Charm Group membership allows you to book vacations at over 100 resorts in Vietnam and abroad. Members get annual vacation weeks for 25 years, which can be customised based on your preferences.`,
   },
   {
     heading: "Can I choose my holiday destination?",
-    description: `Yes, Charm Group provides flexibility to choose from a variety of destinations in India and abroad. Availability depends on the type of membership plan and booking period.`,
+    description: `Yes, Charm Group provides flexibility to choose from a variety of destinations in Vietnam and abroad. Availability depends on the type of membership plan and booking period.`,
   },
   {
     heading: "What are the benefits of a Charm Group membership?",
@@ -834,7 +834,7 @@ export const faqData = [
   },
   {
     heading: "What facilities are available at Charm Group resorts?",
-    description: `Charm Group resorts offer luxurious accommodations, multi-cuisine restaurants, swimming pools, wellness spas, kids’ activities, and more to ensure a memorable stay.`,
+    description: `Charm Group resorts offer luxurious accommodations, multi-cuisine restaurants, swimming pools, wellness spas, kids' activities, and more to ensure a memorable stay.`,
   },
   {
     heading: "Is Charm Group membership transferable?",
