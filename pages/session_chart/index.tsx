@@ -81,7 +81,7 @@ function SessionChartPage() {
             <h4 className="text-primary-600 leading-relaxed">{item}</h4>
           </div>
 
-          <div className="py-2">
+          <div className="pt-2 pb-5">
             <Calendar />
           </div>
         </Container>
