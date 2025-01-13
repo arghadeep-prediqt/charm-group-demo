@@ -81,13 +81,13 @@ function SessionChartPage() {
             <h4 className="text-primary-600 leading-relaxed">{item}</h4>
           </div>
 
-          <div className="py-2">
+          <div className="pt-2 pb-5">
             <Calendar />
           </div>
         </Container>
       ))}
 
-      <div className="sticky bottom-0 w-full py-2 bg-amber-50">
+      <div className="sticky bottom-0 w-full py-2 bg-[#ecffeb]">
         <Container className="flex justify-between items-center">
           <div className="flex justify-start items-center gap-x-2">
             <p className="size-4 rounded-full bg-[#008080]">&nbsp;</p>
