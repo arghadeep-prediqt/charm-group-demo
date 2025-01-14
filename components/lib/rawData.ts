@@ -187,16 +187,15 @@ export const firstFilter: SelectedProps[] = [
   { id: 1, name: "International" },
   { id: 2, name: "North" },
   { id: 3, name: "South" },
-  { id: 4, name: "East" },
-  { id: 5, name: "West" },
+  { id: 4, name: "Central" },
 ];
 
 export const regionData: SelectedProps[] = [
   { id: 0, name: "Region" },
   { id: 1, name: "North" },
   { id: 2, name: "South" },
-  { id: 3, name: "East" },
-  { id: 4, name: "West" },
+  { id: 3, name: "Central" },
+  { id: 4, name: "International" },
 ];
 
 export const domesticData: SelectedProps[] = [
@@ -212,7 +211,6 @@ export const secondFilter: SelectedProps[] = [
   { id: 4, name: "Waterfront" },
   { id: 5, name: "Jungle" },
   { id: 6, name: "Desert" },
-  { id: 7, name: "Himalayan" },
 ];
 
 export const thirdFilter: SelectedProps[] = [
