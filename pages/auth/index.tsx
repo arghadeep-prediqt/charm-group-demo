@@ -26,7 +26,7 @@ function Login() {
 
       // console.log({ email, password });
 
-      if (email === "arghadeep.mallick@prediqt.it" && password === "123456") {
+      if (email === "arghadeep.mallick@prediqt.it" && password === "12345678") {
         setCookie("authUser", JSON.stringify({ token: String(email) }), {
           expires: new Date(Date.now() + 43200000),
           // httpOnly: true,

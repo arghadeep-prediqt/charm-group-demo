@@ -1,20 +1,8 @@
 import { MoveLeft, MoveRight } from "lucide-react";
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
+import TableCalenderDate from "./TableCalenderDate";
 
 const DAYS = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
-const STATUS_COLORS = {
-  available: "text-[#32CD32]",
-  waitlist: "text-[#FFA500]",
-  fullyBooked: "text-[#D3D3D3]",
-  fillingFast: "text-[#9370DB]",
-};
-
-const STATUS_COLORS_ONLY = {
-  available: "bg-[#32CD32]",
-  waitlist: "bg-[#FFA500]",
-  fullyBooked: "bg-[#D3D3D3]",
-  fillingFast: "bg-[#9370DB]",
-};
 
 interface Day {
   date: number | null;
@@ -52,7 +40,7 @@ const Calendar: React.FC = () => {
             ? "available"
             : "waitlist";
 
-        const roomTypes = ["2BR", "HU", "STU"];
+        const roomTypes = ["1BR", "2BR", "3BR", "Villa"];
 
         return { date, status, roomTypes };
       }
@@ -196,23 +184,28 @@ const Calendar: React.FC = () => {
                       : "text-primary-700"
                   }`}
                 >
-                  {String(day.date).padStart(2, "0")}
+                  {day.date.toLocaleString("en-IN", {
+                    minimumIntegerDigits: 2,
+                  })}
                 </div>
                 <div className="text-xs space-y-1">
-                  {day.roomTypes.map((room, idx) => (
-                    <button
-                      key={idx}
-                      className={`${STATUS_COLORS[day.status]} 
-                        w-full text-[14px] font-semibold text-start bg-white py-1 px-2 rounded active:opacity-65 flex justify-between items-center`}
-                    >
-                      {room}
-                      <div
-                        className={`size-2 rounded-full ${
-                          STATUS_COLORS_ONLY[day.status]
-                        }`}
-                      ></div>
-                    </button>
-                  ))}
+                  {day.roomTypes.map((room, idx) => {
+                    const roomId = `${currentYear}-${currentMonth.toLocaleString(
+                      "en-IN",
+                      {
+                        minimumIntegerDigits: 2,
+                      }
+                    )}-${day.date}/${room.toLocaleLowerCase()}`;
+
+                    return (
+                      <TableCalenderDate
+                        key={idx}
+                        id={roomId}
+                        room={room}
+                        status={day.status}
+                      />
+                    );
+                  })}
                 </div>
               </>
             )}
@@ -223,4 +216,4 @@ const Calendar: React.FC = () => {
   );
 };
 
-export default Calendar;
+export default memo(Calendar);
