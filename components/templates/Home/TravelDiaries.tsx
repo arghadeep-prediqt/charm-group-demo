@@ -21,7 +21,7 @@ function TravelDiaries() {
     );
   };
 
-  const { heading, subHeading, description, image, resort } =
+  const { heading, subHeading, description, image, id } =
     travelDiaries[currentIndex];
 
   return (
@@ -71,9 +71,7 @@ function TravelDiaries() {
                 Read full Story
               </button>
               <button
-                onClick={() =>
-                  router.push(`/our_resorts/${resort.split(" ").join("%20")}`)
-                }
+                onClick={() => router.push(`/our_resorts/${id}`)}
                 className="px-4 py-2 text-[18px] font-medium leading-relaxed bg-yellow-300 border-2 border-yellow-200 text-gray-600 rounded-full min-w-[200px] shadow-sm"
               >
                 Explore Resort

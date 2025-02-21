@@ -13,6 +13,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  env: {
+    APIENDPOINT: "https://charm.project.prediqt.ai/v1/api",
+  },
 };
 
 export default nextConfig;

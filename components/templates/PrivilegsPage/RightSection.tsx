@@ -28,6 +28,7 @@ function RightSection() {
 
   const cards = mockCarouselData.map((card, index) => {
     const item = {
+      id: card.id,
       src: card?.src || "",
       title: card?.title || "",
       category: card?.category || "",

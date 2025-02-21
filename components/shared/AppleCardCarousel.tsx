@@ -10,7 +10,8 @@ interface CarouselProps {
   initialScroll?: number;
 }
 
-type Card = {
+type CardProps = {
+  id: string;
   src: string;
   title: string;
   category: string;
@@ -152,7 +153,7 @@ export const Card = ({
   // index = 0,
   layout = false,
 }: {
-  card: Card;
+  card: CardProps;
   index: number;
   layout?: boolean;
 }) => {
@@ -161,9 +162,7 @@ export const Card = ({
   return (
     <motion.button
       layoutId={layout ? `card-${card.title}` : undefined}
-      onClick={() =>
-        router.push(`/our_resorts/${card.title.split(" ").join("%20")}`)
-      }
+      onClick={() => router.push(`/our_resorts/${card.id}`)}
       className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[470px] md:w-[350px] overflow-hidden flex flex-col items-start justify-start relative z-10"
     >
       <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-transparent to-black/90 z-30 pointer-events-none" />

@@ -14,16 +14,26 @@ const Container = dynamic(() => import("@/components/shared/Container"));
 
 interface PageProps {
   name: string;
+  location: string;
 }
 
-function SectionTab({ name }: PageProps) {
+function SectionTab({ name, location }: PageProps) {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const tabCategories = [
     {
       name: "Resort Highlights",
-      component: <AboutTab name={name} setActiveIndex={setActiveIndex} />,
+      component: (
+        <AboutTab
+          name={name}
+          location={location}
+          setActiveIndex={setActiveIndex}
+        />
+      ),
     },
-    { name: "Book Your Stay", component: <AvailablityTab name={name} /> },
+    {
+      name: "Book Your Stay",
+      component: <AvailablityTab name={name} location={location} />,
+    },
   ];
 
   return (

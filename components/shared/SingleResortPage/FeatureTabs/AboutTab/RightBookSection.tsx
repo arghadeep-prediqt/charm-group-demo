@@ -9,6 +9,7 @@ const CustomButton = dynamic(() => import("@/components/ui/CustomButton"));
 
 interface PageProps {
   name: string;
+  location: string;
   setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
@@ -18,7 +19,7 @@ const resortImage = [
   "https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Ho-Tram-12.jpg",
 ];
 
-function RightBookSection({ name, setActiveIndex }: PageProps) {
+function RightBookSection({ name, location, setActiveIndex }: PageProps) {
   const [showCalender, setShowCalendar] = useState<boolean>(false);
   const [selectedRange, setSelectedRange] = useState<{
     startDate: Date | null;
@@ -64,7 +65,7 @@ function RightBookSection({ name, setActiveIndex }: PageProps) {
   return (
     <div className="mb-3 bg-gray-50 p-6 rounded-xl border border-gray-200">
       <h3 className="capitalize text-[21px] font-medium">{name}</h3>
-      <p className="my-2 text-p2-r text-gray-600">Vung Tau province, Vietnam</p>
+      <p className="my-2 text-p2-r text-gray-600">{location}</p>
 
       <div className="mt-5 flex justify-start items-center gap-x-1">
         <button className="border-none text-p3-m text-amber-500">

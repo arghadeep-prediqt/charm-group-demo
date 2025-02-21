@@ -1,6 +1,8 @@
 import { MoveLeft, MoveRight } from "lucide-react";
+import dynamic from "next/dynamic";
 import React, { memo, useState } from "react";
-import TableCalenderDate from "./TableCalenderDate";
+
+const TableCalenderDate = dynamic(() => import("./TableCalenderDate"));
 
 const DAYS = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
@@ -110,13 +112,11 @@ const Calendar: React.FC = () => {
         </div>
 
         {/* Legend and Season Indicator */}
-        <ul className="w-2/12 flex justify-start items-start flex-wrap gap-x-4 gap-y-2 text-sm">
+        <ul className="w-2/12 flex justify-end items-center flex-wrap gap-x-4 gap-y-2 text-sm">
           <li className="flex justify-start items-center gap-x-1">
-            <div className="inline-block size-4 bg-[#008080c9] rounded-full mr-2"></div>
-            <div className="inline-block size-4 bg-[#ff84ef] rounded-full mr-2"></div>
-            <div className="inline-block size-4 bg-[#FF4500] rounded-full mr-2"></div>
-            <div className="inline-block size-4 bg-[#a8d6fe] rounded-full mr-2"></div>
-            Season
+            <div className="inline-block size-4 bg-[#E7E6E6] rounded-full mr-2"></div>
+            <div className="inline-block size-4 bg-[#FFD966] rounded-full mr-2"></div>
+            <div className="inline-block size-4 bg-[#2F5597] rounded-full mr-2"></div>
           </li>
         </ul>
 
@@ -127,19 +127,19 @@ const Calendar: React.FC = () => {
               <div className="inline-block size-4 bg-[#32CD32] rounded-full mr-2"></div>
               Available Now
             </li>
-            <li className="flex justify-start items-center gap-x-1">
+            {/* <li className="flex justify-start items-center gap-x-1">
               <div className="inline-block size-4 bg-[#FFA500] rounded-full mr-2"></div>
               Join Waitlist
-            </li>
+            </li> */}
             <li className="flex justify-start items-center gap-x-1">
               <div className="inline-block size-4 bg-[#FF4500] rounded-full mr-2"></div>
               Fully Reserved
             </li>
 
-            <li className="flex justify-start items-center gap-x-1">
+            {/* <li className="flex justify-start items-center gap-x-1">
               <div className="inline-block size-4 bg-[#9370DB] rounded-full mr-2"></div>
               Filling Fast
-            </li>
+            </li> */}
             <li className="flex justify-start items-center gap-x-1">
               <div className="inline-block size-4 bg-gray-300 rounded-full mr-2"></div>
               Not Operational / Not Available
@@ -170,8 +170,8 @@ const Calendar: React.FC = () => {
                 ? day.status === "fullyBooked"
                   ? "bg-[#D3D3D3] border-[#D3D3D3]"
                   : day.status === "fillingFast"
-                  ? "bg-[#a8d6fe] border-[#a8d6fe]"
-                  : "bg-[#ff84ef] border-[#ff84ef]"
+                  ? "bg-[#FFD966] border-[#FFD966]"
+                  : "bg-[#2F5597] border-[#2F5597]"
                 : "bg-transparent border-gray-100"
             }`}
           >
@@ -181,7 +181,9 @@ const Calendar: React.FC = () => {
                   className={`text-[21px] font-semibold mb-2 ${
                     day.status === "fullyBooked"
                       ? "text-gray-400"
-                      : "text-primary-700"
+                      : day.status === "fillingFast"
+                      ? "text-primary-700"
+                      : "text-white"
                   }`}
                 >
                   {day.date.toLocaleString("en-IN", {

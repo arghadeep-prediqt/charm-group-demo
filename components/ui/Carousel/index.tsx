@@ -115,9 +115,7 @@ const Carousel = () => {
         </div>
         {/* Content */}
         <button
-          onClick={() =>
-            router.push("/our_resorts/charm%20resort%20west%20lake")
-          }
+          onClick={() => router.push("/our_resorts/67a1d14ce051bfada7f48b7f")}
           className="w-5/12 px-6 py-2 bg-sky-500 text-white rounded-full hover:bg-sky-600 z-10 text-p1-b leading-relaxed"
         >
           Explore Now

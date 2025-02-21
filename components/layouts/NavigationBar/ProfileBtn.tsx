@@ -1,5 +1,6 @@
 import { navigationProfile } from "@/components/lib/rawData";
 import { BlurImage } from "@/components/ui/BluerImage";
+import { useAppSelector } from "@/redux/hooks";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { deleteCookie } from "cookies-next";
 import { Poppins } from "next/font/google";
@@ -16,6 +17,7 @@ const poppins = Poppins({
 
 function ProfileBtn() {
   const router = useRouter();
+  const userDetails = useAppSelector((state) => state.user);
 
   const signOut = () => {
     deleteCookie("authUser");
@@ -28,16 +30,19 @@ function ProfileBtn() {
         className="relative flex justify-between items-center gap-x-2 bg-inherit focus:outline-none"
       >
         <BlurImage
-          src={"/images/profile.jpg"}
+          src={userDetails?.image}
           alt="profile"
           width={100}
           height={100}
           className="size-10 object-cover rounded-full border border-amber-300"
         />
         <div className="py-1 px-1 leading-relaxed text-start">
-          <p className="text-p2-b">Hồng Oanh</p>
-          <p className="text-p3-m text-amber-300 hover:underline hover:underline-offset-2">
-            Day Available
+          {/* <p className="text-p2-b">Hồng Oanh</p> */}
+          <p className="text-p2-b capitalize">
+            {userDetails?.name?.split(" ")[0]}
+          </p>
+          <p className="uppercase text-p3-m text-amber-300 hover:underline hover:underline-offset-2">
+            {userDetails?.role}
           </p>
         </div>
       </MenuButton>

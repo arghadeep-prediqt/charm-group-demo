@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Switch } from "@headlessui/react";
 import { BlurImage } from "@/components/ui/BluerImage";
 import { PencilLine } from "lucide-react";
+import { useAppSelector } from "@/redux/hooks";
 
 function InformationSection() {
   return (
@@ -66,12 +67,14 @@ function InformationSection() {
 export default InformationSection;
 
 function AvatarSection() {
+  const userDetails = useAppSelector((state) => state.user);
+
   return (
     <div className="py-5 flex flex-col justify-center items-center gap-x-2">
       <div className="relative">
         <BlurImage
-          src={"/images/profile.jpg"}
-          alt="profile"
+          src={userDetails?.image}
+          alt={userDetails?.name}
           width={200}
           height={200}
           className="size-28 p-1 bg-amber-200 shadow-sm rounded-full"
@@ -81,17 +84,18 @@ function AvatarSection() {
       </div>
 
       <div className="mt-4">
-        <p className="text-[20px] leading-relaxed text-center font-medium text-gray-800">
-          Hồng Oanh
+        <p className="text-[20px] leading-relaxed text-center font-medium text-gray-800 capitalize">
+          {userDetails?.name}
         </p>
         <p className="text-[16px] leading-relaxed text-center text-gray-600 font-semibold">
-          Hồng_Oanh@charm.vn
+          {userDetails?.email}
         </p>
         <p className="text-[16px] mt-2 leading-relaxed text-center text-gray-600 font-medium">
           Membership ID - <span className="font-semibold">0255514</span>
         </p>
         <p className="text-[16px] leading-relaxed text-center text-gray-600 font-medium">
-          Membership Plan - <span className="font-semibold">Navigator</span>
+          Membership Plan -{" "}
+          <span className="font-semibold capitalize">{userDetails?.role}</span>
         </p>
         <p className="text-[16px] leading-relaxed text-center text-gray-600 font-medium">
           Autopay on <span className="font-semibold">Dec 09, 2025</span>
@@ -102,6 +106,8 @@ function AvatarSection() {
 }
 
 function FullName() {
+  const userDetails = useAppSelector((state) => state.user);
+
   return (
     <div className="mt-6 flex justify-start items-center gap-x-2">
       <p className="w-2/12 text-[16px] text-gray-800 font-medium">Full Name*</p>
@@ -110,14 +116,14 @@ function FullName() {
         <input
           type="text"
           placeholder="First Name"
-          defaultValue={"Hồng"}
+          defaultValue={userDetails?.name?.split(" ")[0]}
           className="w-6/12 ring-[2px] ring-gray-300 text-p1-m py-2 px-4 rounded-xl shadow-sm focus:outline-none focus:ring-blue-400 placeholder:text-gray-600 text-gray-700"
           required
         />
         <input
           type="text"
           placeholder="Last Name"
-          value={"Oanh"}
+          defaultValue={userDetails?.name?.split(" ")[1]}
           className="w-6/12 ring-[2px] ring-gray-300 text-p1-m py-2 px-4 rounded-xl shadow-sm focus:outline-none focus:ring-blue-400 placeholder:text-gray-600 text-gray-700"
           required
         />

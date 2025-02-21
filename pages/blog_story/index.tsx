@@ -10,7 +10,7 @@ const NavContainer = dynamic(() => import("@/components/shared/NavContainer"));
 function BlogStoryPage() {
   const router = useRouter();
   const params = router.query;
-  const { heading, subHeading, description, image, resort } =
+  const { heading, subHeading, description, image, id } =
     travelDiaries[Number(params?.index) || 0];
 
   return (
@@ -37,9 +37,7 @@ function BlogStoryPage() {
 
           <div className="mb-12 flex justify-center items-center">
             <button
-              onClick={() =>
-                router.push(`/our_resorts/${resort.split(" ").join("%20")}`)
-              }
+              onClick={() => router.push(`/our_resorts/${id}`)}
               className="w-5/12 bg-sky-500 text-p1-b text-white py-2.5 rounded-full"
             >
               Explore Resort

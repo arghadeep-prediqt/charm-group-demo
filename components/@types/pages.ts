@@ -13,6 +13,7 @@ export interface SelectedProps {
 
 // Interface for a single resort
 export interface Resort {
+  _id?: string;
   name: string;
   location: string;
 }
@@ -35,4 +36,14 @@ export interface Experience {
   id: number;
   title: string;
   image: string;
+}
+
+export interface AllResortDataProps {
+  _id: string;
+  name: string;
+  location: string;
+  photo: string;
+  district: string;
+  region: string;
+  region_local: string;
 }

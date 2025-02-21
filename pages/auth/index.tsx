@@ -1,10 +1,12 @@
 import React, { useCallback, useState } from "react";
-import { useRouter } from "next/navigation";
 import { Eye, EyeClosed } from "lucide-react";
 import { BlurImage } from "@/components/ui/BluerImage";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { setCookie } from "cookies-next";
+import { useLoginGateWayMutation } from "@/redux/services/authApi";
+import toast from "react-hot-toast";
+import { useRouter } from "next/router";
 
 const Footer = dynamic(() => import("@/components/shared/Footer"));
 
@@ -13,35 +15,51 @@ function Login() {
   const [isShow, setIsShow] = useState<boolean>(false);
   const [isClicked, setIsClicked] = useState<boolean>(false);
   //   const [cookies, setCookie] = useCookies(["authUser"]);
+  const [loginGateWay] = useLoginGateWayMutation();
 
   const handleForm = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       setIsClicked(true);
 
-      const formData = new FormData(e.currentTarget);
+      const toastId = toast.loading("Verifying user...");
 
-      const email = formData.get("email");
-      const password = formData.get("password");
+      try {
+        const formData = new FormData(e.currentTarget);
+        const email = formData.get("email");
+        const password = formData.get("password");
 
-      // console.log({ email, password });
-
-      if (email === "arghadeep.mallick@prediqt.it" && password === "12345678") {
-        setCookie("authUser", JSON.stringify({ token: String(email) }), {
-          expires: new Date(Date.now() + 43200000),
-          // httpOnly: true,
-          // maxAge: 43200,
-          // path: '/',
+        const response = await loginGateWay({
+          email: String(email),
+          password: String(password),
         });
-        window.location.reload();
-        setIsClicked(false);
-        return;
-      }
 
-      setIsClicked(false);
-      alert("User credentials are incorrect.");
+        if (response?.data) {
+          // save the cookie
+          setCookie("authUser", JSON.stringify({ ...response.data }), {
+            expires: new Date(Date.now() + 43200000),
+            // httpOnly: true,
+            // maxAge: 43200,
+            // path: '/',
+          });
+          // Success Message
+          toast.success("Login Successfully", { id: toastId });
+          router.reload();
+        } else {
+          // When error ocure
+          const jsonError = JSON.stringify(response?.error);
+          const resError = JSON.parse(jsonError);
+          throw resError?.data?.message || "Server Error";
+        }
+        setIsClicked(false);
+      } catch (error) {
+        // console.log(error);
+        toast.error(String(error), { id: toastId });
+      } finally {
+        setIsClicked(false);
+      }
     },
-    []
+    [loginGateWay, router]
   );
 
   return (

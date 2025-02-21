@@ -14,16 +14,16 @@ interface PageProps {
 
 const STATUS_COLORS = {
   available: "text-[#32CD32]",
-  waitlist: "text-[#FFA500]",
+  waitlist: "text-[#32CD32]",
   fullyBooked: "text-[#D3D3D3]",
-  fillingFast: "text-[#9370DB]",
+  fillingFast: "text-[#FF4500]",
 };
 
 const STATUS_COLORS_ONLY = {
   available: "bg-[#32CD32]",
-  waitlist: "bg-[#FFA500]",
+  waitlist: "bg-[#32CD32]",
   fullyBooked: "bg-[#D3D3D3]",
-  fillingFast: "bg-[#9370DB]",
+  fillingFast: "bg-[#FF4500]",
 };
 
 function TableCalenderDate({ id, room, status }: PageProps) {

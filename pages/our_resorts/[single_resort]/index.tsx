@@ -1,6 +1,8 @@
+import ProfileContext from "@/contextAPI/ProfileContext";
+import { useGetSingleResortQuery } from "@/redux/services/resortApi";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useContext } from "react";
 
 const SectionTab = dynamic(
   () => import("@/components/templates/SingleResortPage/SectionTab")
@@ -14,6 +16,11 @@ const NavContainer = dynamic(() => import("@/components/shared/NavContainer"));
 function SingleResortPage() {
   const router = useRouter();
   const params = router?.query?.single_resort;
+  const { cookieToken } = useContext(ProfileContext);
+  const { data, isSuccess } = useGetSingleResortQuery({
+    id: String(params),
+    token: cookieToken,
+  });
 
   return (
     <NavContainer>
@@ -21,7 +28,12 @@ function SingleResortPage() {
         <TopCarousel />
       </Container>
 
-      <SectionTab name={String(params)} />
+      {isSuccess && (
+        <SectionTab
+          name={data?.name || ""}
+          location={`${data?.location}, Vietnam`}
+        />
+      )}
     </NavContainer>
   );
 }

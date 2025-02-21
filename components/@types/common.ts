@@ -1,5 +1,7 @@
 import { CSSProperties, ReactNode } from "react";
 
+export type RoleType = "silver" | "gold" | "diamond" | null;
+
 export interface CommonProps {
   className?: string;
   children?: ReactNode;
