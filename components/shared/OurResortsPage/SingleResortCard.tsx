@@ -12,14 +12,7 @@ function SingleResortCard() {
       {allResort.resorts?.map((item, id) => (
         <button
           key={id}
-          onClick={() =>
-            router.push(
-              `/our_resorts/${item.name
-                ?.split(" ")
-                .join("%20")
-                .toLocaleLowerCase()}`
-            )
-          }
+          onClick={() => router.push(`/our_resorts/${item._id}`)}
           className="w-[48%] h-[200px] relative text-start focus:outline-none"
         >
           <BlurImage

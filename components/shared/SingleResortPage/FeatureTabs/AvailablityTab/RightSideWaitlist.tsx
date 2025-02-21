@@ -7,17 +7,16 @@ const MemberDropdown = dynamic(() => import("@/components/ui/MemberDropdown"));
 const PeopleDropdown = dynamic(() => import("@/components/ui/PeopleDropdown"));
 interface PageProps {
   name: string;
+  location: string;
 }
 
-function RightSideWaitlist({ name }: PageProps) {
+function RightSideWaitlist({ name, location }: PageProps) {
   const router = useRouter();
   return (
     <div className="mb-3 bg-gray-50 rounded-xl border border-gray-200">
       <div className="p-6">
         <h3 className="capitalize text-[20px] font-medium">{name}</h3>
-        <p className="my-2 text-p2-r text-gray-600">
-          Vung Tau province, Vietnam
-        </p>
+        <p className="my-2 text-p2-r text-gray-600">{location}</p>
 
         <h4 className="capitalize mt-10 mb-1 text-gray-700">
           Add travellers details

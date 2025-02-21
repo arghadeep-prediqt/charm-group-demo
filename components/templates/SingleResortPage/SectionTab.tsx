@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import { Share2 } from "lucide-react";
@@ -14,16 +14,30 @@ const Container = dynamic(() => import("@/components/shared/Container"));
 
 interface PageProps {
   name: string;
+  location: string;
 }
 
-function SectionTab({ name }: PageProps) {
+function SectionTab({ name, location }: PageProps) {
+  const [activeIndex, setActiveIndex] = useState<number>(0);
   const tabCategories = [
-    { name: "Resort Highlights", component: <AboutTab name={name} /> },
-    { name: "Book Your Stay", component: <AvailablityTab name={name} /> },
+    {
+      name: "Resort Highlights",
+      component: (
+        <AboutTab
+          name={name}
+          location={location}
+          setActiveIndex={setActiveIndex}
+        />
+      ),
+    },
+    {
+      name: "Book Your Stay",
+      component: <AvailablityTab name={name} location={location} />,
+    },
   ];
 
   return (
-    <TabGroup>
+    <TabGroup selectedIndex={activeIndex} onChange={(e) => setActiveIndex(e)}>
       <TabList className="mt-2 mb-4 ">
         <Container className="relative">
           <div className="w-9/12 flex justify-between items-center gap-4 pe-10">

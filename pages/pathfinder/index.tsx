@@ -43,7 +43,7 @@ function MagicCompassPage() {
             <button
               type="submit"
               onClick={() =>
-                router.push("/our_resorts/Charm%20Resort%20Hồ%20Tràm")
+                router.push("/our_resorts/67a1d14ce051bfada7f48b7f")
               }
               className="bg-yellow-50 capitalize border-2 border-yellow-300 text-amber-600 text-[20px] font-medium py-2.5 px-8 rounded-full"
             >

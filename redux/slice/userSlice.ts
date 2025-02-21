@@ -1,17 +1,20 @@
+import { RoleType } from "@/components/@types/common";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface UserSliceProps {
   name: string;
   email: string;
+  image: string;
   is_auth?: boolean;
-  role?: "admin" | "teacher" | "student" | "none";
+  role?: RoleType | string;
 }
 
 const initialState: UserSliceProps = {
   name: "",
   email: "",
+  image: "",
+  role: null,
   is_auth: false,
-  role: "none",
 };
 
 export const userSlice = createSlice({
@@ -20,9 +23,10 @@ export const userSlice = createSlice({
   reducers: {
     addUserDetails: (state, action: PayloadAction<UserSliceProps>) => {
       state.name = action.payload?.name || "";
-      state.role = action.payload?.role || "none";
+      state.image = action.payload?.image || "";
       state.email = action.payload?.email || "";
-      state.is_auth = action.payload.is_auth;
+      state.role = action.payload?.role || null;
+      state.is_auth = action.payload?.is_auth || false;
     },
   },
 });

@@ -151,31 +151,37 @@ export const privilegesSideNav = [
 
 export const mockCarouselData = [
   {
+    id: "67a1d14ce051bfada7f48b7f",
     category: "Thuan Phuoc commune",
     title: "Charm Resort Hồ Tràm",
     src: "https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Ho-Tram-1.jpg",
   },
   {
+    id: "67a1d14ce051bfada7f48b85",
     category: "Long Dien District",
     title: "Charm Resort Long Hải ",
     src: "https://charm.vn/wp-content/uploads/2022/12/tien-ich-Charm-Resort-Long-Hai-4-1.jpg",
   },
   {
+    id: "67a1d14ce051bfada7f48b86",
     category: "Thuan Phuoc commune",
     title: "Charm Diamond",
     src: "https://charm.vn/wp-content/uploads/2021/09/Charm-Diamond-2.jpg",
   },
   {
+    id: "67a1d14ce051bfada7f48b87",
     category: "Thuan Phuoc commune",
     title: "Charm Heritage Village Dalat",
     src: "https://charm.vn/wp-content/uploads/2022/07/Charm-Heritage-Village-Dalat-2-1536x864.jpg",
   },
   {
+    id: "67a1d14ce051bfada7f48b88",
     category: "Thuan Phuoc commune",
     title: "Charm Resort Ho Tram",
     src: "https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Ho-Tram-11.jpg",
   },
   {
+    id: "67a1d14ce051bfada7f48b89",
     category: "Long Dien District",
     title: "Charm Resort Long Hai",
     src: "https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Long-Hai-5-1.jpeg",
@@ -1097,6 +1103,7 @@ export const paymentDetails = [
 
 export const travelDiaries = [
   {
+    id: "67a1d14ce051bfada7f48b7f",
     heading: "Trip to Hồ Tràm, Vietnam",
     subHeading: "Shared By Vương Minh Tuân on 20 September 2024",
     description: `
@@ -1109,6 +1116,7 @@ export const travelDiaries = [
       "https://images.unsplash.com/photo-1675310366607-18d20663943b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
+    id: "67a1d14ce051bfada7f48b80",
     heading: "Into the Heart of Nature at Charm Resort Hồ Tràm",
     subHeading: "Shared By Trần Thị Hồng Lũy on 29 August 2024",
     description: `
@@ -1122,6 +1130,7 @@ export const travelDiaries = [
       "https://images.unsplash.com/photo-1709710223973-bed31e23806d?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
+    id: "67a1d14ce051bfada7f48b81",
     heading: "My Charm Resort Hồ Tràm Diary",
     subHeading: "Shared By Văn Thị Huỳnh Hiên on 04 July 2024",
     description: `

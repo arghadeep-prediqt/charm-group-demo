@@ -2,17 +2,18 @@ import React from "react";
 
 interface PageProps {
   params: string;
+  location: string;
 }
 
-function TopHeading({ params }: PageProps) {
+function TopHeading({ params, location }: PageProps) {
   return (
     <React.Fragment>
       <div className="w-full flex justify-between items-end">
-        <h1 className="w-6/12 capitalize text-gray-700 font-medium leading-relaxed">
+        <h1 className="w-8/12 capitalize text-gray-700 font-medium leading-relaxed">
           {params}
         </h1>
 
-        <div className="w-6/12">
+        <div className="w-4/12">
           <p className="text-end text-p1-r">
             <span className="text-amber-500 font-semibold">6° C</span>{" "}
             <span className="text-gray-600 uppercase">overcast clouds</span>
@@ -24,7 +25,7 @@ function TopHeading({ params }: PageProps) {
           </p>
         </div>
       </div>
-      <p className="text-p1-r text-primary-500">Vung Tau province, Vietnam</p>
+      <p className="text-p1-r text-primary-500">{location}</p>
     </React.Fragment>
   );
 }

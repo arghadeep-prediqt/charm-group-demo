@@ -31,7 +31,7 @@ function HolidayOffer() {
       </div>
       <div className="w-6/12">
         <OfferCard
-          link="/our_resorts/Charm%20Resort%20Hồ%20Tràm"
+          link="/our_resorts/67a1d14ce051bfada7f48b7f"
           offerid="3960451"
           vaild="04 Dec 2025"
           photo="https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Ho-Tram-1.jpg"

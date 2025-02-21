@@ -1,8 +1,10 @@
-import { allResortsData } from "@/components/lib/rawData";
+import { AllResortDataProps, DistrictResorts } from "@/components/@types/pages";
+import ProfileContext from "@/contextAPI/ProfileContext";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { useGetAllResortsQuery } from "@/redux/services/resortApi";
 import { clearResort } from "@/redux/slice/resortSlice";
 import dynamic from "next/dynamic";
-import React, { useState } from "react";
+import React, { useContext, useMemo, useState } from "react";
 
 const SingleResortCard = dynamic(
   () => import("@/components/shared/OurResortsPage/SingleResortCard")
@@ -22,8 +24,13 @@ const Container = dynamic(() => import("@/components/shared/Container"));
 
 function OurResortsPage() {
   const dispatch = useAppDispatch();
+  const { cookieToken } = useContext(ProfileContext);
   const [isDrawerOpen, setDrawerOpen] = useState<boolean>(false);
   const resortName = useAppSelector((state) => state.resort.name);
+  const { data: allResorts, isSuccess } = useGetAllResortsQuery({
+    token: cookieToken,
+  });
+  const allResortsData = useResortsData(allResorts, isSuccess);
 
   const toggleDrawer = () => {
     setDrawerOpen((prev) => !prev);
@@ -42,9 +49,10 @@ function OurResortsPage() {
       </Container>
 
       <div className="py-4">
-        {allResortsData?.map((item, id) => (
-          <ResortAccordian key={id} setDrawerOpen={setDrawerOpen} {...item} />
-        ))}
+        {isSuccess &&
+          allResortsData?.map((item, id) => (
+            <ResortAccordian key={id} setDrawerOpen={setDrawerOpen} {...item} />
+          ))}
       </div>
 
       <SideDrawer
@@ -58,3 +66,42 @@ function OurResortsPage() {
 }
 
 export default OurResortsPage;
+
+const useResortsData = (resorts: AllResortDataProps[], isSuccess: boolean) => {
+  return useMemo(() => {
+    const groupedByRegion =
+      isSuccess &&
+      resorts?.reduce<Record<string, DistrictResorts[]>>((acc, resort) => {
+        if (!acc[resort.region]) {
+          acc[resort.region] = [];
+        }
+
+        let districtData = acc[resort.region].find(
+          (d) => d.district === resort.district
+        );
+
+        if (!districtData) {
+          districtData = {
+            district: resort.district,
+            photo: resort.photo,
+            resorts: [],
+          };
+          acc[resort.region].push(districtData);
+        }
+
+        districtData.resorts.push({
+          _id: resort._id,
+          name: resort.name,
+          location: resort.location,
+        });
+
+        return acc;
+      }, {});
+
+    return Object.entries(groupedByRegion).map(([region, districts]) => ({
+      title: region,
+      local: districts[0]?.district || "",
+      data: districts,
+    }));
+  }, [isSuccess, resorts]);
+};

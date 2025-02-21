@@ -13,14 +13,16 @@ const ThingsToDoSection = dynamic(() => import("./ThingsToDo"));
 
 interface PageProps {
   name: string;
+  location: string;
+  setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
-function AboutTab({ name }: PageProps) {
+function AboutTab({ name, location, setActiveIndex }: PageProps) {
   return (
     <React.Fragment>
       <div className="flex justify-start items-start">
         <div className="w-9/12 pe-12">
-          <TopHeading params={name} />
+          <TopHeading params={name} location={location} />
           <h3 className="py-2 mt-4 text-gray-600 font-medium">About</h3>
           <p className="my-3 text-gray-600 leading-relaxed text-p1-r text-justify">
             {
@@ -54,7 +56,11 @@ function AboutTab({ name }: PageProps) {
           </div>
         </div>
         <div className="w-3/12">
-          <RightBookSection name={name} />
+          <RightBookSection
+            name={name}
+            location={location}
+            setActiveIndex={setActiveIndex}
+          />
         </div>
       </div>
 

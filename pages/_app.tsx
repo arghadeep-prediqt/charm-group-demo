@@ -5,6 +5,7 @@ import Head from "next/head";
 import { Poppins } from "next/font/google";
 import dynamic from "next/dynamic";
 import { ReduxProviders } from "@/redux/ReduxProviders";
+import { Toaster } from "react-hot-toast";
 
 const LoadingPage = dynamic(() => import("@/components/shared/LoadingPage"));
 
@@ -37,6 +38,15 @@ export default function App({ Component, pageProps, router }: AppProps) {
         {loader && <LoadingPage />}
         <Component {...pageProps} />
       </ReduxProviders>
+
+      <Toaster
+        position="top-center"
+        reverseOrder={true}
+        gutter={8}
+        toastOptions={{
+          duration: 4000,
+        }}
+      />
     </main>
   );
 }
