@@ -40,7 +40,7 @@ function Calendar({ resort_id, token }: { resort_id: string; token: string }) {
     )}-${new Date(currentYear, currentMonth + 1, 0).getDate()}`,
   });
 
-  // console.log(data);
+  console.log(calenderData);
 
   const generateCalendarDays = (year: number, month: number) => {
     const firstDay = new Date(year, month, 1).getDay();

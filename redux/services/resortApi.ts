@@ -1,4 +1,7 @@
-import { BookingResortProps } from "@/components/@types/resortapi";
+import {
+  BookingResortProps,
+  CancelledBookigResortProps,
+} from "@/components/@types/resortapi";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const resortApi = createApi({
@@ -75,6 +78,22 @@ export const resortApi = createApi({
       invalidatesTags: ["booking"],
     }),
 
+    // Cancel booked Resort
+    cancelledBookedResort: builder.mutation({
+      query: ({ bookingId, token }: CancelledBookigResortProps) => ({
+        url: `/cancelBooking`,
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ bookingId }),
+      }),
+      invalidatesTags: ["booking"],
+    }),
+
     // get all bookings
     getAllBookings: builder.query({
       query: ({ token }: { token: string }) => ({
@@ -89,6 +108,20 @@ export const resortApi = createApi({
       }),
       providesTags: ["booking"],
     }),
+
+    // get Single Booking by id
+    getSingleBookingById: builder.query({
+      query: ({ id, token }: { id: string; token: string }) => ({
+        url: `/getBooking/${id}`,
+        method: "GET",
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }),
+    }),
   }),
 });
 
@@ -98,4 +131,6 @@ export const {
   useGetRoomsByResortsQuery,
   useBookResortRoomMutation,
   useGetAllBookingsQuery,
+  useGetSingleBookingByIdQuery,
+  useCancelledBookedResortMutation,
 } = resortApi;

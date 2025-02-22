@@ -10,7 +10,12 @@ const TabCalendar = dynamic(
     )
 );
 
-function ModifyRightView() {
+interface PageProps {
+  id: string;
+  token: string;
+}
+
+function ModifyRightView({ id, token }: PageProps) {
   return (
     <div className="w-[70%] p-6 border border-gray-200 shadow-sm rounded-2xl">
       {/* Modify Booking Services */}
@@ -37,7 +42,7 @@ function ModifyRightView() {
       <h3 className="pb-3 text-[22px] leading-tight capitalize border-b border-gray-400">
         Booking Calender
       </h3>
-      <TabCalendar resort_id="" token="" />
+      <TabCalendar resort_id={id} token={token} />
     </div>
   );
 }

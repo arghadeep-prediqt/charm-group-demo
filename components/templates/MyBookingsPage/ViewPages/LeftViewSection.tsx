@@ -1,21 +1,60 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import { BlurImage } from "@/components/ui/BluerImage";
 import { useRouter } from "next/router";
+import { useAppSelector } from "@/redux/hooks";
+import { ChevronLeft } from "lucide-react";
+import { useCancelledBookedResortMutation } from "@/redux/services/resortApi";
+import toast from "react-hot-toast";
 
 interface PageProps {
-  title: string;
+  id: string;
+  token: string;
+  status: string;
 }
 
-function LeftViewSection({ title }: PageProps) {
+function LeftViewSection({ id, token, status }: PageProps) {
+  const [isClicked, setIsClicked] = useState<boolean>(false);
   const router = useRouter();
+  const subscription = useAppSelector((state) => state.user.role);
+  const [cancelledBookedResort] = useCancelledBookedResortMutation();
+
+  const handleCancel = useCallback(async () => {
+    setIsClicked(true);
+    const toastId = toast.loading("Cancelling booking...");
+
+    try {
+      const response = await cancelledBookedResort({ bookingId: id, token });
+
+      if (response?.data) {
+        toast.success("Booking is cancelled.", { id: toastId });
+        router.push("/my_bookings");
+      } else {
+        throw new Error("Unable to cancel booking");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Unable to cancel the booking", { id: toastId });
+    } finally {
+      setIsClicked(false);
+    }
+  }, [cancelledBookedResort, id, router, token]);
 
   return (
     <div className="w-[30%] border border-gray-200 shadow-sm rounded-2xl sticky top-14">
       {/* Bottom Section */}
       <div className="mt-3 py-4 px-6">
-        <h3 className="pb-3 font-medium text-[22px] leading-tight capitalize border-b border-gray-400">
-          Resort Summary
-        </h3>
+        <div className="pb-3 border-b border-gray-400 flex justify-start items-center gap-x-2">
+          <button
+            onClick={() => router.back()}
+            className="bg-gray-100 p-0.5 rounded-md border border-gray-200 active:opacity-70"
+          >
+            <ChevronLeft />
+          </button>
+
+          <h3 className="font-medium text-[22px] leading-tight capitalize">
+            Resort Summary
+          </h3>
+        </div>
 
         <div className="mt-5 flex justify-start items-center gap-x-4">
           <BlurImage
@@ -25,8 +64,9 @@ function LeftViewSection({ title }: PageProps) {
             height={100}
             className="size-5 object-contain"
           />
-          <p className="text-p1-m text-gray-700">
-            Navigator | <span className="text-amber-500">2</span> Adults
+          <p className="text-p1-m text-gray-700 capitalize">
+            {subscription} | <span className="text-amber-500">{" 2 "}</span>
+            Adults
           </p>
         </div>
 
@@ -63,24 +103,31 @@ function LeftViewSection({ title }: PageProps) {
           />
         </div>
 
-        <div className="pt-8 flex justify-between items-center">
+        {(status !== "CANCELLED" && (
+          <div className="pt-8 flex justify-between items-center">
+            <button
+              onClick={handleCancel}
+              className="px-4 py-1.5 rounded-lg text-white text-p2-m bg-red-500 active:opacity-65"
+              disabled={isClicked}
+            >
+              Cancel Booking
+            </button>
+            <button
+              onClick={() => router.push(`/my_bookings/${id}?type=modify`)}
+              disabled={isClicked}
+              className="px-4 py-1.5 rounded-lg text-white text-p2-m bg-orange-500 active:opacity-65"
+            >
+              Modify Booking
+            </button>
+          </div>
+        )) || (
           <button
-            onClick={() => router.back()}
-            className="px-4 py-1.5 rounded-lg text-white text-p2-m bg-red-500 active:opacity-65"
+            className="mt-8 px-4 py-1.5 rounded-lg text-red-700 text-p2-m bg-red-50 border border-red-200"
+            disabled={isClicked}
           >
-            Cancel Booking
+            Booking Cancelled
           </button>
-          <button
-            onClick={() =>
-              router.push(
-                `/my_bookings/${title.split(" ").join("%20")}?type=modify`
-              )
-            }
-            className="px-4 py-1.5 rounded-lg text-white text-p2-m bg-orange-500 active:opacity-65"
-          >
-            Modify Booking
-          </button>
-        </div>
+        )}
 
         <h3 className="py-3 mt-5 font-medium text-[22px] leading-tight capitalize border-b border-gray-400">
           Resort Location

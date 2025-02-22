@@ -1,15 +1,14 @@
-import { mockCarouselData, travelDiaries } from "@/components/lib/rawData";
+import { SingleBookingHistoryProps } from "@/components/@types/resortapi";
 import { BlurImage } from "@/components/ui/BluerImage";
-import ProfileContext from "@/contextAPI/ProfileContext";
-import { useGetAllBookingsQuery } from "@/redux/services/resortApi";
 import { useRouter } from "next/router";
-import React, { useContext } from "react";
+import React from "react";
 
-function UpcomingTab() {
-  const { cookieToken } = useContext(ProfileContext);
-  const { data, isSuccess } = useGetAllBookingsQuery({ token: cookieToken });
+interface PageProps {
+  upcomingData: SingleBookingHistoryProps[];
+}
 
-  console.log(data, isSuccess);
+function UpcomingTab({ upcomingData }: PageProps) {
+  // console.log(data, isSuccess);
   return (
     <div id="upcoming" className="relative h-full">
       <div className="absolute top-0 left-10 w-[2px] h-full bg-gray-300"></div>
@@ -18,16 +17,21 @@ function UpcomingTab() {
         <h3 className="ps-6 font-medium">Upcoming</h3>
       </div>
 
-      {Array(3)
-        .fill(0)
-        ?.map((_, id) => (
-          <div key={id} className="pt-3 pb-5">
-            <SingleCard
-              title={travelDiaries[id].resort}
-              photo={mockCarouselData[id].src}
-            />
-          </div>
-        ))}
+      {upcomingData?.map((item, id) => (
+        <div key={id} className="pt-3 pb-5">
+          <SingleCard
+            _id={item?._id}
+            status={item?.status}
+            title={item?.resortId?.name}
+            photo={item?.resortId?.photo}
+            startDate={new Date(item?.bookings?.[0]?.date).toLocaleDateString(
+              "en-US",
+              { day: "2-digit", month: "short", year: "numeric" }
+            )}
+            totalDays={item?.bookings?.length}
+          />
+        </div>
+      ))}
     </div>
   );
 }
@@ -35,11 +39,22 @@ function UpcomingTab() {
 export default UpcomingTab;
 
 interface SingleCardProps {
+  _id: string;
   title: string;
   photo: string;
+  startDate: string;
+  totalDays: number;
+  status: string;
 }
 
-function SingleCard({ title, photo }: SingleCardProps) {
+export function SingleCard({
+  _id,
+  title,
+  photo,
+  startDate,
+  totalDays,
+  status,
+}: SingleCardProps) {
   const router = useRouter();
 
   return (
@@ -96,33 +111,27 @@ function SingleCard({ title, photo }: SingleCardProps) {
 
           <div className="pt-2 flex justify-start items-center gap-x-3 divide-x divide-primary-500">
             <button
-              onClick={() =>
-                router.push(
-                  `/my_bookings/${title.split(" ").join("%20")}?type=view`
-                )
-              }
+              onClick={() => router.push(`/my_bookings/${_id}?type=view`)}
               className="text-p1-b text-amber-500"
             >
               View Booking
             </button>
 
-            <button
-              onClick={() =>
-                router.push(
-                  `/my_bookings/${title.split(" ").join("%20")}?type=modify`
-                )
-              }
-              className="text-p1-b ps-3 text-amber-500"
-            >
-              Modify Booking
-            </button>
+            {status !== "CANCELLED" && (
+              <button
+                onClick={() => router.push(`/my_bookings/${_id}?type=modify`)}
+                className="text-p1-b ps-3 text-amber-500"
+              >
+                Modify Booking
+              </button>
+            )}
           </div>
         </div>
 
         {/* Second Col */}
         <div className="w-4/12  flex justify-center items-center">
           <p className="text-p1-r text-white bg-[#00509da9] px-3 py-1 rounded-md">
-            {"08-10 Feb'25"}
+            {startDate}
           </p>
         </div>
         {/* Third Col */}
@@ -137,7 +146,7 @@ function SingleCard({ title, photo }: SingleCardProps) {
                 height={100}
                 className="size-6 object-contain"
               />
-              <p className="text-p2-m">2 days</p>
+              <p className="text-p2-m">{totalDays} days</p>
             </div>
           </div>
         </div>
