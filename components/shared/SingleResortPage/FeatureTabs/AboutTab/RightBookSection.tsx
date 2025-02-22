@@ -1,11 +1,7 @@
 import { BlurImage } from "@/components/ui/BluerImage";
 import ExpandedCalendar from "@/components/ui/ExpandedCalender";
-import { format } from "date-fns";
-import { CalendarFold, Dot, MapPin, User } from "lucide-react";
-import dynamic from "next/dynamic";
-import React, { useMemo, useState } from "react";
-
-const CustomButton = dynamic(() => import("@/components/ui/CustomButton"));
+import { Dot, MapPin, User } from "lucide-react";
+import React, { useState } from "react";
 
 interface PageProps {
   name: string;
@@ -50,18 +46,6 @@ function RightBookSection({ name, location, setActiveIndex }: PageProps) {
     }
   };
 
-  const renderSelectedRange = useMemo(() => {
-    if (selectedRange.startDate && selectedRange.endDate) {
-      return `${format(selectedRange.startDate, "MMM d, yyyy")} ~ ${format(
-        selectedRange.endDate,
-        "MMM d, yyyy"
-      )}`;
-    } else if (selectedRange.startDate) {
-      return `${format(selectedRange.startDate, "MMM d, yyyy")}`;
-    }
-    return "Check-in & Check-out";
-  }, [selectedRange.endDate, selectedRange.startDate]);
-
   return (
     <div className="mb-3 bg-gray-50 p-6 rounded-xl border border-gray-200">
       <h3 className="capitalize text-[21px] font-medium">{name}</h3>
@@ -94,16 +78,6 @@ function RightBookSection({ name, location, setActiveIndex }: PageProps) {
         <div className="mt-3 pb-3 flex justify-start items-center gap-x-3 border-b border-gray-300">
           <MapPin className="size-6 text-amber-500" />
           <p className="text-p1-r w-[90%] capitalize">{name}</p>
-        </div>
-
-        <div className="mt-3 py-3 flex justify-start items-center gap-x-3 border-b border-gray-300">
-          <CustomButton
-            isAutoWidth={true}
-            name={renderSelectedRange}
-            isFilled={false}
-            changeFn={() => setShowCalendar(true)}
-            icon={<CalendarFold className="size-6 text-amber-500" />}
-          />
         </div>
 
         <div className="mt-3 py-3 flex justify-start items-center gap-x-3 border-b border-gray-300">

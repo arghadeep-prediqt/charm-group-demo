@@ -1,14 +1,21 @@
-import { useAppSelector } from "@/redux/hooks";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { cleraResortRoom } from "@/redux/slice/resortSlice";
 import React, { useMemo } from "react";
 
 function RoomList() {
+  const dispatch = useAppDispatch();
   const resortRoomType = useAppSelector((state) => state.resort.roomType);
 
   return (
     <React.Fragment>
       <div className="mt-6 flex justify-between items-center">
         <p className="text-p2-r">Room Type</p>
-        <div className="text-p1-b text-amber-600">Clear</div>
+        <div
+          className="text-p1-b text-amber-600"
+          onClick={() => dispatch(cleraResortRoom())}
+        >
+          Clear
+        </div>
       </div>
 
       {resortRoomType?.map((item) => (
@@ -39,7 +46,7 @@ function RoomRow({ count, date, title }: RoomRowProps) {
     if (title === "1BR") name = "all floor";
     if (title === "2BR") name = "ocean view";
     if (title === "3BR") name = "president suite";
-    if (title === "villa") name = "Full Villa";
+    if (title === "Villa") name = "Full Villa";
 
     return { name };
   }, [title]);
