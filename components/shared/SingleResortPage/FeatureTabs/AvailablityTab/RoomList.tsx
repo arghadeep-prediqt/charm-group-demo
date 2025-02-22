@@ -36,9 +36,9 @@ function RoomRow({ count, date, title }: RoomRowProps) {
 
   const floor = useMemo(() => {
     let name = "";
-    if (title === "1br") name = "all floor";
-    if (title === "2br") name = "ocean view";
-    if (title === "3br") name = "president suite";
+    if (title === "1BR") name = "all floor";
+    if (title === "2BR") name = "ocean view";
+    if (title === "3BR") name = "president suite";
     if (title === "villa") name = "Full Villa";
 
     return { name };
