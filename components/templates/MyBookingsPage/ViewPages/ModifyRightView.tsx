@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
 import React from "react";
 
 const MemberDropdown = dynamic(() => import("@/components/ui/MemberDropdown"));
@@ -16,12 +17,24 @@ interface PageProps {
 }
 
 function ModifyRightView({ id, token }: PageProps) {
+  const router = useRouter();
+  const param = router.query;
+
   return (
     <div className="w-[70%] p-6 border border-gray-200 shadow-sm rounded-2xl">
       {/* Modify Booking Services */}
-      <h3 className="pb-3 text-[22px] leading-tight capitalize border-b border-gray-400">
-        Modify Booking
-      </h3>
+      <div className="pb-3  border-b border-gray-400 flex justify-between items-center gap-x-2">
+        <h3 className="text-[22px] leading-tight capitalize">Modify Booking</h3>
+
+        <button
+          onClick={() =>
+            router.push(`/my_bookings/${param?.view_id}?type=view`)
+          }
+          className="px-4 py-1.5 rounded-lg text-white text-p2-m bg-indigo-500 active:opacity-65"
+        >
+          Confirm Booking
+        </button>
+      </div>
 
       <div className="pb-6 my-6 flex justify-between items-center gap-x-10">
         <div className="w-6/12 flex items-center justify-start gap-x-2">
