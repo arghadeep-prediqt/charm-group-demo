@@ -2,7 +2,10 @@ import React, { useCallback, useContext, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import ProfileContext from "@/contextAPI/ProfileContext";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { useBookResortRoomMutation } from "@/redux/services/resortApi";
+import {
+  useBookResortRoomMutation,
+  useGetRemainingDayQuery,
+} from "@/redux/services/resortApi";
 import toast from "react-hot-toast";
 import { useRouter } from "next/router";
 import { cleraResortRoom } from "@/redux/slice/resortSlice";
@@ -14,15 +17,17 @@ interface PageProps {
   name: string;
   location: string;
   resort_id: string;
+  token: string;
 }
 
-function RightSideWaitlist({ name, location, resort_id }: PageProps) {
+function RightSideWaitlist({ name, location, resort_id, token }: PageProps) {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const { cookieToken } = useContext(ProfileContext);
   const roomList = useAppSelector((state) => state.resort.roomType);
   const [bookResortRoom] = useBookResortRoomMutation();
+  const { data: remainingDays, isSuccess } = useGetRemainingDayQuery({ token });
 
   const bookings = useMemo(() => {
     if (roomList.length !== 0) {
@@ -90,16 +95,20 @@ function RightSideWaitlist({ name, location, resort_id }: PageProps) {
         <RoomList />
       </div>
 
-      <div className="mt-[3%] flex justify-between items-center">
-        <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-yellow-200 to-amber-400">
-          <p className="text-p3-m">Days Utilised</p>
-          <p className="text-p2-b">{roomList?.length}</p>
+      {isSuccess && (
+        <div className="mt-[3%] flex justify-between items-center">
+          <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-yellow-200 to-amber-400">
+            <p className="text-p3-m">Days Utilised</p>
+            <p className="text-p2-b">{roomList?.length}</p>
+          </div>
+          <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-yellow-200 to-amber-400">
+            <p className="text-p3-m">Days Remaining</p>
+            <p className="text-p2-b">
+              {remainingDays?.daysBalance - roomList?.length}
+            </p>
+          </div>
         </div>
-        <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-yellow-200 to-amber-400">
-          <p className="text-p3-m">Days Remaining</p>
-          <p className="text-p2-b">20</p>
-        </div>
-      </div>
+      )}
 
       <div className="flex justify-center items-center">
         <button

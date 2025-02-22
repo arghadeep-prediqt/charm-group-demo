@@ -24,7 +24,12 @@ function AvailablityTab({ id, name, location }: PageProps) {
         <TabCalendar resort_id={id} token={cookieToken} />
       </div>
       <div className="w-3/12 pt-6">
-        <RightSideWaitlist name={name} location={location} resort_id={id} />
+        <RightSideWaitlist
+          name={name}
+          location={location}
+          resort_id={id}
+          token={cookieToken}
+        />
       </div>
     </div>
   );
