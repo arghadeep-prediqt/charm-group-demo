@@ -13,3 +13,9 @@ export interface MenuItemProps {
   icon: string;
   link: string;
 }
+
+export type StatusProps =
+  | "available"
+  | "waitlist"
+  | "fullyBooked"
+  | "fillingFast";

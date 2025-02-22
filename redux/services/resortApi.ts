@@ -1,9 +1,10 @@
+import { BookingResortProps } from "@/components/@types/resortapi";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const resortApi = createApi({
   reducerPath: "resortApi",
   baseQuery: fetchBaseQuery({ baseUrl: process.env.APIENDPOINT }),
-  tagTypes: ["allResorts"],
+  tagTypes: ["allResorts", "booking"],
   endpoints: (builder) => ({
     // Get all Resort
     getAllResorts: builder.query({
@@ -33,7 +34,68 @@ export const resortApi = createApi({
         },
       }),
     }),
+
+    // Get Rooms by resorts
+    getRoomsByResorts: builder.query({
+      query: ({
+        token,
+        id,
+        end,
+        start,
+      }: {
+        token: string;
+        id: string;
+        start: string;
+        end: string;
+      }) => ({
+        url: `/getRoomsByResort/${id}?start=${start}&end=${end}`,
+        method: "GET",
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }),
+    }),
+
+    // Book resort
+    bookResortRoom: builder.mutation({
+      query: ({ bookings, resortId, token }: BookingResortProps) => ({
+        url: `/booking`,
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ resortId, bookings }),
+      }),
+      invalidatesTags: ["booking"],
+    }),
+
+    // get all bookings
+    getAllBookings: builder.query({
+      query: ({ token }: { token: string }) => ({
+        url: `/getBookingList`,
+        method: "GET",
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }),
+      providesTags: ["booking"],
+    }),
   }),
 });
 
-export const { useGetAllResortsQuery, useGetSingleResortQuery } = resortApi;
+export const {
+  useGetAllResortsQuery,
+  useGetSingleResortQuery,
+  useGetRoomsByResortsQuery,
+  useBookResortRoomMutation,
+  useGetAllBookingsQuery,
+} = resortApi;

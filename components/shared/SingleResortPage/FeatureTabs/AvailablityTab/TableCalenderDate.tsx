@@ -1,3 +1,4 @@
+import { StatusProps } from "@/components/@types/common";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
   addRoomType,
@@ -9,24 +10,25 @@ import React, { memo, useCallback, useMemo } from "react";
 interface PageProps {
   id: string;
   room: string;
-  status: "available" | "waitlist" | "fullyBooked" | "fillingFast";
+  status: StatusProps;
+  capacity: number;
 }
 
 const STATUS_COLORS = {
-  available: "text-[#32CD32]",
-  waitlist: "text-[#32CD32]",
+  available: "text-[#9370DB]",
+  waitlist: "text-[#9370DB]",
   fullyBooked: "text-[#D3D3D3]",
   fillingFast: "text-[#FF4500]",
 };
 
 const STATUS_COLORS_ONLY = {
-  available: "bg-[#32CD32]",
-  waitlist: "bg-[#32CD32]",
+  available: "bg-[#9370DB]",
+  waitlist: "bg-[#9370DB]",
   fullyBooked: "bg-[#D3D3D3]",
   fillingFast: "bg-[#FF4500]",
 };
 
-function TableCalenderDate({ id, room, status }: PageProps) {
+function TableCalenderDate({ id, room, status, capacity }: PageProps) {
   const dispatch = useAppDispatch();
   const resortRoomType = useAppSelector((state) => state.resort.roomType);
   const handleAddRoomType = useCallback(
@@ -77,6 +79,7 @@ function TableCalenderDate({ id, room, status }: PageProps) {
         <button
           className="text-p1-b w-5 rounded"
           onClick={() => dispatch(incrementRoomType({ id }))}
+          disabled={filteredResortRoomType?.[0]?.count >= capacity}
         >
           +
         </button>

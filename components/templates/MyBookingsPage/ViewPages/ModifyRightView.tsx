@@ -37,7 +37,7 @@ function ModifyRightView() {
       <h3 className="pb-3 text-[22px] leading-tight capitalize border-b border-gray-400">
         Booking Calender
       </h3>
-      <TabCalendar />
+      <TabCalendar resort_id="" token="" />
     </div>
   );
 }

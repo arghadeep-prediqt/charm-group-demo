@@ -7,11 +7,9 @@ import {
   yearData,
 } from "@/components/lib/rawData";
 import { BlurImage } from "@/components/ui/BluerImage";
-import { Info } from "lucide-react";
 import dynamic from "next/dynamic";
 import React from "react";
 
-const Tooltip = dynamic(() => import("@/components/ui/Tooltip"));
 const Container = dynamic(() => import("@/components/shared/Container"));
 const Calendar = dynamic(
   () => import("@/components/shared/SessionCalender/Calender")
@@ -91,44 +89,23 @@ function SessionChartPage() {
       ))}
 
       <div className="sticky bottom-0 w-full py-2 bg-[#ecffeb]">
-        <Container className="flex justify-between items-center">
-          <Tooltip message="Off-Peak Seasons">
-            <div className="flex justify-start items-center gap-x-2">
-              <p className="size-4 rounded-full bg-[#008080]">&nbsp;</p>
-              <p className="text-p1-m">Dewdrop Seasons</p>
-              <Info className="size-4 text-gray-700" />
-            </div>
-          </Tooltip>
-
-          <Tooltip message="Peak Seasons">
-            <div className="flex justify-start items-center gap-x-2">
-              <p className="size-4 rounded-full bg-[#FF69B4]">&nbsp;</p>
-              <p className="text-p1-m">Blossom Season</p>
-              <Info className="size-4 text-gray-700" />
-            </div>
-          </Tooltip>
-
-          <Tooltip message="High Demand (Festive Period)">
-            <div className="flex justify-start items-center gap-x-2">
-              <p className="size-4 rounded-full bg-[#FF4500]">&nbsp;</p>
-              <p className="text-p1-m">Aurora Seasons</p>
-              <Info className="size-4 text-gray-700" />
-            </div>
-          </Tooltip>
-
-          <Tooltip message="Before / After Peak Seasons">
-            <div className="flex justify-start items-center gap-x-2">
-              <p className="size-4 rounded-full bg-[#87CEFA]">&nbsp;</p>
-              <p className="text-p1-m">Breeze Season</p>
-              <Info className="size-4 text-gray-700" />
-            </div>
-          </Tooltip>
+        <Container className="flex justify-center items-center gap-x-[100px]">
+          <div className="flex justify-start items-center gap-x-2">
+            <p className="size-4 rounded-full bg-[#D3D3D3]">&nbsp;</p>
+            <p className="text-p1-m">Silver Member</p>
+            {/* <Info className="size-4 text-gray-700" /> */}
+          </div>
+          {/* <Tooltip message="Off-Peak Seasons">
+          </Tooltip> */}
 
           <div className="flex justify-start items-center gap-x-2">
-            <p className="size-4 rounded-full bg-transparent border-2 border-blue-500">
-              &nbsp;
-            </p>
-            <p className="text-p1-m">Members Only</p>
+            <p className="size-4 rounded-full bg-[#FFD966]">&nbsp;</p>
+            <p className="text-p1-m">Gold Member</p>
+          </div>
+
+          <div className="flex justify-start items-center gap-x-2">
+            <p className="size-4 rounded-full bg-[#2F5597]">&nbsp;</p>
+            <p className="text-p1-m">Diamond Member</p>
           </div>
         </Container>
       </div>

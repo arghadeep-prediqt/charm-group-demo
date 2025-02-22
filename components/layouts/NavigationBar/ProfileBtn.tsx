@@ -29,13 +29,15 @@ function ProfileBtn() {
         as="button"
         className="relative flex justify-between items-center gap-x-2 bg-inherit focus:outline-none"
       >
-        <BlurImage
-          src={userDetails?.image}
-          alt="profile"
-          width={100}
-          height={100}
-          className="size-10 object-cover rounded-full border border-amber-300"
-        />
+        {userDetails?.image !== "" && (
+          <BlurImage
+            src={userDetails?.image}
+            alt="profile"
+            width={100}
+            height={100}
+            className="size-10 object-cover rounded-full border border-amber-300"
+          />
+        )}
         <div className="py-1 px-1 leading-relaxed text-start">
           {/* <p className="text-p2-b">Hồng Oanh</p> */}
           <p className="text-p2-b capitalize">

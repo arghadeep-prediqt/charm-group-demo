@@ -15,10 +15,10 @@ const NavContainer = dynamic(() => import("@/components/shared/NavContainer"));
 
 function SingleResortPage() {
   const router = useRouter();
-  const params = router?.query?.single_resort;
+  const resort_id = router?.query?.single_resort || null;
   const { cookieToken } = useContext(ProfileContext);
   const { data, isSuccess } = useGetSingleResortQuery({
-    id: String(params),
+    id: String(resort_id),
     token: cookieToken,
   });
 
@@ -31,6 +31,7 @@ function SingleResortPage() {
       {isSuccess && (
         <SectionTab
           name={data?.name || ""}
+          resortId={String(resort_id)}
           location={`${data?.location}, Vietnam`}
         />
       )}

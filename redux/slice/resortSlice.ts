@@ -79,6 +79,9 @@ export const resortSlice = createSlice({
         }
       });
     },
+    cleraResortRoom: (state) => {
+      state.roomType = [];
+    },
   },
 });
 
@@ -88,4 +91,5 @@ export const {
   addRoomType,
   decrementRoomType,
   incrementRoomType,
+  cleraResortRoom,
 } = resortSlice.actions;
