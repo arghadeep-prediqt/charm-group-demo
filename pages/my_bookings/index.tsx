@@ -1,5 +1,7 @@
+import ProfileContext from "@/contextAPI/ProfileContext";
+import { useGetAllBookingsQuery } from "@/redux/services/resortApi";
 import dynamic from "next/dynamic";
-import React from "react";
+import React, { useContext, useMemo } from "react";
 
 const CancelledTab = dynamic(
   () => import("@/components/templates/MyBookingsPage/CancelledTab")
@@ -23,11 +25,38 @@ const LeftSideNav = dynamic(
 );
 
 function MyBookings() {
+  const { cookieToken } = useContext(ProfileContext);
+  const { data, isSuccess } = useGetAllBookingsQuery({ token: cookieToken });
+
+  const upcommingData = useMemo(() => {
+    if (isSuccess) {
+      return data?.filter(
+        (item: { status: string }) => item?.status === "CONFIRMED"
+      );
+    }
+    return [];
+  }, [data, isSuccess]);
+
+  const cancelledData = useMemo(() => {
+    if (isSuccess) {
+      return data?.filter(
+        (item: { status: string }) => item?.status === "CANCELLED"
+      );
+    }
+    return [];
+  }, [data, isSuccess]);
+
   const tabCategories = [
-    { name: "Upcoming", component: <UpcomingTab /> },
+    {
+      name: "Upcoming",
+      component: <UpcomingTab upcomingData={upcommingData} />,
+    },
     { name: "Ongoing", component: <OngoingTab /> },
     { name: "Completed", component: <CompletedTab /> },
-    { name: "Cancelled", component: <CancelledTab /> },
+    {
+      name: "Cancelled",
+      component: <CancelledTab cancelledData={cancelledData} />,
+    },
   ];
 
   return (

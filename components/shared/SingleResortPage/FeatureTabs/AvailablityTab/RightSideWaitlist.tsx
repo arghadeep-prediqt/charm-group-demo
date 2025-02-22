@@ -93,11 +93,11 @@ function RightSideWaitlist({ name, location, resort_id }: PageProps) {
       <div className="mt-[3%] flex justify-between items-center">
         <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-yellow-200 to-amber-400">
           <p className="text-p3-m">Days Utilised</p>
-          <p className="text-p2-b">0.8</p>
+          <p className="text-p2-b">{roomList?.length}</p>
         </div>
         <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-yellow-200 to-amber-400">
           <p className="text-p3-m">Days Remaining</p>
-          <p className="text-p2-b">0</p>
+          <p className="text-p2-b">20</p>
         </div>
       </div>
 

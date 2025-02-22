@@ -5,7 +5,13 @@ import React, { useState } from "react";
 
 const SideDrawer = dynamic(() => import("@/components/ui/SideDrawer"));
 
-function RightViewSection() {
+interface PageProps {
+  startDate: string;
+  endDate: string;
+  totalDay: number;
+}
+
+function RightViewSection({ endDate, startDate, totalDay }: PageProps) {
   const [isDrawerOpen, setDrawerOpen] = useState<boolean>(false);
 
   const toggleDrawer = () => {
@@ -17,7 +23,7 @@ function RightViewSection() {
       <h3 className="pb-3 text-[22px] leading-tight capitalize border-b border-gray-400">
         Your Stay Overview
       </h3>
-      <Heading />
+      <Heading end={endDate} start={startDate} total={totalDay} />
 
       {/* Additional Services */}
       <div className="flex justify-between items-end mt-10 mb-3 pb-3 border-b border-gray-400">
@@ -71,7 +77,15 @@ function RightViewSection() {
 
 export default RightViewSection;
 
-function Heading() {
+interface HeadingProps {
+  start: string;
+  end: string;
+  total: number;
+}
+
+function Heading({ end, start, total }: HeadingProps) {
+  const startDate = new Date(start);
+  const endDate = new Date(end);
   return (
     <div className="my-5 flex relative justify-between items-start">
       <div className="pe-5 z-10 bg-white">
@@ -96,16 +110,22 @@ function Heading() {
             />
 
             <div className="w-full mt-1 pe-2 flex justify-end items-center gap-x-4">
-              <h1 className="text-[50px] text-[#00509df9]">08</h1>
+              <h1 className="text-[50px] text-[#00509df9]">
+                {startDate?.toLocaleDateString("en-IN", { day: "2-digit" })}
+              </h1>
               <div className="text-gray-500">
-                <p className="text-p1-b">February</p>
-                <p className="text-p2-m">Saturday</p>
+                <p className="text-p1-b">
+                  {startDate?.toLocaleDateString("en-IN", { month: "long" })}
+                </p>
+                <p className="text-p2-m">
+                  {startDate?.toLocaleDateString("en-IN", { weekday: "long" })}
+                </p>
               </div>
             </div>
           </div>
 
           <div className="w-[24%] flex justify-between items-center">
-            <p className="text-p1-m text-gray-700 text-nowrap">2 Days</p>
+            <p className="text-p1-m text-gray-700 text-nowrap">{total} Days</p>
             <div className="size-4 rounded-full bg-gray-300">&nbsp;</div>
             <p className="text-p1-m text-gray-700 text-nowrap">2 Adults</p>
           </div>
@@ -121,10 +141,18 @@ function Heading() {
 
             <div className="w-full  mt-1 ps-2 flex justify-start items-center gap-x-4">
               <div className="text-gray-500">
-                <p className="text-p1-b text-end">February</p>
-                <p className="text-p2-m text-end">Monday</p>
+                <p className="text-p1-b text-end">
+                  {" "}
+                  {endDate?.toLocaleDateString("en-IN", { month: "long" })}
+                </p>
+                <p className="text-p2-m text-end">
+                  {" "}
+                  {endDate?.toLocaleDateString("en-IN", { weekday: "long" })}
+                </p>
               </div>
-              <h1 className="text-[50px] text-[#00509df9]">10</h1>
+              <h1 className="text-[50px] text-[#00509df9]">
+                {endDate?.toLocaleDateString("en-IN", { day: "2-digit" })}
+              </h1>
             </div>
           </div>
         </div>
