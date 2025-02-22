@@ -7,7 +7,6 @@ const Month = dynamic(() => import("./Month"));
 
 const Calendar: React.FC = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
-
   const handleNext = () => setCurrentDate(addMonths(currentDate, 1));
   const handlePrevious = () => setCurrentDate(subMonths(currentDate, 1));
 

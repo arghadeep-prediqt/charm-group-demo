@@ -1,3 +1,5 @@
+import { StatusProps } from "@/components/@types/common";
+import { useGetRoomsByResortsQuery } from "@/redux/services/resortApi";
 import { MoveLeft, MoveRight } from "lucide-react";
 import dynamic from "next/dynamic";
 import React, { memo, useState } from "react";
@@ -5,18 +7,40 @@ import React, { memo, useState } from "react";
 const TableCalenderDate = dynamic(() => import("./TableCalenderDate"));
 
 const DAYS = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
-
 interface Day {
   date: number | null;
-  status: "available" | "waitlist" | "fullyBooked" | "fillingFast";
-  roomTypes: string[];
+  status: StatusProps;
+  roomTypes: {
+    _id: string;
+    type: string;
+    available: boolean;
+    capacity: number;
+    bookedRooms: number;
+    totalRooms: number;
+  }[];
+  // roomTypes: string[];
 }
 
-const Calendar: React.FC = () => {
+function Calendar({ resort_id, token }: { resort_id: string; token: string }) {
   const today = new Date();
   const [currentYear, setCurrentYear] = useState(today.getFullYear());
   const [currentMonth, setCurrentMonth] = useState(today.getMonth());
   const currentDate = today.getDate();
+  const {
+    data: calenderData,
+    isSuccess,
+    isLoading,
+  } = useGetRoomsByResortsQuery({
+    id: resort_id,
+    token,
+    start: `${currentYear}-${String(currentMonth + 1).padStart(2, "0")}-01`,
+    end: `${currentYear}-${String(currentMonth + 1).padStart(
+      2,
+      "0"
+    )}-${new Date(currentYear, currentMonth + 1, 0).getDate()}`,
+  });
+
+  // console.log(data);
 
   const generateCalendarDays = (year: number, month: number) => {
     const firstDay = new Date(year, month, 1).getDay();
@@ -30,28 +54,39 @@ const Calendar: React.FC = () => {
 
         const date = i - firstDay + 1;
 
+        const dateISO = `${year}-${String(month + 1).padStart(2, "0")}-${String(
+          date
+        ).padStart(2, "0")}`;
+
+        const filterRoom =
+          isSuccess &&
+          calenderData?.filter(
+            (item: { date: string }) => item?.date?.split("T")?.[0] === dateISO
+          );
+
         // Example data for status and roomTypes
-        const status =
+        const status: StatusProps =
           date < currentDate &&
           year === today.getFullYear() &&
           month === today.getMonth()
             ? "fullyBooked"
-            : date % 3 === 0
-            ? "fillingFast"
-            : date % 2 === 0
+            : filterRoom?.[0]?.available
             ? "available"
-            : "waitlist";
+            : "fullyBooked";
 
-        const roomTypes = ["1BR", "2BR", "3BR", "Villa"];
+        // const roomTypes = ["1BR", "2BR", "3BR", "Villa"];
 
-        return { date, status, roomTypes };
+        // console.log(filterRoom?.[0]);
+
+        return { date, status, roomTypes: filterRoom?.[0]?.rooms || [] };
       }
     );
 
     return days;
   };
 
-  const calendarDays = generateCalendarDays(currentYear, currentMonth);
+  const calendarDays =
+    (isSuccess && generateCalendarDays(currentYear, currentMonth)) || [];
 
   const goToNextMonth = () => {
     if (currentMonth === 11) {
@@ -103,8 +138,13 @@ const Calendar: React.FC = () => {
               <MoveLeft className="size-5" />
             </button>
             <button
-              className="text-amber-500 hover:text-amber-500 border border-amber-300 p-2 rounded-full"
+              className={`text-amber-500 hover:text-amber-500 border border-amber-300 p-2 rounded-full disabled:text-gray-400 disabled:border-gray-300 ${
+                currentYear !== today.getFullYear()
+                  ? "opacity-50 cursor-not-allowed"
+                  : ""
+              }`}
               onClick={goToNextMonth}
+              disabled={currentYear !== today.getFullYear()}
             >
               <MoveRight className="size-5" />
             </button>
@@ -112,19 +152,19 @@ const Calendar: React.FC = () => {
         </div>
 
         {/* Legend and Season Indicator */}
-        <ul className="w-2/12 flex justify-end items-center flex-wrap gap-x-4 gap-y-2 text-sm">
+        {/* <ul className="w-2/12 flex justify-end items-center flex-wrap gap-x-4 gap-y-2 text-sm">
           <li className="flex justify-start items-center gap-x-1">
             <div className="inline-block size-4 bg-[#E7E6E6] rounded-full mr-2"></div>
             <div className="inline-block size-4 bg-[#FFD966] rounded-full mr-2"></div>
             <div className="inline-block size-4 bg-[#2F5597] rounded-full mr-2"></div>
           </li>
-        </ul>
+        </ul> */}
 
         <div className="flex items-center ps-4 w-6/12">
           {/* Availability Legend */}
-          <ul className="flex justify-start items-start flex-wrap gap-x-4 gap-y-2 text-sm">
+          <ul className="flex justify-end items-start flex-wrap gap-x-4 gap-y-2 text-sm">
             <li className="flex justify-start items-center gap-x-1">
-              <div className="inline-block size-4 bg-[#32CD32] rounded-full mr-2"></div>
+              <div className="inline-block size-4 bg-[#9370DB] rounded-full mr-2"></div>
               Available Now
             </li>
             {/* <li className="flex justify-start items-center gap-x-1">
@@ -162,20 +202,18 @@ const Calendar: React.FC = () => {
 
       {/* Calendar Grid */}
       <div className="grid grid-cols-7 gap-2">
-        {calendarDays.map((day, index) => (
+        {calendarDays?.map((day, index) => (
           <div
             key={index}
             className={`p-2 rounded-lg border ${
               day.date
                 ? day.status === "fullyBooked"
                   ? "bg-[#D3D3D3] border-[#D3D3D3]"
-                  : day.status === "fillingFast"
-                  ? "bg-[#FFD966] border-[#FFD966]"
-                  : "bg-[#2F5597] border-[#2F5597]"
+                  : "bg-[#9370DB] border-[#9370DB]"
                 : "bg-transparent border-gray-100"
             }`}
           >
-            {day.date && (
+            {day.date && !isLoading && isSuccess && (
               <>
                 <div
                   className={`text-[21px] font-semibold mb-2 ${
@@ -192,19 +230,23 @@ const Calendar: React.FC = () => {
                 </div>
                 <div className="text-xs space-y-1">
                   {day.roomTypes.map((room, idx) => {
-                    const roomId = `${currentYear}-${currentMonth.toLocaleString(
-                      "en-IN",
-                      {
-                        minimumIntegerDigits: 2,
-                      }
-                    )}-${day.date}/${room.toLocaleLowerCase()}`;
+                    const roomId = `${currentYear}-${(
+                      currentMonth + 1
+                    ).toLocaleString("en-IN", {
+                      minimumIntegerDigits: 2,
+                    })}-${day.date}/${room?.type?.toLocaleUpperCase()}`;
 
                     return (
                       <TableCalenderDate
                         key={idx}
                         id={roomId}
-                        room={room}
-                        status={day.status}
+                        room={room?.type}
+                        status={
+                          day?.status === "available" && room?.available
+                            ? "available"
+                            : "fullyBooked"
+                        }
+                        capacity={room?.capacity || 0}
                       />
                     );
                   })}
@@ -216,6 +258,6 @@ const Calendar: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default memo(Calendar);

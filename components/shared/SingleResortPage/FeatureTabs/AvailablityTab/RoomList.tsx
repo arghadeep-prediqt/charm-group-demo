@@ -38,7 +38,7 @@ function RoomRow({ count, date, title }: RoomRowProps) {
     let name = "";
     if (title === "1br") name = "all floor";
     if (title === "2br") name = "ocean view";
-    if (title === "23br") name = "president suite";
+    if (title === "3br") name = "president suite";
     if (title === "villa") name = "Full Villa";
 
     return { name };

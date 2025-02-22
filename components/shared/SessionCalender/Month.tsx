@@ -11,10 +11,35 @@ type MonthProps = {
   date: Date;
 };
 
-const notAvailable = [5, 6, 7, 8, 9, 10, 11];
-const pickTime = [12, 13, 14, 15, 16, 17, 18];
-const seasonTime = [19, 20, 21, 22, 23, 24, 25];
-const memberOnly = [7, 8, 16, 17, 19, 20, 30, 31];
+const silverMember = [
+  9, 10, 11, 14, 15, 17, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
+];
+const goldMember = [
+  2, 3, 6, 7, 8, 12, 13, 16, 19, 20, 21, 22, 23, 24, 38, 39, 51,
+];
+const diamondMember = [
+  1, 4, 5, 18, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 52,
+];
+
+const getWeekNumber = (month: number, date: number): number => {
+  return Math.ceil(date / 7) + (month - 1) * 4;
+};
+
+const isDateInMembership = (
+  month: number,
+  date: number,
+  membership: "silver" | "gold" | "diamond"
+): boolean => {
+  const week = getWeekNumber(month, date);
+  const membershipWeeks =
+    membership === "silver"
+      ? silverMember
+      : membership === "gold"
+      ? goldMember
+      : diamondMember;
+
+  return membershipWeeks.includes(week);
+};
 
 const Month: React.FC<MonthProps> = ({ date }) => {
   const days = eachDayOfInterval({
@@ -25,32 +50,24 @@ const Month: React.FC<MonthProps> = ({ date }) => {
   const firstDayOffset = getDay(startOfMonth(date));
 
   const getDayColor = (day: Date): string => {
-    if (notAvailable.includes(day.getDate()) && day.getFullYear() === 2025)
-      return `${
-        memberOnly.includes(day.getDate())
-          ? "border-2 border-[#003049]"
-          : "border-[#B0E0E6]"
-      } bg-[#87CEFA] text-slate-700 cursor-pointer`; // Not Available
+    if (
+      isDateInMembership(day.getMonth() + 1, day.getDate(), "silver") &&
+      day.getFullYear() === 2025
+    )
+      return `border-[#D3D3D3] bg-[#D3D3D3] text-[#000000] cursor-pointer`; // Silver Member
 
-    if (pickTime.includes(day.getDate()) && day.getFullYear() === 2025)
-      return `${
-        memberOnly.includes(day.getDate())
-          ? "border-2 border-[#003049]"
-          : "border-[#FFD1DC]"
-      } bg-[#FF69B4] text-white cursor-pointer`; // Pick Time
+    if (
+      isDateInMembership(day.getMonth() + 1, day.getDate(), "gold") &&
+      day.getFullYear() === 2025
+    )
+      return `border-[#FFD966] bg-[#FFD966] text-slate-900 cursor-pointer`; // Gold Member
 
-    if (seasonTime.includes(day.getDate()) && day.getFullYear() === 2025)
-      return `${
-        memberOnly.includes(day.getDate())
-          ? "border-2 border-[#003049]"
-          : "border-[#FF7F50]"
-      } bg-[#FF4500] text-white cursor-pointer`; // Season Time
-
-    return `${
-      memberOnly.includes(day.getDate())
-        ? "border-2 border-[#003049]"
-        : "border-[#20B2AA]"
-    } bg-[#008080c9] text-white cursor-pointer`; // Available
+    if (
+      isDateInMembership(day.getMonth() + 1, day.getDate(), "diamond") &&
+      day.getFullYear() === 2025
+    )
+      return `border-[#2F5597] bg-[#2F5597] text-white cursor-pointer`; // Diamond Member
+    return "bg-gray-300 border-gray-200 text-gray-500 opacity-50";
   };
 
   return (

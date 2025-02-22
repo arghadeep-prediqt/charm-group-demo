@@ -1,9 +1,15 @@
 import { mockCarouselData, travelDiaries } from "@/components/lib/rawData";
 import { BlurImage } from "@/components/ui/BluerImage";
+import ProfileContext from "@/contextAPI/ProfileContext";
+import { useGetAllBookingsQuery } from "@/redux/services/resortApi";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useContext } from "react";
 
 function UpcomingTab() {
+  const { cookieToken } = useContext(ProfileContext);
+  const { data, isSuccess } = useGetAllBookingsQuery({ token: cookieToken });
+
+  console.log(data, isSuccess);
   return (
     <div id="upcoming" className="relative h-full">
       <div className="absolute top-0 left-10 w-[2px] h-full bg-gray-300"></div>
