@@ -234,7 +234,7 @@ function Calendar({ resort_id, token }: { resort_id: string; token: string }) {
                       currentMonth + 1
                     ).toLocaleString("en-IN", {
                       minimumIntegerDigits: 2,
-                    })}-${day.date}/${room?.type?.toLocaleUpperCase()}`;
+                    })}-${day.date}/${room?.type}`;
 
                     return (
                       <TableCalenderDate
