@@ -7,7 +7,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const resortApi = createApi({
   reducerPath: "resortApi",
   baseQuery: fetchBaseQuery({ baseUrl: process.env.APIENDPOINT }),
-  tagTypes: ["allResorts", "booking"],
+  tagTypes: ["allResorts", "booking", "totalDay"],
   endpoints: (builder) => ({
     // Get all Resort
     getAllResorts: builder.query({
@@ -62,6 +62,21 @@ export const resortApi = createApi({
       }),
     }),
 
+    // Get Remaining Day
+    getRemainingDay: builder.query({
+      query: ({ token }: { token: string }) => ({
+        url: `/getRemainingDays`,
+        method: "GET",
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }),
+      providesTags: ["totalDay"],
+    }),
+
     // Book resort
     bookResortRoom: builder.mutation({
       query: ({ bookings, resortId, token }: BookingResortProps) => ({
@@ -75,7 +90,7 @@ export const resortApi = createApi({
         },
         body: JSON.stringify({ resortId, bookings }),
       }),
-      invalidatesTags: ["booking"],
+      invalidatesTags: ["booking", "totalDay"],
     }),
 
     // Cancel booked Resort
@@ -133,4 +148,5 @@ export const {
   useGetAllBookingsQuery,
   useGetSingleBookingByIdQuery,
   useCancelledBookedResortMutation,
+  useGetRemainingDayQuery,
 } = resortApi;
