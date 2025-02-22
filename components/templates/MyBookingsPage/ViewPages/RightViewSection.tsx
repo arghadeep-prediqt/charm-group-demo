@@ -187,15 +187,15 @@ function AdditionalServices() {
       {itineraryIds?.map((item, id) => (
         <div key={id} className="min-w-[250px] max-w[250px] h-[150px] relative">
           <BlurImage
-            src={experiences?.[id].image}
-            alt={experiences?.[id].title}
+            src={experiences?.[item].image}
+            alt={experiences?.[item].title}
             width={100}
             height={100}
             className="w-full h-full object-cover rounded-xl  mx-auto"
           />
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/90 to-transparent rounded-xl flex justify-start items-end px-3 py-2">
             <p className="pb-1 text-p1-b leading-relaxed text-white">
-              {experiences?.[id].title}
+              {experiences?.[item].title}
             </p>
           </div>
         </div>
@@ -230,7 +230,7 @@ function SingleItineraryCard({
               />
               <div className="p-4 absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/90 to-black/30 flex flex-col justify-between items-start rounded-xl border-2 border-gray-200 shadow-sm">
                 <button
-                  onClick={() => handleAddActivity(id)}
+                  onClick={() => handleAddActivity(item.id)}
                   className="mt-1 text-p3-b leading-relaxed bg-yellow-300 py-1 px-3 active:opacity-65 rounded-md"
                 >
                   Add Activity
