@@ -14,8 +14,8 @@ interface PageProps {
 
 function PeopleDropdown({ isDisabled }: PageProps) {
   const [adult, setAdult] = useState<number>(2);
-  const [children, setChildren] = useState<number>(1);
-  const [infants, setInfants] = useState<number>(1);
+  const [children, setChildren] = useState<number>(0);
+  const [infants, setInfants] = useState<number>(0);
 
   return (
     <Popover>
@@ -49,7 +49,7 @@ function PeopleDropdown({ isDisabled }: PageProps) {
           <div className="w-5/12 flex justify-between items-center gap-x-2">
             <button
               className="p-1 border-2 border-amber-500 rounded-full"
-              onClick={() => adult > 0 && setAdult(adult - 1)}
+              onClick={() => adult > 1 && setAdult(adult - 1)}
             >
               <Minus className="size-4 text-amber-500" />
             </button>

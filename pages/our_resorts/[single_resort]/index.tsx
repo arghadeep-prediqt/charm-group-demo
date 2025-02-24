@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import React, { useContext } from "react";
 
+const LoadingPage = dynamic(() => import("@/components/shared/LoadingPage"));
 const SectionTab = dynamic(
   () => import("@/components/templates/SingleResortPage/SectionTab")
 );
@@ -24,16 +25,22 @@ function SingleResortPage() {
 
   return (
     <NavContainer>
-      <Container className="py-2">
-        <TopCarousel />
-      </Container>
+      {isSuccess ? (
+        <React.Fragment>
+          <Container className="py-2">
+            <TopCarousel thirdPhoto={data?.photo} />
+          </Container>
 
-      {isSuccess && (
-        <SectionTab
-          name={data?.name || ""}
-          resortId={String(resort_id)}
-          location={`${data?.location}, Vietnam`}
-        />
+          <SectionTab
+            name={data?.name || ""}
+            resortId={String(resort_id)}
+            location={`${data?.location}, Vietnam`}
+          />
+        </React.Fragment>
+      ) : (
+        <div className="min-h-screen">
+          <LoadingPage />
+        </div>
       )}
     </NavContainer>
   );

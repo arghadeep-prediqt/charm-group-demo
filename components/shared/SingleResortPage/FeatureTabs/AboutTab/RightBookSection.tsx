@@ -80,7 +80,10 @@ function RightBookSection({ name, location, setActiveIndex }: PageProps) {
           <p className="text-p1-r w-[90%] capitalize">{name}</p>
         </div>
 
-        <div className="mt-3 py-3 flex justify-start items-center gap-x-3 border-b border-gray-300">
+        <div
+          onClick={() => setActiveIndex(1)}
+          className="mt-3 py-3 flex justify-start items-center gap-x-3 border-b border-gray-300 cursor-pointer"
+        >
           <User className="size-6 text-amber-500" />
           <p className="text-p1-r w-[90%]">2 Adults</p>
         </div>

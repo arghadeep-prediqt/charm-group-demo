@@ -9,6 +9,8 @@ import {
   ourResortMenuItems,
   privilegesMenuItems,
 } from "@/components/lib/rawData";
+import { useAppSelector } from "@/redux/hooks";
+import { useRouter } from "next/router";
 const Container = dynamic(() => import("../Container"));
 const CustomNavBtn = dynamic(
   () => import("@/components/layouts/NavigationBar/CustomNavBtn")
@@ -18,6 +20,9 @@ const ProfileBtn = dynamic(
 );
 
 function NavigationBar() {
+  const router = useRouter();
+  const isAuth = useAppSelector((state) => state.user.is_auth);
+
   return (
     <div className="bg-[#003049]">
       <Container className="flex justify-between items-center gap-x-2">
@@ -57,7 +62,16 @@ function NavigationBar() {
             title="need assistance?"
             link="/faqs"
           />
-          <ProfileBtn />
+          {isAuth ? (
+            <ProfileBtn />
+          ) : (
+            <button
+              onClick={() => router.push("/auth")}
+              className="bg-yellow-300 px-4 py-1 rounded-md text-p1-m text-slate-700 hover:bg-amber-300 active:bg-amber-200"
+            >
+              Login
+            </button>
+          )}
         </div>
       </Container>
     </div>

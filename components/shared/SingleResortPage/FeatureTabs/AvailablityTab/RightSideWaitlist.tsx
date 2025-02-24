@@ -104,7 +104,9 @@ function RightSideWaitlist({ name, location, resort_id, token }: PageProps) {
           <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-yellow-200 to-amber-400">
             <p className="text-p3-m">Days Remaining</p>
             <p className="text-p2-b">
-              {remainingDays?.daysBalance - roomList?.length}
+              {Math.sign(remainingDays?.daysBalance - roomList?.length) !== 1
+                ? 0
+                : remainingDays?.daysBalance - roomList?.length}
             </p>
           </div>
         </div>
@@ -113,8 +115,11 @@ function RightSideWaitlist({ name, location, resort_id, token }: PageProps) {
       <div className="flex justify-center items-center">
         <button
           onClick={handleBooking}
-          className="bg-yellow-300 text-slate-700 px-6 py-2.5 w-full rounded-br-xl rounded-bl-xl text-p1-b active:opacity-65"
-          disabled={isClicked}
+          className="bg-yellow-300 text-slate-700 px-6 py-2.5 w-full rounded-br-xl rounded-bl-xl text-p1-b active:opacity-65 disabled:grayscale"
+          disabled={
+            isClicked ||
+            Math.sign(remainingDays?.daysBalance - roomList?.length) === -1
+          }
         >
           {isClicked ? "Booking..." : "Book Now"}
         </button>
