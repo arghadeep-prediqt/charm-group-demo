@@ -1,20 +1,31 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Container from "@/components/shared/Container";
 import { BlurImage } from "@/components/ui/BluerImage";
 import { ArrowDownCircle } from "lucide-react";
 import Link from "next/link";
 
+const banner = [
+  "/images/offer1.jpg",
+  "/images/search.jpg",
+  "/images/offer2.jpg",
+  "/images/social.jpg",
+  "/images/banner1.jpg",
+  "/images/offer3.jpg",
+];
+
 function FirstHeroSection() {
-  const banner = ["/images/banner1.jpg", "/images/banner1.png"];
+  const randomIdGen = useMemo((): number => {
+    return Math.floor(Math.random() * banner.length);
+  }, []);
 
   return (
     <section className="relative h-[93vh] w-screen">
       <BlurImage
-        src={banner[0]}
+        src={banner[randomIdGen]}
         alt="hero_banner"
         width={1400}
         height={1200}
-        className="w-full h-full object-cover object-center bg-fixed"
+        className="w-full h-full object-cover bg-fixed"
       />
       <div className="pt-16 pb-2 absolute top-0 left-0 w-screen h-full bg-gradient-to-t from-black/80 to-black/30">
         <Container className="w-full h-full flex flex-col justify-center items-start gap-12">
