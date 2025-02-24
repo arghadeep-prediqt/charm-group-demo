@@ -183,7 +183,7 @@ let itineraryIds = [0, 1];
 
 function AdditionalServices() {
   return (
-    <div className="pb-3 mt-5 flex justify-start items-center gap-x-4 overflow-auto scrollbarX">
+    <div className="pb-3 mt-5 w-[70%] flex justify-start items-center gap-x-4 overflow-auto scrollbarX">
       {itineraryIds?.map((item, id) => (
         <div key={id} className="min-w-[250px] max-w[250px] h-[150px] relative">
           <BlurImage

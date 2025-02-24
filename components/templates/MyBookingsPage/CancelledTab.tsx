@@ -2,8 +2,10 @@ import { SingleBookingHistoryProps } from "@/components/@types/resortapi";
 import dynamic from "next/dynamic";
 import React from "react";
 
-import { SingleCard } from "./UpcomingTab";
 const NoEvents = dynamic(() => import("./NoEvents"));
+const SingleBookingStatusCard = dynamic(
+  () => import("./SingleBookingStatusCard")
+);
 
 interface PageProps {
   cancelledData: SingleBookingHistoryProps[];
@@ -20,7 +22,7 @@ function CancelledTab({ cancelledData }: PageProps) {
       {cancelledData?.length !== 0 ? (
         cancelledData?.map((item, id) => (
           <div key={id} className="pt-3 pb-5">
-            <SingleCard
+            <SingleBookingStatusCard
               _id={item?._id}
               status={item?.status}
               title={item?.resortId?.name}

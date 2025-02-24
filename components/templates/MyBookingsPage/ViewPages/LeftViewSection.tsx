@@ -8,11 +8,12 @@ import toast from "react-hot-toast";
 
 interface PageProps {
   id: string;
+  type: string;
   token: string;
   status: string;
 }
 
-function LeftViewSection({ id, token, status }: PageProps) {
+function LeftViewSection({ id, token, status, type }: PageProps) {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const router = useRouter();
   const subscription = useAppSelector((state) => state.user.role);
@@ -112,13 +113,24 @@ function LeftViewSection({ id, token, status }: PageProps) {
             >
               Cancel Booking
             </button>
-            <button
-              onClick={() => router.push(`/my_bookings/${id}?type=modify`)}
-              disabled={isClicked}
-              className="px-4 py-1.5 rounded-lg text-white text-p2-m bg-orange-500 active:opacity-65"
-            >
-              Modify Booking
-            </button>
+            {type === "view" ? (
+              <button
+                onClick={() => router.push(`/my_bookings/${id}?type=modify`)}
+                disabled={isClicked}
+                className="px-4 py-1.5 rounded-lg text-white text-p2-m bg-orange-500 active:opacity-65"
+              >
+                Modify Booking
+              </button>
+            ) : (
+              type === "modify" && (
+                <button
+                  onClick={() => router.push(`/my_bookings/${id}?type=view`)}
+                  className="px-4 py-1.5 rounded-lg text-white text-p2-m bg-indigo-500 active:opacity-65"
+                >
+                  Confirm Booking
+                </button>
+              )
+            )}
           </div>
         )) || (
           <button
