@@ -1,39 +1,40 @@
+import { useAppSelector } from "@/redux/hooks";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-const pricingPlans = [
-  {
-    name: "Explorer",
-    price: 90000,
-    yearly: 400000,
-    description:
-      "For independent travelers and small families eager to uncover hidden gems with ease and flexibility.",
-    isRecommended: false,
-    buttonLabel: "Choose Explorer",
-  },
-  {
-    name: "Navigator",
-    price: 180000,
-    yearly: 540000,
-    description:
-      "For those who seek balanced travel experiences, with enhanced perks and tailored benefits to elevate every journey.",
-    isRecommended: true,
-    buttonLabel: "Already Paid",
-  },
-  {
-    name: "Pioneer",
-    price: 300000,
-    yearly: 900000,
-    description:
-      "For families and groups who travel often and want exclusive VIP privileges for an unparalleled vacation experience.",
-    isRecommended: false,
-    buttonLabel: "Begin Your Adventure",
-  },
-];
-
 const PricingTablle = () => {
   const router = useRouter();
+  const role = useAppSelector((state) => state.user.role);
   const [billingCycle, setBillingCycle] = useState("monthly");
+  const pricingPlans = [
+    {
+      name: "Silver",
+      price: 90000,
+      yearly: 400000,
+      description:
+        "For independent travelers and small families eager to uncover hidden gems with ease and flexibility.",
+      isRecommended: role === "silver",
+      buttonLabel: role === "silver" ? "Already Paid" : "Choose Silver",
+    },
+    {
+      name: "Gold",
+      price: 180000,
+      yearly: 540000,
+      description:
+        "For those who seek balanced travel experiences, with enhanced perks and tailored benefits to elevate every journey.",
+      isRecommended: role === "gold",
+      buttonLabel: role === "gold" ? "Already Paid" : "Choose Gold",
+    },
+    {
+      name: "Diamond",
+      price: 300000,
+      yearly: 900000,
+      description:
+        "For families and groups who travel often and want exclusive VIP privileges for an unparalleled vacation experience.",
+      isRecommended: role === "diamond",
+      buttonLabel: role === "diamond" ? "Already Paid" : "Begin Your Diamond",
+    },
+  ];
 
   return (
     <div className={`flex flex-col items-center justify-center bg-gray-50`}>

@@ -193,7 +193,10 @@ function Login() {
             </div>
 
             <div className="flex justify-center items-center mt-4">
-              <button className="bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 py-2 px-4 rounded-full w-6/12 flex justify-start items-center font-medium text-[16px]">
+              <button
+                onClick={() => router.push("/explore_membership")}
+                className="bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 py-2 px-4 rounded-full w-6/12 flex justify-start items-center font-medium text-[16px]"
+              >
                 <BlurImage
                   src={"/icons/google.svg"}
                   alt="Google"
