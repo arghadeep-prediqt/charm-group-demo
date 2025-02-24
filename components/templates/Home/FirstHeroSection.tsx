@@ -10,7 +10,6 @@ const banner = [
   "/images/offer2.jpg",
   "/images/social.jpg",
   "/images/banner1.jpg",
-  "/images/offer3.jpg",
 ];
 
 function FirstHeroSection() {
