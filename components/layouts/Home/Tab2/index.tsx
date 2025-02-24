@@ -26,7 +26,9 @@ function Tab2() {
   return (
     <React.Fragment>
       {isSuccess && upcommingData?.length !== 0 ? (
-        <UpcomingTab upcomingData={upcommingData} />
+        <Container>
+          <UpcomingTab upcomingData={upcommingData} />
+        </Container>
       ) : (
         <NoPlanndedTrip />
       )}
