@@ -151,39 +151,39 @@ export const privilegesSideNav = [
 
 export const mockCarouselData = [
   {
-    id: "67a1d14ce051bfada7f48b7f",
-    category: "Thuan Phuoc commune",
+    id: "67bc2bfd899c4a28887dcdb4",
+    category: "Vũng Tàu, Xuyên Mộc",
     title: "Charm Resort Hồ Tràm",
     src: "https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Ho-Tram-1.jpg",
   },
   {
-    id: "67a1d14ce051bfada7f48b85",
-    category: "Long Dien District",
+    id: "67bc2c4b899c4a28887dcdb5",
+    category: "Đông Nam Bộ, Long Điền",
     title: "Charm Resort Long Hải ",
     src: "https://charm.vn/wp-content/uploads/2022/12/tien-ich-Charm-Resort-Long-Hai-4-1.jpg",
   },
   {
-    id: "67a1d14ce051bfada7f48b86",
-    category: "Thuan Phuoc commune",
-    title: "Charm Diamond",
+    id: "67bc4c94899c4a28887dcdb7",
+    category: "Đông Nam Bộ, Dĩ An",
+    title: "Charm Diamond DĨ An",
     src: "https://charm.vn/wp-content/uploads/2021/09/Charm-Diamond-2.jpg",
   },
   {
-    id: "67a1d14ce051bfada7f48b87",
-    category: "Thuan Phuoc commune",
-    title: "Charm Heritage Village Dalat",
+    id: "67bc2c83899c4a28887dcdb6",
+    category: "Tây Nguyên, Đà Lạt City",
+    title: "Charm Resort Đà Lạt",
     src: "https://charm.vn/wp-content/uploads/2022/07/Charm-Heritage-Village-Dalat-2-1536x864.jpg",
   },
   {
-    id: "67a1d14ce051bfada7f48b88",
-    category: "Thuan Phuoc commune",
-    title: "Charm Resort Ho Tram",
+    id: "67bc2bfd899c4a28887dcdb4",
+    category: "Vũng Tàu, Xuyên Mộc",
+    title: "Charm Resort Hồ Tràm",
     src: "https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Ho-Tram-11.jpg",
   },
   {
-    id: "67a1d14ce051bfada7f48b89",
-    category: "Long Dien District",
-    title: "Charm Resort Long Hai",
+    id: "67bc2c4b899c4a28887dcdb5",
+    category: "Đông Nam Bộ, Long Điền",
+    title: "Charm Resort Long Hải",
     src: "https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Long-Hai-5-1.jpeg",
   },
 ];
@@ -1098,7 +1098,7 @@ export const paymentDetails = [
 
 export const travelDiaries = [
   {
-    id: "67a1d14ce051bfada7f48b7f",
+    id: "67bc2bfd899c4a28887dcdb4",
     heading: "Trip to Hồ Tràm, Vietnam",
     subHeading: "Shared By Vương Minh Tuân on 20 September 2024",
     description: `
@@ -1111,8 +1111,8 @@ export const travelDiaries = [
       "https://images.unsplash.com/photo-1675310366607-18d20663943b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    id: "67a1d14ce051bfada7f48b80",
-    heading: "Into the Heart of Nature at Charm Resort Hồ Tràm",
+    id: "67bc2c4b899c4a28887dcdb5",
+    heading: "Into the Heart of Nature at Charm Resort Long Hải",
     subHeading: "Shared By Trần Thị Hồng Lũy on 29 August 2024",
     description: `
       <p>The breathtaking beauty of Hồ Tràm, Vietnam, feels like a scene straight out of a dream. Its pristine beaches, luxurious surroundings, and serene ambiance offer an unforgettable escape. Our trip to Charm Resort Hồ Tràm, nestled within this coastal haven, was nothing short of spectacular.</p>
@@ -1120,13 +1120,13 @@ export const travelDiaries = [
       <p>The resort’s travel desk made planning effortless, arranging activities tailored to our preferences. One of the highlights was a guided tour of Hồ Tràm’s lush landscapes, where we connected deeply with nature. The resort also catered to every member of our family, including preparing kid-friendly meals for our little one. The buffet spread, featuring breakfast, lunch, high tea, and dinner, was a culinary delight, showcasing perfection in every bite.</p>
       <p>Whether it was enjoying a sunset stroll along the beach, relaxing by the pool, or marveling at the beauty of the location, Charm Resort Hồ Tràm made our timeshare experience truly memorable. We’re eagerly looking forward to our next adventure at Charm Resort Phú Quốc for its unique blend of entertainment and authentic architecture.</p>
     `,
-    resort: "Charm Resort Hồ Tràm",
+    resort: "Charm Resort Long Hải",
     image:
       "https://images.unsplash.com/photo-1709710223973-bed31e23806d?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    id: "67a1d14ce051bfada7f48b81",
-    heading: "My Charm Resort Hồ Tràm Diary",
+    id: "67bc4c94899c4a28887dcdb7",
+    heading: "My Charm Diamond DĨ An Diary",
     subHeading: "Shared By Văn Thị Huỳnh Hiên on 04 July 2024",
     description: `
       <p>Creating a travel diary for Charm Resort Hồ Tràm is a delightful way to preserve cherished memories. Here’s how our 5-day escape unfolded:</p>
@@ -1137,7 +1137,7 @@ export const travelDiaries = [
       <p><strong>Day 5: Departure</strong><br>Enjoyed a leisurely breakfast before taking one last stroll around the resort to soak in its charm. The check-out process was smooth, and the staff sent us off with warm smiles and a thoughtful parting gift.</p>
       <p>Charm Resort Hồ Tràm turned our holiday into an extraordinary journey, and we can’t wait to plan our next stay at Charm Resort Đà Lạt for its unique cultural charm.</p>
     `,
-    resort: "Charm Resort Hồ Tràm",
+    resort: "Charm Diamond DĨ An",
     image:
       "https://images.unsplash.com/photo-1685714628080-356a7cddcf66?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },

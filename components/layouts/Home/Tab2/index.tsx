@@ -1,15 +1,46 @@
 import { BlurImage } from "@/components/ui/BluerImage";
+import ProfileContext from "@/contextAPI/ProfileContext";
+import { useGetAllBookingsQuery } from "@/redux/services/resortApi";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useContext, useMemo } from "react";
 
 const Container = dynamic(() => import("@/components/shared/Container"));
+const UpcomingTab = dynamic(
+  () => import("@/components/templates/MyBookingsPage/UpcomingTab")
+);
 
 function Tab2() {
+  const { cookieToken } = useContext(ProfileContext);
+  const { data, isSuccess } = useGetAllBookingsQuery({ token: cookieToken });
+
+  const upcommingData = useMemo(() => {
+    if (isSuccess) {
+      return data?.filter(
+        (item: { status: string }) => item?.status === "CONFIRMED"
+      );
+    }
+    return [];
+  }, [data, isSuccess]);
+
+  return (
+    <React.Fragment>
+      {isSuccess && upcommingData?.length !== 0 ? (
+        <UpcomingTab upcomingData={upcommingData} />
+      ) : (
+        <NoPlanndedTrip />
+      )}
+    </React.Fragment>
+  );
+}
+
+export default Tab2;
+
+export function NoPlanndedTrip() {
   const router = useRouter();
 
   return (
-    <Container className="mt-[3%]">
+    <Container className="mt-[5%]">
       <BlurImage
         src={"/images/no_bookings.svg"}
         alt="bookings"
@@ -34,5 +65,3 @@ function Tab2() {
     </Container>
   );
 }
-
-export default Tab2;

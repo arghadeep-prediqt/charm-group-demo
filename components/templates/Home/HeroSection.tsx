@@ -9,7 +9,7 @@ const Container = dynamic(() => import("@/components/shared/Container"));
 
 function HeroSection() {
   return (
-    <div id="hero">
+    <div id="hero" className="relative">
       <Container className="pt-10 flex justify-start items-start gap-x-2">
         {/* Left Side */}
         <div className="w-full py-2 pe-[2%]">
