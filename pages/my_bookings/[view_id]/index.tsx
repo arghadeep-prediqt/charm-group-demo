@@ -46,6 +46,7 @@ function ViewHolidaysPage() {
           id={String(param?.view_id || "")}
           token={cookieToken}
           status={data?.[0]?.status || ""}
+          type={String(param?.type || "")}
         />
 
         {isSuccess && param?.type === "view" && (
