@@ -26,7 +26,7 @@ function TabSection() {
 
   return (
     <React.Fragment>
-      <div className="p-3 flex justify-between items-center gap-x-16 border-b-2 border-gray-300">
+      <div className="p-3 flex justify-between items-center gap-x-16 border-b-2 border-gray-300 sticky top-16 bg-white z-20">
         <h2 className="text-gray-700 capitalize">
           {tabCategories[current]?.name}
         </h2>

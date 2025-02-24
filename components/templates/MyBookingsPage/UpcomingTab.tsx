@@ -2,6 +2,7 @@ import { SingleBookingHistoryProps } from "@/components/@types/resortapi";
 import dynamic from "next/dynamic";
 import React from "react";
 
+const NoEvents = dynamic(() => import("./NoEvents"));
 const SingleBookingStatusCard = dynamic(
   () => import("./SingleBookingStatusCard")
 );
@@ -20,21 +21,25 @@ function UpcomingTab({ upcomingData }: PageProps) {
         <h3 className="ps-6 font-medium">Upcoming</h3>
       </div>
 
-      {upcomingData?.map((item, id) => (
-        <div key={id} className="pt-3 pb-5">
-          <SingleBookingStatusCard
-            _id={item?._id}
-            status={item?.status}
-            title={item?.resortId?.name}
-            photo={item?.resortId?.photo}
-            startDate={new Date(item?.bookings?.[0]?.date).toLocaleDateString(
-              "en-US",
-              { day: "2-digit", month: "short", year: "numeric" }
-            )}
-            totalDays={item?.bookings?.length}
-          />
-        </div>
-      ))}
+      {upcomingData?.length !== 0 ? (
+        upcomingData?.map((item, id) => (
+          <div key={id} className="pt-3 pb-5">
+            <SingleBookingStatusCard
+              _id={item?._id}
+              status={item?.status}
+              title={item?.resortId?.name}
+              photo={item?.resortId?.photo}
+              startDate={new Date(item?.bookings?.[0]?.date).toLocaleDateString(
+                "en-US",
+                { day: "2-digit", month: "short", year: "numeric" }
+              )}
+              totalDays={item?.bookings?.length}
+            />
+          </div>
+        ))
+      ) : (
+        <NoEvents title="Start exploring and book your next vacation today!" />
+      )}
     </div>
   );
 }
