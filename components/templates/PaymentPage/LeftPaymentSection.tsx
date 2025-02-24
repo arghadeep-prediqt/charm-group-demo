@@ -1,22 +1,25 @@
 import React from "react";
 import { paymentDetails } from "@/components/lib/rawData";
+import { useAppSelector } from "@/redux/hooks";
 
 function LeftPaymentSection() {
+  const userRole = useAppSelector((state) => state.user.role);
+
   return (
-    <>
+    <React.Fragment>
       <TableHeader />
       <div className="flex flex-col divide-y">
         {paymentDetails?.map((item, id) => (
           <RowTable
             key={id}
-            title={`Navigator - ${item.PaymentType} ${item.emiNumber} | ${item.InvoiceDate}`}
+            title={`${userRole} - ${item.PaymentType} ${item.emiNumber} | ${item.InvoiceDate}`}
             dueDate={item?.InvoiceDuedate || ""}
             status={item?.emiStatusName || ""}
             amount={item?.netAmount?.toLocaleString("en-IN") || ""}
           />
         ))}
       </div>
-    </>
+    </React.Fragment>
   );
 }
 
@@ -56,7 +59,7 @@ function RowTable({ dueDate, amount, status, title }: RowTableInterface) {
       <div className="w-[60%] flex justify-start items-center gap-x-3">
         <input type="checkbox" className="size-4" />
         <div className="">
-          <p className="text-p1-b leading-relaxed">{title}</p>
+          <p className="text-p1-b leading-relaxed capitalize">{title}</p>
           <p className="text-p3-r leading-relaxed">
             Due -{" "}
             {date.toLocaleDateString("en-IN", {
