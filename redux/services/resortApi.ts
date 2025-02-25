@@ -142,8 +142,8 @@ export const resortApi = createApi({
 
 export const {
   useGetAllResortsQuery,
-  useGetSingleResortQuery,
-  useGetRoomsByResortsQuery,
+  useLazyGetSingleResortQuery,
+  useLazyGetRoomsByResortsQuery,
   useBookResortRoomMutation,
   useGetAllBookingsQuery,
   useGetSingleBookingByIdQuery,
