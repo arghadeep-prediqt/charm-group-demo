@@ -1,8 +1,8 @@
 import { StatusProps } from "@/components/@types/common";
-import { useGetRoomsByResortsQuery } from "@/redux/services/resortApi";
+import { useLazyGetRoomsByResortsQuery } from "@/redux/services/resortApi";
 import { MoveLeft, MoveRight } from "lucide-react";
 import dynamic from "next/dynamic";
-import React, { memo, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 
 const TableCalenderDate = dynamic(() => import("./TableCalenderDate"));
 
@@ -26,21 +26,24 @@ function Calendar({ resort_id, token }: { resort_id: string; token: string }) {
   const [currentYear, setCurrentYear] = useState(today.getFullYear());
   const [currentMonth, setCurrentMonth] = useState(today.getMonth());
   const currentDate = today.getDate();
-  const {
-    data: calenderData,
-    isSuccess,
-    isLoading,
-  } = useGetRoomsByResortsQuery({
-    id: resort_id,
-    token,
-    start: `${currentYear}-${String(currentMonth + 1).padStart(2, "0")}-01`,
-    end: `${currentYear}-${String(currentMonth + 1).padStart(
-      2,
-      "0"
-    )}-${new Date(currentYear, currentMonth + 1, 0).getDate()}`,
-  });
+  const [getRoomsByResorts, { data: calenderData, isSuccess, isLoading }] =
+    useLazyGetRoomsByResortsQuery();
 
-  console.log(calenderData);
+  // console.log(calenderData);
+
+  useEffect(() => {
+    if (token) {
+      getRoomsByResorts({
+        id: resort_id,
+        token,
+        start: `${currentYear}-${String(currentMonth + 1).padStart(2, "0")}-01`,
+        end: `${currentYear}-${String(currentMonth + 1).padStart(
+          2,
+          "0"
+        )}-${new Date(currentYear, currentMonth + 1, 0).getDate()}`,
+      });
+    }
+  }, [currentMonth, currentYear, getRoomsByResorts, resort_id, token]);
 
   const generateCalendarDays = (year: number, month: number) => {
     const firstDay = new Date(year, month, 1).getDay();

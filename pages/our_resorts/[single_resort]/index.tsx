@@ -1,8 +1,8 @@
 import ProfileContext from "@/contextAPI/ProfileContext";
-import { useGetSingleResortQuery } from "@/redux/services/resortApi";
+import { useLazyGetSingleResortQuery } from "@/redux/services/resortApi";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 const LoadingPage = dynamic(() => import("@/components/shared/LoadingPage"));
 const SectionTab = dynamic(
@@ -18,10 +18,16 @@ function SingleResortPage() {
   const router = useRouter();
   const resort_id = router?.query?.single_resort || null;
   const { cookieToken } = useContext(ProfileContext);
-  const { data, isSuccess } = useGetSingleResortQuery({
-    id: String(resort_id),
-    token: cookieToken,
-  });
+  const [getSingleResort, { data, isSuccess }] = useLazyGetSingleResortQuery();
+
+  useEffect(() => {
+    if (cookieToken) {
+      getSingleResort({
+        id: String(resort_id),
+        token: cookieToken,
+      });
+    }
+  }, [cookieToken, getSingleResort, resort_id]);
 
   return (
     <NavContainer>
