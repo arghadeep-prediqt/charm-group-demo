@@ -25,16 +25,16 @@ function SingleBookingStatusCard({
   }, []);
 
   return (
-    <div className="flex justify-between items-center gap-x-8 bg-gray-100 rounded-xl ">
+    <div className="flex justify-start items-center bg-gray-100 rounded-xl">
       <BlurImage
         src={photo}
         alt="banner Image"
-        width={300}
+        width={500}
         height={200}
-        className="h-[200px] w-[250px] object-cover rounded-xl"
+        className="h-[200px] w-3/12 object-fill rounded-xl"
       />
       {/* right Section */}
-      <div className="w-full flex justify-between items-start gap-x-3">
+      <div className="w-9/12 ps-8 flex justify-between items-start gap-x-3">
         {/* First Col */}
         <div className="w-5/12">
           <h4 className="leading-tight text-[21px] font-medium line-clamp-2">
