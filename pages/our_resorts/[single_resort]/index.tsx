@@ -40,6 +40,7 @@ function SingleResortPage() {
           <SectionTab
             name={data?.name || ""}
             resortId={String(resort_id)}
+            isRci={data?.region === "International"}
             location={`${data?.location}, Vietnam`}
           />
         </React.Fragment>

@@ -11,10 +11,11 @@ const TabCalendar = dynamic(() => import("./TabCalender"));
 interface PageProps {
   id: string;
   name: string;
+  isRci: boolean;
   location: string;
 }
 
-function AvailablityTab({ id, name, location }: PageProps) {
+function AvailablityTab({ id, name, location, isRci }: PageProps) {
   const { cookieToken } = useContext(ProfileContext);
 
   return (
@@ -29,6 +30,7 @@ function AvailablityTab({ id, name, location }: PageProps) {
           location={location}
           resort_id={id}
           token={cookieToken}
+          isRci={isRci}
         />
       </div>
     </div>

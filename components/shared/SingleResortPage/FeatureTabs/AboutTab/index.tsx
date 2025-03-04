@@ -14,10 +14,11 @@ const ThingsToDoSection = dynamic(() => import("./ThingsToDo"));
 interface PageProps {
   name: string;
   location: string;
+  isRci: boolean;
   setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
-function AboutTab({ name, location, setActiveIndex }: PageProps) {
+function AboutTab({ name, location, isRci, setActiveIndex }: PageProps) {
   return (
     <React.Fragment>
       <div className="flex justify-start items-start">
@@ -59,6 +60,7 @@ function AboutTab({ name, location, setActiveIndex }: PageProps) {
           <RightBookSection
             name={name}
             location={location}
+            isRci={isRci}
             setActiveIndex={setActiveIndex}
           />
         </div>
