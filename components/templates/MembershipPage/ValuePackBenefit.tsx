@@ -14,7 +14,7 @@ interface PageProps {
 function ValuePackBenefit({ billingCycle }: PageProps) {
   return (
     <div className={`bg-gray-50`}>
-      <MembershipSeasonalWeeks />
+      <MembershipSeasonalWeeks billingCycle={billingCycle} />
       {(billingCycle === "one" && <PackageOne />) ||
         (billingCycle === "two" && <PackageTwo />)}
     </div>
@@ -24,11 +24,17 @@ function ValuePackBenefit({ billingCycle }: PageProps) {
 export default ValuePackBenefit;
 
 const weekGrouping = [
-  { tire: "silver", week: "9 10 11 14 15 17 40 41 42 43 44 45 46 47 48 49 50" },
-  { tire: "gold", week: "2 3 6 7 8 12 13 16 19 20 21 22 23 24 38 39 51" },
+  {
+    tire: "silver",
+    week: "9, 10, 11, 14, 15, 17, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50",
+  },
+  {
+    tire: "gold",
+    week: "2, 3, 6, 7, 8, 12, 13, 16, 19,, 20, 21, 22, 23, 24, 38, 39, 51",
+  },
   {
     tire: "diamond",
-    week: "1 4 5 18 25 26 27 28 29 30 31 32 33 34 35 36 37 52",
+    week: "1, 4, 5, 18, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 52",
   },
 ];
 const membershipTire = [
@@ -44,17 +50,23 @@ const membershipTire = [
   },
   {
     membership: "3-Bedroom (President Suite)",
-    occupency: "6 adults + 2 child",
+    occupency: "6 adults + 2 children",
     fee: "$50,000",
   },
   {
     membership: "Villa (Full)",
-    occupency: "8 adults + 4 child",
+    occupency: "8 adults + 4 children",
     fee: "$50,000",
   },
 ];
 
-function MembershipSeasonalWeeks() {
+interface MembershipSeasonalWeeksProps {
+  billingCycle: string;
+}
+
+function MembershipSeasonalWeeks({
+  billingCycle,
+}: MembershipSeasonalWeeksProps) {
   return (
     <Disclosure as="div" className="mb-6" defaultOpen={true}>
       <DisclosureButton className="pb-1 text-start group w-full">
@@ -68,7 +80,7 @@ function MembershipSeasonalWeeks() {
 
       <DisclosurePanel
         as={"div"}
-        className="w-full border py-3 px-6 bg-white rounded-2xl"
+        className="w-full border pb-6 pt-3 px-6 bg-white rounded-2xl"
       >
         <p className="text-p1-b border-b border-gray-200 px-3 py-2 rounded-lg mb-2">
           Seasonal Week Groupings
@@ -91,28 +103,34 @@ function MembershipSeasonalWeeks() {
           </div>
         </div>
 
-        <p className="text-p1-b border-b border-gray-200 px-3 py-2 rounded-lg mt-4 mb-2">
-          Membership Types
-        </p>
-        <div className="mb-3 px-6 pt-6 pb-3 bg-amber-100 rounded-xl">
-          <div className="pb-2 flex justify-between border-b border-b-gray-300">
-            <p className="px-3 w-4/12 text-p1-m">Membership</p>
-            <p className="w-4/12 text-p1-m">Occupancy</p>
-            <p className="w-4/12 text-p1-m">Membership Fee</p>
-          </div>
-
-          <div className="flex flex-col divide-y divide-gray-300">
-            {membershipTire?.map((item, id) => (
-              <div key={id} className="py-3 flex justify-between">
-                <p className="px-3 w-4/12 text-p2-r capitalize">
-                  {item.membership}
-                </p>
-                <p className="w-4/12 text-p2-r">{item.occupency}</p>
-                <p className="w-4/12 text-p2-r">{item.fee}</p>
+        {billingCycle === "one" && (
+          <React.Fragment>
+            <p className="text-p1-b border-b border-gray-200 px-3 py-2 rounded-lg mt-4 mb-2">
+              Membership Types
+            </p>
+            <div className="px-6 pt-6 pb-3 bg-amber-100 rounded-xl">
+              <div className="pb-2 flex justify-between border-b border-b-gray-300">
+                <p className="px-3 w-4/12 text-p1-m">Membership</p>
+                <p className="w-4/12 text-p1-m">Occupancy</p>
+                <p className="w-4/12 text-p1-m">Membership Fee</p>
               </div>
-            ))}
-          </div>
-        </div>
+
+              <div className="flex flex-col divide-y divide-gray-300">
+                {membershipTire?.map((item, id) => (
+                  <div key={id} className="py-3 flex justify-between">
+                    <p className="px-3 w-4/12 text-p2-r capitalize">
+                      {item.membership}
+                    </p>
+                    <p className="w-4/12 text-p2-r capitalize">
+                      {item.occupency}
+                    </p>
+                    <p className="w-4/12 text-p2-r">{item.fee}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </React.Fragment>
+        )}
       </DisclosurePanel>
     </Disclosure>
   );

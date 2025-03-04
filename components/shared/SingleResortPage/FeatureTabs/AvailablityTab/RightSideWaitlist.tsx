@@ -18,9 +18,16 @@ interface PageProps {
   location: string;
   resort_id: string;
   token: string;
+  isRci: boolean;
 }
 
-function RightSideWaitlist({ name, location, resort_id, token }: PageProps) {
+function RightSideWaitlist({
+  name,
+  location,
+  resort_id,
+  token,
+  isRci,
+}: PageProps) {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const [isClicked, setIsClicked] = useState<boolean>(false);
@@ -121,7 +128,7 @@ function RightSideWaitlist({ name, location, resort_id, token }: PageProps) {
             Math.sign(remainingDays?.daysBalance - roomList?.length) === -1
           }
         >
-          {isClicked ? "Booking..." : "Book Now"}
+          {isClicked ? "Booking..." : isRci ? "Book Now with RCI" : "Book Now"}
         </button>
       </div>
     </div>

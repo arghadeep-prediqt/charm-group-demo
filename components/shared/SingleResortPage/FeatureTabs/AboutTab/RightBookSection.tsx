@@ -6,6 +6,7 @@ import React, { useState } from "react";
 interface PageProps {
   name: string;
   location: string;
+  isRci: boolean;
   setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
@@ -15,7 +16,12 @@ const resortImage = [
   "https://charm.vn/wp-content/uploads/2022/12/Charm-Resort-Ho-Tram-12.jpg",
 ];
 
-function RightBookSection({ name, location, setActiveIndex }: PageProps) {
+function RightBookSection({
+  name,
+  location,
+  isRci,
+  setActiveIndex,
+}: PageProps) {
   const [showCalender, setShowCalendar] = useState<boolean>(false);
   const [selectedRange, setSelectedRange] = useState<{
     startDate: Date | null;
@@ -93,7 +99,7 @@ function RightBookSection({ name, location, setActiveIndex }: PageProps) {
             onClick={() => setActiveIndex(1)}
             className="bg-amber-50 text-amber-500 px-6 py-2 w-full rounded-full text-p1-b border border-amber-400"
           >
-            Book Now
+            {isRci ? "Book Now with RCI" : "Book Now"}
           </button>
         </div>
       </div>

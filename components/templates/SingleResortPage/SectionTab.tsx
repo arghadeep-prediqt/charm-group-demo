@@ -16,9 +16,10 @@ interface PageProps {
   name: string;
   resortId: string;
   location: string;
+  isRci: boolean;
 }
 
-function SectionTab({ name, location, resortId }: PageProps) {
+function SectionTab({ name, location, resortId, isRci }: PageProps) {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const tabCategories = [
     {
@@ -27,6 +28,7 @@ function SectionTab({ name, location, resortId }: PageProps) {
         <AboutTab
           name={name}
           location={location}
+          isRci={isRci}
           setActiveIndex={setActiveIndex}
         />
       ),
@@ -34,7 +36,12 @@ function SectionTab({ name, location, resortId }: PageProps) {
     {
       name: "Book Your Stay",
       component: (
-        <AvailablityTab id={resortId} name={name} location={location} />
+        <AvailablityTab
+          id={resortId}
+          name={name}
+          location={location}
+          isRci={isRci}
+        />
       ),
     },
   ];
