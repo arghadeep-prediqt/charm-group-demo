@@ -153,7 +153,7 @@ function PackageOne() {
         className="w-full border py-3 px-6 bg-white rounded-2xl"
       >
         <BlurImage
-          src={"/images/package1.png"}
+          src={"/images/package11.png"}
           alt="package1"
           width={1900}
           height={800}
