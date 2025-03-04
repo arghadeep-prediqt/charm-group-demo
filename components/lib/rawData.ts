@@ -2,7 +2,6 @@ import { MenuItemProps } from "../@types/common";
 import {
   CurrentSectionProps,
   Experience,
-  ResortsData,
   SelectedProps,
 } from "../@types/pages";
 
@@ -232,298 +231,298 @@ export const thirdFilter: SelectedProps[] = [
   { id: 6, name: "Active" },
 ];
 
-export const allResortsData: ResortsData[] = [
-  {
-    title: "Northern Vietnam",
-    local: "Bắc Bộ",
-    data: [
-      {
-        district: "Đông Bắc",
-        photo:
-          "https://image.vietnam.travel/sites/default/files/styles/top_banner/public/2023-02/shutterstock_1900070254_1.jpg?itok=XkGlqHC7",
-        resorts: [
-          {
-            name: "Charm Resort Hạ Long Bay",
-            location: "Quảng Ninh , Đông Bắc",
-          },
-          { name: "Charm Resort Ba Bể Lake", location: "Bắc Kạn , Đông Bắc" },
-          {
-            name: "Charm Resort Lạng Sơn Hills",
-            location: "Lạng Sơn , Đông Bắc",
-          },
-          {
-            name: "Charm Resort Cao Bằng Riverside",
-            location: "Cao Bằng , Đông Bắc",
-          },
-          { name: "Charm Resort Mẫu Sơn", location: "Lạng Sơn , Đông Bắc" },
-        ],
-      },
-      {
-        district: "Tây Bắc",
-        photo:
-          "https://cdn.kimkim.com/files/a/content_articles/featured_photos/538026be6c47504b374240cae3aaed096b42977b/big-0090bb4a9046bb1abb1f236b9ce588cf.jpg",
-        resorts: [
-          { name: "Charm Resort Sapa Valley", location: "Lào Cai , Tây Bắc" },
-          {
-            name: "Charm Resort Điện Biên Retreat",
-            location: "Điện Biên , Tây Bắc",
-          },
-          {
-            name: "Charm Resort Sơn La Serenity",
-            location: "Sơn La , Tây Bắc",
-          },
-          {
-            name: "Charm Resort Lai Châu Highlands",
-            location: "Lai Châu , Tây Bắc",
-          },
-          { name: "Charm Resort Mộc Châu Bliss", location: "Sơn La , Tây Bắc" },
-        ],
-      },
-      {
-        district: "Đồng Bằng Sông Hồng",
-        photo:
-          "https://travelsense.asia/wp-content/uploads/2019/11/cao-bang-Trung-Khanh.jpg",
-        resorts: [
-          {
-            name: "Charm Resort West Lake",
-            location: "Hà Nội , Đồng Bằng Sông Hồng",
-          },
-          {
-            name: "Charm Resort Ninh Bình Tranquility",
-            location: "Ninh Bình , Đồng Bằng Sông Hồng",
-          },
-          {
-            name: "Charm Resort Hải Phòng Harbor",
-            location: "Hải Phòng , Đồng Bằng Sông Hồng",
-          },
-          {
-            name: "Charm Resort Nam Định Heritage",
-            location: "Nam Định , Đồng Bằng Sông Hồng",
-          },
-          {
-            name: "Charm Resort Thái Bình Serenity",
-            location: "Thái Bình , Đồng Bằng Sông Hồng",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Central Vietnam",
-    local: "Trung Bộ",
-    data: [
-      {
-        district: "Bắc Trung Bộ",
-        photo:
-          "https://image.vietnam.travel/sites/default/files/styles/top_banner/public/2019-02/Central%20Vietnam%20Travel%20Guide-2_0.jpg?itok=tkYt3Jqd",
-        resorts: [
-          {
-            name: "Charm Resort Cửa Lò Beachfront",
-            location: "Nghệ An , Bắc Trung Bộ",
-          },
-          {
-            name: "Charm Resort Thanh Hóa Oasis",
-            location: "Thanh Hóa , Bắc Trung Bộ",
-          },
-          {
-            name: "Charm Resort Quảng Bình Caveside",
-            location: "Quảng Bình , Bắc Trung Bộ",
-          },
-          {
-            name: "Charm Resort Hà Tĩnh Seascape",
-            location: "Hà Tĩnh , Bắc Trung Bộ",
-          },
-          {
-            name: "Charm Resort Vinh City Luxe",
-            location: "Nghệ An , Bắc Trung Bộ",
-          },
-        ],
-      },
-      {
-        district: "Nam Trung Bộ",
-        photo:
-          "https://statics.vinwonders.com/Central-Vietnam-itinerary-01_1687860666.jpg",
-        resorts: [
-          {
-            name: "Charm Resort Đà Nẵng Beachfront",
-            location: "Đà Nẵng , Nam Trung Bộ",
-          },
-          {
-            name: "Charm Resort Nha Trang Shores",
-            location: "Khánh Hòa , Nam Trung Bộ",
-          },
-          {
-            name: "Charm Resort Quy Nhơn Pearl",
-            location: "Bình Định , Nam Trung Bộ",
-          },
-          {
-            name: "Charm Resort Phan Thiết Retreat",
-            location: "Bình Thuận , Nam Trung Bộ",
-          },
-          {
-            name: "Charm Resort Lý Sơn Island",
-            location: "Quảng Ngãi , Nam Trung Bộ",
-          },
-        ],
-      },
-      {
-        district: "Tây Nguyên",
-        photo:
-          "https://media.worldnomads.com/Explore/vietnam/river-hoi-an-istock-gargolas.jpg",
-        resorts: [
-          {
-            name: "Charm Resort Đà Lạt Heritage",
-            location: "Lâm Đồng , Tây Nguyên",
-          },
-          {
-            name: "Charm Resort Buôn Ma Thuột Coffee Retreat",
-            location: "Đắk Lắk , Tây Nguyên",
-          },
-          {
-            name: "Charm Resort Gia Lai Hills",
-            location: "Gia Lai , Tây Nguyên",
-          },
-          {
-            name: "Charm Resort Kon Tum Wilderness",
-            location: "Kon Tum , Tây Nguyên",
-          },
-          {
-            name: "Charm Resort Krông Năng Escape",
-            location: "Đắk Lắk , Tây Nguyên",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Southern Vietnam",
-    local: "Nam Bộ ",
-    data: [
-      {
-        district: "Đông Nam Bộ",
-        photo:
-          "https://image.vietnam.travel/sites/default/files/styles/top_banner/public/2017-07/southern-vietnam_1.jpg?itok=an6PzoKg",
-        resorts: [
-          {
-            name: "Charm Resort Hồ Tràm Bliss",
-            location: "Bà Rịa–Vũng Tàu , Đông Nam Bộ",
-          },
-          {
-            name: "Charm Resort Long Hải Serenity",
-            location: "Bà Rịa–Vũng Tàu , Đông Nam Bộ",
-          },
-          {
-            name: "Charm Resort Biên Hòa Luxe",
-            location: "Đồng Nai , Đông Nam Bộ",
-          },
-          {
-            name: "Charm Resort Củ Chi Nature Retreat",
-            location: "Hồ Chí Minh City , Đông Nam Bộ",
-          },
-          {
-            name: "Charm Resort Vũng Tàu Cityscape",
-            location: "Bà Rịa–Vũng Tàu , Đông Nam Bộ",
-          },
-        ],
-      },
-      {
-        district: "Đồng Bằng Sông Cửu Long",
-        photo:
-          "https://pohcdn.com/guide/sites/default/files/styles/node__blog_post__bp_banner/public/live_banner/South-Vietnam.jpg",
-        resorts: [
-          {
-            name: "Charm Resort Cần Thơ Riverside",
-            location: "Cần Thơ , Đồng Bằng Sông Cửu Long",
-          },
-          {
-            name: "Charm Resort Phú Quốc Haven",
-            location: "Kiên Giang , Đồng Bằng Sông Cửu Long",
-          },
-          {
-            name: "Charm Resort Mỹ Tho Serenity",
-            location: "Tiền Giang , Đồng Bằng Sông Cửu Long",
-          },
-          {
-            name: "Charm Resort Sóc Trăng Bliss",
-            location: "Sóc Trăng , Đồng Bằng Sông Cửu Long",
-          },
-          {
-            name: "Charm Resort Châu Đốc Retreat",
-            location: "An Giang , Đồng Bằng Sông Cửu Long",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "International",
-    local: "",
-    data: [
-      {
-        district: "Bali, Indonesia",
-        photo:
-          "https://plus.unsplash.com/premium_photo-1677829177642-30def98b0963?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        resorts: [
-          { name: "Charm Resort Uluwatu Bliss", location: "Bali, Indonesia" },
-          {
-            name: "Charm Resort Tegallalang Retreat",
-            location: "Bali, Indonesia",
-          },
-          {
-            name: "Charm Resort Seminyak Serenity",
-            location: "Bali, Indonesia",
-          },
-          { name: "Charm Resort Nusa Dua Escape", location: "Bali, Indonesia" },
-        ],
-      },
-      {
-        district: "Maldives",
-        photo:
-          "https://images.unsplash.com/photo-1467377791767-c929b5dc9a23?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        resorts: [
-          { name: "Charm Resort Maafushi Lagoon", location: "Maldives" },
-          { name: "Charm Resort Baa Atoll Luxe", location: "Maldives" },
-          { name: "Charm Resort Malé Serenity", location: "Maldives" },
-          { name: "Charm Resort Ari Atoll Escape", location: "Maldives" },
-        ],
-      },
-      {
-        district: "Santorini, Greece",
-        photo:
-          "https://images.unsplash.com/photo-1662116432150-4394d39ced32?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        resorts: [
-          { name: "Charm Resort Oia Sunset", location: "Santorini, Greece" },
-          { name: "Charm Resort Fira Heights", location: "Santorini, Greece" },
-          { name: "Charm Resort Kamari Bliss", location: "Santorini, Greece" },
-          {
-            name: "Charm Resort Imerovigli Tranquility",
-            location: "Santorini, Greece",
-          },
-        ],
-      },
-      {
-        district: "Kyoto, Japan",
-        photo:
-          "https://images.unsplash.com/photo-1655222330870-1c2a0fc3fea7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        resorts: [
-          { name: "Charm Resort Arashiyama Retreat", location: "Kyoto, Japan" },
-          {
-            name: "Charm Resort Higashiyama Heritage",
-            location: "Kyoto, Japan",
-          },
-          {
-            name: "Charm Resort Gion Luxe",
-            location: "Kyoto, Japan",
-          },
-          {
-            name: "Charm Resort Fushimi Escape",
-            location: "Kyoto, Japan",
-          },
-        ],
-      },
-    ],
-  },
-];
+// export const allResortsData: ResortsData[] = [
+//   {
+//     title: "Northern Vietnam",
+//     local: "Bắc Bộ",
+//     data: [
+//       {
+//         district: "Đông Bắc",
+//         photo:
+//           "https://image.vietnam.travel/sites/default/files/styles/top_banner/public/2023-02/shutterstock_1900070254_1.jpg?itok=XkGlqHC7",
+//         resorts: [
+//           {
+//             name: "Charm Resort Hạ Long Bay",
+//             location: "Quảng Ninh , Đông Bắc",
+//           },
+//           { name: "Charm Resort Ba Bể Lake", location: "Bắc Kạn , Đông Bắc" },
+//           {
+//             name: "Charm Resort Lạng Sơn Hills",
+//             location: "Lạng Sơn , Đông Bắc",
+//           },
+//           {
+//             name: "Charm Resort Cao Bằng Riverside",
+//             location: "Cao Bằng , Đông Bắc",
+//           },
+//           { name: "Charm Resort Mẫu Sơn", location: "Lạng Sơn , Đông Bắc" },
+//         ],
+//       },
+//       {
+//         district: "Tây Bắc",
+//         photo:
+//           "https://cdn.kimkim.com/files/a/content_articles/featured_photos/538026be6c47504b374240cae3aaed096b42977b/big-0090bb4a9046bb1abb1f236b9ce588cf.jpg",
+//         resorts: [
+//           { name: "Charm Resort Sapa Valley", location: "Lào Cai , Tây Bắc" },
+//           {
+//             name: "Charm Resort Điện Biên Retreat",
+//             location: "Điện Biên , Tây Bắc",
+//           },
+//           {
+//             name: "Charm Resort Sơn La Serenity",
+//             location: "Sơn La , Tây Bắc",
+//           },
+//           {
+//             name: "Charm Resort Lai Châu Highlands",
+//             location: "Lai Châu , Tây Bắc",
+//           },
+//           { name: "Charm Resort Mộc Châu Bliss", location: "Sơn La , Tây Bắc" },
+//         ],
+//       },
+//       {
+//         district: "Đồng Bằng Sông Hồng",
+//         photo:
+//           "https://travelsense.asia/wp-content/uploads/2019/11/cao-bang-Trung-Khanh.jpg",
+//         resorts: [
+//           {
+//             name: "Charm Resort West Lake",
+//             location: "Hà Nội , Đồng Bằng Sông Hồng",
+//           },
+//           {
+//             name: "Charm Resort Ninh Bình Tranquility",
+//             location: "Ninh Bình , Đồng Bằng Sông Hồng",
+//           },
+//           {
+//             name: "Charm Resort Hải Phòng Harbor",
+//             location: "Hải Phòng , Đồng Bằng Sông Hồng",
+//           },
+//           {
+//             name: "Charm Resort Nam Định Heritage",
+//             location: "Nam Định , Đồng Bằng Sông Hồng",
+//           },
+//           {
+//             name: "Charm Resort Thái Bình Serenity",
+//             location: "Thái Bình , Đồng Bằng Sông Hồng",
+//           },
+//         ],
+//       },
+//     ],
+//   },
+//   {
+//     title: "Central Vietnam",
+//     local: "Trung Bộ",
+//     data: [
+//       {
+//         district: "Bắc Trung Bộ",
+//         photo:
+//           "https://image.vietnam.travel/sites/default/files/styles/top_banner/public/2019-02/Central%20Vietnam%20Travel%20Guide-2_0.jpg?itok=tkYt3Jqd",
+//         resorts: [
+//           {
+//             name: "Charm Resort Cửa Lò Beachfront",
+//             location: "Nghệ An , Bắc Trung Bộ",
+//           },
+//           {
+//             name: "Charm Resort Thanh Hóa Oasis",
+//             location: "Thanh Hóa , Bắc Trung Bộ",
+//           },
+//           {
+//             name: "Charm Resort Quảng Bình Caveside",
+//             location: "Quảng Bình , Bắc Trung Bộ",
+//           },
+//           {
+//             name: "Charm Resort Hà Tĩnh Seascape",
+//             location: "Hà Tĩnh , Bắc Trung Bộ",
+//           },
+//           {
+//             name: "Charm Resort Vinh City Luxe",
+//             location: "Nghệ An , Bắc Trung Bộ",
+//           },
+//         ],
+//       },
+//       {
+//         district: "Nam Trung Bộ",
+//         photo:
+//           "https://statics.vinwonders.com/Central-Vietnam-itinerary-01_1687860666.jpg",
+//         resorts: [
+//           {
+//             name: "Charm Resort Đà Nẵng Beachfront",
+//             location: "Đà Nẵng , Nam Trung Bộ",
+//           },
+//           {
+//             name: "Charm Resort Nha Trang Shores",
+//             location: "Khánh Hòa , Nam Trung Bộ",
+//           },
+//           {
+//             name: "Charm Resort Quy Nhơn Pearl",
+//             location: "Bình Định , Nam Trung Bộ",
+//           },
+//           {
+//             name: "Charm Resort Phan Thiết Retreat",
+//             location: "Bình Thuận , Nam Trung Bộ",
+//           },
+//           {
+//             name: "Charm Resort Lý Sơn Island",
+//             location: "Quảng Ngãi , Nam Trung Bộ",
+//           },
+//         ],
+//       },
+//       {
+//         district: "Tây Nguyên",
+//         photo:
+//           "https://media.worldnomads.com/Explore/vietnam/river-hoi-an-istock-gargolas.jpg",
+//         resorts: [
+//           {
+//             name: "Charm Resort Đà Lạt Heritage",
+//             location: "Lâm Đồng , Tây Nguyên",
+//           },
+//           {
+//             name: "Charm Resort Buôn Ma Thuột Coffee Retreat",
+//             location: "Đắk Lắk , Tây Nguyên",
+//           },
+//           {
+//             name: "Charm Resort Gia Lai Hills",
+//             location: "Gia Lai , Tây Nguyên",
+//           },
+//           {
+//             name: "Charm Resort Kon Tum Wilderness",
+//             location: "Kon Tum , Tây Nguyên",
+//           },
+//           {
+//             name: "Charm Resort Krông Năng Escape",
+//             location: "Đắk Lắk , Tây Nguyên",
+//           },
+//         ],
+//       },
+//     ],
+//   },
+//   {
+//     title: "Southern Vietnam",
+//     local: "Nam Bộ ",
+//     data: [
+//       {
+//         district: "Đông Nam Bộ",
+//         photo:
+//           "https://image.vietnam.travel/sites/default/files/styles/top_banner/public/2017-07/southern-vietnam_1.jpg?itok=an6PzoKg",
+//         resorts: [
+//           {
+//             name: "Charm Resort Hồ Tràm Bliss",
+//             location: "Bà Rịa–Vũng Tàu , Đông Nam Bộ",
+//           },
+//           {
+//             name: "Charm Resort Long Hải Serenity",
+//             location: "Bà Rịa–Vũng Tàu , Đông Nam Bộ",
+//           },
+//           {
+//             name: "Charm Resort Biên Hòa Luxe",
+//             location: "Đồng Nai , Đông Nam Bộ",
+//           },
+//           {
+//             name: "Charm Resort Củ Chi Nature Retreat",
+//             location: "Hồ Chí Minh City , Đông Nam Bộ",
+//           },
+//           {
+//             name: "Charm Resort Vũng Tàu Cityscape",
+//             location: "Bà Rịa–Vũng Tàu , Đông Nam Bộ",
+//           },
+//         ],
+//       },
+//       {
+//         district: "Đồng Bằng Sông Cửu Long",
+//         photo:
+//           "https://pohcdn.com/guide/sites/default/files/styles/node__blog_post__bp_banner/public/live_banner/South-Vietnam.jpg",
+//         resorts: [
+//           {
+//             name: "Charm Resort Cần Thơ Riverside",
+//             location: "Cần Thơ , Đồng Bằng Sông Cửu Long",
+//           },
+//           {
+//             name: "Charm Resort Phú Quốc Haven",
+//             location: "Kiên Giang , Đồng Bằng Sông Cửu Long",
+//           },
+//           {
+//             name: "Charm Resort Mỹ Tho Serenity",
+//             location: "Tiền Giang , Đồng Bằng Sông Cửu Long",
+//           },
+//           {
+//             name: "Charm Resort Sóc Trăng Bliss",
+//             location: "Sóc Trăng , Đồng Bằng Sông Cửu Long",
+//           },
+//           {
+//             name: "Charm Resort Châu Đốc Retreat",
+//             location: "An Giang , Đồng Bằng Sông Cửu Long",
+//           },
+//         ],
+//       },
+//     ],
+//   },
+//   {
+//     title: "International",
+//     local: "",
+//     data: [
+//       {
+//         district: "Bali, Indonesia",
+//         photo:
+//           "https://plus.unsplash.com/premium_photo-1677829177642-30def98b0963?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//         resorts: [
+//           { name: "Charm Resort Uluwatu Bliss", location: "Bali, Indonesia" },
+//           {
+//             name: "Charm Resort Tegallalang Retreat",
+//             location: "Bali, Indonesia",
+//           },
+//           {
+//             name: "Charm Resort Seminyak Serenity",
+//             location: "Bali, Indonesia",
+//           },
+//           { name: "Charm Resort Nusa Dua Escape", location: "Bali, Indonesia" },
+//         ],
+//       },
+//       {
+//         district: "Maldives",
+//         photo:
+//           "https://images.unsplash.com/photo-1467377791767-c929b5dc9a23?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//         resorts: [
+//           { name: "Charm Resort Maafushi Lagoon", location: "Maldives" },
+//           { name: "Charm Resort Baa Atoll Luxe", location: "Maldives" },
+//           { name: "Charm Resort Malé Serenity", location: "Maldives" },
+//           { name: "Charm Resort Ari Atoll Escape", location: "Maldives" },
+//         ],
+//       },
+//       {
+//         district: "Santorini, Greece",
+//         photo:
+//           "https://images.unsplash.com/photo-1662116432150-4394d39ced32?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//         resorts: [
+//           { name: "Charm Resort Oia Sunset", location: "Santorini, Greece" },
+//           { name: "Charm Resort Fira Heights", location: "Santorini, Greece" },
+//           { name: "Charm Resort Kamari Bliss", location: "Santorini, Greece" },
+//           {
+//             name: "Charm Resort Imerovigli Tranquility",
+//             location: "Santorini, Greece",
+//           },
+//         ],
+//       },
+//       {
+//         district: "Kyoto, Japan",
+//         photo:
+//           "https://images.unsplash.com/photo-1655222330870-1c2a0fc3fea7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//         resorts: [
+//           { name: "Charm Resort Arashiyama Retreat", location: "Kyoto, Japan" },
+//           {
+//             name: "Charm Resort Higashiyama Heritage",
+//             location: "Kyoto, Japan",
+//           },
+//           {
+//             name: "Charm Resort Gion Luxe",
+//             location: "Kyoto, Japan",
+//           },
+//           {
+//             name: "Charm Resort Fushimi Escape",
+//             location: "Kyoto, Japan",
+//           },
+//         ],
+//       },
+//     ],
+//   },
+// ];
 
 export const monthsData: SelectedProps[] = [
   { id: 1, name: "January" },
