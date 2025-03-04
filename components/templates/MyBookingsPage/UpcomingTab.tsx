@@ -22,13 +22,15 @@ function UpcomingTab({ upcomingData }: PageProps) {
       </div>
 
       {upcomingData?.length !== 0 ? (
-        upcomingData?.map((item, id) => (
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        upcomingData?.map((item: any, id) => (
           <div key={id} className="pt-3 pb-5">
             <SingleBookingStatusCard
               _id={item?._id}
               status={item?.status}
               title={item?.resortId?.name}
               photo={item?.resortId?.photo}
+              isRci={item?.category === "RCI Booking"}
               startDate={new Date(item?.bookings?.[0]?.date).toLocaleDateString(
                 "en-US",
                 { day: "2-digit", month: "short", year: "numeric" }

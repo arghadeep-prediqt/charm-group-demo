@@ -9,6 +9,7 @@ interface PageProps {
   startDate: string;
   totalDays: number;
   status: string;
+  isRci?: boolean;
 }
 
 function SingleBookingStatusCard({
@@ -18,6 +19,7 @@ function SingleBookingStatusCard({
   startDate,
   totalDays,
   status,
+  isRci = false,
 }: PageProps) {
   const router = useRouter();
   const randomIdGen = useMemo((): number => {
@@ -26,13 +28,20 @@ function SingleBookingStatusCard({
 
   return (
     <div className="flex justify-start items-center bg-gray-100 rounded-xl">
-      <BlurImage
-        src={photo}
-        alt="banner Image"
-        width={500}
-        height={200}
-        className="h-[200px] w-3/12 object-fill rounded-xl"
-      />
+      <div className="relative h-[200px] w-3/12 ">
+        <BlurImage
+          src={photo}
+          alt="banner Image"
+          width={500}
+          height={200}
+          className="w-full h-full object-fill rounded-xl"
+        />
+        {isRci && (
+          <div className="absolute px-2.5 py-1 top-0 left-0 w-fit h-fit bg-amber-300 flex justify-center items-center rounded-tl-xl">
+            <p className="text-p1-b text-indigo-700">RCI Booking</p>
+          </div>
+        )}
+      </div>
       {/* right Section */}
       <div className="w-9/12 ps-8 flex justify-between items-start gap-x-3">
         {/* First Col */}

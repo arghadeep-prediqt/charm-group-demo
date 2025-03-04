@@ -23,6 +23,7 @@ export interface DistrictResorts {
   district: string;
   photo: string;
   resorts: Resort[];
+  region_local: string;
 }
 
 // Interface for regions like "North", "South", etc.

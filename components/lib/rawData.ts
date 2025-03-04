@@ -83,10 +83,13 @@ export const navigationProfile = [
     content: [{ name: "Payment Details", link: "#payment" }],
   },
   {
-    name: "Ownership Upgrade",
+    name: "Travel Plan",
     icon: "https://img.icons8.com/fluency-systems-filled/100/faa307/membership-card.png",
     link: "/membership",
-    content: [{ name: "Upgrade", link: "#upgrade" }],
+    content: [
+      { name: "Upgrade", link: "#upgrade" },
+      { name: "Value Pack", link: "#benefits" },
+    ],
   },
   {
     name: "Holiday Usage",
