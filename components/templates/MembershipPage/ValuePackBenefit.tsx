@@ -165,9 +165,9 @@ function PackageOne() {
 }
 
 const allPlansDetails = [
-  { plan: "silver", photo: "/images/silver2.png" },
-  { plan: "gold", photo: "/images/gold2.png" },
-  { plan: "diamond", photo: "/images/diamond2.png" },
+  { plan: "silver", photo: "/images/silver21.png" },
+  { plan: "gold", photo: "/images/gold22.png" },
+  { plan: "diamond", photo: "/images/diamond23.png" },
 ];
 
 function PackageTwo() {
