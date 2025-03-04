@@ -44,7 +44,7 @@ function SelectListBoxHigh({ selected, setSelected, selectedData }: PageProps) {
             value={person}
             className="group flex cursor-default items-center gap-2 rounded-lg py-1.5 px-3 select-none data-[focus]:bg-black/10"
           >
-            <CheckIcon className="invisible size-4 text-sky-400 group-data-[selected]:visible" />
+            <CheckIcon className="invisible size-4 text-indigo-400 group-data-[selected]:visible" />
             <p className="text-p1-r text-nowrap group-data-[selected]:font-medium">
               {person.name}
             </p>
