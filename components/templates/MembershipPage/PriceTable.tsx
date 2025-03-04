@@ -1,16 +1,32 @@
+import React, { useState } from "react";
 import { useAppSelector } from "@/redux/hooks";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import SelectListBoxText from "@/components/ui/SelectListBoxText";
 
-const PricingTablle = () => {
+interface PageProps {
+  billingCycle: string;
+  setBillingCycle: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const listData = [
+  { id: 1, name: "01 Year" },
+  { id: 2, name: "02 Year" },
+  { id: 3, name: "03 Year" },
+  { id: 4, name: "04 Year" },
+  { id: 5, name: "05 Year" },
+  { id: 10, name: "10 Year" },
+  { id: 15, name: "15 Year" },
+  { id: 20, name: "20 Year" },
+];
+
+const PricingTablle = ({ billingCycle, setBillingCycle }: PageProps) => {
   const router = useRouter();
   const role = useAppSelector((state) => state.user.role);
-  const [billingCycle, setBillingCycle] = useState("monthly");
   const pricingPlans = [
     {
       name: "Silver",
-      price: 90000,
-      yearly: 400000,
+      price: 15000,
+      yearly: 700,
       description:
         "For independent travelers and small families eager to uncover hidden gems with ease and flexibility.",
       isRecommended: role === "silver",
@@ -18,8 +34,8 @@ const PricingTablle = () => {
     },
     {
       name: "Gold",
-      price: 180000,
-      yearly: 540000,
+      price: 25000,
+      yearly: 1400,
       description:
         "For those who seek balanced travel experiences, with enhanced perks and tailored benefits to elevate every journey.",
       isRecommended: role === "gold",
@@ -27,8 +43,8 @@ const PricingTablle = () => {
     },
     {
       name: "Diamond",
-      price: 300000,
-      yearly: 900000,
+      price: 50000,
+      yearly: 3500,
       description:
         "For families and groups who travel often and want exclusive VIP privileges for an unparalleled vacation experience.",
       isRecommended: role === "diamond",
@@ -49,26 +65,28 @@ const PricingTablle = () => {
         <div className="flex items-center p-1 bg-gray-200 rounded-full">
           <button
             className={`px-6 py-2 rounded-full text-p2-m ${
-              billingCycle === "monthly"
+              billingCycle === "one"
                 ? "bg-amber-50 text-amber-600"
                 : "text-gray-600"
             }`}
-            onClick={() => setBillingCycle("monthly")}
+            onClick={() => setBillingCycle("one")}
           >
-            Monthly
+            Package 1
           </button>
           <button
             className={`px-6 py-2 rounded-full text-p2-m ${
-              billingCycle === "yearly"
+              billingCycle === "two"
                 ? "bg-amber-50 text-amber-600"
                 : "text-gray-600"
             }`}
-            onClick={() => setBillingCycle("yearly")}
+            onClick={() => setBillingCycle("two")}
           >
-            Yearly
+            Package 2
           </button>
         </div>
-        <span className="ps-4 text-[#7732BB] text-p3-m">SAVE UP TO 30%</span>
+        <span className="ps-4 text-[#7732BB] text-p3-m">
+          10% OFF ONE-TIME <br /> FULL PAYMENT
+        </span>
 
         {/* Curved Arrow */}
         <div className="absolute right-20 -bottom-6">
@@ -115,16 +133,9 @@ const PricingTablle = () => {
                 </div>
               </div>
 
-              <div className="text-[28px] font-semibold text-gray-900 mb-6">
-                <span className="text-[28x]">{"₫ "}</span>
-                {billingCycle === "monthly"
-                  ? plan.price?.toLocaleString("en-IN")
-                  : plan.yearly?.toLocaleString("en-IN")}
-                <span className="text-lg font-medium text-gray-600">
-                  {" "}
-                  / {billingCycle}
-                </span>
-              </div>
+              {/* Pricing */}
+
+              <PricingSecion billingCycle={billingCycle} plan={plan} />
 
               <button
                 disabled={plan.isRecommended}
@@ -142,3 +153,38 @@ const PricingTablle = () => {
 };
 
 export default PricingTablle;
+
+interface PricingSectionProps {
+  billingCycle: string;
+  plan: {
+    name: string;
+    price: number;
+    yearly: number;
+    description: string;
+    isRecommended: boolean;
+    buttonLabel: string;
+  };
+}
+
+function PricingSecion({ billingCycle, plan }: PricingSectionProps) {
+  const [selected, setSelected] = useState(listData[0]);
+
+  return (
+    <div className="text-[28px] font-semibold text-gray-900 mb-6 flex justify-center items-center">
+      <div className="text-[28x]">{"$ "}</div>
+      {billingCycle === "one"
+        ? plan.price?.toLocaleString("en-IN")
+        : (plan.yearly * selected.id)?.toLocaleString("en-IN")}
+      {billingCycle === "two" && (
+        <div className="text-lg font-medium text-gray-600 flex justify-start items-center">
+          &nbsp;/&nbsp;
+          <SelectListBoxText
+            selected={selected}
+            setSelected={setSelected}
+            selectedData={listData}
+          />
+        </div>
+      )}
+    </div>
+  );
+}

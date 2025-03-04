@@ -32,6 +32,8 @@ function OurResortsPage() {
   });
   const allResortsData = useResortsData(allResorts, isSuccess);
 
+  console.log(allResortsData);
+
   const toggleDrawer = () => {
     setDrawerOpen((prev) => !prev);
     dispatch(clearResort());
@@ -84,6 +86,7 @@ const useResortsData = (resorts: AllResortDataProps[], isSuccess: boolean) => {
           districtData = {
             district: resort.district,
             photo: resort.photo,
+            region_local: resort.region_local,
             resorts: [],
           };
           acc[resort.region].push(districtData);
@@ -100,7 +103,7 @@ const useResortsData = (resorts: AllResortDataProps[], isSuccess: boolean) => {
 
     return Object.entries(groupedByRegion).map(([region, districts]) => ({
       title: region,
-      local: districts[0]?.district || "",
+      local: districts[0]?.region_local || "",
       data: districts,
     }));
   }, [isSuccess, resorts]);
