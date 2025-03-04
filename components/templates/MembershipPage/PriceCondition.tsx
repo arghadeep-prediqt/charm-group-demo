@@ -23,7 +23,9 @@ const PriceCondition = ({ billingCycle }: PageProps) => {
   ];
 
   const packageTwo = [
-    `1. Valid for 20 years ${date.getFullYear()} - ${date.getFullYear() + 20}`,
+    `1. Valid for 1 to 20 years ${date.getFullYear()} - ${
+      date.getFullYear() + 20
+    }`,
     "2. Discount of 10% on one-time full payment",
     "3. 6 EMI options available with NAM A Bank @ 0% interest rate ",
     "4. RCI memberships for up to 2 years free ",
