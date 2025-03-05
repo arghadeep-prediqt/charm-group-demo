@@ -1,3 +1,4 @@
+import { useAppSelector } from "@/redux/hooks";
 import React from "react";
 
 const bookings = [
@@ -34,6 +35,7 @@ const bookings = [
 ];
 
 const HolidayBookings = () => {
+  const userName = useAppSelector((state) => state.user.name);
   const totalHolidays = bookings.reduce(
     (total, booking) => total + booking.debitedHolidays,
     0
@@ -80,7 +82,7 @@ const HolidayBookings = () => {
                 {booking.resort}
               </td>
               <td className="px-4 py-2 text-p2-r text-nowrap text-center">
-                {booking.guest}
+                {userName}
               </td>
               <td className="px-4 py-2 text-p2-r text-nowrap text-center">
                 {booking.room}
