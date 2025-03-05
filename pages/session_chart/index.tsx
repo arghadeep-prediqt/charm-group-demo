@@ -35,7 +35,7 @@ function SessionChartPage() {
         subTitle="Tailor your holidays to the perfect time of year with our seasonal availability chart."
       />
       <Container className="py-2">
-        <div className="my-5 flex justify-start items-center gap-x-[2%]">
+        <div className="my-5 flex justify-center items-center gap-x-[2%]">
           <div className="w-2/12">
             <SelectListBox selectedData={domesticData} />
           </div>
@@ -53,9 +53,6 @@ function SessionChartPage() {
           </div>
           <div className="w-2/12">
             <SelectListBox selectedData={yearData} />
-          </div>
-          <div className="w-2/12">
-            <SelectListBox selectedData={thirdFilter} />
           </div>
         </div>
         <div className="flex justify-center items-center gap-x-6">
