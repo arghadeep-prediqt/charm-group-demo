@@ -3,13 +3,13 @@ import React from "react";
 
 function ProfileCard() {
   return (
-    <div className="relative flex justify-start items-center gap-x-1 border border-amber-200 px-3 rounded-xl bg-amber-50">
+    <div className="relative flex justify-start items-center gap-x-1 border border-blue-200 px-3 rounded-xl bg-blue-50">
       <BlurImage
         src={""}
         alt="profile"
         width={55}
         height={55}
-        className="rounded-full bg-amber-50 p-0.5 hover:grayscale"
+        className="rounded-full bg-blue-50 p-0.5 hover:grayscale"
       />
 
       <div className="w-full ps-4 py-2">

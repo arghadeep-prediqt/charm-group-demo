@@ -5,12 +5,13 @@ import { useGetAllResortsQuery } from "@/redux/services/resortApi";
 import { clearResort } from "@/redux/slice/resortSlice";
 import dynamic from "next/dynamic";
 import React, { useContext, useMemo, useState } from "react";
+import { motion } from "framer-motion";
 
 const SingleResortCard = dynamic(
   () => import("@/components/shared/OurResortsPage/SingleResortCard")
 );
 const SideDrawer = dynamic(() => import("@/components/ui/SideDrawer"));
-const ResortAccordian = dynamic(
+const ResortAccordion = dynamic(
   () => import("@/components/templates/OurResortsPage/ResortAccordian")
 );
 const FilterRow = dynamic(
@@ -32,8 +33,6 @@ function OurResortsPage() {
   });
   const allResortsData = useResortsData(allResorts, isSuccess);
 
-  console.log(allResortsData);
-
   const toggleDrawer = () => {
     setDrawerOpen((prev) => !prev);
     dispatch(clearResort());
@@ -42,24 +41,43 @@ function OurResortsPage() {
   return (
     <NavContainer>
       <TopBanner
-        photo="https://images.unsplash.com/photo-1521019795854-14e15f600980?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        title="Resorts Across Horizons"
-        subTitle="Experience the diverse charm of Vietnam’s regions and indulge in our exclusive international destinations."
+        photo="https://images.unsplash.com/photo-1521019795854-14e15f600980?q=80&w=1932&auto=format&fit=crop"
+        title="Discover Our Luxury Resorts"
+        subTitle="Immerse yourself in extraordinary experiences across Vietnam and beyond"
       />
-      <Container className="py-2">
-        <FilterRow />
+
+      <Container className="py-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <FilterRow />
+        </motion.div>
       </Container>
 
-      <div className="py-4">
+      <motion.div
+        className="py-8 bg-gradient-to-b from-white to-gray-50"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+      >
         {isSuccess &&
           allResortsData?.map((item, id) => (
-            <ResortAccordian key={id} setDrawerOpen={setDrawerOpen} {...item} />
+            <motion.div
+              key={id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: id * 0.1 }}
+            >
+              <ResortAccordion setDrawerOpen={setDrawerOpen} {...item} />
+            </motion.div>
           ))}
-      </div>
+      </motion.div>
 
       <SideDrawer
         isOpen={isDrawerOpen}
-        title={`Resort ${resortName}`}
+        title={`Discover ${resortName}`}
         onClose={toggleDrawer}
         paraBody={<SingleResortCard />}
       />

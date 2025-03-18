@@ -1,7 +1,8 @@
 import { membersReviewData } from "@/components/lib/rawData";
-import { BlurImage } from "@/components/ui/BluerImage";
+import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
 import React from "react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 function MemberReview() {
@@ -11,13 +12,13 @@ function MemberReview() {
         type: "fraction",
       }}
       navigation={true}
-      modules={[Navigation]}
+      modules={[Navigation, Autoplay]}
       slidesPerView={2.3}
-      spaceBetween={0}
-      // autoplay={{
-      //   delay: 2500,
-      //   disableOnInteraction: false,
-      // }}
+      spaceBetween={24}
+      autoplay={{
+        delay: 3000,
+        disableOnInteraction: false,
+      }}
       className="mySwiper"
     >
       {membersReviewData?.map((item, id) => (
@@ -37,29 +38,44 @@ interface MemberCardProps {
   comment: string;
 }
 
-function MemberCard({ name, comment }: MemberCardProps) {
+function MemberCard({ name, comment, created }: MemberCardProps) {
   return (
-    <div className="h-full w-full z-10">
-      <div className="w-[90%] mx-auto h-full border border-amber-200 bg-amber-50 -z-10 rounded-3xl ps-8 pe-4 pt-4 text-start">
-        <div className="ps-4 pe-9">
-          <div className="mt-[4%]">
-            <BlurImage
-              src="https://img.icons8.com/3d-fluency/100/user-male-circle.png"
-              alt="user"
-              width={100}
-              height={100}
-              className="size-16 object-cover rounded-full border border-gray-200 bg-white"
-            />
-            <h2 className="mt-2 font-normal text-[23px] leading-relaxed capitalize">
-              {name}
-            </h2>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="h-full w-full p-2"
+    >
+      <div className="relative h-full bg-gradient-to-br from-white to-blue-50 rounded-2xl p-6 shadow-sm border border-blue-100">
+        {/* Quote Icon */}
+        <div className="absolute -top-3 -left-3">
+          <div className="relative">
+            <div className="absolute inset-0 bg-blue-200 rounded-full blur-lg opacity-50" />
+            <div className="relative bg-white p-2 rounded-full shadow-sm border border-blue-100">
+              <Quote className="size-5 text-blue-500" />
+            </div>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="space-y-4">
+          {/* User Info */}
+          <div className="flex items-center gap-4">
+            <div className="relative"></div>
+            <div>
+              <h2 className="text-xl font-semibold text-gray-800">{name}</h2>
+              <p className="text-sm text-gray-500">{created}</p>
+            </div>
           </div>
 
-          <p className="text-p1-r line-clamp-[9] mt-[4%] text-justify">
-            {comment}
-          </p>
+          {/* Review Text */}
+          <div className="relative">
+            <p className="text-gray-600 leading-relaxed line-clamp-[7] text-pretty">
+              {comment}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

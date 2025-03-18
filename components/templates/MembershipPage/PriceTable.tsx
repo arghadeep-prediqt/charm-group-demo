@@ -55,7 +55,7 @@ const PricingTablle = ({ billingCycle, setBillingCycle }: PageProps) => {
   return (
     <div className={`flex flex-col items-center justify-center bg-gray-50`}>
       <h2 className="font-medium text-center mb-8">
-        Choose the <span className="text-amber-500">travel plan</span> that fits
+        Choose the <span className="text-blue-500">travel plan</span> that fits
         your lifestyle <br />
         and embark on your dream vacations!
       </h2>
@@ -66,7 +66,7 @@ const PricingTablle = ({ billingCycle, setBillingCycle }: PageProps) => {
           <button
             className={`px-6 py-2 rounded-full text-p2-m ${
               billingCycle === "one"
-                ? "bg-amber-50 text-amber-600"
+                ? "bg-blue-50 text-blue-600"
                 : "text-gray-600"
             }`}
             onClick={() => setBillingCycle("one")}
@@ -76,7 +76,7 @@ const PricingTablle = ({ billingCycle, setBillingCycle }: PageProps) => {
           <button
             className={`px-6 py-2 rounded-full text-p2-m ${
               billingCycle === "two"
-                ? "bg-amber-50 text-amber-600"
+                ? "bg-blue-50 text-blue-600"
                 : "text-gray-600"
             }`}
             onClick={() => setBillingCycle("two")}
@@ -113,12 +113,12 @@ const PricingTablle = ({ billingCycle, setBillingCycle }: PageProps) => {
             className={`relative bg-white shadow-lg p-8 text-center border ${
               plan.isRecommended
                 ? "bg-transparent rounded-br-xl rounded-bl-xl cursor-not-allowed"
-                : "border-gray-100 rounded-xl hover:border-amber-300 hover:bg-amber-50 hover:shadow-2xl cursor-pointer"
+                : "border-gray-100 rounded-xl hover:border-blue-300 hover:bg-blue-50 hover:shadow-2xl cursor-pointer"
             }  transition-shadow duration-300`}
           >
             {/* Recommended Badge */}
             {plan.isRecommended && (
-              <div className="absolute w-full -top-4 left-1/2 transform -translate-x-1/2 bg-amber-300 text-gray-700 py-1 px-4 rounded-tr-lg rounded-tl-lg text-sm font-medium">
+              <div className="absolute w-full -top-4 left-1/2 transform -translate-x-1/2 bg-blue-300 text-gray-700 py-1 px-4 rounded-tr-lg rounded-tl-lg text-sm font-medium">
                 You are using
               </div>
             )}
@@ -140,7 +140,7 @@ const PricingTablle = ({ billingCycle, setBillingCycle }: PageProps) => {
               <button
                 disabled={plan.isRecommended}
                 onClick={() => router.push("/mockpay")}
-                className="hover:bg-amber-100 bg-amber-50 py-2 px-4 rounded-lg text-p1-m transition-colors border border-amber-300 text-amber-600 disabled:grayscale disabled:opacity-65"
+                className="hover:bg-blue-100 bg-blue-50 py-2 px-4 rounded-lg text-p1-m transition-colors border border-blue-300 text-blue-600 disabled:grayscale disabled:opacity-65"
               >
                 {plan.buttonLabel}
               </button>

@@ -46,28 +46,28 @@ const HolidayBookings = () => {
       <table className="w-full border-collapse mb-4">
         <thead>
           <tr>
-            <th className="px-4 py-2 text-p3-b text-nowrap bg-amber-100">
+            <th className="px-4 py-2 text-p3-b text-nowrap bg-blue-100">
               Booking #
             </th>
-            <th className="px-4 py-2 text-p3-b text-nowrap bg-amber-100">
+            <th className="px-4 py-2 text-p3-b text-nowrap bg-blue-100">
               Property Name
             </th>
-            <th className="px-4 py-2 text-p3-b text-nowrap bg-amber-100">
+            <th className="px-4 py-2 text-p3-b text-nowrap bg-blue-100">
               Primary Guest
             </th>
-            <th className="px-4 py-2 text-p3-b text-nowrap bg-amber-100">
+            <th className="px-4 py-2 text-p3-b text-nowrap bg-blue-100">
               Accommodation Details
             </th>
-            <th className="px-4 py-2 text-p3-b text-nowrap bg-amber-100">
+            <th className="px-4 py-2 text-p3-b text-nowrap bg-blue-100">
               Booking Type
             </th>
-            <th className="px-4 py-2 text-p3-b text-nowrap bg-amber-100">
+            <th className="px-4 py-2 text-p3-b text-nowrap bg-blue-100">
               Arrival Date
             </th>
-            <th className="px-4 py-2 text-p3-b text-nowrap bg-amber-100">
+            <th className="px-4 py-2 text-p3-b text-nowrap bg-blue-100">
               Departure Date
             </th>
-            <th className="px-4 py-2 text-p3-b text-nowrap bg-amber-100">
+            <th className="px-4 py-2 text-p3-b text-nowrap bg-blue-100">
               Nights Used
             </th>
           </tr>

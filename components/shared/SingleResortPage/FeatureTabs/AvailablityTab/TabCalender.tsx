@@ -1,8 +1,14 @@
 import { StatusProps } from "@/components/@types/common";
 import { useLazyGetRoomsByResortsQuery } from "@/redux/services/resortApi";
-import { MoveLeft, MoveRight } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Info,
+  Calendar as CalendarIcon,
+} from "lucide-react";
 import dynamic from "next/dynamic";
 import React, { memo, useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const TableCalenderDate = dynamic(() => import("./TableCalenderDate"));
 
@@ -18,7 +24,6 @@ interface Day {
     bookedRooms: number;
     totalRooms: number;
   }[];
-  // roomTypes: string[];
 }
 
 function Calendar({ resort_id, token }: { resort_id: string; token: string }) {
@@ -26,10 +31,9 @@ function Calendar({ resort_id, token }: { resort_id: string; token: string }) {
   const [currentYear, setCurrentYear] = useState(today.getFullYear());
   const [currentMonth, setCurrentMonth] = useState(today.getMonth());
   const currentDate = today.getDate();
+  const [showLegend, setShowLegend] = useState(true);
   const [getRoomsByResorts, { data: calenderData, isSuccess, isLoading }] =
     useLazyGetRoomsByResortsQuery();
-
-  // console.log(calenderData);
 
   useEffect(() => {
     if (token) {
@@ -67,7 +71,6 @@ function Calendar({ resort_id, token }: { resort_id: string; token: string }) {
             (item: { date: string }) => item?.date?.split("T")?.[0] === dateISO
           );
 
-        // Example data for status and roomTypes
         const status: StatusProps =
           date < currentDate &&
           year === today.getFullYear() &&
@@ -76,10 +79,6 @@ function Calendar({ resort_id, token }: { resort_id: string; token: string }) {
             : filterRoom?.[0]?.available
             ? "available"
             : "fullyBooked";
-
-        // const roomTypes = ["1BR", "2BR", "3BR", "Villa"];
-
-        // console.log(filterRoom?.[0]);
 
         return { date, status, roomTypes: filterRoom?.[0]?.rooms || [] };
       }
@@ -111,92 +110,121 @@ function Calendar({ resort_id, token }: { resort_id: string; token: string }) {
     }
   };
 
-  return (
-    <div className="p-4 mt-4 max-w-5xl mx-auto">
-      {/* Calendar Header */}
-      <header className="flex justify-between items-center gap-x-4 mb-4">
-        {/* Navigation Buttons */}
-        <div className="flex justify-between items-center w-4/12 pe-6">
-          <h2 className="text-lg font-semibold">
-            {new Date(currentYear, currentMonth).toLocaleString("default", {
-              month: "long",
-            })}{" "}
-            {currentYear}
-          </h2>
+  const monthName = new Date(currentYear, currentMonth).toLocaleString(
+    "default",
+    {
+      month: "long",
+    }
+  );
 
-          <div className="flex justify-end items-center gap-x-2">
+  return (
+    <motion.div
+      className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      {/* Calendar Header */}
+      <div className="bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 p-5 border-b border-gray-100">
+        <div className="flex justify-between items-center">
+          {/* Month and Year Display */}
+          <motion.div
+            className="flex items-center gap-4"
+            initial={{ x: -20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="p-2 bg-white/70 backdrop-blur-sm rounded-lg shadow-sm border border-indigo-100">
+              <CalendarIcon className="size-5 text-indigo-600" />
+            </div>
+            <h2 className="text-xl font-medium text-gray-800">
+              {monthName} <span className="text-indigo-600">{currentYear}</span>
+            </h2>
+          </motion.div>
+
+          {/* Navigation Controls */}
+          <motion.div
+            className="flex items-center gap-2"
+            initial={{ x: 20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
             <button
-              className={`text-amber-500 hover:text-amber-500 border border-amber-300 p-2 rounded-full disabled:text-gray-400 disabled:border-gray-300 ${
-                currentYear === today.getFullYear() &&
-                currentMonth === today.getMonth()
-                  ? "opacity-50 cursor-not-allowed"
-                  : ""
-              }`}
+              className="p-2 rounded-full text-indigo-600 hover:bg-indigo-100 transition-colors disabled:text-gray-400 disabled:hover:bg-transparent"
               onClick={goToPreviousMonth}
               disabled={
                 currentYear === today.getFullYear() &&
                 currentMonth === today.getMonth()
               }
             >
-              <MoveLeft className="size-5" />
+              <ChevronLeft className="size-5" />
             </button>
             <button
-              className={`text-amber-500 hover:text-amber-500 border border-amber-300 p-2 rounded-full disabled:text-gray-400 disabled:border-gray-300 ${
-                currentYear !== today.getFullYear()
-                  ? "opacity-50 cursor-not-allowed"
-                  : ""
-              }`}
+              className="p-2 rounded-full text-indigo-600 hover:bg-indigo-100 transition-colors disabled:text-gray-400 disabled:hover:bg-transparent"
               onClick={goToNextMonth}
               disabled={currentYear !== today.getFullYear()}
             >
-              <MoveRight className="size-5" />
+              <ChevronRight className="size-5" />
             </button>
-          </div>
+
+            {/* Legend Toggle Button */}
+            <button
+              className={`ml-2 p-2 rounded-full ${
+                showLegend
+                  ? "bg-indigo-100 text-indigo-700"
+                  : "text-indigo-600 hover:bg-indigo-100"
+              } transition-colors relative`}
+              onClick={() => setShowLegend(!showLegend)}
+            >
+              <Info className="size-5" />
+            </button>
+          </motion.div>
         </div>
 
-        {/* Legend and Season Indicator */}
-        {/* <ul className="w-2/12 flex justify-end items-center flex-wrap gap-x-4 gap-y-2 text-sm">
-          <li className="flex justify-start items-center gap-x-1">
-            <div className="inline-block size-4 bg-[#E7E6E6] rounded-full mr-2"></div>
-            <div className="inline-block size-4 bg-[#FFD966] rounded-full mr-2"></div>
-            <div className="inline-block size-4 bg-[#2F5597] rounded-full mr-2"></div>
-          </li>
-        </ul> */}
+        {/* Legend Section - Always visible */}
+        <AnimatePresence>
+          {showLegend && (
+            <motion.div
+              className="mt-4 p-4 bg-white/80 backdrop-blur-sm rounded-lg shadow-sm border border-indigo-100"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+            >
+              <h4 className="text-sm font-medium text-gray-700 mb-3">
+                Availability Legend
+              </h4>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center size-8 bg-indigo-50 rounded-md">
+                    <div className="size-4 bg-indigo-500 rounded-full"></div>
+                  </div>
+                  <span className="text-sm text-gray-700">Available Now</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center size-8 bg-red-50 rounded-md">
+                    <div className="size-4 bg-red-500 rounded-full"></div>
+                  </div>
+                  <span className="text-sm text-gray-700">Fully Reserved</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center size-8 bg-gray-50 rounded-md">
+                    <div className="size-4 bg-gray-300 rounded-full"></div>
+                  </div>
+                  <span className="text-sm text-gray-700">Not Available</span>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
 
-        <div className="flex items-center ps-4 w-6/12">
-          {/* Availability Legend */}
-          <ul className="flex justify-end items-start flex-wrap gap-x-4 gap-y-2 text-sm">
-            <li className="flex justify-start items-center gap-x-1">
-              <div className="inline-block size-4 bg-[#9370DB] rounded-full mr-2"></div>
-              Available Now
-            </li>
-            {/* <li className="flex justify-start items-center gap-x-1">
-              <div className="inline-block size-4 bg-[#FFA500] rounded-full mr-2"></div>
-              Join Waitlist
-            </li> */}
-            <li className="flex justify-start items-center gap-x-1">
-              <div className="inline-block size-4 bg-[#FF4500] rounded-full mr-2"></div>
-              Fully Reserved
-            </li>
-
-            {/* <li className="flex justify-start items-center gap-x-1">
-              <div className="inline-block size-4 bg-[#9370DB] rounded-full mr-2"></div>
-              Filling Fast
-            </li> */}
-            <li className="flex justify-start items-center gap-x-1">
-              <div className="inline-block size-4 bg-gray-300 rounded-full mr-2"></div>
-              Not Operational / Not Available
-            </li>
-          </ul>
-        </div>
-      </header>
-
-      {/* Weekdays */}
-      <div className="grid grid-cols-7 gap-2 text-center mb-2">
+      {/* Weekdays Header */}
+      <div className="grid grid-cols-7 bg-gray-50 border-b border-gray-100">
         {DAYS.map((day) => (
           <div
             key={day}
-            className="text-sm text-start ps-2 font-semibold text-slate-600"
+            className="py-3 text-center text-sm font-medium text-gray-600"
           >
             {day}
           </div>
@@ -204,62 +232,112 @@ function Calendar({ resort_id, token }: { resort_id: string; token: string }) {
       </div>
 
       {/* Calendar Grid */}
-      <div className="grid grid-cols-7 gap-2">
-        {calendarDays?.map((day, index) => (
-          <div
-            key={index}
-            className={`p-2 rounded-lg border ${
-              day.date
-                ? day.status === "fullyBooked"
-                  ? "bg-[#D3D3D3] border-[#D3D3D3]"
-                  : "bg-[#9370DB] border-[#9370DB]"
-                : "bg-transparent border-gray-100"
-            }`}
-          >
-            {day.date && !isLoading && isSuccess && (
-              <>
-                <div
-                  className={`text-[21px] font-semibold mb-2 ${
-                    day.status === "fullyBooked"
-                      ? "text-gray-400"
-                      : day.status === "fillingFast"
-                      ? "text-primary-700"
-                      : "text-white"
-                  }`}
-                >
-                  {day.date.toLocaleString("en-IN", {
-                    minimumIntegerDigits: 2,
-                  })}
-                </div>
-                <div className="text-xs space-y-1">
-                  {day.roomTypes.map((room, idx) => {
-                    const roomId = `${currentYear}-${(
-                      currentMonth + 1
-                    ).toLocaleString("en-IN", {
-                      minimumIntegerDigits: 2,
-                    })}-${day.date}/${room?.type}`;
-
-                    return (
-                      <TableCalenderDate
-                        key={idx}
-                        id={roomId}
-                        room={room?.type}
-                        status={
-                          day?.status === "available" && room?.available
-                            ? "available"
-                            : "fullyBooked"
-                        }
-                        capacity={room?.capacity || 0}
-                      />
-                    );
-                  })}
-                </div>
-              </>
-            )}
+      <div className="p-3">
+        {isLoading ? (
+          <div className="py-20 flex justify-center items-center">
+            <motion.div
+              className="size-16 relative"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+            >
+              <div className="absolute inset-0 border-4 border-indigo-200 border-t-indigo-600 rounded-full"></div>
+              <div className="absolute inset-2 border-4 border-indigo-100 border-b-indigo-400 rounded-full"></div>
+            </motion.div>
           </div>
-        ))}
+        ) : (
+          <div className="grid grid-cols-7 gap-2">
+            {calendarDays?.map((day, index) => (
+              <motion.div
+                key={index}
+                className={`relative rounded-lg overflow-hidden ${
+                  day.date ? "min-h-[120px]" : ""
+                }`}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.01 }}
+              >
+                {day.date && !isLoading && isSuccess ? (
+                  <div
+                    className={`h-full p-3 rounded-lg transition-all duration-200 hover:shadow-sm ${
+                      day.status === "available"
+                        ? "bg-indigo-50 border border-indigo-100 hover:border-indigo-200"
+                        : day.status === "fullyBooked"
+                        ? "bg-red-50 border border-red-100 hover:border-red-200"
+                        : "bg-gray-50 border border-gray-200 hover:border-gray-300"
+                    }`}
+                  >
+                    {/* Date Display */}
+                    <div className="flex justify-between items-center mb-3">
+                      <span
+                        className={`text-lg font-medium ${
+                          day.status === "available"
+                            ? "text-indigo-700"
+                            : day.status === "fullyBooked"
+                            ? "text-red-700"
+                            : "text-gray-600"
+                        }`}
+                      >
+                        {day.date}
+                      </span>
+
+                      {/* Status Indicator */}
+                      <div
+                        className={`size-3 rounded-full ${
+                          day.status === "available"
+                            ? "bg-indigo-500"
+                            : day.status === "fullyBooked"
+                            ? "bg-red-500"
+                            : "bg-gray-400"
+                        }`}
+                      />
+                    </div>
+
+                    {/* Room Types */}
+                    <div className="space-y-2">
+                      {day.roomTypes.map((room, idx) => {
+                        const roomId = `${currentYear}-${(
+                          currentMonth + 1
+                        ).toLocaleString("en-IN", {
+                          minimumIntegerDigits: 2,
+                        })}-${day.date}/${room?.type}`;
+
+                        return (
+                          <TableCalenderDate
+                            key={idx}
+                            id={roomId}
+                            room={room?.type}
+                            status={
+                              day?.status === "available" && room?.available
+                                ? "available"
+                                : "fullyBooked"
+                            }
+                            capacity={room?.capacity || 0}
+                          />
+                        );
+                      })}
+
+                      {day.roomTypes.length === 0 && (
+                        <div
+                          className={`text-xs italic p-2 rounded-md text-center ${
+                            day.status === "available"
+                              ? "bg-indigo-100/50 text-indigo-600"
+                              : day.status === "fullyBooked"
+                              ? "bg-red-100/50 text-red-600"
+                              : "bg-gray-100/50 text-gray-600"
+                          }`}
+                        >
+                          No rooms available
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ) : null}
+              </motion.div>
+            ))}
+          </div>
+        )}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

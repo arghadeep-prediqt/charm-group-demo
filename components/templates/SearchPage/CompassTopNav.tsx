@@ -59,7 +59,7 @@ function CompassTopNav() {
           isFilled={false}
           name={renderSelectedRange}
           changeFn={() => setShowCalendar(true)}
-          icon={<CalendarFold className="size-6 text-amber-500" />}
+          icon={<CalendarFold className="size-6 text-blue-500" />}
         />
       </div>
 

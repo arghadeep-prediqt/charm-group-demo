@@ -12,14 +12,22 @@ const Container = dynamic(() => import("@/components/shared/Container"));
 
 const ExperienceSection: React.FC = () => {
   return (
-    <React.Fragment>
+    <section className="py-16 bg-gradient-to-br from-slate-50 to-slate-100 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30"></div>
+      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-100 rounded-full blur-3xl opacity-30"></div>
+
       {/* Header */}
-      <Container className="py-2 mt-3">
-        <h1 className="text-[40px] leading-relaxed">Craft Your Memories</h1>
-        <p className="text-p1-m text-gray-500 leading-relaxed">
-          Indulge in hands-on activities and delightful moments with family and
-          friends.
-        </p>
+      <Container className="relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-blue-600 to-teal-500 bg-clip-text text-transparent">
+            Craft Your Memories
+          </h2>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            Indulge in hands-on activities and delightful moments with family
+            and friends that will last a lifetime.
+          </p>
+        </div>
       </Container>
 
       <Container className="">
@@ -58,7 +66,7 @@ const ExperienceSection: React.FC = () => {
           ))}
         </Swiper>
       </Container>
-    </React.Fragment>
+    </section>
   );
 };
 

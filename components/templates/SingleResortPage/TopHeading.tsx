@@ -15,13 +15,13 @@ function TopHeading({ params, location }: PageProps) {
 
         <div className="w-4/12">
           <p className="text-end text-p1-r">
-            <span className="text-amber-500 font-semibold">6° C</span>{" "}
+            <span className="text-blue-500 font-semibold">6° C</span>{" "}
             <span className="text-gray-600 uppercase">overcast clouds</span>
           </p>
           <p className="text-end text-p1-r text-gray-500">
-            <span className="text-amber-500 font-semibold">70</span> kms{" | "}
-            <span className="text-amber-500 font-semibold">2</span> hours{" "}
-            <span className="text-amber-500 font-semibold">30</span> mins
+            <span className="text-blue-500 font-semibold">70</span> kms{" | "}
+            <span className="text-blue-500 font-semibold">2</span> hours{" "}
+            <span className="text-blue-500 font-semibold">30</span> mins
           </p>
         </div>
       </div>

@@ -17,10 +17,10 @@ function LeftSideNav() {
             onClick={() => router.push(data?.link || "/user")}
             className={`${
               pathname === data?.link
-                ? "ps-5 pe-3 py-2.5 bg-amber-50"
+                ? "ps-5 pe-3 py-2.5 bg-blue-50"
                 : "ps-3 pe-3 py-2.5"
             } 
-        mt-4 w-full flex justify-between rounded-full border border-amber-300 hover:bg-amber-100 active:opacity-80`}
+        mt-4 w-full flex justify-between rounded-full border border-blue-300 hover:bg-blue-100 active:opacity-80`}
           >
             <div className="flex justify-start items-center gap-x-3">
               <BlurImage
@@ -32,7 +32,7 @@ function LeftSideNav() {
               />
               <p
                 className={`${
-                  pathname === data?.link ? "text-amber-600" : "text-amber-500"
+                  pathname === data?.link ? "text-blue-600" : "text-blue-500"
                 } text-p1-m capitalize text-start`}
               >
                 {data.name}
@@ -42,7 +42,7 @@ function LeftSideNav() {
             <ChevronRight
               className={`${
                 pathname === data?.link
-                  ? "text-amber-600"
+                  ? "text-blue-600"
                   : "text-gary-700 rotate-[90deg]"
               } size-5`}
             />
@@ -84,8 +84,8 @@ function ContentRowSection({ data }: ContentRowProps) {
           onClick={() => handleClick({ id: j, link: item?.link || "#" })}
           className={`${
             index === j
-              ? "border-l-amber-500 text-amber-600"
-              : "border-l-amber-100"
+              ? "border-l-blue-500 text-blue-600"
+              : "border-l-blue-100"
           } ps-4 pt-2.5 w-full text-p1-r text-start border-l-2 capitalize`}
         >
           {item?.name}

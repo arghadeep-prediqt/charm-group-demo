@@ -3,6 +3,7 @@ import { useLazyGetSingleResortQuery } from "@/redux/services/resortApi";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import React, { useContext, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const LoadingPage = dynamic(() => import("@/components/shared/LoadingPage"));
 const SectionTab = dynamic(
@@ -32,18 +33,34 @@ function SingleResortPage() {
   return (
     <NavContainer>
       {isSuccess ? (
-        <React.Fragment>
-          <Container className="py-2">
-            <TopCarousel thirdPhoto={data?.photo} />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Container className="py-4">
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              <TopCarousel thirdPhoto={data?.photo} />
+            </motion.div>
           </Container>
 
-          <SectionTab
-            name={data?.name || ""}
-            resortId={String(resort_id)}
-            isRci={data?.region === "International"}
-            location={`${data?.location}, Vietnam`}
-          />
-        </React.Fragment>
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            <SectionTab
+              name={data?.name || ""}
+              resortId={String(resort_id)}
+              isRci={data?.region === "International"}
+              location={`${data?.location}, Vietnam`}
+            />
+          </motion.div>
+        </motion.div>
       ) : (
         <div className="min-h-screen">
           <LoadingPage />

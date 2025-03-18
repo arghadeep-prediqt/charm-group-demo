@@ -58,11 +58,11 @@ function RightBookSection({
       <p className="my-2 text-p2-r text-gray-600">{location}</p>
 
       <div className="mt-5 flex justify-start items-center gap-x-1">
-        <button className="border-none text-p3-m text-amber-500">
+        <button className="border-none text-p3-m text-blue-500">
           15 Photos
         </button>
         <Dot className="size-7 text-gray-400" />
-        <button className="border-none text-p3-m text-amber-500">
+        <button className="border-none text-p3-m text-blue-500">
           2 Videos
         </button>
       </div>
@@ -75,14 +75,14 @@ function RightBookSection({
             alt="image"
             width={70}
             height={65}
-            className="w-[86px] h-[76px] object-cover p-1 bg-amber-50 border border-amber-300 rounded-lg"
+            className="w-[86px] h-[76px] object-cover p-1 bg-blue-50 border border-blue-300 rounded-lg"
           />
         ))}
       </div>
 
       <div className="">
         <div className="mt-3 pb-3 flex justify-start items-center gap-x-3 border-b border-gray-300">
-          <MapPin className="size-6 text-amber-500" />
+          <MapPin className="size-6 text-blue-500" />
           <p className="text-p1-r w-[90%] capitalize">{name}</p>
         </div>
 
@@ -90,14 +90,14 @@ function RightBookSection({
           onClick={() => setActiveIndex(1)}
           className="mt-3 py-3 flex justify-start items-center gap-x-3 border-b border-gray-300 cursor-pointer"
         >
-          <User className="size-6 text-amber-500" />
+          <User className="size-6 text-blue-500" />
           <p className="text-p1-r w-[90%]">2 Adults</p>
         </div>
 
         <div className="mt-[15%] flex justify-center items-center">
           <button
             onClick={() => setActiveIndex(1)}
-            className="bg-amber-50 text-amber-500 px-6 py-2 w-full rounded-full text-p1-b border border-amber-400"
+            className="bg-blue-50 text-blue-500 px-6 py-2 w-full rounded-full text-p1-b border border-blue-400"
           >
             {isRci ? "Book Now with RCI" : "Book Now"}
           </button>

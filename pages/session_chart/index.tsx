@@ -34,34 +34,55 @@ function SessionChartPage() {
         title="Plan Your Vacation by Season"
         subTitle="Tailor your holidays to the perfect time of year with our seasonal availability chart."
       />
-      <Container className="py-2">
-        <div className="my-5 flex justify-center items-center gap-x-[2%]">
-          <div className="w-2/12">
-            <SelectListBox selectedData={domesticData} />
+      <Container className="py-4">
+        <div className="bg-white rounded-xl shadow-md p-5 border border-gray-100">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-6">
+            <div className="transition-all duration-300 hover:translate-y-[-2px]">
+              <label className="text-xs text-gray-500 font-medium mb-1 block">
+                Country
+              </label>
+              <SelectListBox selectedData={domesticData} />
+            </div>
+            <div className="transition-all duration-300 hover:translate-y-[-2px]">
+              <label className="text-xs text-gray-500 font-medium mb-1 block">
+                Region
+              </label>
+              <SelectListBox selectedData={regionData} />
+            </div>
+            <div className="transition-all duration-300 hover:translate-y-[-2px]">
+              <label className="text-xs text-gray-500 font-medium mb-1 block">
+                Category
+              </label>
+              <SelectListBox selectedData={secondFilter} />
+            </div>
+            <div className="transition-all duration-300 hover:translate-y-[-2px]">
+              <label className="text-xs text-gray-500 font-medium mb-1 block">
+                Type
+              </label>
+              <SelectListBox selectedData={thirdFilter} />
+            </div>
+            <div className="transition-all duration-300 hover:translate-y-[-2px]">
+              <label className="text-xs text-gray-500 font-medium mb-1 block">
+                Month
+              </label>
+              <SelectListBox selectedData={monthsData} />
+            </div>
+            <div className="transition-all duration-300 hover:translate-y-[-2px]">
+              <label className="text-xs text-gray-500 font-medium mb-1 block">
+                Year
+              </label>
+              <SelectListBox selectedData={yearData} />
+            </div>
           </div>
-          <div className="w-2/12">
-            <SelectListBox selectedData={regionData} />
+
+          <div className="flex justify-center items-center gap-4">
+            <button className="text-p1-m text-white bg-blue-600 px-6 py-2 rounded-lg min-w-[120px] shadow-sm transition-all duration-300 hover:shadow-md hover:bg-primary-700 active:scale-95">
+              Search
+            </button>
+            <button className="text-p1-m text-primary-600 bg-white border border-primary-600 px-6 py-2 rounded-lg min-w-[120px] shadow-sm transition-all duration-300 hover:bg-gray-50 active:scale-95">
+              Clear
+            </button>
           </div>
-          <div className="w-2/12">
-            <SelectListBox selectedData={secondFilter} />
-          </div>
-          <div className="w-2/12">
-            <SelectListBox selectedData={thirdFilter} />
-          </div>
-          <div className="w-2/12">
-            <SelectListBox selectedData={monthsData} />
-          </div>
-          <div className="w-2/12">
-            <SelectListBox selectedData={yearData} />
-          </div>
-        </div>
-        <div className="flex justify-center items-center gap-x-6">
-          <button className="text-p1-m text-white bg-yellow-500 px-4 py-1.5 rounded-lg min-w-[100px] active:opacity-65 hover:bg-yellow-300">
-            Search
-          </button>
-          <button className="text-p1-m text-white bg-yellow-500 px-4 py-1.5 rounded-lg min-w-[100px] active:opacity-65 hover:bg-yellow-300">
-            Clear
-          </button>
         </div>
       </Container>
 
@@ -85,24 +106,43 @@ function SessionChartPage() {
         </Container>
       ))}
 
-      <div className="sticky bottom-0 w-full py-2 bg-[#ecffeb]">
-        <Container className="flex justify-center items-center gap-x-[100px]">
-          <div className="flex justify-start items-center gap-x-2">
-            <p className="size-4 rounded-full bg-[#D3D3D3]">&nbsp;</p>
-            <p className="text-p1-m">Silver Member</p>
-            {/* <Info className="size-4 text-gray-700" /> */}
-          </div>
-          {/* <Tooltip message="Off-Peak Seasons">
-          </Tooltip> */}
+      <div className="sticky bottom-0 w-full py-3 bg-gradient-to-r from-blue-50 to-green-50 backdrop-blur-sm border-t border-gray-200 shadow-lg">
+        <Container>
+          <div className="flex flex-col sm:flex-row justify-center items-center">
+            <h5 className="text-primary-600 font-medium mb-2 sm:mb-0 sm:mr-6">
+              Membership Tiers:
+            </h5>
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+              <div className="flex items-center group transition-all duration-300 hover:scale-105">
+                <div className="relative">
+                  <div className="size-5 rounded-full bg-[#D3D3D3] ring-2 ring-gray-300 ring-offset-1"></div>
+                  <div className="absolute -top-1 -right-1 size-2 bg-white rounded-full opacity-70"></div>
+                </div>
+                <p className="ml-2 text-p1-m font-medium text-gray-700 group-hover:text-primary-600">
+                  Silver
+                </p>
+              </div>
 
-          <div className="flex justify-start items-center gap-x-2">
-            <p className="size-4 rounded-full bg-[#FFD966]">&nbsp;</p>
-            <p className="text-p1-m">Gold Member</p>
-          </div>
+              <div className="flex items-center group transition-all duration-300 hover:scale-105">
+                <div className="relative">
+                  <div className="size-5 rounded-full bg-[#FFD966] ring-2 ring-yellow-300 ring-offset-1"></div>
+                  <div className="absolute -top-1 -right-1 size-2 bg-white rounded-full opacity-70"></div>
+                </div>
+                <p className="ml-2 text-p1-m font-medium text-gray-700 group-hover:text-primary-600">
+                  Gold
+                </p>
+              </div>
 
-          <div className="flex justify-start items-center gap-x-2">
-            <p className="size-4 rounded-full bg-[#2F5597]">&nbsp;</p>
-            <p className="text-p1-m">Diamond Member</p>
+              <div className="flex items-center group transition-all duration-300 hover:scale-105">
+                <div className="relative">
+                  <div className="size-5 rounded-full bg-[#2F5597] ring-2 ring-blue-600 ring-offset-1"></div>
+                  <div className="absolute -top-1 -right-1 size-2 bg-white rounded-full opacity-70"></div>
+                </div>
+                <p className="ml-2 text-p1-m font-medium text-gray-700 group-hover:text-primary-600">
+                  Diamond
+                </p>
+              </div>
+            </div>
           </div>
         </Container>
       </div>

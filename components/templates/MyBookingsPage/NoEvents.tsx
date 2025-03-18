@@ -24,7 +24,7 @@ function NoEvents({ title }: PageProps) {
       <div className="flex justify-center items-center mt-5">
         <button
           onClick={() => router.push("/our_resorts")}
-          className="px-8 py-2 border border-amber-300 bg-amber-50 rounded-full text-p1-b text-amber-600"
+          className="px-8 py-2 border border-blue-300 bg-blue-50 rounded-full text-p1-b text-blue-600"
         >
           Explore More
         </button>

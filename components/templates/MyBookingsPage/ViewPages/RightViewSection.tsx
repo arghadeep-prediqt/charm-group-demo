@@ -3,6 +3,16 @@ import { BlurImage } from "@/components/ui/BluerImage";
 import dynamic from "next/dynamic";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Calendar,
+  Clock,
+  MapPin,
+  Users,
+  Plus,
+  Sparkles,
+  CheckCircle,
+} from "lucide-react";
 
 const SideDrawer = dynamic(() => import("@/components/ui/SideDrawer"));
 
@@ -14,57 +24,173 @@ interface PageProps {
 
 function RightViewSection({ endDate, startDate, totalDay }: PageProps) {
   const [isDrawerOpen, setDrawerOpen] = useState<boolean>(false);
+  const [activeSection, setActiveSection] = useState<string>("all");
 
   const toggleDrawer = () => {
     setDrawerOpen((prev) => !prev);
   };
 
   return (
-    <div className="w-[70%] p-6 border border-gray-200 shadow-sm rounded-2xl">
-      <h3 className="pb-3 text-[22px] leading-tight capitalize border-b border-gray-400">
-        Your Stay Overview
-      </h3>
-      <Heading end={endDate} start={startDate} total={totalDay} />
+    <motion.div
+      className="w-[70%] bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      {/* Header */}
+      <div className="relative p-6 bg-gradient-to-r from-indigo-600 to-blue-500">
+        <motion.div
+          className="absolute top-0 right-0 w-64 h-64 bg-blue-400 rounded-full opacity-20"
+          style={{ top: "-20px", right: "-20px" }}
+          animate={{
+            scale: [1, 1.05, 1],
+            rotate: [0, 5, 0],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        />
 
-      {/* Additional Services */}
-      <div className="flex justify-between items-end mt-10 mb-3 pb-3 border-b border-gray-400">
-        <h3 className="text-[22px] leading-tight capitalize">
-          Explore Your Itinerary
-        </h3>
-
-        <button
-          onClick={() => setDrawerOpen(true)}
-          className="text-white text-p2-m bg-[#00509df9] py-1.5 px-4 rounded-lg active:opacity-65"
+        <motion.h3
+          className="relative z-10 text-2xl font-medium text-white"
+          initial={{ x: -20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.2 }}
         >
-          Add Activity
-        </button>
-      </div>
-      <AdditionalServices />
-
-      {/* Experience */}
-      <h3 className="mt-10 mb-3 pb-3 text-[22px] leading-tight capitalize border-b border-gray-400">
-        Enhance Your Experience
-      </h3>
-
-      <div className="w-full mt-6 px-10 flex justify-between items-center">
-        {experienceService?.map((photo, id) => (
-          <BlurImage
-            key={id}
-            src={photo}
-            alt={`Image ${id}`}
-            width={100}
-            height={100}
-            className="w-24 object-cover"
-          />
-        ))}
+          Your Stay Overview
+        </motion.h3>
       </div>
 
-      {/* Amenities Services */}
-      <h3 className="mt-10 mb-3 pb-3 text-[22px] leading-tight capitalize border-b border-gray-400">
-        Included Resort Facilities
-      </h3>
+      {/* Content */}
+      <div className="p-6">
+        {/* Stay Timeline */}
+        <Heading end={endDate} start={startDate} total={totalDay} />
 
-      <AminitiesServices />
+        {/* Tabs Navigation */}
+        <motion.div
+          className="mt-10 mb-6 border-b border-gray-200"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+        >
+          <div className="flex space-x-6">
+            <TabButton
+              active={activeSection === "all"}
+              onClick={() => setActiveSection("all")}
+              label="All"
+            />
+            <TabButton
+              active={activeSection === "itinerary"}
+              onClick={() => setActiveSection("itinerary")}
+              label="Your Itinerary"
+            />
+            <TabButton
+              active={activeSection === "experiences"}
+              onClick={() => setActiveSection("experiences")}
+              label="Experiences"
+            />
+            <TabButton
+              active={activeSection === "amenities"}
+              onClick={() => setActiveSection("amenities")}
+              label="Resort Facilities"
+            />
+          </div>
+        </motion.div>
+
+        {/* Content Sections */}
+        <AnimatePresence mode="wait">
+          {(activeSection === "all" || activeSection === "itinerary") && (
+            <motion.div
+              key="itinerary"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className={activeSection !== "all" ? "mb-10" : ""}
+            >
+              <div className="flex justify-between items-end mb-4">
+                <h3 className="text-xl font-medium text-gray-800 flex items-center gap-2">
+                  <Calendar className="size-5 text-indigo-600" />
+                  Explore Your Itinerary
+                </h3>
+
+                <motion.button
+                  onClick={() => setDrawerOpen(true)}
+                  className="flex items-center gap-2 py-2 px-4 bg-indigo-600 text-white rounded-lg shadow-sm hover:bg-indigo-700 transition-colors"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Plus className="size-4" />
+                  Add Activity
+                </motion.button>
+              </div>
+              <AdditionalServices />
+            </motion.div>
+          )}
+
+          {(activeSection === "all" || activeSection === "experiences") && (
+            <motion.div
+              key="experiences"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{
+                duration: 0.3,
+                delay: activeSection === "all" ? 0.1 : 0,
+              }}
+              className={activeSection !== "all" ? "mb-10" : "mt-10"}
+            >
+              <h3 className="mb-4 text-xl font-medium text-gray-800 flex items-center gap-2">
+                <Sparkles className="size-5 text-indigo-600" />
+                Enhance Your Experience
+              </h3>
+
+              <div className="w-full px-4 py-6 flex justify-between items-center bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl">
+                {experienceService?.map((photo, id) => (
+                  <motion.div
+                    key={id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: id * 0.1 + 0.2 }}
+                    whileHover={{ y: -5, scale: 1.05 }}
+                  >
+                    <BlurImage
+                      src={photo}
+                      alt={`Experience ${id}`}
+                      width={100}
+                      height={100}
+                      className="w-24 h-24 object-contain drop-shadow-md"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+
+          {(activeSection === "all" || activeSection === "amenities") && (
+            <motion.div
+              key="amenities"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{
+                duration: 0.3,
+                delay: activeSection === "all" ? 0.2 : 0,
+              }}
+              className={activeSection !== "all" ? "" : "mt-10"}
+            >
+              <h3 className="mb-4 text-xl font-medium text-gray-800 flex items-center gap-2">
+                <CheckCircle className="size-5 text-indigo-600" />
+                Included Resort Facilities
+              </h3>
+
+              <AminitiesServices />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
 
       <SideDrawer
         isOpen={isDrawerOpen}
@@ -72,11 +198,42 @@ function RightViewSection({ endDate, startDate, totalDay }: PageProps) {
         onClose={toggleDrawer}
         paraBody={<SingleItineraryCard setOpen={setDrawerOpen} />}
       />
-    </div>
+    </motion.div>
   );
 }
 
 export default RightViewSection;
+
+// Tab Button Component
+function TabButton({
+  active,
+  onClick,
+  label,
+}: {
+  active: boolean;
+  onClick: () => void;
+  label: string;
+}) {
+  return (
+    <motion.button
+      onClick={onClick}
+      className={`relative pb-3 text-base font-medium transition-colors ${
+        active ? "text-indigo-600" : "text-gray-500 hover:text-gray-800"
+      }`}
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.97 }}
+    >
+      {label}
+      {active && (
+        <motion.div
+          className="absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-600"
+          layoutId="activeTab"
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        />
+      )}
+    </motion.button>
+  );
+}
 
 interface HeadingProps {
   start: string;
@@ -87,88 +244,120 @@ interface HeadingProps {
 function Heading({ end, start, total }: HeadingProps) {
   const startDate = new Date(start);
   const endDate = new Date(end);
-  return (
-    <div className="my-5 flex relative justify-between items-start">
-      <div className="pe-5 z-10 bg-white">
-        <BlurImage
-          src="https://img.icons8.com/ios-filled/100/00509d/hotel-check-in.png"
-          alt="checkin"
-          width={50}
-          height={50}
-          className="size-16"
-        />
-      </div>
 
-      <div className="mt-6 w-10/12">
-        <div className="flex justify-between items-start gap-x-[3%]">
-          <div className="w-[38%]">
+  return (
+    <motion.div
+      className="mt-6 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-indigo-100 relative overflow-hidden"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.3 }}
+    >
+      {/* Decorative Elements */}
+      <motion.div
+        className="absolute top-0 left-0 w-full h-full"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+      >
+        <div className="absolute top-4 left-4 size-20 bg-blue-200 rounded-full opacity-20" />
+        <div className="absolute bottom-4 right-4 size-16 bg-indigo-200 rounded-full opacity-20" />
+      </motion.div>
+
+      <div className="relative z-10 flex justify-between items-start">
+        {/* Check-in */}
+        <motion.div
+          className="flex items-center gap-4"
+          initial={{ x: -20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.4 }}
+        >
+          <div className="p-3 bg-white rounded-xl shadow-sm">
             <BlurImage
-              src="/icons/left-line.svg"
+              src="https://img.icons8.com/ios-filled/100/00509d/hotel-check-in.png"
               alt="checkin"
               width={50}
               height={50}
-              className="w-full h-full object-contain"
+              className="size-12"
             />
+          </div>
 
-            <div className="w-full mt-1 pe-2 flex justify-end items-center gap-x-4">
-              <h1 className="text-[50px] text-[#00509df9]">
+          <div className="flex flex-col">
+            <span className="text-sm font-medium text-indigo-600">
+              CHECK-IN
+            </span>
+            <div className="flex items-end gap-2">
+              <span className="text-4xl font-bold text-gray-800">
                 {startDate?.toLocaleDateString("en-IN", { day: "2-digit" })}
-              </h1>
-              <div className="text-gray-500">
-                <p className="text-p1-b">
+              </span>
+              <div className="mb-1">
+                <p className="text-base font-medium text-gray-700">
                   {startDate?.toLocaleDateString("en-IN", { month: "long" })}
                 </p>
-                <p className="text-p2-m">
+                <p className="text-sm text-gray-500">
                   {startDate?.toLocaleDateString("en-IN", { weekday: "long" })}
                 </p>
               </div>
             </div>
           </div>
+        </motion.div>
 
-          <div className="w-[24%] flex justify-between items-center">
-            <p className="text-p1-m text-gray-700 text-nowrap">{total} Days</p>
-            <div className="size-4 rounded-full bg-gray-300">&nbsp;</div>
-            <p className="text-p1-m text-gray-700 text-nowrap">2 Adults</p>
+        {/* Stay Details */}
+        <motion.div
+          className="flex flex-col items-center justify-center px-6"
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          <div className="py-2 px-4 bg-white rounded-full shadow-sm flex items-center gap-2 mb-2">
+            <Clock className="size-4 text-indigo-600" />
+            <span className="text-sm font-medium text-gray-700">
+              {total} Days
+            </span>
           </div>
+          <div className="py-2 px-4 bg-white rounded-full shadow-sm flex items-center gap-2">
+            <Users className="size-4 text-indigo-600" />
+            <span className="text-sm font-medium text-gray-700">2 Adults</span>
+          </div>
+        </motion.div>
 
-          <div className="w-[38%]">
-            <BlurImage
-              src="/icons/right-line.svg"
-              alt="checkin"
-              width={50}
-              height={50}
-              className="w-full h-full object-contain"
-            />
-
-            <div className="w-full  mt-1 ps-2 flex justify-start items-center gap-x-4">
-              <div className="text-gray-500">
-                <p className="text-p1-b text-end">
-                  {" "}
+        {/* Check-out */}
+        <motion.div
+          className="flex items-center gap-4"
+          initial={{ x: 20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.4 }}
+        >
+          <div className="flex flex-col items-end">
+            <span className="text-sm font-medium text-indigo-600">
+              CHECK-OUT
+            </span>
+            <div className="flex items-end gap-2">
+              <div className="mb-1">
+                <p className="text-base font-medium text-gray-700 text-right">
                   {endDate?.toLocaleDateString("en-IN", { month: "long" })}
                 </p>
-                <p className="text-p2-m text-end">
-                  {" "}
+                <p className="text-sm text-gray-500 text-right">
                   {endDate?.toLocaleDateString("en-IN", { weekday: "long" })}
                 </p>
               </div>
-              <h1 className="text-[50px] text-[#00509df9]">
+              <span className="text-4xl font-bold text-gray-800">
                 {endDate?.toLocaleDateString("en-IN", { day: "2-digit" })}
-              </h1>
+              </span>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className="ps-5 z-10 bg-white">
-        <BlurImage
-          src="https://img.icons8.com/ios-filled/100/00509d/hotel-chekc-out.png"
-          alt="checkin"
-          width={50}
-          height={50}
-          className="size-16"
-        />
+          <div className="p-3 bg-white rounded-xl shadow-sm">
+            <BlurImage
+              src="https://img.icons8.com/ios-filled/100/00509d/hotel-chekc-out.png"
+              alt="checkout"
+              width={50}
+              height={50}
+              className="size-12"
+            />
+          </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -183,22 +372,37 @@ let itineraryIds = [0, 1];
 
 function AdditionalServices() {
   return (
-    <div className="pb-3 mt-5 w-full flex justify-start items-center gap-x-4 overflow-auto scrollbarX">
+    <div className="grid grid-cols-2 gap-4 mt-4">
       {itineraryIds?.map((item, id) => (
-        <div key={id} className="min-w-[250px] max-w[250px] h-[150px] relative">
+        <motion.div
+          key={id}
+          className="relative rounded-xl overflow-hidden shadow-sm border border-gray-100 group"
+          whileHover={{ y: -5, scale: 1.02 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: id * 0.1 + 0.2 }}
+        >
           <BlurImage
             src={experiences?.[item].image}
             alt={experiences?.[item].title}
-            width={100}
-            height={100}
-            className="w-full h-full object-cover rounded-xl  mx-auto"
+            width={400}
+            height={250}
+            className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
           />
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/90 to-transparent rounded-xl flex justify-start items-end px-3 py-2">
-            <p className="pb-1 text-p1-b leading-relaxed text-white">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-4">
+            <div className="mb-2 flex items-center gap-2">
+              <div className="p-1 bg-white/20 backdrop-blur-sm rounded-md">
+                <MapPin className="size-4 text-white" />
+              </div>
+              <span className="text-xs font-medium text-white/80">
+                Resort Activity
+              </span>
+            </div>
+            <h3 className="text-xl font-medium text-white mb-1">
               {experiences?.[item].title}
-            </p>
+            </h3>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
@@ -214,35 +418,58 @@ function SingleItineraryCard({
 
     itineraryIds = [...itineraryIds, id];
     setOpen(false);
+    toast.success("Activity added to your itinerary");
   };
+
   return (
-    <div className="pb-16 flex flex-wrap justify-between items-start gap-y-6 gap-x-4">
+    <div className="grid grid-cols-2 gap-4 pb-16">
       {experiences?.map(
         (item, id) =>
           !itineraryIds.includes(id) && (
-            <div key={id} className="w-[48%] h-[200px] relative">
+            <motion.div
+              key={id}
+              className="relative rounded-xl overflow-hidden shadow-sm border border-gray-100 group"
+              whileHover={{ y: -5, scale: 1.02 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: id * 0.1 }}
+            >
               <BlurImage
                 src={item.image}
                 alt={item.title}
-                width={200}
-                height={200}
-                className="w-full h-full object-cover bg-gray-300 rounded-xl shadow-sm"
+                width={400}
+                height={250}
+                className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="p-4 absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/90 to-black/30 flex flex-col justify-between items-start rounded-xl border-2 border-gray-200 shadow-sm">
-                <button
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-between p-4">
+                <motion.button
                   onClick={() => handleAddActivity(item.id)}
-                  className="mt-1 text-p3-b leading-relaxed bg-yellow-300 py-1 px-3 active:opacity-65 rounded-md"
+                  className="self-start py-1.5 px-4 bg-white text-blue-600 rounded-lg text-sm font-medium shadow-md flex items-center gap-1.5 border border-blue-300 backdrop-blur-sm"
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: "#f0f7ff",
+                    boxShadow: "0 4px 12px rgba(59, 130, 246, 0.2)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 15,
+                  }}
                 >
+                  <Plus className="size-3.5" />
                   Add Activity
-                </button>
-                <p
-                  className="text-white text-p1-b leading-relaxed line-clamp-1"
-                  style={{ textShadow: "0 3px 6px #000" }}
-                >
-                  {item.title}
-                </p>
+                </motion.button>
+
+                <div>
+                  <h3 className="text-xl font-medium text-white mb-1">
+                    {item.title}
+                  </h3>
+                </div>
               </div>
-            </div>
+            </motion.div>
           )
       )}
     </div>
@@ -251,23 +478,29 @@ function SingleItineraryCard({
 
 function AminitiesServices() {
   return (
-    <div className="pb-3 border-b border-gray-400 flex gap-x-4 overflow-auto scrollbarX">
+    <div className="grid grid-cols-4 gap-4">
       {aminitiesData?.map((item, id) => (
-        <div
+        <motion.div
           key={id}
-          className="min-w-[140px] p-3 flex-1 border border-amber-300 rounded-lg flex flex-col justify-center items-center bg-amber-50"
+          className="p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-indigo-100 flex flex-col items-center"
+          whileHover={{ y: -5, scale: 1.03 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: id * 0.05 + 0.2 }}
         >
-          <BlurImage
-            src={item.photo}
-            alt={item.name}
-            width={100}
-            height={100}
-            className="size-10"
-          />
-          <p className="mt-3 text-p2-r text-amber-600 text-center">
+          <div className="p-3 bg-white rounded-full shadow-sm mb-3">
+            <BlurImage
+              src={item.photo}
+              alt={item.name}
+              width={100}
+              height={100}
+              className="size-10"
+            />
+          </div>
+          <p className="text-center text-sm font-medium text-indigo-700">
             {item.name}
           </p>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

@@ -42,7 +42,7 @@ function SelectListBoxHigh({ selected, setSelected, selectedData }: PageProps) {
           <ListboxOption
             key={person.id}
             value={person}
-            className="group flex cursor-default items-center gap-2 rounded-lg py-1.5 px-3 select-none data-[focus]:bg-amber-100"
+            className="group flex cursor-default items-center gap-2 rounded-lg py-1.5 px-3 select-none data-[focus]:bg-blue-100"
           >
             <CheckIcon className="invisible size-4 text-slate-700 group-data-[selected]:visible" />
             <p className="text-p1-r text-nowrap group-data-[selected]:font-medium">
