@@ -15,12 +15,12 @@ function RightPaymentSection() {
 
       <div className="mt-3 flex justify-between items-center">
         <p className="text-p2-r text-gray-600">Offer Applied</p>
-        <p className="text-p1-b text-amber-400">₹ 0</p>
+        <p className="text-p1-b text-blue-400">₹ 0</p>
       </div>
 
       <div className="my-3 flex justify-between items-center">
         <p className="text-p2-r text-gray-600">Referral Points Redeemed</p>
-        <p className="text-p1-b text-amber-400">₹ 0</p>
+        <p className="text-p1-b text-blue-400">₹ 0</p>
       </div>
 
       <hr />
@@ -33,7 +33,7 @@ function RightPaymentSection() {
       <div className="mt-5 flex justify-center items-center">
         <button
           onClick={() => router.push("/mockpay")}
-          className="text-amber-600 bg-amber-50 border border-amber-300 py-3 w-9/12 rounded-full text-h4-semi-bold shadow-sm"
+          className="text-blue-600 bg-blue-50 border border-blue-300 py-3 w-9/12 rounded-full text-h4-semi-bold shadow-sm"
         >
           Pay Now
         </button>

@@ -54,12 +54,12 @@ export function NoPlanndedTrip() {
         <p className="text-[21px] font-medium leading-relaxed">
           No trips planned yet.
         </p>
-        <h3 className="text-center text-amber-400 drop-shadow-sm leading-relaxed">
+        <h3 className="text-center text-blue-400 drop-shadow-sm leading-relaxed">
           Start exploring and book your next vacation today!
         </h3>
         <button
           onClick={() => router.push("/our_resorts")}
-          className="mt-4 py-2 px-6 text-p1-m text-amber-600 bg-amber-50 border border-amber-200 rounded-full shadow-sm active:opacity-65"
+          className="mt-4 py-2 px-6 text-p1-m text-blue-600 bg-blue-50 border border-blue-200 rounded-full shadow-sm active:opacity-65"
         >
           Browse Resorts
         </button>

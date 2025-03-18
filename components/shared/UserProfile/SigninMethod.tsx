@@ -23,7 +23,7 @@ function SigninMethod() {
       </div>
 
       {/* notification */}
-      <div className="mt-6  px-4 py-3 bg-amber-50 border border-amber-300 rounded-xl flex justify-start items-center gap-x-4">
+      <div className="mt-6  px-4 py-3 bg-blue-50 border border-blue-300 rounded-xl flex justify-start items-center gap-x-4">
         <BlurImage
           src={"/icons/verify.svg"}
           alt="verify"
@@ -44,7 +44,7 @@ function SigninMethod() {
             </p>
           </div>
         </div>
-        <button className="px-4 py-1.5 text-[14px] text-gray-700 font-semibold bg-amber-300 rounded-lg active:opacity-70">
+        <button className="px-4 py-1.5 text-[14px] text-gray-700 font-semibold bg-blue-300 rounded-lg active:opacity-70">
           Enable
         </button>
       </div>
@@ -70,7 +70,7 @@ function RowMethod({ title, value, btnName }: RowMethodProps) {
         <p className="mt-1 text-p1-m text-gray-600">{value}</p>
       </div>
 
-      <button className="text-amber-600 text-p1-m capitalize border border-amber-300 bg-amber-50 px-5 py-1.5 rounded-xl shadow-sm active:opacity-70">
+      <button className="text-blue-600 text-p1-m capitalize border border-blue-300 bg-blue-50 px-5 py-1.5 rounded-xl shadow-sm active:opacity-70">
         {btnName}
       </button>
     </div>

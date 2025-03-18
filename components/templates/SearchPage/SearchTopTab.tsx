@@ -77,7 +77,7 @@ function SearchTopTab({ placeholder = "Resort Name" }: PageProps) {
           <InputCustom
             name="destination"
             label={placeholder}
-            icon={<MapPinIcon className="size-6 text-amber-500" />}
+            icon={<MapPinIcon className="size-6 text-blue-500" />}
             isRequired
           />
         </div>
@@ -87,7 +87,7 @@ function SearchTopTab({ placeholder = "Resort Name" }: PageProps) {
             isAutoWidth={true}
             name={renderSelectedRange}
             changeFn={() => setShowCalendar(true)}
-            icon={<CalendarFold className="size-6 text-amber-500" />}
+            icon={<CalendarFold className="size-6 text-blue-500" />}
           />
         </div>
 
@@ -96,14 +96,14 @@ function SearchTopTab({ placeholder = "Resort Name" }: PageProps) {
             name="guest"
             type="number"
             label="Number of Guests"
-            icon={<UsersRound className="size-6 text-amber-500" />}
+            icon={<UsersRound className="size-6 text-blue-500" />}
             isRequired
           />
         </div>
 
         <button
           type="submit"
-          className="bg-amber-500 text-white text-h3-semi-bold py-3 px-2 w-[180px] rounded-xl"
+          className="bg-blue-500 text-white text-h3-semi-bold py-3 px-2 w-[180px] rounded-xl"
         >
           Search
         </button>

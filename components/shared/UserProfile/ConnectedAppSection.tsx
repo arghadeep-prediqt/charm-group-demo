@@ -40,11 +40,11 @@ function ConnectedAppSection() {
       <hr className="bg-gray-200 my-10" />
 
       <div className="pt-2 flex justify-end items-center gap-x-5">
-        <button className="px-4 py-2 text-[14px] text-amber-600 font-semibold bg-amber-50 rounded-lg border border-amber-300 shadow-sm active:opacity-70">
+        <button className="px-4 py-2 text-[14px] text-blue-600 font-semibold bg-blue-50 rounded-lg border border-blue-300 shadow-sm active:opacity-70">
           Discard
         </button>
 
-        <button className="px-4 py-2 text-[14px] text-gray-700 font-semibold bg-amber-300 border border-amber-400 shadow-sm rounded-lg active:opacity-70">
+        <button className="px-4 py-2 text-[14px] text-gray-700 font-semibold bg-blue-300 border border-blue-400 shadow-sm rounded-lg active:opacity-70">
           Save Changes
         </button>
       </div>
@@ -87,7 +87,7 @@ function SocialRow({ name, subTitle, logo, isChecked }: SocialRowProps) {
         <Switch
           checked={enabled}
           onChange={setEnabled}
-          className="group inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition data-[checked]:bg-amber-400"
+          className="group inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition data-[checked]:bg-blue-400"
         >
           <span className="size-4 translate-x-1 rounded-full bg-white transition group-data-[checked]:translate-x-6" />
         </Switch>

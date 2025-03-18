@@ -104,11 +104,11 @@ function RightSideWaitlist({
 
       {isSuccess && (
         <div className="mt-[3%] flex justify-between items-center">
-          <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-yellow-200 to-amber-400">
+          <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-yellow-200 to-blue-400">
             <p className="text-p3-m">Days Utilised</p>
             <p className="text-p2-b">{roomList?.length}</p>
           </div>
-          <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-yellow-200 to-amber-400">
+          <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-yellow-200 to-blue-400">
             <p className="text-p3-m">Days Remaining</p>
             <p className="text-p2-b">
               {Math.sign(remainingDays?.daysBalance - roomList?.length) !== 1

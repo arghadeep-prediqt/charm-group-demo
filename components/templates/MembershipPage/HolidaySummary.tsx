@@ -17,7 +17,7 @@ function HolidaySummary() {
   ];
   return (
     <div className="my-3">
-      <div className="mb-3 px-4 py-2 flex justify-between items-center bg-amber-100">
+      <div className="mb-3 px-4 py-2 flex justify-between items-center bg-blue-100">
         <div className="w-10/12">
           <p className="text-p2-b">Summary</p>
         </div>

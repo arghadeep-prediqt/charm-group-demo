@@ -39,7 +39,7 @@ const PriceCondition = ({ billingCycle }: PageProps) => {
     <div className={`bg-gray-50`}>
       <Disclosure as="div" defaultOpen={true}>
         <DisclosureButton className="text-start group w-full">
-          <div className="pb-1 flex w-full items-center justify-between border-b-2 group-data-[open]:text-amber-500 group-data-[open]:border-none text-gray-700">
+          <div className="pb-1 flex w-full items-center justify-between border-b-2 group-data-[open]:text-blue-500 group-data-[open]:border-none text-gray-700">
             <h4 className="w-10/12 text-inherit capitalize leading-relaxed">
               Conditions
             </h4>

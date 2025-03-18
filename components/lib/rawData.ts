@@ -1185,9 +1185,9 @@ export const ourResortMenuItems: MenuItemProps[] = [
     link: "/our_resorts?filter=south",
   },
   {
-    title: "International",
+    title: "RCI",
     icon: "https://img.icons8.com/ios-filled/100/00509d/world.png",
-    link: "/our_resorts?filter=south",
+    link: "https://www.rci.com/pre-rci/us/en/resort-directory/landing",
   },
 ];
 

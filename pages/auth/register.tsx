@@ -183,7 +183,7 @@ function RegisterPage() {
               <div className="mt-10 flex justify-center items-center">
                 <button
                   type="submit"
-                  className="bg-amber-500 hover:bg-amber-400 hover:text-gray-700 text-white text-[16px] font-medium py-2 rounded-full w-4/12 focus:outline-nono"
+                  className="bg-blue-500 hover:bg-blue-400 hover:text-gray-700 text-white text-[16px] font-medium py-2 rounded-full w-4/12 focus:outline-nono"
                   disabled={isClicked}
                 >
                   {isClicked ? "Creating your Account..." : "Sign Up"}
@@ -214,7 +214,7 @@ function RegisterPage() {
               Already have an account?{" "}
               <button
                 onClick={() => router.push("/auth")}
-                className="text-amber-500 hover:text-amber-700 font-medium text-[16px] border-none focus:outline-none"
+                className="text-blue-500 hover:text-blue-700 font-medium text-[16px] border-none focus:outline-none"
               >
                 Log In
               </button>

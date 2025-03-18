@@ -1,4 +1,6 @@
 export interface CurrentSectionProps {
+  location: string;
+  featuredImage: string;
   id: number;
   name: string;
   image: string;

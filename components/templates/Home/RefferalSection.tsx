@@ -4,12 +4,12 @@ import React from "react";
 const ReferralProgram = () => {
   return (
     <div
-      className="my-[6%] pt-20 pb-16 font-sans flex flex-col items-center justify-center"
-      style={{
-        backgroundImage: "url('/images/reffer_bg.svg')", // Replace with your SVG path
-        backgroundSize: "con",
-        backgroundPosition: "center",
-      }}
+      className="mt-[6%] pt-20 pb-16 font-sans flex flex-col items-center justify-center bg-gradient-to-r from-blue-100 via-blue-50 to-teal-100"
+      // style={{
+      //   backgroundImage: "url('/images/reffer_bg.svg')", // Replace with your SVG path
+      //   backgroundSize: "con",
+      //   backgroundPosition: "center",
+      // }}
     >
       <Container className="w-full">
         {/* Heading */}
@@ -55,7 +55,7 @@ const ReferralProgram = () => {
             className="flex-1 px-4 py-2 border-none focus:outline-none focus:ring-0 text-gray-700 placeholder-gray-500"
           />
           {/* Refer Now Button */}
-          <button className="bg-orange-500 text-white px-10 py-3 text-base rounded-full hover:bg-orange-600 transition shadow-lg ml-4 whitespace-nowrap min-w-[8rem] flex items-center justify-center">
+          <button className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-10 py-3 font-bold text-base rounded-full  transition shadow-lg ml-4 whitespace-nowrap min-w-[8rem] flex items-center justify-center">
             REFER NOW
           </button>
         </div>
@@ -64,7 +64,7 @@ const ReferralProgram = () => {
           <p className="text-gray-700 text-left mr-4">
             Discover More About Charm’s Exclusive Rewards Program
           </p>
-          <button className="bg-transparent border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-full hover:bg-orange-500 hover:text-white transition shadow-md">
+          <button className="bg-transparent font-bold border-2 border-blue-500 text-blue-500 px-6 py-3 rounded-full transition shadow-md">
             EXPLORE NOW
           </button>
         </div>

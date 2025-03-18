@@ -182,7 +182,7 @@ function MembershipTransferPage() {
             </p>
           </div>
 
-          <button className="mb-10 mt-3 bg-amber-50 border border-amber-300 text-amber-600 text-p1-m py-2 px-4 rounded-lg shadow-sm">
+          <button className="mb-10 mt-3 bg-blue-50 border border-blue-300 text-blue-600 text-p1-m py-2 px-4 rounded-lg shadow-sm">
             Submit
           </button>
           <ChatBot />

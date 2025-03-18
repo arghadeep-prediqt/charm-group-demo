@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 import React from "react";
-import { BlurImage } from "@/components/ui/BluerImage";
 import { useAppSelector } from "@/redux/hooks";
 
 const TabSection = dynamic(
@@ -18,16 +17,11 @@ function HeroSection() {
         <div className="w-full py-2 pe-[2%]">
           {/* Top Heading */}
           <div className="mt-[2%] flex justify-start items-center gap-x-3">
-            <BlurImage
-              src={user?.image}
-              alt="profile"
-              width={200}
-              height={200}
-              className="size-[75px] object-cover rounded-full border-[3px] border-yellow-400"
-            />
             <div className="py-1 px-1 leading-relaxed">
-              <h2 className="font-medium capitalize">Hello, {user.name}!</h2>
-              <p className="text-p1-r">
+              <h2 className="font-semibold text-4xl capitalize bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-transparent">
+                Hello, {user.name}!
+              </h2>
+              <p className="text-p1-r text-gray-600">
                 Here are the details to help you plan your next holiday
               </p>
             </div>

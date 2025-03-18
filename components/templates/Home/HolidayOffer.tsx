@@ -23,7 +23,7 @@ function HolidayOffer() {
         <div className="w-2/12 flex justify-end">
           <button
             onClick={() => router.push("/offer")}
-            className="text-amber-600 text-[18px] font-semibold capitalize hover:underline hover:underline-offset-2"
+            className="text-blue-600 text-[18px] font-semibold capitalize hover:underline hover:underline-offset-2"
           >
             view all
           </button>

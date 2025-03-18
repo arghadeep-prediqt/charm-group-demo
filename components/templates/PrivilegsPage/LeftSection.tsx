@@ -22,7 +22,7 @@ function LeftSection() {
               key={j}
               className={`ps-6 py-2 text-start w-full capitalize leading-relaxed ${
                 section === item.title
-                  ? "text-[#ff9900] text-p1-m"
+                  ? "text-blue-600 text-p1-m"
                   : "text-gray-400 text-p1-r"
               }`}
               onClick={() => router.push(`/privilegs?section=${item.path}`)}

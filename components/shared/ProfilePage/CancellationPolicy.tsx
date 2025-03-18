@@ -25,7 +25,7 @@ const CancellationPolicy: React.FC = () => {
 
   return (
     <div className="p-6 border border-gray-200 shadow-sm rounded-2xl">
-      <h2 className="text-xl font-semibold text-amber-600 mb-4 flex items-center">
+      <h2 className="text-xl font-semibold text-blue-600 mb-4 flex items-center">
         <span className="mr-2">✖</span> Cancellation of Confirmed Holiday
       </h2>
       <p className="text-gray-700 mb-6">
@@ -59,7 +59,7 @@ const CancellationPolicy: React.FC = () => {
           ))}
         </tbody>
       </table>
-      <p className="text-sm text-amber-500 mt-4">
+      <p className="text-sm text-blue-500 mt-4">
         *Above cancellation policy is for Regular holidays (holidays using the
         Annual entitlement of 7 days)
       </p>

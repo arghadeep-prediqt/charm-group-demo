@@ -70,7 +70,7 @@ function MembershipSeasonalWeeks({
   return (
     <Disclosure as="div" className="mb-6" defaultOpen={true}>
       <DisclosureButton className="pb-1 text-start group w-full">
-        <div className="pb-2 flex w-full items-center justify-between border-b-2 group-data-[open]:text-amber-500 group-data-[open]:border-none text-gray-700">
+        <div className="pb-2 flex w-full items-center justify-between border-b-2 group-data-[open]:text-blue-500 group-data-[open]:border-none text-gray-700">
           <h4 className="w-10/12 text-inherit capitalize leading-relaxed">
             Membership Tiers & Seasonal Weeks
           </h4>
@@ -85,7 +85,7 @@ function MembershipSeasonalWeeks({
         <p className="text-p1-b border-b border-gray-200 px-3 py-2 rounded-lg mb-2">
           Seasonal Week Groupings
         </p>
-        <div className="px-6 pt-6 pb-3 bg-amber-100 rounded-xl">
+        <div className="px-6 pt-6 pb-3 bg-blue-100 rounded-xl">
           <div className="pb-3 flex justify-between border-b border-b-gray-300">
             <p className="px-3 w-4/12 text-p1-m">Membership Tier</p>
             <p className="w-8/12 text-p1-m">Weeks Included</p>
@@ -108,7 +108,7 @@ function MembershipSeasonalWeeks({
             <p className="text-p1-b border-b border-gray-200 px-3 py-2 rounded-lg mt-4 mb-2">
               Membership Types
             </p>
-            <div className="px-6 pt-6 pb-3 bg-amber-100 rounded-xl">
+            <div className="px-6 pt-6 pb-3 bg-blue-100 rounded-xl">
               <div className="pb-2 flex justify-between border-b border-b-gray-300">
                 <p className="px-3 w-4/12 text-p1-m">Membership</p>
                 <p className="w-4/12 text-p1-m">Occupancy</p>
@@ -140,7 +140,7 @@ function PackageOne() {
   return (
     <Disclosure as="div" className="mt-6" defaultOpen={true}>
       <DisclosureButton className="pb-1 text-start group w-full">
-        <div className="pb-2 flex w-full items-center justify-between border-b-2 group-data-[open]:text-amber-500 group-data-[open]:border-none text-gray-700">
+        <div className="pb-2 flex w-full items-center justify-between border-b-2 group-data-[open]:text-blue-500 group-data-[open]:border-none text-gray-700">
           <h4 className="w-10/12 text-inherit capitalize leading-relaxed">
             Value Pack Overview
           </h4>
@@ -174,7 +174,7 @@ function PackageTwo() {
   return (
     <Disclosure as="div" className="mt-6" defaultOpen={true}>
       <DisclosureButton className="pb-1 text-start group w-full">
-        <div className="pb-2 flex w-full items-center justify-between border-b-2 group-data-[open]:text-amber-500 group-data-[open]:border-none text-gray-700">
+        <div className="pb-2 flex w-full items-center justify-between border-b-2 group-data-[open]:text-blue-500 group-data-[open]:border-none text-gray-700">
           <h4 className="w-10/12 text-inherit capitalize leading-relaxed">
             Value Pack Overview
           </h4>

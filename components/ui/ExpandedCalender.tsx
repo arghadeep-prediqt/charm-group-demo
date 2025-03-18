@@ -54,9 +54,9 @@ const ExpandedCalendar: React.FC<CalendarProps> = ({
         className={`w-10 h-10 rounded-full flex items-center justify-center text-gray-700 font-semibold 
           ${
             isSelectedStart || isSelectedEnd
-              ? "bg-amber-100 text-amber-600 border border-amber-200"
+              ? "bg-blue-100 text-blue-600 border border-blue-200"
               : isInRange
-              ? "bg-amber-100 text-amber-600 border border-amber-200"
+              ? "bg-blue-100 text-blue-600 border border-blue-200"
               : ""
           }
           ${isSelectedStart ? "rounded-l-full" : ""} ${
@@ -123,7 +123,7 @@ const ExpandedCalendar: React.FC<CalendarProps> = ({
           <div className="flex items-center justify-between mb-4">
             <button
               onClick={() => handleMonthChange(-1)}
-              className="text-amber-600"
+              className="text-blue-600"
             >
               <ChevronLeft className="size-6" />
             </button>
@@ -134,7 +134,7 @@ const ExpandedCalendar: React.FC<CalendarProps> = ({
 
             <button
               onClick={() => handleMonthChange(1)}
-              className="text-amber-600"
+              className="text-blue-600"
             >
               <ChevronRight className="size-6" />
             </button>
@@ -149,7 +149,7 @@ const ExpandedCalendar: React.FC<CalendarProps> = ({
           <div className="flex justify-center items-center">
             <button
               onClick={() => setShowCalendar(false)}
-              className="mt-6 w-[280px] text-amber-600 font-medium bg-amber-100 border border-amber-200 text-[16px] px-5 py-2.5 rounded-full"
+              className="mt-6 w-[280px] text-blue-600 font-medium bg-blue-100 border border-blue-200 text-[16px] px-5 py-2.5 rounded-full"
             >
               Save & Close Calendar
             </button>

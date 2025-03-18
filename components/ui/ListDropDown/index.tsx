@@ -19,10 +19,13 @@ interface PageProps {
 
 function ListDropDown({ title, logo, menuItems }: PageProps) {
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu
+      as="div"
+      className="relative inline-block text-left bg-gradient-to-r from-[#0B1121] to-[#2089ff] bg-clip-text text-transparent"
+    >
       <MenuButton
         as="button"
-        className="text-white flex justify-start items-center gap-x-1 capitalize"
+        className="text-black flex justify-start items-center gap-x-1 capitalize"
       >
         <BlurImage
           src={logo}

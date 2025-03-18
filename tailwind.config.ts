@@ -33,6 +33,7 @@ const config: Config = {
           white: "#FFF",
           muted: "#EEEEEE",
         },
+       
         primary: {
           50: "#666666",
           100: "#B1B1B1",
