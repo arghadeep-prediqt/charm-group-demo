@@ -14,6 +14,8 @@ export const resortImage: CurrentSectionProps[] = [
       "Uncover serene retreats off the beaten path. These hidden gems offer unmatched tranquility and charm for a perfect getaway.",
     image:
       "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?q=80&w=2875&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    location: "Various Locations",
+    featuredImage: "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?q=80&w=2875&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 1,
@@ -23,6 +25,8 @@ export const resortImage: CurrentSectionProps[] = [
       "Be among the first to stay at our newly launched premium properties. Discover modern luxury designed for your ultimate comfort.",
     image:
       "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    location: "Various Locations",
+    featuredImage: "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 2,
@@ -32,6 +36,8 @@ export const resortImage: CurrentSectionProps[] = [
       "Take advantage of exclusive limited-time deals. Indulge in world-class experiences at incredible value.",
     image:
       "https://images.unsplash.com/photo-1469796466635-455ede028aca?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3DD",
+    location: "Various Locations",
+    featuredImage: "https://images.unsplash.com/photo-1469796466635-455ede028aca?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 3,
@@ -41,6 +47,8 @@ export const resortImage: CurrentSectionProps[] = [
       "Explore the most sought-after destinations of the season. These resorts are buzzing with excitement and unforgettable experiences.",
     image:
       "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    location: "Various Locations",
+    featuredImage: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 4,
@@ -50,6 +58,8 @@ export const resortImage: CurrentSectionProps[] = [
       "Highly praised by travelers, these resorts deliver exceptional luxury. Enjoy a flawless escape with top-tier amenities and services.",
     image:
       "https://images.unsplash.com/photo-1515249347005-66ea7bc26847?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    location: "Various Locations",
+    featuredImage: "https://images.unsplash.com/photo-1515249347005-66ea7bc26847?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -703,7 +713,7 @@ export const membersReviewData = [
     name: "Trần Minh Hoàng",
     created: "2021",
     comment:
-      "An amazing experience! The location is perfect for nature lovers, with breathtaking views and plenty of greenery all around. I particularly enjoyed the guided tours that the resort organized—they were well-planned and informative. The rooms were cozy, the food was excellent, and the hospitality was top-notch. I can't thank the staff enough for making our stay so memorable. It’s a place I would visit again without a second thought.",
+      "An amazing experience! The location is perfect for nature lovers, with breathtaking views and plenty of greenery all around. I particularly enjoyed the guided tours that the resort organized—they were well-planned and informative. The rooms were cozy, the food was excellent, and the hospitality was top-notch. I can't thank the staff enough for making our stay so memorable. It's a place I would visit again without a second thought.",
   },
   {
     name: "Phạm Thị Lan",
@@ -733,7 +743,7 @@ export const membersReviewData = [
     name: "Ngô Thị Hương",
     created: "2019",
     comment:
-      "A truly memorable experience! The resort is a paradise for anyone looking to unwind and reconnect with nature. The rooms were tastefully done, with attention to every little detail. I was particularly impressed with the range of activities they offered, from yoga sessions to adventure sports. The staff made us feel special at every step, and the food was absolutely divine. It’s a place I would recommend to anyone looking for a peaceful retreat.",
+      "A truly memorable experience! The resort is a paradise for anyone looking to unwind and reconnect with nature. The rooms were tastefully done, with attention to every little detail. I was particularly impressed with the range of activities they offered, from yoga sessions to adventure sports. The staff made us feel special at every step, and the food was absolutely divine. It's a place I would recommend to anyone looking for a peaceful retreat.",
   },
   {
     name: "Bùi Thanh Tùng",
@@ -1104,9 +1114,9 @@ export const travelDiaries = [
     heading: "Trip to Hồ Tràm, Vietnam",
     subHeading: "Shared By Vương Minh Tuân on 20 September 2024",
     description: `
-      <p>This was our first experience as members of Charm Group’s timeshare program, and it truly set the bar high. Initially, we were unsure about room availability, but the Charm Group app made the booking process effortless. We chose to stay at Charm Resort Hồ Tràm, nestled in Hồ Tràm, Vietnam, a luxurious beachfront destination spanning 40 hectares. Upon arrival, we were welcomed warmly with a refreshing drink before settling into our accommodations.</p>
-      <p>Our afternoon was spent soaking in the sun by the stunning pool. In the evening, my child and I enjoyed an exciting bicycle ride, followed by a serene visit to the waterfront – an unforgettable highlight. My spouse relished the rejuvenating spa treatments available at the resort. I was also impressed by Charm Group’s commitment to sustainability, with solar energy initiatives and the convenience of an EV charging station for our electric car.</p>
-      <p>The fine dining experience was exceptional, and my child had a fantastic time exploring the kids’ play area. Later, I savored the gentle breeze by the waterfront, which perfectly captured the essence of relaxation. The resort’s proximity to Hồ Tràm's attractions added to our excitement, and we’re already planning a stay at Charm Resort Đà Lạt in Đà Lạt, Vietnam, to experience its cultural charm on our next visit.</p>
+      <p>This was our first experience as members of Charm Group's timeshare program, and it truly set the bar high. Initially, we were unsure about room availability, but the Charm Group app made the booking process effortless. We chose to stay at Charm Resort Hồ Tràm, nestled in Hồ Tràm, Vietnam, a luxurious beachfront destination spanning 40 hectares. Upon arrival, we were welcomed warmly with a refreshing drink before settling into our accommodations.</p>
+      <p>Our afternoon was spent soaking in the sun by the stunning pool. In the evening, my child and I enjoyed an exciting bicycle ride, followed by a serene visit to the waterfront – an unforgettable highlight. My spouse relished the rejuvenating spa treatments available at the resort. I was also impressed by Charm Group's commitment to sustainability, with solar energy initiatives and the convenience of an EV charging station for our electric car.</p>
+      <p>The fine dining experience was exceptional, and my child had a fantastic time exploring the kids' play area. Later, I savored the gentle breeze by the waterfront, which perfectly captured the essence of relaxation. The resort's proximity to Hồ Tràm's attractions added to our excitement, and we're already planning a stay at Charm Resort Đà Lạt in Đà Lạt, Vietnam, to experience its cultural charm on our next visit.</p>
     `,
     resort: "Charm Resort Hồ Tràm",
     image:
@@ -1118,9 +1128,9 @@ export const travelDiaries = [
     subHeading: "Shared By Trần Thị Hồng Lũy on 29 August 2024",
     description: `
       <p>The breathtaking beauty of Hồ Tràm, Vietnam, feels like a scene straight out of a dream. Its pristine beaches, luxurious surroundings, and serene ambiance offer an unforgettable escape. Our trip to Charm Resort Hồ Tràm, nestled within this coastal haven, was nothing short of spectacular.</p>
-      <p>From the moment we arrived, the resort’s warmth and hospitality stood out. Greeted by the friendly staff with a refreshing welcome drink, we felt at ease immediately. Spread across a sprawling 40 hectares, the resort offers a wealth of amenities – from a wellness center and spa to a sparkling swimming pool and a vibrant kids' play area.</p>
-      <p>The resort’s travel desk made planning effortless, arranging activities tailored to our preferences. One of the highlights was a guided tour of Hồ Tràm’s lush landscapes, where we connected deeply with nature. The resort also catered to every member of our family, including preparing kid-friendly meals for our little one. The buffet spread, featuring breakfast, lunch, high tea, and dinner, was a culinary delight, showcasing perfection in every bite.</p>
-      <p>Whether it was enjoying a sunset stroll along the beach, relaxing by the pool, or marveling at the beauty of the location, Charm Resort Hồ Tràm made our timeshare experience truly memorable. We’re eagerly looking forward to our next adventure at Charm Resort Phú Quốc for its unique blend of entertainment and authentic architecture.</p>
+      <p>From the moment we arrived, the resort's warmth and hospitality stood out. Greeted by the friendly staff with a refreshing welcome drink, we felt at ease immediately. Spread across a sprawling 40 hectares, the resort offers a wealth of amenities – from a wellness center and spa to a sparkling swimming pool and a vibrant kids' play area.</p>
+      <p>The resort's travel desk made planning effortless, arranging activities tailored to our preferences. One of the highlights was a guided tour of Hồ Tràm's lush landscapes, where we connected deeply with nature. The resort also catered to every member of our family, including preparing kid-friendly meals for our little one. The buffet spread, featuring breakfast, lunch, high tea, and dinner, was a culinary delight, showcasing perfection in every bite.</p>
+      <p>Whether it was enjoying a sunset stroll along the beach, relaxing by the pool, or marveling at the beauty of the location, Charm Resort Hồ Tràm made our timeshare experience truly memorable. We're eagerly looking forward to our next adventure at Charm Resort Phú Quốc for its unique blend of entertainment and authentic architecture.</p>
     `,
     resort: "Charm Resort Long Hải",
     image:
@@ -1131,13 +1141,13 @@ export const travelDiaries = [
     heading: "My Charm Diamond DĨ An Diary",
     subHeading: "Shared By Văn Thị Huỳnh Hiên on 04 July 2024",
     description: `
-      <p>Creating a travel diary for Charm Resort Hồ Tràm is a delightful way to preserve cherished memories. Here’s how our 5-day escape unfolded:</p>
+      <p>Creating a travel diary for Charm Resort Hồ Tràm is a delightful way to preserve cherished memories. Here's how our 5-day escape unfolded:</p>
       <p><strong>Day 1: Arrival and First Impressions</strong><br>Morning: Arrived at Charm Resort Hồ Tràm, Hồ Tràm, Vietnam. The check-in was seamless, with the staff offering a warm welcome and a refreshing drink. First impressions were remarkable: modern yet tranquil architecture, breathtaking beachfront views, and the lush ambiance surrounding the resort.</p>
       <p><strong>Day 2: Discovering Hồ Tràm</strong><br>Started the day with an early breakfast featuring local delicacies like fresh Vietnamese spring rolls and tropical fruits. Embarked on a nature walk guided by the resort staff, where we discovered the serene beachfront and vibrant flora.</p>
-      <p><strong>Day 3: Adventure and Relaxation</strong><br>After breakfast, ventured on an adventurous ATV ride along the coastal trails organized by the resort’s travel desk. The views and adrenaline were unforgettable! Unwound with a rejuvenating spa session, indulging in a traditional Vietnamese massage with herbal oils.</p>
+      <p><strong>Day 3: Adventure and Relaxation</strong><br>After breakfast, ventured on an adventurous ATV ride along the coastal trails organized by the resort's travel desk. The views and adrenaline were unforgettable! Unwound with a rejuvenating spa session, indulging in a traditional Vietnamese massage with herbal oils.</p>
       <p><strong>Day 4: Cultural Immersion</strong><br>Guided visit to a nearby craft village, interacting with artisans and exploring traditional pottery and textile-making. Returned to the resort for an enchanting musical evening featuring traditional instruments.</p>
       <p><strong>Day 5: Departure</strong><br>Enjoyed a leisurely breakfast before taking one last stroll around the resort to soak in its charm. The check-out process was smooth, and the staff sent us off with warm smiles and a thoughtful parting gift.</p>
-      <p>Charm Resort Hồ Tràm turned our holiday into an extraordinary journey, and we can’t wait to plan our next stay at Charm Resort Đà Lạt for its unique cultural charm.</p>
+      <p>Charm Resort Hồ Tràm turned our holiday into an extraordinary journey, and we can't wait to plan our next stay at Charm Resort Đà Lạt for its unique cultural charm.</p>
     `,
     resort: "Charm Diamond DĨ An",
     image:
