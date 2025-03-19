@@ -70,7 +70,7 @@ const Month: React.FC<MonthProps> = ({ date }) => {
       ) &&
       day.getFullYear() === 2025
     )
-      return `border-[#D3D3D3] bg-[#D3D3D3] text-[#000000] cursor-pointer`; // Silver Member
+      return `border-1 border-[#9CA3AF] text-[#4B5563] hover:border-[#4B5563] cursor-pointer`; // Silver Member
 
     if (
       isDateInMembership(
@@ -81,7 +81,7 @@ const Month: React.FC<MonthProps> = ({ date }) => {
       ) &&
       day.getFullYear() === 2025
     )
-      return `border-[#FFD966] bg-[#FFD966] text-slate-900 cursor-pointer`; // Gold Member
+      return `border-1 border-yellow-400 text-yellow-500 hover:border-yellow-500 cursor-pointer`; // Gold Member
 
     if (
       isDateInMembership(
@@ -92,12 +92,12 @@ const Month: React.FC<MonthProps> = ({ date }) => {
       ) &&
       day.getFullYear() === 2025
     )
-      return `border-[#2F5597] bg-[#2F5597] text-white cursor-pointer`; // Diamond Member
+      return `border-1 border-[#2563EB] text-[#1D4ED8] hover:border-[#1D4ED8] cursor-pointer`; // Diamond Member
     return "bg-gray-300 border-gray-200 text-gray-500 opacity-50";
   };
 
   return (
-    <div className="bg-[#fef5e8] rounded-xl p-4 shadow-sm">
+    <div className="bg-white shadow-sm rounded-xl p-4">
       {/* Month Title */}
       <h3 className="text-center text-gray-700 mb-5">
         {format(date, "MMMM yyyy")}
@@ -106,7 +106,7 @@ const Month: React.FC<MonthProps> = ({ date }) => {
       {/* Weekday Headers */}
       <div className="grid grid-cols-7 text-primary-700 mb-2">
         {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
-          <div key={day} className="pb-2 text-center text-p1-m">
+          <div key={day} className="pb-2 text-center text-sm">
             {day}
           </div>
         ))}
@@ -123,11 +123,11 @@ const Month: React.FC<MonthProps> = ({ date }) => {
         {days.map((day) => (
           <div
             key={day.toISOString()}
-            className={`mt-3 flex justify-center items-center size-10 rounded-full shadow-sm hover:shadow-none border ${getDayColor(
+            className={`mt-3 flex justify-center items-center size-8 rounded-full shadow-sm hover:shadow-none border ${getDayColor(
               day
             )}`}
           >
-            <p className="text-p1-m">{format(day, "dd")}</p>
+            <p className="text-sm">{format(day, "dd")}</p>
           </div>
         ))}
       </div>

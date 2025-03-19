@@ -22,7 +22,7 @@ function CustomNavBtn({ logo, title, link = "#" }: PageProps) {
         height={100}
         className="size-6 object-cover"
       />
-      <div className="text-start capitalize text-white">
+      <div className="text-start capitalize text-black">
         <p className="text-p1-m leading-tight">{title}</p>
       </div>
     </button>

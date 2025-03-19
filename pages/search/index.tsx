@@ -31,7 +31,7 @@ function SearchPage() {
             <h2 className="mt-4 text-white font-medium w-8/12 text-center">
               Experience the diverse charm of Vietnam’s regions and indulge in
               our exclusive international{" "}
-              <Link href="/our_resorts" className="text-amber-400">
+              <Link href="/our_resorts" className="text-blue-400">
                 destinations
               </Link>
             </h2>

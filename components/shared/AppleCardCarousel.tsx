@@ -129,14 +129,14 @@ export const AppleCardCarousel = ({
         {/* Buttons */}
         <div className="mb-5 flex justify-end gap-3">
           <button
-            className="rounded-full bg-[#ff9900] flex items-center justify-center active:opacity-70 disabled:opacity-50"
+            className="rounded-full bg-blue-600 flex items-center justify-center active:opacity-70 disabled:opacity-50"
             onClick={scrollLeft}
             disabled={!canScrollLeft}
           >
             <ArrowLeftCircle className="size-10 text-gray-100" />
           </button>
           <button
-            className="rounded-full bg-[#ff9900] flex items-center justify-center active:opacity-70 disabled:opacity-50"
+            className="rounded-full bg-blue-600 flex items-center justify-center active:opacity-70 disabled:opacity-50"
             onClick={scrollRight}
             disabled={!canScrollRight}
           >

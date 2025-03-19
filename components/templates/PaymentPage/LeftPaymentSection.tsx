@@ -71,7 +71,7 @@ function RowTable({ dueDate, amount, status, title }: RowTableInterface) {
         </div>
       </div>
       <div className="w-[13%] flex justify-center items-center">
-        <p className="uppercase w-fit px-2 text-[10px] font-semibold rounded-md border border-amber-400 text-amber-500 bg-amber-50">
+        <p className="uppercase w-fit px-2 text-[10px] font-semibold rounded-md border border-blue-400 text-blue-500 bg-blue-50">
           {status}
         </p>
       </div>

@@ -25,11 +25,13 @@ function HomePage() {
   return (
     <NavContainer>
       <FirstHeroSection />
+      <PrivilegsSection />
+
       <HeroSection />
       <Resorts />
-      <PrivilegsSection />
       <TravelDiaries />
       <RefferalSection />
+
       <ExperienceSection />
 
       <ChatBot />

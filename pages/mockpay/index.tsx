@@ -58,7 +58,7 @@ const MockPayment: React.FC = () => {
       <div className="h-screen inset-0 z-10 w-screen overflow-y-auto">
         <div className="flex min-h-full items-center justify-center bg-black/20 backdrop-blur-sm">
           <div className="w-full max-w-sm mx-auto p-6 bg-white rounded-lg shadow-md">
-            <h2 className="text-2xl font-semibold mb-4 text-amber-600">
+            <h2 className="text-2xl font-semibold mb-4 text-blue-600">
               CHARM Payment
             </h2>
             <form onSubmit={handlePayment}>
@@ -70,7 +70,7 @@ const MockPayment: React.FC = () => {
                   value={paymentDetails.cardNumber}
                   onChange={handleInputChange}
                   disabled={isProcessing}
-                  className="w-full mt-2 p-2 border rounded focus:outline-none focus:ring-1 focus:ring-amber-300"
+                  className="w-full mt-2 p-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-300"
                   required
                 />
               </div>
@@ -82,7 +82,7 @@ const MockPayment: React.FC = () => {
                   value={paymentDetails.expiryDate}
                   onChange={handleInputChange}
                   disabled={isProcessing}
-                  className="w-full mt-2 p-2 border rounded focus:outline-none focus:ring-1 focus:ring-amber-300"
+                  className="w-full mt-2 p-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-300"
                   required
                 />
               </div>
@@ -94,17 +94,15 @@ const MockPayment: React.FC = () => {
                   value={paymentDetails.cvv}
                   onChange={handleInputChange}
                   disabled={isProcessing}
-                  className="w-full mt-2 p-2 border rounded focus:outline-none focus:ring-1 focus:ring-amber-300"
+                  className="w-full mt-2 p-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-300"
                   required
                 />
               </div>
               <button
                 type="submit"
                 disabled={isProcessing}
-                className={`w-full py-2 text-p1-b border border-amber-300 text-amber-600 rounded-lg ${
-                  isProcessing
-                    ? "bg-amber-100"
-                    : "bg-amber-50 hover:bg-amber-100"
+                className={`w-full py-2 text-p1-b border border-blue-300 text-blue-600 rounded-lg ${
+                  isProcessing ? "bg-blue-100" : "bg-blue-50 hover:bg-blue-100"
                 }`}
               >
                 {isProcessing ? "Processing..." : "Pay Now"}

@@ -11,7 +11,7 @@ interface PageProps {
 function TopCarousel({ firstPhoto, secondPhoto, thirdPhoto }: PageProps) {
   return (
     <React.Fragment>
-      <div className="h-[60vh] my-4 grid grid-rows-2 grid-flow-col gap-4">
+      <div className="h-[60vh] my-4 grid grid-rows-2 grid-flow-col gap-4 mt-16">
         <BlurImage
           src={firstPhoto || singleResortData?.[0]}
           alt="property1"

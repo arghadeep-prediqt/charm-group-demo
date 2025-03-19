@@ -4,32 +4,79 @@ import Link from "next/link";
 import React from "react";
 
 const Container = dynamic(() => import("@/components/shared/Container"));
-const TopBanner = dynamic(
-  () => import("@/components/templates/OurResortsPage/TopBanner")
-);
+
 const NavContainer = dynamic(() => import("@/components/shared/NavContainer"));
 
 function ExploreMembership() {
   return (
     <NavContainer>
-      <TopBanner
-        title="Exclusive Membership Plans"
-        photo="https://charm.vn/wp-content/uploads/2021/09/Charm-Diamond-39.jpg"
-        subTitle="Discover exclusive timeshare benefits in Vietnam with luxury stays, flexible options, and premium privileges from Charm Group."
-      />
+      <div className="relative h-[80vh] min-h-[600px]">
+        <BlurImage
+          src="https://charm.vn/wp-content/uploads/2021/09/Charm-Diamond-39.jpg"
+          alt="Luxury Resort"
+          width={1980}
+          height={1080}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-transparent" />
+        <div className="absolute inset-0 flex items-center">
+          <Container className="px-4">
+            <div className="max-w-3xl">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Exclusive Membership Plans
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-100 leading-relaxed">
+                Discover exclusive timeshare benefits in Vietnam with luxury
+                stays, flexible options, and premium privileges from Charm
+                Group.
+              </p>
+            </div>
+          </Container>
+        </div>
+      </div>
       <Container className="px-4">
-        <h2 className="mt-10 leading-relaxed">
-          Discover Charm Group’s Timeshare Plans
-        </h2>
-        <p className="mt-2 md:text-p1-r text-p2-r leading-relaxed">
-          With access to four iconic destinations in Vietnam, Charm Group offers
-          you the opportunity to own your dream vacation for up to 20 years.
-          Whether you choose the serene beaches of Phú Quốc or the cultural
-          elegance of Đà Lạt, your membership guarantees an unparalleled holiday
-          experience tailored to your preferences. Enjoy luxurious stays,
-          exclusive amenities, and a host of additional benefits that make every
-          vacation memorable.
-        </p>
+        <div className="grid md:grid-cols-2 gap-12 py-20">
+          <div className="space-y-6">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Discover Charm Group’s Timeshare Plans
+            </h2>
+            <p className="text-lg leading-relaxed text-gray-700">
+              With access to four iconic destinations in Vietnam, Charm Group
+              offers you the opportunity to own your dream vacation for up to 20
+              years. Whether you choose the serene beaches of Phú Quốc or the
+              cultural elegance of Đà Lạt, your membership guarantees an
+              unparalleled holiday experience tailored to your preferences.
+              Enjoy luxurious stays, exclusive amenities, and a host of
+              additional benefits that make every vacation memorable.
+            </p>
+            <div className="flex gap-4">
+              <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                20 Year Plans
+              </span>
+              <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
+                Luxury Stays
+              </span>
+              <span className="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">
+                Premium Benefits
+              </span>
+            </div>
+          </div>
+          <div className="relative">
+            <BlurImage
+              src="https://images.unsplash.com/photo-1506059612708-99d6c258160e"
+              alt="Luxury Resort"
+              width={1980}
+              height={1080}
+              className="rounded-2xl shadow-2xl"
+            />
+            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg max-w-xs">
+              <p className="text-sm font-medium text-gray-900">
+                "Experience unparalleled luxury across our premium resorts
+              </p>
+            </div>
+          </div>
+        </div>
+
         <h2 className="mt-10 leading-relaxed">
           All You Need to Know About Our Memberships
         </h2>
@@ -40,15 +87,7 @@ function ExploreMembership() {
           experiences. Choose from several membership tiers and durations, each
           designed to maximize your enjoyment and provide exceptional value.
         </p>
-        <BlurImage
-          src={
-            "https://images.unsplash.com/photo-1506059612708-99d6c258160e?q=80&w=2969&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          }
-          alt="image1"
-          width={1980}
-          height={400}
-          className="mt-10 w-full h-[400px] object-cover rounded-md"
-        />
+
         <h2 className="mt-10 leading-relaxed">
           Long-Term Luxury with Our 20-Year Plan
         </h2>
@@ -81,7 +120,7 @@ function ExploreMembership() {
         <div className="mt-8 w-full flex justify-center items-center">
           <Link
             href={"/membership"}
-            className="text-p1-b bg-amber-500 px-4 py-2 rounded-md capitalize"
+            className="text-p1-b bg-blue-500 text-white px-4 py-2 rounded-md capitalize"
           >
             become a member
           </Link>
@@ -140,7 +179,7 @@ function ExploreMembership() {
         <div className="mt-8 w-full flex justify-center items-center">
           <Link
             href={"/membership"}
-            className="text-p1-b bg-amber-500 px-4 py-2 rounded-md capitalize"
+            className="text-p1-b bg-blue-500 text-white px-4 py-2 rounded-md capitalize"
           >
             become a member
           </Link>
@@ -179,7 +218,7 @@ function ExploreMembership() {
         <div className="mt-8 w-full flex justify-center items-center">
           <Link
             href={"/membership"}
-            className="text-p1-b bg-amber-500 px-4 py-2 rounded-md capitalize"
+            className="text-p1-b bg-blue-500 text-white px-4 py-2 rounded-md capitalize"
           >
             become a member
           </Link>
@@ -220,7 +259,7 @@ function ExploreMembership() {
         <div className="mt-8 w-full flex justify-center items-center">
           <Link
             href={"/membership"}
-            className="text-p1-b bg-amber-500 px-4 py-2 rounded-md capitalize"
+            className="text-p1-b bg-blue-500 text-white px-4 py-2 rounded-md capitalize"
           >
             become a member
           </Link>
@@ -322,7 +361,7 @@ function ExploreMembership() {
         <div className="my-8 w-full flex justify-center items-center">
           <Link
             href={"/membership"}
-            className="text-p1-b bg-amber-500 px-4 py-2 rounded-md capitalize"
+            className="text-p1-b bg-blue-500 text-white px-4 py-2 rounded-md capitalize"
           >
             become a member
           </Link>

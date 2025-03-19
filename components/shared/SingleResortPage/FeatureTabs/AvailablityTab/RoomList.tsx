@@ -11,7 +11,7 @@ function RoomList() {
       <div className="mt-6 flex justify-between items-center">
         <p className="text-p2-r">Room Type</p>
         <div
-          className="text-p1-b text-amber-600 cursor-pointer"
+          className="text-p1-b text-blue-600 cursor-pointer"
           onClick={() => dispatch(cleraResortRoom())}
         >
           Clear
@@ -53,7 +53,7 @@ function RoomRow({ count, date, title }: RoomRowProps) {
 
   return (
     <div className="mt-3 bg-white p-2 rounded-2xl flex justify-start items-center gap-x-4">
-      <div className="py-3 px-4 flex flex-col justify-center divide-y divide-gray-700 bg-amber-100 rounded-xl">
+      <div className="py-3 px-4 flex flex-col justify-center divide-y divide-gray-700 bg-blue-100 rounded-xl">
         <p className="pb-1 text-p1-b text-gray-700 text-center">
           {selectedDate?.toLocaleDateString("en-IN", { month: "short" })}
         </p>
@@ -66,7 +66,7 @@ function RoomRow({ count, date, title }: RoomRowProps) {
         <p className="text-p1-m text-gray-700 uppercase">
           {count} – {title}
         </p>
-        <p className="text-p1-b text-amber-600 capitalize">{floor?.name}</p>
+        <p className="text-p1-b text-blue-600 capitalize">{floor?.name}</p>
       </div>
     </div>
   );

@@ -57,18 +57,18 @@ function PrivilegsSection() {
   });
 
   return (
-    <section className="w-full bg-orange-100 mt-[5%] mb-[2%] pb-[3%]">
-      <Container className="py-2">
-        <div className="mt-[3%]">
-          <h1 className="text-[46px] leading-relaxed">Tailored Experiences</h1>
-          <p className="text-p1-m text-gray-500 leading-relaxed">
-            Relish the curated advantages that make your membership truly
-            extraordinary.
-          </p>
-        </div>
+    <section
+      className="relative w-full bg-gradient-to-r from-blue-100 mt-[-2%] via-blue-50 to-teal-100  mb-[2%] pb-[5%] pt-[3%]"
+      style={{
+        clipPath:
+          "polygon(0% 0%, 25% 2%, 50% 0%, 75% 2%, 100% 0%, 100% 100%, 0% 100%)",
+      }}
+    >
+      <Container className="py-2"></Container>
 
+      <div className="overflow-hidden">
         <PrivilegsCardCarousel items={cards} />
-      </Container>
+      </div>
     </section>
   );
 }

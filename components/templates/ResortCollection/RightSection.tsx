@@ -21,7 +21,7 @@ function RightSection({ description, heading }: PageProps) {
   return (
     <div className="mt-[3%] w-7/12 ps-10 py-10 relative">
       <div className="py-2 pe-20 w-full h-full">
-        <h1 className="text-end text-[40px] text-amber-400 leading-relaxed">
+        <h1 className="text-end text-[40px] text-white leading-relaxed">
           {heading}
         </h1>
         <p className="my-4 text-end text-[20px] text-white leading-relaxed">

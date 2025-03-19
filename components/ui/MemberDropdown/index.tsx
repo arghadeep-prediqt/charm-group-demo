@@ -33,7 +33,7 @@ function MemberDropdown({ isDisabled = false }: PageProps) {
         )}
         disabled={isDisabled}
       >
-        <User className="size-6 text-amber-500" />
+        <User className="size-6 text-blue-500" />
 
         <p className="text-gray-700 text-p2-r text-wrap break-words">
           {selected}
@@ -59,11 +59,11 @@ function MemberDropdown({ isDisabled = false }: PageProps) {
                 "group p-3 flex justify-between items-center gap-x-2 cursor-pointer"
               )}
             >
-              <p className="text-p2-r group-data-[checked]:text-amber-500 group-data-[checked]:font-medium">
+              <p className="text-p2-r group-data-[checked]:text-blue-500 group-data-[checked]:font-medium">
                 {plan}
               </p>
-              <div className="flex p-0.5 items-center justify-center rounded-full border border-amber-400 bg-gary-100 ">
-                <span className="invisible size-3 rounded-full bg-amber-400 group-data-[checked]:visible" />
+              <div className="flex p-0.5 items-center justify-center rounded-full border border-blue-400 bg-gary-100 ">
+                <span className="invisible size-3 rounded-full bg-blue-400 group-data-[checked]:visible" />
               </div>
             </Radio>
           ))}

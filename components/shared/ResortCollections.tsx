@@ -128,14 +128,14 @@ export const AppleCardCarousel = ({
 
         {/* Buttons */}
         <button
-          className="absolute -left-[50px] top-[50%] -translate-y-[50%]  z-20 p-2 rounded-full bg-blue-400 flex items-center justify-center active:opacity-70 disabled:opacity-70 disabled:grayscale"
+          className="absolute -left-[50px] top-[50%] -translate-y-[50%]  z-20 p-2 rounded-full bg-blue-500 flex items-center justify-center active:opacity-70 disabled:opacity-70 disabled:grayscale"
           onClick={scrollLeft}
           disabled={!canScrollLeft}
         >
           <ArrowLeft className="size-6 text-gray-100" />
         </button>
         <button
-          className="absolute right-[20px] top-[50%] -translate-y-[50%]  z-20 p-2 rounded-full bg-blue-400 flex items-center justify-center active:opacity-70 disabled:opacity-70 disabled:grayscale"
+          className="absolute right-[20px] top-[50%] -translate-y-[50%]  z-20 p-2 rounded-full bg-blue-500 flex items-center justify-center active:opacity-70 disabled:opacity-70 disabled:grayscale"
           onClick={scrollRight}
           disabled={!canScrollRight}
         >

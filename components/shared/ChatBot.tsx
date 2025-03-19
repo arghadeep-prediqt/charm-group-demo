@@ -74,7 +74,7 @@ const ChatBot: React.FC = () => {
             alt="Chatbot icon"
             width={50}
             height={50}
-            className="bg-amber-100 p-3 rounded-full shadow-lg border border-amber-300"
+            className="bg-blue-100 p-3 rounded-full shadow-lg border border-blue-300"
           />
         </button>
       )}

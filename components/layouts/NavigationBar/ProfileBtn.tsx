@@ -24,7 +24,10 @@ function ProfileBtn() {
     router.reload();
   };
   return (
-    <Menu as="div" className={`${poppins.className} text-white relative ps-6`}>
+    <Menu
+      as="div"
+      className={`${poppins.className} text-blue-600 relative ps-6`}
+    >
       <MenuButton
         as="button"
         className="relative flex justify-between items-center gap-x-2 bg-inherit focus:outline-none"
@@ -35,7 +38,7 @@ function ProfileBtn() {
             alt="profile"
             width={100}
             height={100}
-            className="size-10 object-cover rounded-full border border-amber-300"
+            className="size-10 object-cover rounded-full border border-blue-400"
           />
         )}
         <div className="py-1 px-1 leading-relaxed text-start">
@@ -43,7 +46,7 @@ function ProfileBtn() {
           <p className="text-p2-b capitalize">
             {userDetails?.name?.split(" ")[0]}
           </p>
-          <p className="uppercase text-p3-m text-amber-300 hover:underline hover:underline-offset-2">
+          <p className="uppercase text-p3-m text-blue-400 hover:underline hover:underline-offset-2">
             {userDetails?.role}
           </p>
         </div>
