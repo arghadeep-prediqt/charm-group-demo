@@ -104,11 +104,11 @@ function RightSideWaitlist({
 
       {isSuccess && (
         <div className="mt-[3%] flex justify-between items-center">
-          <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-yellow-200 to-blue-400">
+          <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-blue-100 to-blue-200">
             <p className="text-p3-m">Days Utilised</p>
             <p className="text-p2-b">{roomList?.length}</p>
           </div>
-          <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-yellow-200 to-blue-400">
+          <div className="w-6/12 p-2 flex justify-between items-center bg-gradient-to-r from-blue-100 to-blue-200">
             <p className="text-p3-m">Days Remaining</p>
             <p className="text-p2-b">
               {Math.sign(remainingDays?.daysBalance - roomList?.length) !== 1
@@ -122,7 +122,7 @@ function RightSideWaitlist({
       <div className="flex justify-center items-center">
         <button
           onClick={handleBooking}
-          className="bg-yellow-300 text-slate-700 px-6 py-2.5 w-full rounded-br-xl rounded-bl-xl text-p1-b active:opacity-65 disabled:grayscale"
+          className="bg-blue-600 text-white px-6 py-2.5 w-full rounded-br-xl rounded-bl-xl text-p1-b active:opacity-65 disabled:grayscale"
           disabled={
             isClicked ||
             Math.sign(remainingDays?.daysBalance - roomList?.length) === -1
