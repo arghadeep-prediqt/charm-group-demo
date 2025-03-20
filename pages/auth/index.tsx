@@ -1,14 +1,11 @@
 import React, { useCallback, useState } from "react";
 import { Eye, EyeClosed } from "lucide-react";
 import { BlurImage } from "@/components/ui/BluerImage";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { setCookie } from "cookies-next";
 import { useLoginGateWayMutation } from "@/redux/services/authApi";
 import toast from "react-hot-toast";
 import { useRouter } from "next/router";
-
-const Footer = dynamic(() => import("@/components/shared/Footer"));
 
 function Login() {
   const router = useRouter();
@@ -63,166 +60,160 @@ function Login() {
   );
 
   return (
-    <>
-      <div className="flex justify-start items-center">
-        <div className="w-6/12 relative">
-          <BlurImage
-            src="https://images.unsplash.com/photo-1560113855-2ea616c915ee?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="register"
-            width={600}
-            height={1200}
-            className="w-full h-screen object-cover"
-          />
-          <div className="absolute top-0 left-0 w-full h-full bg-black/60">
-            <div className="px-10 w-full h-full flex flex-col justify-center items-center">
-              <div className="">
-                <Link
-                  href={"/"}
-                  className="w-full flex justify-center items-center gap-x-2 cursor-pointer"
-                >
-                  <BlurImage
-                    src={"/images/charm.png"}
-                    alt="logo"
-                    width={100}
-                    height={100}
-                    className="size-28 object-cover"
-                  />
-                </Link>
-              </div>
+    <div className="min-h-screen relative">
+      {/* Full screen background image */}
+      <div className="fixed inset-0 -z-10">
+        <BlurImage
+          src="https://images.unsplash.com/photo-1560113855-2ea616c915ee?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="travel"
+          width={1200}
+          height={800}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
+      </div>
 
-              <div className="pb-24 text-center mt-5">
-                <h1 className="text-white leading-relaxed">
-                  WELCOME BACK TO CHARM{" "}
+      <div className="container mx-auto px-6 py-8 flex items-center justify-center min-h-screen">
+        <div className="flex flex-col lg:flex-row w-full max-w-6xl gap-8 items-stretch">
+          {/* Left Section - Content */}
+          <div className="lg:w-1/2 relative">
+            <div className="h-full flex flex-col items-center p-12">
+              <Link href="/" className="mb-auto">
+                <BlurImage
+                  src="/images/charm.png"
+                  alt="logo"
+                  width={60}
+                  height={60}
+                  className="mx-auto filter brightness-0 invert"
+                />
+              </Link>
+
+              <div className="text-center">
+                <h1 className="text-5xl font-bold mb-4 text-white">
+                  Experience Seamless Travel
                 </h1>
-                <p className="text-p1-r mt-1 leading-relaxed text-white">
-                  Reconnect with a community that redefines travel and
-                  experiences.
+                <p className="text-lg text-gray-200 mb-8">
+                  Connecting travelers with extraordinary experiences through
+                  innovative solutions and personalized journeys.
+                </p>
+                <h3 className="text-2xl font-semibold text-white mb-2">
+                  Amazing Places
+                </h3>
+                <p className="text-gray-200">
+                  Start your journey with us today
                 </p>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="min-h-[80vh] w-6/12 flex justify-center items-center">
-          <div className="bg-white p-8 w-full max-w-xl">
-            <h2 className="text-3xl font-semibold text-center mb-6 text-gray-800">
-              Sign In to Charm
-            </h2>
+          {/* Right Section - Login Form */}
+          <div className="lg:w-1/2">
+            <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-lg">
+              <div className="max-w-sm mx-auto">
+                <h2 className="text-2xl font-semibold text-center mb-2">
+                  Sign In
+                </h2>
+                <p className="text-gray-600 text-center mb-6">
+                  Sign in if you already have an account.
+                </p>
 
-            {/* Login Form */}
-            <form onSubmit={handleForm}>
-              <div className="mb-4">
-                <label
-                  htmlFor="email"
-                  className="block text-gray-700 text-[16px] font-medium mb-2"
-                >
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  className="shadow appearance-none border border-gray-200 rounded-lg w-full py-3 px-4 h-[44px] text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent text-[16px] placeholder:text-[16px]"
-                  placeholder="Email Address"
-                  autoFocus={true}
-                  required
-                />
-              </div>
-
-              <div className="mb-4">
-                <label
-                  htmlFor="password"
-                  className="block text-gray-700 text-[16px] font-medium mb-2"
-                >
-                  Password
-                </label>
-
-                <div className="relative">
+                <form onSubmit={handleForm} className="space-y-4">
                   <input
-                    type={isShow ? "text" : "password"}
-                    name="password"
-                    className="shadow appearance-none border border-gary-200 rounded-lg w-full py-3 px-4 h-[44px] text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent text-[16px] placeholder:text-[16px]"
-                    placeholder="Enter Password"
+                    type="email"
+                    name="email"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200  focus:border-transparent transition-all"
+                    placeholder="Enter your email"
                     required
                   />
-                  <div
-                    className="absolute right-3 top-[50%] -translate-y-[50%] cursor-pointer"
-                    onClick={() => setIsShow(!isShow)}
-                  >
-                    {isShow ? (
-                      <Eye className="size-6 text-gray-700" />
-                    ) : (
-                      <EyeClosed className="size-6 text-gray-700" />
-                    )}
+
+                  <div className="relative">
+                    <input
+                      type={isShow ? "text" : "password"}
+                      name="password"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200  focus:border-transparent transition-all"
+                      placeholder="Enter your password"
+                      required
+                    />
+                    <button
+                      type="button"
+                      className="absolute right-3 top-1/2 -translate-y-1/2"
+                      onClick={() => setIsShow(!isShow)}
+                    >
+                      {isShow ? (
+                        <Eye className="w-5 h-5 text-gray-500" />
+                      ) : (
+                        <EyeClosed className="w-5 h-5 text-gray-500" />
+                      )}
+                    </button>
                   </div>
-                </div>
+
+                  <div className="flex items-center justify-between">
+                    <label className="flex items-center">
+                      <input
+                        type="checkbox"
+                        className="rounded text-blue-500"
+                      />
+                      <span className="ml-2 text-sm text-gray-600">
+                        Remember me
+                      </span>
+                    </label>
+                    <a
+                      href="#"
+                      className="text-sm text-blue-500 hover:text-blue-600"
+                    >
+                      Forgot Password?
+                    </a>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isClicked}
+                    className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-xl transition-colors"
+                  >
+                    {isClicked ? "Please wait..." : "Continue"}
+                  </button>
+
+                  <div className="relative my-4">
+                    <div className="absolute inset-0 flex items-center">
+                      <div className="w-full border-t border-gray-200"></div>
+                    </div>
+                    <div className="relative flex justify-center text-sm">
+                      <span className="px-2 bg-white text-gray-500">
+                        or continue with
+                      </span>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => router.push("/explore_membership")}
+                    className="w-full flex items-center justify-center gap-2 bg-white border border-gray-200 text-gray-700 py-3 rounded-xl hover:bg-gray-50 transition-colors"
+                  >
+                    <BlurImage
+                      src="/icons/google.svg"
+                      alt="Google"
+                      width={20}
+                      height={20}
+                    />
+                    <span>Sign in with Google</span>
+                  </button>
+
+                  <p className="text-center text-gray-600 text-sm mt-4">
+                    Don't have an account?{" "}
+                    <button
+                      onClick={() => router.push("/auth/register")}
+                      className="text-blue-500 hover:text-blue-600 font-medium"
+                    >
+                      Sign up
+                    </button>
+                  </p>
+                </form>
               </div>
-
-              <div className="flex items-center justify-between mb-6">
-                <label className="flex items-center">
-                  <input
-                    type="checkbox"
-                    className="form-checkbox size-5 text-blue-500"
-                  />
-                  <span className="ml-2 text-gray-700 text-[16px]">
-                    Keep me signed in
-                  </span>
-                </label>
-                <a
-                  href="#"
-                  className="text-[16px] text-blue-500 hover:text-blue-700"
-                >
-                  Forgot Password?
-                </a>
-              </div>
-
-              <div className="mt-10 flex justify-center items-center">
-                <button
-                  type="submit"
-                  className="bg-blue-500 hover:bg-blue-400 hover:text-gray-700 text-white text-[16px] font-medium py-2 rounded-full w-4/12 focus:outline-nono"
-                  disabled={isClicked}
-                >
-                  {isClicked ? "Please Wait..." : "Sign In"}
-                </button>
-              </div>
-            </form>
-
-            <div className="flex items-center justify-center mt-6">
-              <span className="text-gray-600 text-[15px] capitalize">
-                Or continue with
-              </span>
-            </div>
-
-            <div className="flex justify-center items-center mt-4">
-              <button
-                onClick={() => router.push("/explore_membership")}
-                className="bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 py-2 px-4 rounded-full w-6/12 flex justify-start items-center font-medium text-[16px]"
-              >
-                <BlurImage
-                  src={"/icons/google.svg"}
-                  alt="Google"
-                  width={100}
-                  height={100}
-                  className="size-6 mr-2"
-                />
-                Continue with Google
-              </button>
-            </div>
-
-            <div className="text-center mt-6 text-[16px] font-normal">
-              Don’t have an account?{" "}
-              <button
-                onClick={() => router.push("/auth/register")}
-                className="text-blue-500 hover:text-blue-700 font-medium text-[16px] border-none focus:outline-none"
-              >
-                Sign Up
-              </button>
             </div>
           </div>
         </div>
       </div>
-
-      <Footer />
-    </>
+    </div>
   );
 }
 
