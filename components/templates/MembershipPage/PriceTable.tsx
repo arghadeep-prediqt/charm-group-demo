@@ -114,18 +114,40 @@ const PricingTablle = ({ billingCycle, setBillingCycle }: PageProps) => {
               plan.isRecommended
                 ? "bg-transparent rounded-br-xl rounded-bl-xl cursor-not-allowed"
                 : "border-gray-100 rounded-xl hover:border-blue-300 hover:bg-blue-50 hover:shadow-2xl cursor-pointer"
-            }  transition-shadow duration-300`}
+            } ${
+              plan.name === "Silver"
+                ? "border-l-4 border-l-gray-400"
+                : plan.name === "Gold"
+                ? "border-l-4 border-l-yellow-400"
+                : "border-l-4 border-l-blue-400"
+            } transition-shadow duration-300`}
           >
             {/* Recommended Badge */}
             {plan.isRecommended && (
-              <div className="absolute w-full -top-4 left-1/2 transform -translate-x-1/2 bg-blue-300 text-gray-700 py-1 px-4 rounded-tr-lg rounded-tl-lg text-sm font-medium">
+              <div
+                className={`absolute w-full -top-4 left-1/2 transform -translate-x-1/2 py-1 px-4 rounded-tr-lg rounded-tl-lg text-sm font-medium ${
+                  plan.name === "Silver"
+                    ? "bg-gray-300 text-gray-700"
+                    : plan.name === "Gold"
+                    ? "bg-yellow-300 text-yellow-800"
+                    : "bg-blue-300 text-blue-800"
+                }`}
+              >
                 You are using
               </div>
             )}
 
             <div className="flex flex-col justify-between h-full">
               <div className="body">
-                <h3 className="text-[25px] font-medium mb-4 text-gray-800">
+                <h3
+                  className={`text-[25px] font-medium mb-4 ${
+                    plan.name === "Silver"
+                      ? "text-gray-700"
+                      : plan.name === "Gold"
+                      ? "text-yellow-600"
+                      : "text-blue-600"
+                  }`}
+                >
                   {plan.name}
                 </h3>
                 <div className="h-[130px] mb-6 flex justify-center items-center">
@@ -134,13 +156,18 @@ const PricingTablle = ({ billingCycle, setBillingCycle }: PageProps) => {
               </div>
 
               {/* Pricing */}
-
               <PricingSecion billingCycle={billingCycle} plan={plan} />
 
               <button
                 disabled={plan.isRecommended}
                 onClick={() => router.push("/mockpay")}
-                className="hover:bg-blue-100 bg-blue-50 py-2 px-4 rounded-lg text-p1-m transition-colors border border-blue-300 text-blue-600 disabled:grayscale disabled:opacity-65"
+                className={`py-2 px-4 rounded-lg text-p1-m transition-colors border ${
+                  plan.name === "Silver"
+                    ? "hover:bg-gray-100 bg-gray-50 border-gray-300 text-gray-600"
+                    : plan.name === "Gold"
+                    ? "hover:bg-yellow-100 bg-yellow-50 border-yellow-300 text-yellow-600"
+                    : "hover:bg-blue-100 bg-blue-50 border-blue-300 text-blue-600"
+                } disabled:grayscale disabled:opacity-65`}
               >
                 {plan.buttonLabel}
               </button>

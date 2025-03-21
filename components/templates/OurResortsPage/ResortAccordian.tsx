@@ -1,6 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { ResortsData } from "@/components/@types/pages";
+import { motion } from "framer-motion";
 
 const Container = dynamic(() => import("@/components/shared/Container"));
 const SingleResortCol = dynamic(
@@ -13,11 +14,20 @@ interface PageProps extends ResortsData {
 function ResortAccordian({ data, title, local, setDrawerOpen }: PageProps) {
   return (
     <Container className="mt-4">
-      <div className="py-3 w-full border-b border-[#3a6ea5]">
-        <p className="text-[18px] font-medium text-[#004e98] capitalize leading-relaxed">
-          resorts in {title} {(local !== "" && `(${local})`) || ""}
-        </p>
-      </div>
+      <motion.div
+        className="py-5 w-full border-b border-indigo-100 bg-gradient-to-r from-blue-50 to-indigo-50 px-6 rounded-t-xl"
+        whileHover={{ backgroundColor: "#f0f7ff" }}
+      >
+        <h2 className="text-2xl font-semibold text-blue-600 capitalize flex items-center">
+          <span className="mr-2"></span>
+          <span>Resorts in {title}</span>
+          {local !== "" && (
+            <span className="ml-2 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+              {local}
+            </span>
+          )}
+        </h2>
+      </motion.div>
 
       <div className="mt-2 py-4 w-full flex justify-start items-start flex-wrap">
         {data?.map((item, id) => (

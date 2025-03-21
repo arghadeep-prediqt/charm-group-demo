@@ -261,9 +261,7 @@ function Calendar({ resort_id, token }: { resort_id: string; token: string }) {
                     className={`h-full p-3 rounded-lg transition-all duration-200 hover:shadow-sm ${
                       day.status === "available"
                         ? "bg-indigo-50 border border-indigo-100 hover:border-indigo-200"
-                        : day.status === "fullyBooked"
-                        ? "bg-red-50 border border-red-100 hover:border-red-200"
-                        : "bg-gray-50 border border-gray-200 hover:border-gray-300"
+                        : "bg-gray-100 border border-gray-300 hover:border-gray-300"
                     }`}
                   >
                     {/* Date Display */}
@@ -272,8 +270,6 @@ function Calendar({ resort_id, token }: { resort_id: string; token: string }) {
                         className={`text-lg font-medium ${
                           day.status === "available"
                             ? "text-indigo-700"
-                            : day.status === "fullyBooked"
-                            ? "text-red-700"
                             : "text-gray-600"
                         }`}
                       >
@@ -285,8 +281,6 @@ function Calendar({ resort_id, token }: { resort_id: string; token: string }) {
                         className={`size-3 rounded-full ${
                           day.status === "available"
                             ? "bg-indigo-500"
-                            : day.status === "fullyBooked"
-                            ? "bg-red-500"
                             : "bg-gray-400"
                         }`}
                       />
@@ -321,8 +315,6 @@ function Calendar({ resort_id, token }: { resort_id: string; token: string }) {
                           className={`text-xs italic p-2 rounded-md text-center ${
                             day.status === "available"
                               ? "bg-indigo-100/50 text-indigo-600"
-                              : day.status === "fullyBooked"
-                              ? "bg-red-100/50 text-red-600"
                               : "bg-gray-100/50 text-gray-600"
                           }`}
                         >
